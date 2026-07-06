@@ -18,6 +18,9 @@ if (-not (Test-Path $distDir)) {
 New-Item -ItemType Directory -Path $stagingDir | Out-Null
 
 $itemsToPackage = @(
+    "Install.cmd",
+    "Run.cmd",
+    "Enable_Startup.cmd",
     "ahk",
     "scripts",
     "src",
@@ -52,4 +55,4 @@ Compress-Archive -Path $stagingDir -DestinationPath $zipPath
 Remove-Item $stagingRoot -Recurse -Force
 
 Write-Host "Package created: $zipPath"
-Write-Host "Share this zip with users. They should extract it, then run scripts\install.ps1 and scripts\run.ps1."
+Write-Host "Share this zip with users. They should extract it, then double-click Install.cmd and Run.cmd."

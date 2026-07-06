@@ -41,6 +41,12 @@ ai-text-expand-local-llm/
 
 ## Setup
 
+For most users, double-click:
+
+```text
+Install.cmd
+```
+
 From this folder:
 
 ```powershell
@@ -75,6 +81,12 @@ You can change the model name if you prefer another local model, such as `qwen2.
 
 ## Run
 
+For most users, double-click:
+
+```text
+Run.cmd
+```
+
 Run:
 
 ```powershell
@@ -82,6 +94,12 @@ Run:
 ```
 
 To ensure the helper starts automatically after sign-in:
+
+```text
+Enable_Startup.cmd
+```
+
+Or run:
 
 ```powershell
 .\scripts\enable_startup.ps1
@@ -135,18 +153,16 @@ The package is created under `dist\`.
 Send the zip file to another Windows PC. On that PC, the user should:
 
 1. Extract the zip.
-2. Open PowerShell in the extracted folder.
-3. Run:
+2. Double-click `Install.cmd`.
+3. Double-click `Run.cmd`.
+
+Optional startup setup: double-click `Enable_Startup.cmd`.
+
+PowerShell alternative:
 
 ```powershell
 .\scripts\install.ps1
 .\scripts\run.ps1
-```
-
-Optional startup setup:
-
-```powershell
-.\scripts\enable_startup.ps1
 ```
 
 ## How It Works
