@@ -153,10 +153,12 @@ The package is created under `dist\`.
 Send the zip file to another Windows PC. On that PC, the user should:
 
 1. Extract the zip.
-2. Double-click `Install.cmd`.
-3. Double-click `Run.cmd`.
+2. Double-click `Install.exe`.
+3. Double-click `Run.exe`.
 
-Optional startup setup: double-click `Enable_Startup.cmd`.
+Optional startup setup: double-click `Enable_Startup.exe`.
+
+If Windows blocks the unsigned executable, use the included `.cmd` fallback files instead: `Install.cmd`, `Run.cmd`, and `Enable_Startup.cmd`.
 
 PowerShell alternative:
 

@@ -8,6 +8,47 @@ $stagingRoot = Join-Path ([System.IO.Path]::GetTempPath()) "$packageName-package
 $stagingDir = Join-Path $stagingRoot $packageName
 $zipPath = Join-Path $distDir "$packageName.zip"
 
+function Add-LauncherExecutable($targetCmd, $outputExe)
+{
+    $escapedTarget = $targetCmd.Replace("\", "\\").Replace('"', '\"')
+    $source = @"
+using System;
+using System.Diagnostics;
+using System.IO;
+
+public class Program
+{
+    public static int Main()
+    {
+        string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+        string target = Path.Combine(baseDir, "$escapedTarget");
+
+        if (!File.Exists(target))
+        {
+            Console.Error.WriteLine("Required file was not found: " + target);
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey(true);
+            return 1;
+        }
+
+        ProcessStartInfo startInfo = new ProcessStartInfo();
+        startInfo.FileName = "cmd.exe";
+        startInfo.Arguments = "/c \"" + target + "\"";
+        startInfo.WorkingDirectory = baseDir;
+        startInfo.UseShellExecute = false;
+
+        using (Process process = Process.Start(startInfo))
+        {
+            process.WaitForExit();
+            return process.ExitCode;
+        }
+    }
+}
+"@
+
+    Add-Type -TypeDefinition $source -Language CSharp -OutputAssembly $outputExe -OutputType ConsoleApplication
+}
+
 if (Test-Path $stagingRoot) {
     Remove-Item $stagingRoot -Recurse -Force
 }
@@ -39,6 +80,10 @@ foreach ($item in $itemsToPackage) {
     Copy-Item $source -Destination $stagingDir -Recurse -Force
 }
 
+Add-LauncherExecutable "Install.cmd" (Join-Path $stagingDir "Install.exe")
+Add-LauncherExecutable "Run.cmd" (Join-Path $stagingDir "Run.exe")
+Add-LauncherExecutable "Enable_Startup.cmd" (Join-Path $stagingDir "Enable_Startup.exe")
+
 Get-ChildItem $stagingDir -Directory -Recurse -Force |
     Where-Object { $_.Name -in @("__pycache__", ".pytest_cache") } |
     Remove-Item -Recurse -Force
@@ -55,4 +100,4 @@ Compress-Archive -Path $stagingDir -DestinationPath $zipPath
 Remove-Item $stagingRoot -Recurse -Force
 
 Write-Host "Package created: $zipPath"
-Write-Host "Share this zip with users. They should extract it, then double-click Install.cmd and Run.cmd."
+Write-Host "Share this zip with users. They should extract it, then double-click Install.exe and Run.exe."
