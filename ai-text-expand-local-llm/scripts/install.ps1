@@ -1,8 +1,10 @@
 param(
     [string]$Model,
+    [string]$Proxy = "http://proxy-dmz.intel.com:912",
     [switch]$SkipWingetInstall,
     [switch]$SkipModelPull,
-    [switch]$SkipStart
+    [switch]$SkipStart,
+    [switch]$NoProxy
 )
 
 $ErrorActionPreference = "Stop"
@@ -33,6 +35,22 @@ function Install-WithWinget($packageId, $displayName)
     }
 
     Update-ProcessPath
+}
+
+function Set-ProxyEnvironment($proxyUrl)
+{
+    if (-not $proxyUrl) {
+        return
+    }
+
+    $env:HTTP_PROXY = $proxyUrl
+    $env:HTTPS_PROXY = $proxyUrl
+    $env:ALL_PROXY = $proxyUrl
+    $env:http_proxy = $proxyUrl
+    $env:https_proxy = $proxyUrl
+    $env:all_proxy = $proxyUrl
+
+    Write-Host "Using proxy for downloads: $proxyUrl"
 }
 
 function Get-PythonCommand()
@@ -160,6 +178,12 @@ if (Test-Path $configPath) {
     if ($config.OLLAMA_BASE_URL) {
         $baseUrl = $config.OLLAMA_BASE_URL
     }
+}
+
+if ($NoProxy) {
+    Write-Host "Proxy disabled for this install."
+} else {
+    Set-ProxyEnvironment $Proxy
 }
 
 $python = Get-PythonCommand
