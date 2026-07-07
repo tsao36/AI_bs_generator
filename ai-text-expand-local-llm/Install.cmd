@@ -13,5 +13,5 @@ if errorlevel 1 (
 )
 
 echo.
-echo Install complete. AI Text Expand is now running.
+echo Setup finished. If the model download failed, connect to a network that can reach registry.ollama.ai and run Install.exe again.
 pause

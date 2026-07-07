@@ -100,6 +100,33 @@ function Test-OllamaApi($baseUrl)
     }
 }
 
+function Test-OllamaModelInstalled($baseUrl, $modelName)
+{
+    try {
+        $tags = Invoke-RestMethod -Uri "$baseUrl/api/tags" -Method Get -TimeoutSec 5
+        return @($tags.models | ForEach-Object { $_.name }) -contains $modelName
+    } catch {
+        return $false
+    }
+}
+
+function Pull-OllamaModel($modelName)
+{
+    foreach ($attempt in 1..3) {
+        Write-Host "Pulling Ollama model: $modelName (attempt $attempt of 3)"
+        & ollama pull $modelName
+        if ($LASTEXITCODE -eq 0) {
+            return $true
+        }
+
+        if ($attempt -lt 3) {
+            Write-Warning "Model pull failed. Retrying..."
+        }
+    }
+
+    return $false
+}
+
 function Start-OllamaIfNeeded($baseUrl)
 {
     if (Test-OllamaApi $baseUrl) {
@@ -177,15 +204,27 @@ Start-OllamaIfNeeded $baseUrl
 $modelName = Get-ConfiguredModel $configPath
 if ($SkipModelPull) {
     Write-Host "Skipping model pull. Required model: $modelName"
+    $modelReady = Test-OllamaModelInstalled $baseUrl $modelName
 } else {
-    Write-Host "Pulling Ollama model: $modelName"
-    & ollama pull $modelName
-    if ($LASTEXITCODE -ne 0) {
-        throw "Failed to pull Ollama model: $modelName"
+    $modelReady = Test-OllamaModelInstalled $baseUrl $modelName
+    if ($modelReady) {
+        Write-Host "Ollama model is already installed: $modelName"
+    } else {
+        $modelReady = Pull-OllamaModel $modelName
     }
 }
 
 Write-Host "Install complete."
+
+if (-not $modelReady) {
+    Write-Warning "The required Ollama model is not installed: $modelName"
+    Write-Warning "AI Text Expand is installed, but it cannot run until this model is available."
+    Write-Warning "This is usually caused by a corporate firewall, proxy, VPN, or timeout reaching https://registry.ollama.ai."
+    Write-Warning "Connect to a network that can reach registry.ollama.ai, then double-click Install.exe again."
+    Write-Warning "If your company provides a preloaded Ollama model, install it with the same model name or update config.example.json."
+    exit 0
+}
+
 if ($SkipStart) {
     Write-Host "Start skipped. Run scripts\run.ps1 when you are ready to start the AutoHotkey helper."
     exit 0

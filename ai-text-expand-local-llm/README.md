@@ -57,6 +57,8 @@ From this folder:
 
 The installer checks for Python, AutoHotkey v2, and Ollama. If `winget` is available, missing tools are installed automatically. It also starts Ollama and pulls the configured local model.
 
+If the model download times out, the app install still completes but AI Text Expand does not start. Connect to a network that can reach `https://registry.ollama.ai`, then double-click `Install.exe` again. This is common on corporate networks that require a proxy, VPN, or firewall allowlist.
+
 If your PC blocks `winget` installs, install Python 3.9+, AutoHotkey v2, and Ollama manually, then rerun:
 
 ```powershell
@@ -187,4 +189,5 @@ The model is instructed to preserve meaning, tone, and language while making the
 - Some protected apps may block simulated copy and paste.
 - The right-click AI menu only appears in supported browser windows.
 - To stop it, right-click the AutoHotkey tray icon and choose Exit.
+- Ollama model download requires access to `https://registry.ollama.ai`. If it times out, rerun `Install.exe` after connecting to a network that can reach the registry.
 - For GitHub upload, this folder can be copied or initialized as its own repository.
