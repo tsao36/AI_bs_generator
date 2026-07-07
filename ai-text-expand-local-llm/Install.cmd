@@ -13,5 +13,5 @@ if errorlevel 1 (
 )
 
 echo.
-echo Install complete. Double-click Run.cmd to start AI Text Expand.
+echo Install complete. AI Text Expand is now running.
 pause

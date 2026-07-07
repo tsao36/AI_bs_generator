@@ -100,4 +100,4 @@ Compress-Archive -Path $stagingDir -DestinationPath $zipPath
 Remove-Item $stagingRoot -Recurse -Force
 
 Write-Host "Package created: $zipPath"
-Write-Host "Share this zip with users. They should extract it, then double-click Install.exe and Run.exe."
+Write-Host "Share this zip with users. They should extract it, then double-click Install.exe."

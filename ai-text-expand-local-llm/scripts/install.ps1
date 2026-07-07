@@ -1,7 +1,8 @@
 param(
     [string]$Model,
     [switch]$SkipWingetInstall,
-    [switch]$SkipModelPull
+    [switch]$SkipModelPull,
+    [switch]$SkipStart
 )
 
 $ErrorActionPreference = "Stop"
@@ -185,4 +186,15 @@ if ($SkipModelPull) {
 }
 
 Write-Host "Install complete."
-Write-Host "Next: run scripts\run.ps1 to start the AutoHotkey helper."
+if ($SkipStart) {
+    Write-Host "Start skipped. Run scripts\run.ps1 when you are ready to start the AutoHotkey helper."
+    exit 0
+}
+
+Write-Host "Starting AI Text Expand..."
+& (Join-Path (Get-Location) "scripts\run.ps1")
+if ($LASTEXITCODE -ne 0) {
+    throw "Install completed, but AI Text Expand did not start. Run scripts\run.ps1 manually and check the error message."
+}
+
+Write-Host "AI Text Expand is installed and running."

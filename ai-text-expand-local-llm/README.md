@@ -47,6 +47,8 @@ For most users, double-click:
 Install.cmd
 ```
 
+Installation starts AI Text Expand automatically. You do not need to run another script after installation.
+
 From this folder:
 
 ```powershell
@@ -80,6 +82,8 @@ The default config is in `config.example.json`:
 You can change the model name if you prefer another local model, such as `qwen2.5:7b`, `llama3.1:8b`, or another model installed in Ollama. Instruction-tuned models usually follow the length options more reliably.
 
 ## Run
+
+The installer starts AI Text Expand automatically. Use this section only if you stopped the helper and want to start it again.
 
 For most users, double-click:
 
@@ -154,7 +158,7 @@ Send the zip file to another Windows PC. On that PC, the user should:
 
 1. Extract the zip.
 2. Double-click `Install.exe`.
-3. Double-click `Run.exe`.
+3. Start using the right-click AI menu in a supported browser.
 
 Optional startup setup: double-click `Enable_Startup.exe`.
 
@@ -164,7 +168,6 @@ PowerShell alternative:
 
 ```powershell
 .\scripts\install.ps1
-.\scripts\run.ps1
 ```
 
 ## How It Works
