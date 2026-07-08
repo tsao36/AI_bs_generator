@@ -44,12 +44,14 @@ ai-text-expand-local-llm/
 For most users, double-click:
 
 ```text
-Install.cmd
+01_Setup_and_Start.exe
 ```
 
 Installation copies the app to `%LOCALAPPDATA%\AITextExpandLocalLLM` and starts AI Text Expand automatically. You do not need to run another script after installation.
 
-For upgrades, extract the newer zip and double-click `Install.exe` or `Install.cmd` again. The installer updates the app files in the same local install folder and keeps the existing config, Python virtual environment, Ollama install, and downloaded model when they are already valid.
+For upgrades, extract the newer zip and double-click `01_Setup_and_Start.exe` again. The installer updates the app files in the same local install folder and keeps the existing config, Python virtual environment, Ollama install, and downloaded model when they are already valid.
+
+If Windows blocks the unsigned executable, use the included `Install.cmd` fallback.
 
 From this folder:
 
@@ -110,22 +112,10 @@ You can change the model name if you prefer another local model, such as `qwen2.
 
 The installer starts AI Text Expand automatically. Use this section only if you stopped the helper and want to start it again.
 
-For most users, double-click:
-
-```text
-Run.cmd
-```
-
 Run:
 
 ```powershell
 .\scripts\run.ps1
-```
-
-To ensure the helper starts automatically after sign-in:
-
-```text
-Enable_Startup.cmd
 ```
 
 Or run:
@@ -182,12 +172,10 @@ The package is created under `dist\`.
 Send the zip file to another Windows PC. On that PC, the user should:
 
 1. Extract the zip.
-2. Double-click `Install.exe`.
+2. Double-click `01_Setup_and_Start.exe`.
 3. Start using the right-click AI menu in a supported browser.
 
-Optional startup setup: double-click `Enable_Startup.exe`.
-
-If Windows blocks the unsigned executable, use the included `.cmd` fallback files instead: `Install.cmd`, `Run.cmd`, and `Enable_Startup.cmd`.
+If Windows blocks the unsigned executable, use the included `Install.cmd` fallback.
 
 PowerShell alternative:
 

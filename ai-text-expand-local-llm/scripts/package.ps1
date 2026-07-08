@@ -60,8 +60,6 @@ New-Item -ItemType Directory -Path $stagingDir | Out-Null
 
 $itemsToPackage = @(
     "Install.cmd",
-    "Run.cmd",
-    "Enable_Startup.cmd",
     "ahk",
     "scripts",
     "src",
@@ -80,9 +78,7 @@ foreach ($item in $itemsToPackage) {
     Copy-Item $source -Destination $stagingDir -Recurse -Force
 }
 
-Add-LauncherExecutable "Install.cmd" (Join-Path $stagingDir "Install.exe")
-Add-LauncherExecutable "Run.cmd" (Join-Path $stagingDir "Run.exe")
-Add-LauncherExecutable "Enable_Startup.cmd" (Join-Path $stagingDir "Enable_Startup.exe")
+Add-LauncherExecutable "Install.cmd" (Join-Path $stagingDir "01_Setup_and_Start.exe")
 
 Get-ChildItem $stagingDir -Directory -Recurse -Force |
     Where-Object { $_.Name -in @("__pycache__", ".pytest_cache") } |
@@ -100,4 +96,4 @@ Compress-Archive -Path $stagingDir -DestinationPath $zipPath
 Remove-Item $stagingRoot -Recurse -Force
 
 Write-Host "Package created: $zipPath"
-Write-Host "Share this zip with users. They should extract it, then double-click Install.exe."
+Write-Host "Share this zip with users. They should extract it, then double-click 01_Setup_and_Start.exe."

@@ -23,11 +23,7 @@ function Copy-PackageToInstallDir($sourceRoot, $destinationRoot)
 
     $itemsToCopy = @(
         "Install.cmd",
-        "Run.cmd",
-        "Enable_Startup.cmd",
-        "Install.exe",
-        "Run.exe",
-        "Enable_Startup.exe",
+        "01_Setup_and_Start.exe",
         "ahk",
         "scripts",
         "src",
