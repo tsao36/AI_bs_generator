@@ -199,6 +199,17 @@ function Pull-OllamaModel($modelName)
     return $false
 }
 
+function Test-AITextExpandHelperRunning($rootPath)
+{
+    $scriptPath = Join-Path $rootPath "ahk\ai_text_expand.ahk"
+
+    $proc = Get-CimInstance Win32_Process -Filter "name = 'AutoHotkey64.exe' or name = 'AutoHotkey.exe'" |
+        Where-Object { $_.CommandLine -and $_.CommandLine.Contains($scriptPath) } |
+        Select-Object -First 1
+
+    return $null -ne $proc
+}
+
 function Start-OllamaIfNeeded($baseUrl)
 {
     if (Test-OllamaApi $baseUrl) {
@@ -344,9 +355,14 @@ if ($SkipStart) {
 }
 
 Write-Host "Starting AI Text Expand..."
-& (Join-Path (Get-Location) "scripts\run.ps1")
-if ($LASTEXITCODE -ne 0) {
-    throw "Install completed, but AI Text Expand did not start. Run scripts\run.ps1 manually and check the error message."
+try {
+    & (Join-Path (Get-Location) "scripts\run.ps1")
+} catch {
+    throw "Install completed, but AI Text Expand failed to launch: $($_.Exception.Message)"
+}
+
+if (-not (Test-AITextExpandHelperRunning (Get-Location).Path)) {
+    throw "Install completed, but AI Text Expand did not stay running. Run scripts\run.ps1 manually and check the error message."
 }
 
 Write-Host "AI Text Expand is installed and running."
