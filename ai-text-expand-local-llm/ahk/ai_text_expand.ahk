@@ -2,9 +2,21 @@
 #SingleInstance Force
 
 ProjectRoot := RegExReplace(A_ScriptDir, "\\ahk$", "")
+InstalledRoot := EnvGet("LOCALAPPDATA") "\\AITextExpandLocalLLM"
+if !FileExist(ProjectRoot "\\.venv\\Scripts\\python.exe") && FileExist(InstalledRoot "\\.venv\\Scripts\\python.exe") {
+    ProjectRoot := InstalledRoot
+}
+
 PythonExe := ProjectRoot "\\.venv\\Scripts\\python.exe"
+PythonArgs := ""
 if !FileExist(PythonExe) {
-    PythonExe := "python"
+    pyLauncher := GetCommandPath("py")
+    if (pyLauncher != "") {
+        PythonExe := pyLauncher
+        PythonArgs := "-3"
+    } else {
+        PythonExe := "python"
+    }
 }
 
 ScriptPath := ProjectRoot "\\src\\ai_text_expand\\expand_text.py"
@@ -30,6 +42,15 @@ ContextMenu.Add("Open Last Error Log", OpenLastErrorLog)
 ContextMenu.Add("Copy Last Error Path", CopyLastErrorPath)
 ContextMenu.Add("Use Native Context Menu", ShowNativeContextMenu)
 ContextMenu.Add("Cancel", (*) => 0)
+
+GetCommandPath(commandName)
+{
+    checkCmd := Format('{} /c "where {} >nul 2>&1"', A_ComSpec, commandName)
+    if (RunWait(checkCmd, , "Hide") = 0) {
+        return commandName
+    }
+    return ""
+}
 
 #HotIf IsSupportedBrowser()
 RButton::
@@ -91,7 +112,7 @@ ExpandWithLocalAI(lengthMode, lengthLabel)
 
     modelName := GetConfiguredModel()
     StartProgressIndicator(lengthLabel, modelName)
-    command := Format('{} /c ""{}" "{}" --input "{}" --output "{}" --config "{}" --length "{}" > "{}" 2>&1"', A_ComSpec, PythonExe, ScriptPath, inputFile, outputFile, ConfigPath, lengthMode, errorFile)
+    command := Format('{} /c ""{}" {} "{}" --input "{}" --output "{}" --config "{}" --length "{}" > "{}" 2>&1"', A_ComSpec, PythonExe, PythonArgs, ScriptPath, inputFile, outputFile, ConfigPath, lengthMode, errorFile)
     try {
         exitCode := RunWait(command, , "Hide")
     } catch as err {
@@ -325,12 +346,15 @@ PreflightCheck()
     }
 
     if FileExist(ProjectRoot "\\.venv\\Scripts\\python.exe") {
-        if !TestPythonExecutable(ProjectRoot "\\.venv\\Scripts\\python.exe") {
+        if !TestPythonExecutable(ProjectRoot "\\.venv\\Scripts\\python.exe", "") {
             issues.Push("Virtual environment Python exists but is not runnable.")
         }
     } else {
-        if !TestPythonExecutable("python") {
-            issues.Push("Python was not found. Re-run Install.exe.")
+        if !TestPythonExecutable(PythonExe, PythonArgs) {
+            issues.Push("Python was not found. Re-run 01_Setup_and_Start.exe.")
+            if (ProjectRoot != InstalledRoot && FileExist(InstalledRoot "\\.venv\\Scripts\\python.exe")) {
+                issues.Push("A valid installed environment exists in " InstalledRoot ", but this script is running from another folder. Use the installed copy.")
+            }
         }
     }
 
@@ -353,9 +377,9 @@ PreflightCheck()
     return RTrim(detail, "`n")
 }
 
-TestPythonExecutable(pyExe)
+TestPythonExecutable(pyExe, pyArgs := "")
 {
-    checkCmd := Format('{} /c ""{}" --version >nul 2>&1"', A_ComSpec, pyExe)
+    checkCmd := Format('{} /c ""{}" {} --version >nul 2>&1"', A_ComSpec, pyExe, pyArgs)
     return RunWait(checkCmd, , "Hide") = 0
 }
 
