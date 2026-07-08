@@ -91,12 +91,20 @@ ExpandWithLocalAI(lengthMode, lengthLabel)
 
     modelName := GetConfiguredModel()
     StartProgressIndicator(lengthLabel, modelName)
-    command := Format('"{}" "{}" --input "{}" --output "{}" --config "{}" --length "{}" > "{}" 2>&1', PythonExe, ScriptPath, inputFile, outputFile, ConfigPath, lengthMode, errorFile)
-    exitCode := RunWait(command, , "Hide")
+    command := Format('{} /c ""{}" "{}" --input "{}" --output "{}" --config "{}" --length "{}" > "{}" 2>&1"', A_ComSpec, PythonExe, ScriptPath, inputFile, outputFile, ConfigPath, lengthMode, errorFile)
+    try {
+        exitCode := RunWait(command, , "Hide")
+    } catch as err {
+        StopProgressIndicator()
+        RecordFailure("Failed to launch local AI bridge", err.Message, errorFile)
+        ShowStatus("AI launch failed", 1800)
+        MsgBox "Local AI launch failed.`n`n" err.Message "`n`nDetails saved to:`n" LastErrorPath, "AI Text Expand", "Iconx"
+        return
+    }
     StopProgressIndicator()
 
     if (exitCode != 0) {
-        detail := GetFailureDetails(errorFile)
+        detail := GetFailureDetails(errorFile, exitCode)
         ShowStatus("AI expansion failed", 1800)
         MsgBox "Local AI expansion failed.`n`n" detail, "AI Text Expand", "Iconx"
         return
@@ -351,7 +359,7 @@ TestPythonExecutable(pyExe)
     return RunWait(checkCmd, , "Hide") = 0
 }
 
-ReadErrorFile(errorFile)
+ReadErrorFile(errorFile, exitCode := "")
 {
     if FileExist(errorFile) {
         text := Trim(FileRead(errorFile, "UTF-8"))
@@ -359,7 +367,15 @@ ReadErrorFile(errorFile)
             return text
         }
     }
-    return "No error details were captured from Python output."
+
+    detail := "Python exited"
+    if (exitCode != "") {
+        detail .= " with code " exitCode
+    }
+    detail .= " but did not write any error output.`n"
+    detail .= "This usually means the local AI bridge failed before stderr redirection completed.`n"
+    detail .= "Re-run 01_Setup_and_Start.exe to repair the install, then try again."
+    return detail
 }
 
 ClassifyFailure(rawError)
@@ -421,9 +437,9 @@ RecordFailure(title, rawError, tempErrorFile)
     FileAppend context, LastErrorPath, "UTF-8"
 }
 
-GetFailureDetails(errorFile)
+GetFailureDetails(errorFile, exitCode := "")
 {
-    rawError := ReadErrorFile(errorFile)
+    rawError := ReadErrorFile(errorFile, exitCode)
     detail := ClassifyFailure(rawError)
     RecordFailure("Local AI expansion failed", rawError, errorFile)
 
