@@ -9,9 +9,11 @@ if !FileExist(PythonExe) {
 
 ScriptPath := ProjectRoot "\\src\\ai_text_expand\\expand_text.py"
 ConfigPath := ProjectRoot "\\config.example.json"
+PyprojectPath := ProjectRoot "\\pyproject.toml"
 LogsDir := EnvGet("LOCALAPPDATA") "\\AITextExpandLocalLLM\\logs"
 MainLogPath := LogsDir "\\ai_text_expand.log"
 LastErrorPath := LogsDir "\\last_error.txt"
+GitHubDistPageUrl := "https://github.com/tsao36/AI_bs_generator/tree/main/ai-text-expand-local-llm/dist"
 
 global SelectedText := ""
 global ProgressTick := 0
@@ -22,6 +24,7 @@ ContextMenu.Add("Expand with Local AI - 2 sentences", ExpandTwoSentences)
 ContextMenu.Add("Expand with Local AI - 5 sentences", ExpandFiveSentences)
 ContextMenu.Add("Expand with Local AI - paragraph", ExpandParagraph)
 ContextMenu.Add()
+ContextMenu.Add("Check GitHub for Latest Download", CheckGitHubForLatestDownload)
 ContextMenu.Add("Open AI Logs Folder", OpenLogsFolder)
 ContextMenu.Add("Open Last Error Log", OpenLastErrorLog)
 ContextMenu.Add("Copy Last Error Path", CopyLastErrorPath)
@@ -122,6 +125,20 @@ ExpandWithLocalAI(lengthMode, lengthLabel)
 ShowNativeContextMenu(*)
 {
     Send "+{F10}"
+}
+
+CheckGitHubForLatestDownload(*)
+{
+    currentVersion := GetCurrentAppVersion()
+    if (currentVersion = "") {
+        prompt := "Open the GitHub package page to check for the latest download?`n`nLook for the newest AITextExpandLocalLLM-v*.zip file."
+    } else {
+        prompt := "Current local package version: " currentVersion "`n`nOpen the GitHub package page to check for a newer download?"
+    }
+
+    if (MsgBox(prompt, "AI Text Expand", "YesNo Iconi") = "Yes") {
+        Run GitHubDistPageUrl
+    }
 }
 
 OpenLogsFolder(*)
@@ -271,6 +288,24 @@ GetConfiguredModel()
     }
 
     return "local LLM"
+}
+
+GetCurrentAppVersion()
+{
+    try {
+        if !FileExist(PyprojectPath) {
+            return ""
+        }
+
+        projectText := FileRead(PyprojectPath, "UTF-8")
+        if RegExMatch(projectText, 'version\s*=\s*"([0-9]+(?:\.[0-9]+)*)"', &match) {
+            return match[1]
+        }
+    } catch {
+        return ""
+    }
+
+    return ""
 }
 
 PreflightCheck()

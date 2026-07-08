@@ -83,6 +83,7 @@ If the model download times out, the app install still completes but AI Text Exp
 
 If expansion fails at runtime, the popup includes the detailed Python/Ollama error and the path to a temporary diagnostic log.
 AHK also writes persistent diagnostics to `%LOCALAPPDATA%\\AITextExpandLocalLLM\\logs\\ai_text_expand.log` and the latest failure to `%LOCALAPPDATA%\\AITextExpandLocalLLM\\logs\\last_error.txt`.
+The right-click tool menu also includes `Check GitHub for Latest Download`, which opens the GitHub `dist` page in your browser so you can manually download the newest packaged zip.
 
 If your PC blocks `winget` installs, install Python 3.9+, AutoHotkey v2, and Ollama manually, then rerun:
 
