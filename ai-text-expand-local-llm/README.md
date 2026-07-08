@@ -47,7 +47,9 @@ For most users, double-click:
 Install.cmd
 ```
 
-Installation starts AI Text Expand automatically. You do not need to run another script after installation.
+Installation copies the app to `%LOCALAPPDATA%\AITextExpandLocalLLM` and starts AI Text Expand automatically. You do not need to run another script after installation.
+
+For upgrades, extract the newer zip and double-click `Install.exe` or `Install.cmd` again. The installer updates the app files in the same local install folder and keeps the existing config, Python virtual environment, Ollama install, and downloaded model when they are already valid.
 
 From this folder:
 
@@ -76,6 +78,9 @@ To install without a proxy:
 ```
 
 If the model download times out, the app install still completes but AI Text Expand does not start. Connect to a network that can reach `https://registry.ollama.ai`, then double-click `Install.exe` again. This is common on corporate networks that require a proxy, VPN, or firewall allowlist.
+
+If expansion fails at runtime, the popup includes the detailed Python/Ollama error and the path to a temporary diagnostic log.
+AHK also writes persistent diagnostics to `%LOCALAPPDATA%\\AITextExpandLocalLLM\\logs\\ai_text_expand.log` and the latest failure to `%LOCALAPPDATA%\\AITextExpandLocalLLM\\logs\\last_error.txt`.
 
 If your PC blocks `winget` installs, install Python 3.9+, AutoHotkey v2, and Ollama manually, then rerun:
 

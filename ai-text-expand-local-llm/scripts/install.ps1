@@ -1,15 +1,73 @@
 param(
     [string]$Model,
     [string]$Proxy = "http://proxy-dmz.intel.com:912",
+    [string]$InstallDir = "$env:LOCALAPPDATA\AITextExpandLocalLLM",
     [switch]$SkipWingetInstall,
     [switch]$SkipModelPull,
     [switch]$SkipStart,
-    [switch]$NoProxy
+    [switch]$NoProxy,
+    [switch]$InstallInPlace
 )
 
 $ErrorActionPreference = "Stop"
 
-Set-Location (Split-Path -Parent $PSScriptRoot)
+$packageRoot = Split-Path -Parent $PSScriptRoot
+$targetRoot = [System.IO.Path]::GetFullPath($InstallDir)
+$currentRoot = [System.IO.Path]::GetFullPath($packageRoot)
+
+function Copy-PackageToInstallDir($sourceRoot, $destinationRoot)
+{
+    if (-not (Test-Path $destinationRoot)) {
+        New-Item -ItemType Directory -Path $destinationRoot | Out-Null
+    }
+
+    $itemsToCopy = @(
+        "Install.cmd",
+        "Run.cmd",
+        "Enable_Startup.cmd",
+        "Install.exe",
+        "Run.exe",
+        "Enable_Startup.exe",
+        "ahk",
+        "scripts",
+        "src",
+        "pyproject.toml",
+        "requirements.txt",
+        "README.md"
+    )
+
+    foreach ($item in $itemsToCopy) {
+        $source = Join-Path $sourceRoot $item
+        if (Test-Path $source) {
+            Copy-Item $source -Destination $destinationRoot -Recurse -Force
+        }
+    }
+
+    $configSource = Join-Path $sourceRoot "config.example.json"
+    $configTarget = Join-Path $destinationRoot "config.example.json"
+    if ((Test-Path $configSource) -and -not (Test-Path $configTarget)) {
+        Copy-Item $configSource -Destination $configTarget -Force
+    }
+}
+
+if (-not $InstallInPlace -and ($currentRoot.TrimEnd("\") -ine $targetRoot.TrimEnd("\"))) {
+    Write-Host "Updating installed app files in: $targetRoot"
+    Copy-PackageToInstallDir $currentRoot $targetRoot
+
+    $installedScript = Join-Path $targetRoot "scripts\install.ps1"
+    $args = @("-NoProfile", "-ExecutionPolicy", "Bypass", "-File", $installedScript, "-InstallInPlace", "-InstallDir", $targetRoot)
+    if ($Model) { $args += @("-Model", $Model) }
+    if ($Proxy) { $args += @("-Proxy", $Proxy) }
+    if ($SkipWingetInstall) { $args += "-SkipWingetInstall" }
+    if ($SkipModelPull) { $args += "-SkipModelPull" }
+    if ($SkipStart) { $args += "-SkipStart" }
+    if ($NoProxy) { $args += "-NoProxy" }
+
+    & powershell.exe @args
+    exit $LASTEXITCODE
+}
+
+Set-Location $currentRoot
 
 function Update-ProcessPath()
 {
@@ -171,6 +229,40 @@ function Start-OllamaIfNeeded($baseUrl)
     throw "Ollama did not respond at $baseUrl. Start Ollama manually, then rerun this script."
 }
 
+function Get-FileSha256($path)
+{
+    if (-not (Test-Path $path)) {
+        return ""
+    }
+    return (Get-FileHash -Path $path -Algorithm SHA256).Hash
+}
+
+function Install-PythonRequirementsIfNeeded($requirementsPath)
+{
+    $venvPython = ".\.venv\Scripts\python.exe"
+    $hashPath = ".\.venv\.requirements.sha256"
+    $requirementsHash = Get-FileSha256 $requirementsPath
+    $installedHash = ""
+    if (Test-Path $hashPath) {
+        $installedHash = (Get-Content $hashPath -Raw).Trim()
+    }
+
+    if ((Test-Path $venvPython) -and $requirementsHash -and ($requirementsHash -eq $installedHash)) {
+        Write-Host "Python requirements are already up to date."
+        return
+    }
+
+    $requirements = Get-Content $requirementsPath | Where-Object { $_.Trim() -and -not $_.Trim().StartsWith("#") }
+    if ($requirements) {
+        Write-Host "Installing Python requirements..."
+        & $venvPython -m pip install -r $requirementsPath
+        if ($LASTEXITCODE -ne 0) {
+            throw "Failed to install Python requirements."
+        }
+        Set-Content -Path $hashPath -Value $requirementsHash -Encoding ASCII
+    }
+}
+
 $configPath = ".\config.example.json"
 $baseUrl = "http://127.0.0.1:11434"
 if (Test-Path $configPath) {
@@ -195,19 +287,18 @@ if (-not $python) {
     throw "Python was not found after install. Restart PowerShell, then rerun this script."
 }
 
-if ($python -like "*\py.exe") {
-    & $python -3 -m venv .venv
+if (-not (Test-Path ".\.venv\Scripts\python.exe")) {
+    Write-Host "Creating Python virtual environment..."
+    if ($python -like "*\py.exe") {
+        & $python -3 -m venv .venv
+    } else {
+        & $python -m venv .venv
+    }
 } else {
-    & $python -m venv .venv
+    Write-Host "Using existing Python virtual environment."
 }
 
-$requirements = Get-Content .\requirements.txt | Where-Object { $_.Trim() -and -not $_.Trim().StartsWith("#") }
-if ($requirements) {
-    & .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-    if ($LASTEXITCODE -ne 0) {
-        throw "Failed to install Python requirements."
-    }
-}
+Install-PythonRequirementsIfNeeded ".\requirements.txt"
 
 if (-not (Get-AutoHotkeyCommand)) {
     Install-WithWinget "AutoHotkey.AutoHotkey" "AutoHotkey v2"
@@ -251,6 +342,8 @@ if (-not $modelReady) {
 
 if ($SkipStart) {
     Write-Host "Start skipped. Run scripts\run.ps1 when you are ready to start the AutoHotkey helper."
+    Write-Host "Logs folder: $env:LOCALAPPDATA\AITextExpandLocalLLM\logs"
+    Write-Host "Latest error log: $env:LOCALAPPDATA\AITextExpandLocalLLM\logs\last_error.txt"
     exit 0
 }
 
@@ -261,3 +354,5 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 Write-Host "AI Text Expand is installed and running."
+Write-Host "Logs folder: $env:LOCALAPPDATA\AITextExpandLocalLLM\logs"
+Write-Host "Latest error log: $env:LOCALAPPDATA\AITextExpandLocalLLM\logs\last_error.txt"
