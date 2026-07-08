@@ -168,6 +168,7 @@ Create a shareable zip from this folder:
 ```
 
 The package is created under `dist\`.
+The release zip name is `AITextExpandLocalLLM-v0.1.2.zip`.
 
 Send the zip file to another Windows PC. On that PC, the user should:
 
