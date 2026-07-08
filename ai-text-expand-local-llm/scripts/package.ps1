@@ -2,7 +2,7 @@ $ErrorActionPreference = "Stop"
 
 $projectRoot = Split-Path -Parent $PSScriptRoot
 $version = "0.1.2"
-$packageName = "AI-Text-Expand-Local-LLM-$version"
+$packageName = "AITextExpandLocalLLM-v$version"
 $distDir = Join-Path $projectRoot "dist"
 $stagingRoot = Join-Path ([System.IO.Path]::GetTempPath()) "$packageName-package"
 $stagingDir = Join-Path $stagingRoot $packageName
@@ -91,6 +91,8 @@ Get-ChildItem $stagingDir -File -Recurse -Force |
 if (Test-Path $zipPath) {
     Remove-Item $zipPath -Force
 }
+
+Get-ChildItem $distDir -Filter "*.zip" -File | Where-Object { $_.FullName -ne $zipPath } | Remove-Item -Force
 
 Compress-Archive -Path $stagingDir -DestinationPath $zipPath
 Remove-Item $stagingRoot -Recurse -Force
