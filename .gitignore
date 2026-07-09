@@ -6,3 +6,11 @@
 # Python cache
 __pycache__/
 *.py[cod]
+
+# Runtime logs and local state
+logs/
+**/logs/
+*.log
+*.tmp
+jobs/**/.offload_csv_watch_state.json
+jobs/**/.graph_msal_token_cache.json
