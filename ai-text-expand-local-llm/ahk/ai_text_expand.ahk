@@ -28,6 +28,9 @@ LastErrorPath := LogsDir "\\last_error.txt"
 GitHubDistPageUrl := "https://github.com/tsao36/AI_bs_generator/tree/main/ai-text-expand-local-llm/dist"
 
 global SelectedText := ""
+global TargetHwnd := 0
+global TargetMouseX := 0
+global TargetMouseY := 0
 global ProgressTick := 0
 global ProgressLabel := ""
 global ProgressModel := ""
@@ -55,7 +58,7 @@ GetCommandPath(commandName)
 #HotIf IsSupportedBrowser()
 RButton::
 {
-    global SelectedText
+    global SelectedText, TargetHwnd, TargetMouseX, TargetMouseY
 
     selected := CopySelectedText()
     if (selected = "") {
@@ -65,6 +68,9 @@ RButton::
 
     SelectedText := selected
     MouseGetPos &mouseX, &mouseY
+    TargetMouseX := mouseX
+    TargetMouseY := mouseY
+    TargetHwnd := WinExist("A")
     ContextMenu.Show(mouseX, mouseY)
 }
 #HotIf
@@ -146,9 +152,19 @@ ExpandWithLocalAI(lengthMode, lengthLabel)
         return
     }
 
-    PasteOverSelection(expanded)
+    pasteResult := PasteOverSelection(expanded)
+    if (!pasteResult.Success) {
+        RecordFailure("Could not restore original target for paste", pasteResult.Message, "")
+        A_Clipboard := expanded
+        ShowStatus("Expansion done. Copied result to clipboard", 2200)
+        SoundBeep 900, 120
+        MsgBox "Expansion completed, but the original field could not be restored.`n`nThe expanded text was copied to clipboard.`n`n" pasteResult.Message, "AI Text Expand", "Icon!"
+        return
+    }
+
     TryDelete(errorFile)
-    ShowStatus(Format("Inserted {} using {}", lengthLabel, modelName), 1600)
+    ShowStatus(Format("Inserted {} using {}", lengthLabel, modelName), 2000)
+    SoundBeep 1200, 80
 }
 
 ShowNativeContextMenu(*)
@@ -213,12 +229,42 @@ CopySelectedText()
 
 PasteOverSelection(text)
 {
+    global TargetHwnd, TargetMouseX, TargetMouseY
+
+    if (TargetHwnd = 0 || !WinExist("ahk_id " TargetHwnd)) {
+        return { Success: false, Message: "Original target window is no longer available." }
+    }
+
+    MouseGetPos &returnMouseX, &returnMouseY
+    returnHwnd := WinExist("A")
+
+    try {
+        WinActivate "ahk_id " TargetHwnd
+        WinWaitActive "ahk_id " TargetHwnd, , 1
+    } catch {
+        return { Success: false, Message: "Failed to activate the original target window." }
+    }
+
+    if (TargetMouseX > 0 || TargetMouseY > 0) {
+        Click TargetMouseX, TargetMouseY
+        Sleep 40
+    }
+
     savedClipboard := ClipboardAll()
     A_Clipboard := text
     ClipWait(0.5)
     Send "^v"
     Sleep 80
     A_Clipboard := savedClipboard
+
+    if (returnHwnd && WinExist("ahk_id " returnHwnd)) {
+        try {
+            WinActivate "ahk_id " returnHwnd
+        }
+    }
+    MouseMove returnMouseX, returnMouseY, 0
+
+    return { Success: true, Message: "" }
 }
 
 TryDelete(path)
