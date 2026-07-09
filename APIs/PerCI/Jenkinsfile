@@ -1,0 +1,60 @@
+pipeline {
+    agent {
+        label 'gerrit'
+    }
+
+    parameters {
+        string(name: 'SCRIPTS_BRANCH', description: 'The branch to use for CICD', defaultValue: 'master')
+        string(name: 'CHANGE_ID', description: 'The SHA1 or RefSpec to run PerCI on', defaultValue: '')
+    }
+
+    stages {
+        stage ('Init'){
+            steps {
+                cleanWs()
+                script {
+                    def source = env.GERRIT_REFSPEC ?: env.CHANGE_ID
+                    if (!source) {
+                        error "Neither a Gerrit Refspec nor a Change ID were supplied!"
+                    }
+                    checkout([
+                        $class: 'GitSCM',
+                        branches:  [[name: 'FETCH_HEAD']],
+                        doGenerateSubmoduleConfigurations: false,
+                        extensions: [],
+                        submoduleCfg: [],
+                        userRemoteConfigs: [[
+                            credentialsId: 'sys_windrvbuild-main',
+                            url: 'ssh://gerritwcs.ir.intel.com:29418/wifi_drv-devops-apis',
+                            refspec: source
+                        ]]
+                    ])
+                    withPythonEnv("python") {
+                        bat """
+                            python -m pip install --upgrade pip
+                            python -m pip install -r requirements.txt -r PerCI\\requirements.txt -r test\\requirements.txt
+                        """
+                    }
+                }
+            }
+        }
+        stage('pytest')
+        {
+            steps {
+                withPythonEnv("python") {
+                    bat "python -m pytest"
+                }
+            }
+        }
+        stage('Linters and Formatters Test') {
+            steps {
+                script {
+                    def refspecString = env.GERRIT_REFSPEC ? "--refspec $GERRIT_REFSPEC" : ""
+                    withPythonEnv("python") {
+                        bat "python PerCI\\file_validator.py --no-tests --target-dir \"$WORKSPACE\" --config-file \"$WORKSPACE\\PerCI\\config.json\" $refspecString"
+                    }
+                }
+            }
+        }
+    }
+}

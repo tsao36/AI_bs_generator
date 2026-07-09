@@ -1,0 +1,6 @@
+[Sun 06/21/2026 16:44:36.13] Starting HSD-only job 
+[INFO] Python executable: python 
+Python 3.14.3
+[INFO] REQUESTS_CA_BUNDLE=C:\Python314\Lib\site-packages\certifi\cacert.pem 
+python: can't open file 'C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\jobs\\05_hsd_jira_data_pipeline\\wireless_bug_dashboard_ips_hsd_jira.py': [Errno 2] No such file or directory
+[Sun 06/21/2026 16:44:36.47] Finished with exit code 2 

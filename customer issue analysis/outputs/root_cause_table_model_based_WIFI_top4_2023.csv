@@ -1,0 +1,5 @@
+﻿Category,Root Cause Type 1,Root Cause Type 2,Root Cause Type 3,Root Cause Type 4,Issue Count
+Connectivity,Firmware Configuration and Parameter Tuning Issues,Timing Synchronization and Race Condition Issues,,,3
+YB/Lost,Firmware Configuration and Parameter Tuning Issues,Power State Transition and Reset Recovery Issues,Firmware and Hardware Interface Communication Issues,,7
+BSOD,Memory and Resource Management Issues,Power State Transition and Reset Recovery Issues,,,3
+Performance,Timing Synchronization and Race Condition Issues,Firmware Configuration and Parameter Tuning Issues,,,2

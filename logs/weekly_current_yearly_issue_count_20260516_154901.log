@@ -1,0 +1,19 @@
+[INFO] ===== Weekly current yearly issue count start ======
+[INFO] Timestamp: Sat 05/16/2026 15:49:01.80
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\
+[INFO] Current dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat
+C:\Python314\python.exe
+C:\Users\jtsao1\AppData\Local\Microsoft\WindowsApps\python.exe
+C:\Users\jtsao1\AppData\Local\Python\bin\python.exe
+[INFO] GRAPH_AUTH_MODE=delegated
+[INFO] GRAPH_SENDER_UPN=frank.lee@intel.com
+2026-05-16 15:49:03,217 [INFO][weekly_issue_count_report] Querying 2026 issue loading from ips_jira_bugs (stale_days=365)...
+2026-05-16 15:49:06,998 [INFO][weekly_issue_count_report] Fetching yearly created counts (all statuses)...
+2026-05-16 15:49:07,592 [INFO][weekly_issue_count_report] Found 19 engineers with data.
+2026-05-16 15:49:29,422 [INFO][weekly_issue_count_report] Generated Traditional Chinese summary (130 chars).
+2026-05-16 15:49:33,417 [INFO][weekly_issue_count_report] Email sent to 20 recipients.
+2026-05-16 15:49:33,417 [INFO][weekly_issue_count_report] Cc: jonathan.tsao@intel.com
+[Config] Using GRAPH_CLIENT_SECRET from environment/.env.
+[Auth] Using cached Graph delegated token.
+[INFO] Exit code: 0
+[INFO] ===== Weekly current yearly issue count end =====

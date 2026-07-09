@@ -1,0 +1,31 @@
+[Wed 01/28/2026 18:42:13.10] Starting HSD-only job 
+2026-01-28 18:42:30,757 [INFO] Run options: RunOptions(enable_jira_tat=True, enable_jira_comment_analysis=True, enable_jira_initial_component=True, enable_jira_duplicate_sw_check=True, log_jira_tat_dict=False, limit_ips=0, limit_jira=0, enable_db_insert=True, db_recreate_table=True, db_use_batch_insert=False, db_batch_page_size=200)
+2026-01-28 18:42:30,757 [INFO][wireless_ips_hsd] Run options: RunOptions(enable_jira_tat=True, enable_jira_comment_analysis=True, enable_jira_initial_component=True, enable_jira_duplicate_sw_check=True, log_jira_tat_dict=False, limit_ips=0, limit_jira=0, enable_db_insert=True, db_recreate_table=True, db_use_batch_insert=False, db_batch_page_size=200)
+2026-01-28 18:42:30,758 [WARNING] KRB5CCNAME not set; Kerberos will use the system default credential cache.
+2026-01-28 18:42:30,758 [WARNING][hsd_access] KRB5CCNAME not set; Kerberos will use the system default credential cache.
+2026-01-28 18:42:30,759 [INFO] Kerberos credential cache in use: system default
+2026-01-28 18:42:30,759 [INFO][hsd_access] Kerberos credential cache in use: system default
+2026-01-28 18:42:30,759 [INFO] Using Kerberos authentication; ensure 'kinit' has been run and KRB5CCNAME is set.
+2026-01-28 18:42:30,759 [INFO][hsd_access] Using Kerberos authentication; ensure 'kinit' has been run and KRB5CCNAME is set.
+2026-01-28 18:42:30,760 [INFO] HSD authentication mode in use: kerberos
+2026-01-28 18:42:30,760 [INFO][hsd_access] HSD authentication mode in use: kerberos
+2026-01-28 18:42:30,760 [INFO] Fetching bugs from saved query ID: 16021056445 (limit: 500)
+2026-01-28 18:42:30,760 [INFO][hsd_access] Fetching bugs from saved query ID: 16021056445 (limit: 500)
+2026-01-28 18:42:30,760 [INFO] Query URL: https://hsdes.intel.com/appstore/generalapps/#/pages/community/1203659509?queryId=16021056445
+2026-01-28 18:42:30,760 [INFO][hsd_access] Query URL: https://hsdes.intel.com/appstore/generalapps/#/pages/community/1203659509?queryId=16021056445
+2026-01-28 18:42:30,761 [INFO] [Attempt 1/5] Trying endpoint: https://hsdes-api.intel.com/rest/query/16021056445
+2026-01-28 18:42:30,761 [INFO][hsd_access] [Attempt 1/5] Trying endpoint: https://hsdes-api.intel.com/rest/query/16021056445
+2026-01-28 18:42:30,761 [DEBUG][hsd_access] API request: GET https://hsdes-api.intel.com/rest/query/16021056445
+2026-01-28 18:42:42,806 [INFO] Successfully fetched 7 bugs from query 16021056445
+2026-01-28 18:42:42,806 [INFO][hsd_access] Successfully fetched 7 bugs from query 16021056445
+2026-01-28 18:42:42,809 [INFO] Fetched 7 HSD bug(s) via API
+2026-01-28 18:42:42,809 [INFO][wireless_ips_hsd] Fetched 7 HSD bug(s) via API
+2026-01-28 18:42:49,118 [INFO] === Stage timing summary (seconds) ===
+2026-01-28 18:42:49,118 [INFO][wireless_ips_hsd] === Stage timing summary (seconds) ===
+2026-01-28 18:42:49,119 [INFO] HSD_fetch         12.06
+2026-01-28 18:42:49,119 [INFO][wireless_ips_hsd] HSD_fetch         12.06
+2026-01-28 18:42:49,119 [INFO] Postgres_insert    6.30
+2026-01-28 18:42:49,119 [INFO][wireless_ips_hsd] Postgres_insert    6.30
+2026-01-28 18:42:49,119 [INFO] TOTAL             18.36
+2026-01-28 18:42:49,119 [INFO][wireless_ips_hsd] TOTAL             18.36
+[Wed 01/28/2026 18:42:49.87] Finished with exit code 0 

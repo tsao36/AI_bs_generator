@@ -1,0 +1,34 @@
+assignee_email,assignee_team,technology,created_date,ips_title
+frank.lee@intel.com,wifi,WiFi,2026/4/6,3LS - SIP129355 - EL1040 G11 (ErnestoX ELT 1.0) \ Win11 25H2\Fonterra \ GA \ Intel WLAN AX211 constantly trying to re-authenticate and crashes \ PC APJ \ NZ
+zhiqiang.cai@intel.com,wifi,WiFi,2026/4/10,[WW15][Lenovo WKS][ARL-S][Wistron][P3 Tower Gen2]WIFI 6E country setting & test
+charles.p.chu@intel.com,wifi,WiFi,2026/4/10,HP/3LS - SIP129303 - EB 830 G9 (Warpath 13)/Win 24H2/Smart Tech/IN/Intel AX211 6GHz not connecting/PC APJ/ BD
+kj.fang@intel.com,wifi,WiFi,2026/4/8,[lenovo_ptl_mario]Field issue - Lenovo customer encounter WiFi connection issues
+timdaway.lai@intel.com,wifi,WiFi,2026/4/8,[Intel BE211] 11be 320MHz MCS13 sensitivity result can not align Intel EPS
+frank.fc.yang@intel.com,wifi,WiFi,2026/4/12,"[Honor][Huaqin][LvzhouD][WCL][Intel AX211][WiFi][25H2]After STA changes the channel, the P2P channel undergoes irregular changes."
+jackx.lee@intel.com,wifi,WiFi,2026/4/9,[HSD22022275671][PTL][BE201] BSOD 0x139 after disabling Wi-Fi and rebooting with driver 24.40.0.3 post-Procyon install (Wi-Fi)
+frank.lee@intel.com,other,,2026/4/7,AX210NGWG.NV UL file No.
+brenton.wu@intel.com,wifi,WiFi,2026/4/8,SIP128868 - EB X G1i 14(MasadaN)/Win 11 24H2/Traveloka/ GA/ Intel WI-FI 7 (BE201NGW) Not working / PC APJ/ ID
+frank.lee@intel.com,wifi,WiFi,2026/4/8,"[HP][SDC][G2i-Ricotta-PTL] SIO2474075:The ""Wi-Fi 6E UHB Support"" value is shown ""0x40AFBFFF"" in WRT tool which does not match the test plan(0x41AFBFFF)."
+zhiqiang.cai@intel.com,wifi,WiFi,2026/4/10,WIFI7116
+charles.p.chu@intel.com,wifi,WiFi,2026/4/8,[ASUS_CCBU][9406CAA][BE211][PTL] Flow label will change and can not keep the same value ONLY on IPv6 connection.
+kj.fang@intel.com,wifi,WiFi,2026/4/9,The power values of the CE and EU country codes in the DRTU do not match the exp
+timdaway.lai@intel.com,wifi,WiFi,2026/4/8,[VAIO][RPL][AX211]PC Disconnects from Wireless AP
+frank.fc.yang@intel.com,wifi,WiFi,2026/4/7,[HP][Wistron][bNB Pokemon WCL][BE211/non vPro/1216][25H2 26200.6584] ETD Mass Storage Failure with Error 0x3B Over Wi Fi (BE211)
+jackx.lee@intel.com,wifi,WiFi,2026/4/10,WiFi Roaming
+matt.chen@intel.com,bt,BT,2026/4/10,[Dell][MHBTW34965_24.30.1.1G]24.30.1.1 Package contained WhP2 and SpP2 USB Drivers - Unsigned
+brenton.wu@intel.com,wifi,WiFi,2026/4/7,[Dell_Compal]Intel Wi-Fi BE201 wireless performance is too low on Bolan LNL 14(PA14250)
+steven1.chen@intel.com,bt,BT,2026/4/8,"[Lenovo][Huaqin][IdeaPad 5 2-in-1 14/16IAL10][LNL][BE201][BT][25H2]BSOD 0x139 occurs during ColdBoot.5/6UUTs, 10/12Cycles"
+zhiqiang.cai@intel.com,other,Software,2026/4/9,[Windows] Smart Connect Unexpected error message appears while connecting to phone HS manually (once)
+charles.p.chu@intel.com,other,Software,2026/4/9,No HS recommendation when PC starts without available known Wi-Fi
+yu-wei.chen@intel.com,bt,BT,2026/4/8,[Dell][Sunfire WCL] Mic Not Working with Bluetooth Headset with AX211
+wesley.kuo@intel.com,bt,BT,2026/4/8,[ASUS_CCBU][9406CAA][BE211][PTL] Bluetooth will YB when running S4 aging.
+kj.fang@intel.com,other,Software,2026/4/9,"[ICPS5, UI] Name Wifi Bands Same notification not displayed when connecting to same AP on 2 different bands with different SSIDs"
+timdaway.lai@intel.com,other,Software,2026/4/10,"[ICPS5, UI] No ETH connection displayed in Network Health tab - Sometimes"
+juan.zou@intel.com,bt,BT,2026/4/8,[FCCL] BT YB issue happened with PLDR Standalone Test Suite (from HLK) or ibterverify.exe
+brenton.wu@intel.com,bt,BT,2026/4/8,[Honor][LUX][NvwaC][ARL-HX][AX211][BT]The BSOD (0x5) releated to intel bluetooth application
+frank.lee@intel.com,wifi,WiFi,2026/4/9,[Lenovo-Ideapad][Y9 Refresh][ARL/BE200][25H2] stress s3 0x50 BSOD
+frank.fc.yang@intel.com,other,Tools,2026/4/7,[Lenovo ThinkPad JP/LCFC][DRTU][PTL/WhP] BLR and BLE 2M are not available.
+jackx.lee@intel.com,other,Tools,2026/4/8,[DELL][Compal]NVL WS incorrect UefiCnvWlanPPAG field in WRT tool
+brenton.wu@intel.com,other,Software,2026/4/9,ICPS sends recommendation when Wi-Fi is turned off
+matt.chen@intel.com,other,Tools,2026/4/10,[Lenovo IdeaPad/SMB][Wistron][LNL][BE201NGW & AX211NGW][Aegis][BT PWR issue]
+zhiqiang.cai@intel.com,wifi,WiFi,2026/4/10,[BSOD][PTL]BSOD occur during reboot

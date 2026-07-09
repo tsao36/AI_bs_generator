@@ -1,0 +1,36 @@
+[INFO] ===== Labeling reminder daily start =====
+[INFO] Timestamp: Tue 04/21/2026 18:59:07.21
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\
+[INFO] Current dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat
+C:\Python314\python.exe
+C:\Users\jtsao1\AppData\Local\Microsoft\WindowsApps\python.exe
+C:\Users\jtsao1\AppData\Local\Python\bin\python.exe
+[INFO] Latest weekly dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\tuning_outputs\weekly_20260421
+[INFO] Target CSV: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\tuning_outputs\weekly_20260421\weekly_labeling_template.csv
+[INFO] Command: python send_labeling_reminders.py --send-email --graph-auth-mode delegated --weekly-dir "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\tuning_outputs\weekly_20260421" --no-email --dry-run-email
+2026-04-21 18:59:08,120 [INFO] Pending assignees: 15, pending rows: 41
+2026-04-21 18:59:08,120 [INFO] Dry-run mode enabled; emails will not be sent.
+2026-04-21 18:59:08,409 [INFO] [DRY RUN] To=bingyue.sun@intel.com Cc=jonathan.tsao@intel.com Subject=[Action Required][\u8acb\u8655\u7406] Fill HUMAN_CATEGORY / \u8acb\u586b\u5beb HUMAN_CATEGORY (3 pending)
+
+--- Email preview ---
+To: bingyue.sun@intel.com
+Cc: jonathan.tsao@intel.com
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\send_labeling_reminders.py", line 415, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\send_labeling_reminders.py", line 403, in main
+    return _send_reminders(
+        pending_by_assignee=pending_by_assignee,
+    ...<5 lines>...
+        graph_auth_mode=str(args.graph_auth_mode or "app"),
+    )
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\send_labeling_reminders.py", line 348, in _send_reminders
+    print(f"Subject: {subject}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 27-29: character maps to <undefined>
+[INFO] Exit code: 1
+[INFO] ===== Labeling reminder daily end =====

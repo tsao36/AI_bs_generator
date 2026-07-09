@@ -1,0 +1,65 @@
+[Tue 07/07/2026 17:38:15.74] Starting one-time all-time HSD refresh 
+[INFO] Python executable: C:\Python314\python.exe 
+[INFO] ROOT_DIR=C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\05_hsd_jira_data_pipeline\..\.. 
+[INFO] PIPELINE_SCRIPT=C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\05_hsd_jira_data_pipeline\..\..\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py 
+[INFO] PYTHONPATH=C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\05_hsd_jira_data_pipeline\..\..;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\05_hsd_jira_data_pipeline\..\..\APIs;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\05_hsd_jira_data_pipeline\..\..\jobs\04_wireless_bug_dashboard;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\05_hsd_jira_data_pipeline\..\..\jobs\05_hsd_jira_data_pipeline; 
+[INFO] HSD_QUERY_ID=15019608847 
+[INFO] HSD_CREATED_YEARS=all 
+[INFO] HSD_LIMIT=50000 
+[INFO] HSD_OWNER_FILTER is intentionally not set; saved query defines team scope. 
+Python 3.14.3
+[INFO] Python with psycopg2: C:\Python314\python.exe 
+[INFO] REQUESTS_CA_BUNDLE=C:\Python314\Lib\site-packages\certifi\cacert.pem 
+2026-07-07 17:38:16,999 [WARNING] DDL safeguard active: forcing append mode (no DROP/CREATE). Use --allow-ddl to override.
+2026-07-07 17:38:16,999 [WARNING][wireless_ips_hsd] DDL safeguard active: forcing append mode (no DROP/CREATE). Use --allow-ddl to override.
+2026-07-07 17:38:16,999 [INFO] Run options: RunOptions(enable_jira_tat=True, enable_jira_comment_analysis=False, enable_jira_initial_component=True, enable_jira_duplicate_sw_check=True, log_jira_tat_dict=False, limit_ips=0, limit_jira=0, enable_db_insert=True, db_recreate_table=False, db_auto_add_missing_columns=False, db_use_batch_insert=True, db_batch_page_size=200)
+2026-07-07 17:38:16,999 [INFO][wireless_ips_hsd] Run options: RunOptions(enable_jira_tat=True, enable_jira_comment_analysis=False, enable_jira_initial_component=True, enable_jira_duplicate_sw_check=True, log_jira_tat_dict=False, limit_ips=0, limit_jira=0, enable_db_insert=True, db_recreate_table=False, db_auto_add_missing_columns=False, db_use_batch_insert=True, db_batch_page_size=200)
+2026-07-07 17:38:16,999 [DEBUG][hsd_access] Using existing KRB5CCNAME=FILE:C:\Temp\krb5cache
+2026-07-07 17:38:17,000 [INFO] Kerberos credential cache in use: FILE:C:\Temp\krb5cache
+2026-07-07 17:38:17,000 [INFO][hsd_access] Kerberos credential cache in use: FILE:C:\Temp\krb5cache
+2026-07-07 17:38:17,000 [INFO] Using Kerberos authentication with cache FILE:C:\Temp\krb5cache
+2026-07-07 17:38:17,000 [INFO][hsd_access] Using Kerberos authentication with cache FILE:C:\Temp\krb5cache
+2026-07-07 17:38:17,000 [WARNING] SSL verification disabled for HSD API requests; set HSD_CA_CERT to enable.
+2026-07-07 17:38:17,000 [WARNING][hsd_access] SSL verification disabled for HSD API requests; set HSD_CA_CERT to enable.
+2026-07-07 17:38:17,000 [INFO] HSD authentication mode in use: kerberos
+2026-07-07 17:38:17,000 [INFO][hsd_access] HSD authentication mode in use: kerberos
+2026-07-07 17:38:17,001 [INFO] Fetching bugs from saved query ID: 15019608847 (limit: 50000)
+2026-07-07 17:38:17,001 [INFO][hsd_access] Fetching bugs from saved query ID: 15019608847 (limit: 50000)
+2026-07-07 17:38:17,001 [INFO] Query URL: https://hsdes.intel.com/appstore/generalapps/#/pages/community/1203659509?queryId=15019608847
+2026-07-07 17:38:17,001 [INFO][hsd_access] Query URL: https://hsdes.intel.com/appstore/generalapps/#/pages/community/1203659509?queryId=15019608847
+2026-07-07 17:38:17,001 [INFO] [Attempt 1/5] Trying endpoint: https://hsdes-api.intel.com/rest/query/15019608847
+2026-07-07 17:38:17,001 [INFO][hsd_access] [Attempt 1/5] Trying endpoint: https://hsdes-api.intel.com/rest/query/15019608847
+2026-07-07 17:38:17,001 [DEBUG][hsd_access] API request: GET https://hsdes-api.intel.com/rest/query/15019608847
+2026-07-07 17:38:18,148 [INFO] Successfully fetched 123 bugs from query 15019608847
+2026-07-07 17:38:18,148 [INFO][hsd_access] Successfully fetched 123 bugs from query 15019608847
+2026-07-07 17:38:18,151 [INFO][CUSTOMER_BUGS] Loaded 28 team assignees from C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\cfe_team_member.json
+2026-07-07 17:38:18,151 [INFO] HSD owner filter defaulted to CFE team list: 28 member(s)
+2026-07-07 17:38:18,151 [INFO][wireless_ips_hsd] HSD owner filter defaulted to CFE team list: 28 member(s)
+2026-07-07 17:38:18,151 [INFO] Owner filter reduced HSD list to 120 rows
+2026-07-07 17:38:18,151 [INFO][wireless_ips_hsd] Owner filter reduced HSD list to 120 rows
+2026-07-07 17:38:18,151 [INFO] Fetched 120 HSD bug(s) via API
+2026-07-07 17:38:18,151 [INFO][wireless_ips_hsd] Fetched 120 HSD bug(s) via API
+2026-07-07 17:38:18,153 [INFO] HSD fetched ids: 14026512328, 14026609233, 1409823484, 22011061718, 1509878296, 22017974482, 22018170968, 14019288524, 22018425260, 22018522057, 14020116372, 14020401976, 14027332422, 14027712332, 14028060253, 22014114263, 22014161356, 22014193845, 2207336477, 22014343455, 22014778530, 22014846261, 22014893807, 22014898642, 22015075905, 22015414251, 22015509717, 22015647352, 22015694640, 2209600872, 22020209259, 22020209279, 22014208794, 22015728813, 22015752327, 22015827139, 22018808507, 22018498156, 22018474946, 22018199158, 22018454009, 1606874723, 1606874743, 1607072417, 22011031381, 22016524637, 14022637856, 14023789269, 14024012436, 14025468821, 14025564587, 14025564691, 14026156716, 14026204534, 14026574433, 14026574491, 14026574496, 14026574526, 22018532272, 22018789339, 22018352236, 14020378740, 14020453038, 14025390936, 2202666083, 22010068082, 1508723935, 1508724544, 16012831494, 22016231958, 22018782367, 15016720361, 22015001339, 22015009856, 22018537214, 1507240469, 2207921039, 2209012064, 22010033833, 22011519541, 22014414973, 22014996163, 22015149869, 22015396764, 22016461646, 22017957436, 14020645429, 22019779549, 14022752583, 14022752729, 15016557437, 14024864570, 14025540864, 14026511953, 22022266039, 22022269787, 22022307898, 22022308344, 22022308421, 22022335060, 2205530444, 15012734489, 14025259075, 14026565205, 22010442293, 22011357185, 22018233918, 14020955058, 14021077892, 14022391692, 14023084343, 14023383727, 14023869800, 14023869863, 14026081491, 14026146814, 14027711070, 16025798972, 22018654737, 22022335496
+2026-07-07 17:38:18,153 [INFO][wireless_ips_hsd] HSD fetched ids: 14026512328, 14026609233, 1409823484, 22011061718, 1509878296, 22017974482, 22018170968, 14019288524, 22018425260, 22018522057, 14020116372, 14020401976, 14027332422, 14027712332, 14028060253, 22014114263, 22014161356, 22014193845, 2207336477, 22014343455, 22014778530, 22014846261, 22014893807, 22014898642, 22015075905, 22015414251, 22015509717, 22015647352, 22015694640, 2209600872, 22020209259, 22020209279, 22014208794, 22015728813, 22015752327, 22015827139, 22018808507, 22018498156, 22018474946, 22018199158, 22018454009, 1606874723, 1606874743, 1607072417, 22011031381, 22016524637, 14022637856, 14023789269, 14024012436, 14025468821, 14025564587, 14025564691, 14026156716, 14026204534, 14026574433, 14026574491, 14026574496, 14026574526, 22018532272, 22018789339, 22018352236, 14020378740, 14020453038, 14025390936, 2202666083, 22010068082, 1508723935, 1508724544, 16012831494, 22016231958, 22018782367, 15016720361, 22015001339, 22015009856, 22018537214, 1507240469, 2207921039, 2209012064, 22010033833, 22011519541, 22014414973, 22014996163, 22015149869, 22015396764, 22016461646, 22017957436, 14020645429, 22019779549, 14022752583, 14022752729, 15016557437, 14024864570, 14025540864, 14026511953, 22022266039, 22022269787, 22022307898, 22022308344, 22022308421, 22022335060, 2205530444, 15012734489, 14025259075, 14026565205, 22010442293, 22011357185, 22018233918, 14020955058, 14021077892, 14022391692, 14023084343, 14023383727, 14023869800, 14023869863, 14026081491, 14026146814, 14027711070, 16025798972, 22018654737, 22022335496
+2026-07-07 17:38:18,154 [INFO] HSD pre-sync cleanup disabled; preserving existing HSD rows in ips_jira_bugs.
+2026-07-07 17:38:18,154 [INFO][wireless_ips_hsd] HSD pre-sync cleanup disabled; preserving existing HSD rows in ips_jira_bugs.
+2026-07-07 17:38:18,154 [INFO][CUSTOMER_BUGS] CTOR - DbConnector
+2026-07-07 17:38:19,950 [INFO][CUSTOMER_BUGS] DB connection info: host=10-108-27-113.dbaas.intel.com db=wirelesscustomerengineering schema=public search_path="$user", public, dbaas_admin
+2026-07-07 17:39:20,300 [INFO][CUSTOMER_BUGS] update table with relevant data (row-by-row; slow) ..
+2026-07-07 17:39:46,248 [INFO][CUSTOMER_BUGS] update is complete. 116 rows were inserted
+2026-07-07 17:39:46,685 [INFO][CUSTOMER_BUGS] table ips_jira_bugs rowcount after insert: 5596
+2026-07-07 17:39:46,686 [INFO][CUSTOMER_BUGS] HSD refresh in ips_jira_bugs: updated 49 row(s); engineer refreshed 0; inserted 116 new; skipped 116 unmatched (sample unmatched: NA, NA, NA, NA, NA)
+2026-07-07 17:39:46,686 [INFO][CUSTOMER_BUGS] HSD matches: hsd_id=14027712332 promoted=NA via hsd_id=14027712332; hsd_id=14028060253 promoted=NA via hsd_id=14028060253; hsd_id=14020378740 promoted=0 via ips_case_number=0; hsd_id=22018537214 promoted=00814813 via ips_case_number=814813
+2026-07-07 17:39:46,686 [INFO][CUSTOMER_BUGS] HSD unmatched details: hsd_id=14026512328 promoted=NA (no match); hsd_id=14026609233 promoted=NA (no match); hsd_id=1409823484 promoted=NA (no match); hsd_id=22011061718 promoted=NA (no match); hsd_id=1509878296 promoted=NA (no match); hsd_id=22017974482 promoted=WIFI-303797 (no match); hsd_id=22018170968 promoted=NA (no match); hsd_id=14019288524 promoted=NA (no match); hsd_id=22018425260 promoted=NA (no match); hsd_id=22018522057 promoted=NA (no match)
+2026-07-07 17:39:46,686 [INFO] HSD-only: refreshed 165 row(s) in ips_jira_bugs (input rows=120)
+2026-07-07 17:39:46,686 [INFO][wireless_ips_hsd] HSD-only: refreshed 165 row(s) in ips_jira_bugs (input rows=120)
+2026-07-07 17:39:46,686 [INFO][CUSTOMER_BUGS] DTOR - DbConnector
+2026-07-07 17:39:46,687 [INFO] === Stage timing summary (seconds) ===
+2026-07-07 17:39:46,687 [INFO][wireless_ips_hsd] === Stage timing summary (seconds) ===
+2026-07-07 17:39:46,688 [INFO] HSD_fetch          1.15
+2026-07-07 17:39:46,688 [INFO][wireless_ips_hsd] HSD_fetch          1.15
+2026-07-07 17:39:46,688 [INFO] Postgres_insert   88.53
+2026-07-07 17:39:46,688 [INFO][wireless_ips_hsd] Postgres_insert   88.53
+2026-07-07 17:39:46,689 [INFO] TOTAL             89.69
+2026-07-07 17:39:46,689 [INFO][wireless_ips_hsd] TOTAL             89.69
+[Tue 07/07/2026 17:39:46.89] Finished with exit code 0 

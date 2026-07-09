@@ -1,0 +1,136 @@
+[INFO] ===== Labeling reminder daily start =====
+[INFO] Timestamp: Fri 05/15/2026 11:07:39.52
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\
+[INFO] Current dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat
+C:\Python314\python.exe
+C:\Users\jtsao1\AppData\Local\Microsoft\WindowsApps\python.exe
+C:\Users\jtsao1\AppData\Local\Python\bin\python.exe
+[INFO] Latest weekly dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\tuning_outputs\weekly_20260511
+[INFO] Target CSV: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\tuning_outputs\weekly_20260511\weekly_labeling_template.csv
+[INFO] Command: python send_labeling_reminders.py --send-email --graph-auth-mode delegated --weekly-dir "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\tuning_outputs\weekly_20260511" 
+2026-05-15 11:07:42,155 [INFO] Pending source path: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\tuning_outputs\weekly_20260511\weekly_labeling_template.xlsx
+2026-05-15 11:07:42,188 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001ADA4C88830>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /46c98d88-e344-4ed4-8496-4ed7712e255d/v2.0/.well-known/openid-configuration
+2026-05-15 11:07:42,189 [WARNING] Could not download cloud-fresh source; fallback to local file: HTTPSConnectionPool(host='login.microsoftonline.com', port=443): Max retries exceeded with url: /46c98d88-e344-4ed4-8496-4ed7712e255d/v2.0/.well-known/openid-configuration (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001ADA4BBFC50>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2026-05-15 11:07:43,501 [INFO] Loaded pending rows from XLSX C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\tuning_outputs\weekly_20260511\weekly_labeling_template.xlsx: assignees=2
+2026-05-15 11:07:43,503 [INFO] Pending assignees: 2, pending rows: 4
+2026-05-15 11:07:43,504 [INFO] Graph auth mode: delegated
+2026-05-15 11:07:43,508 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001ADC6631E50>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /46c98d88-e344-4ed4-8496-4ed7712e255d/v2.0/.well-known/openid-configuration
+[Config] Using GRAPH_CLIENT_SECRET from environment/.env.
+[Config] Using GRAPH_CLIENT_SECRET from environment/.env.
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+        (self._dns_host, self.port), self.timeout, **extra_kw
+    )
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\urllib3\util\connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\socket.py", line 983, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\urllib3\connectionpool.py", line 716, in urlopen
+    httplib_response = self._make_request(
+        conn,
+    ...<5 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\urllib3\connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\urllib3\connectionpool.py", line 1061, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\urllib3\connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+        self, "Failed to establish a new connection: %s" % e
+    )
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x000001ADC6631810>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\requests\adapters.py", line 440, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<8 lines>...
+        timeout=timeout
+    )
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\urllib3\connectionpool.py", line 830, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<11 lines>...
+        **response_kw
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\urllib3\connectionpool.py", line 802, in urlopen
+    retries = retries.increment(
+        method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\urllib3\util\retry.py", line 594, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='login.microsoftonline.com', port=443): Max retries exceeded with url: /46c98d88-e344-4ed4-8496-4ed7712e255d/v2.0/.well-known/openid-configuration (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001ADC6631810>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\send_labeling_reminders.py", line 630, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\send_labeling_reminders.py", line 612, in main
+    return _send_reminders(
+        pending_by_assignee=pending_by_assignee,
+    ...<5 lines>...
+        graph_auth_mode=str(args.graph_auth_mode or "app"),
+    )
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\send_labeling_reminders.py", line 517, in _send_reminders
+    token = get_graph_token_delegated_with_secret(secret, scopes=["Mail.Send", "Files.ReadWrite"])
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\Meeting_agenda_OneNote.py", line 380, in get_graph_token_delegated_with_secret
+    app = msal.ConfidentialClientApplication(
+        client_id=CLIENT_ID,
+    ...<2 lines>...
+        token_cache=token_cache,
+    )
+  File "C:\Python314\Lib\site-packages\msal\application.py", line 645, in __init__
+    self.authority = Authority(
+                     ~~~~~~~~~^
+        authority_to_use,
+        ^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        oidc_authority_url=oidc_authority,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+  File "C:\Python314\Lib\site-packages\msal\authority.py", line 79, in __init__
+    openid_config = tenant_discovery(
+        tenant_discovery_endpoint,
+        self._http_client)
+  File "C:\Python314\Lib\site-packages\msal\authority.py", line 210, in tenant_discovery
+    resp = http_client.get(tenant_discovery_endpoint, **kwargs)
+  File "C:\Python314\Lib\site-packages\msal\individual_cache.py", line 273, in wrapper
+    value = function(*args, **kwargs)
+  File "C:\Python314\Lib\site-packages\msal\throttled_http_client.py", line 99, in get
+    return NormalizedResponse(self.http_client.get(*args, **kwargs))
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\requests\sessions.py", line 542, in get
+    return self.request('GET', url, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='login.microsoftonline.com', port=443): Max retries exceeded with url: /46c98d88-e344-4ed4-8496-4ed7712e255d/v2.0/.well-known/openid-configuration (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001ADC6631810>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+[INFO] Exit code: 1
+[INFO] ===== Labeling reminder daily end =====

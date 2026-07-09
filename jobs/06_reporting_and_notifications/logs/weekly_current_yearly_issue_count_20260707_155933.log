@@ -1,0 +1,149 @@
+[INFO] ===== Weekly current yearly issue count start ======
+[INFO] Timestamp: Tue 07/07/2026 15:59:33.37
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\
+[INFO] Current dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications
+[INFO] Project root: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..
+[INFO] Python: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\customer issue analysis\.venv\Scripts\python.exe
+[INFO] DB table: ips_jira_bugs
+[INFO] PYTHONPATH: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\APIs;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\jobs\01_issue_category_tuning;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\jobs\03_offload_automation;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\jobs\04_wireless_bug_dashboard;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\jobs\06_reporting_and_notifications;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\APIs;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\APIs;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\APIs;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\APIs;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\APIs;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\APIs;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications;
+C:\Python314\python.exe
+C:\Users\jtsao1\AppData\Local\Microsoft\WindowsApps\python.exe
+C:\Users\jtsao1\AppData\Local\Python\bin\python.exe
+[INFO] GRAPH_AUTH_MODE=delegated
+[INFO] GRAPH_SENDER_UPN=frank.lee@intel.com
+[INFO] DB_TABLE=ips_jira_bugs
+[INFO] Running issue contribution report...
+2026-07-07 15:59:35,330 [INFO][weekly_issue_count_report] Querying 2026 issue loading from ips_jira_bugs (stale_days=365)...
+2026-07-07 15:59:37,860 [INFO][weekly_issue_count_report] Fetching yearly created counts (all statuses)...
+2026-07-07 15:59:38,349 [INFO][weekly_issue_count_report] Found 18 engineers with data.
+2026-07-07 15:59:53,404 [INFO][weekly_issue_count_report] Generated Traditional Chinese summary (158 chars).
+2026-07-07 16:00:44,169 [INFO][weekly_issue_count_report] Generated per-person LLM comments for 18 engineers.
+[DRY RUN] To: ['frank.lee@intel.com', 'zhiqiang.cai@intel.com', 'nicky.chen@intel.com', 'charles.p.chu@intel.com', 'kj.fang@intel.com', 'timdaway.lai@intel.com', 'frank.fc.yang@intel.com', 'matt.chen@intel.com', 'steven1.chen@intel.com', 'yu-wei.chen@intel.com', 'jackx.lee@intel.com', 'wesley.kuo@intel.com', 'bingyue.sun@intel.com', 'juan.zou@intel.com', 'arielx.fan@intel.com', 'brenton.wu@intel.com', 'wei-ling.chi@intel.com', 'yuan-yuan.tu@intel.com', 'cce.wireless.ce.cfe.wifi.gb@intel.com', 'cce.wireless.ce.cfe.bt.gb@intel.com']
+[DRY RUN] Cc: ['jonathan.tsao@intel.com']
+[DRY RUN] Subject: [2026 Issue Contribution] 2026-07-07 | 18 engineers | 539 created (IPS 514 / Jira 21 / HSD 4)
+
+--- Body Preview ---
+
+[2026 年度各工程師開案負載摘要（繁體中文）]
+2026 年至今，我們無線工程團隊總共完成了539個新建案件，分別來自IPS、Jira和HSD系統。其中，貢獻最高的三名工程師是Bingyue Sun、Zhiqiang Cai和Frank Yang，他們各自提交了75個、63個和48個案件。不過也有1位工程師在今年至今沒有提交任何新的案件，我們共有18位團隊成員。
+
+============================================================
+
+2026 Issue Loading per Engineer (Year-to-Date)
+============================================================
+Generated at : 2026-07-07 16:00:44
+Period       : 2026-01-01 ~ 2026-07-07
+Data source  : ips_jira_bugs
+Engineers    : 18
+Grand total  : 539 total created (IPS 514 + Jira 21 + HSD 4) in 2026
+
++---------------+---------+------+-----------+-------------+--------------+-------------+-------+
+| Reporter      | Group   | Jira | Stale IPS | Created IPS | Created JIRA | Created HSD | Total |
++---------------+---------+------+-----------+-------------+--------------+-------------+-------+
+| Bingyue Sun   | BT      |    0 |         0 |          75 |            0 |           0 |    75 |
+| Zhiqiang Cai  | WiFi    |    4 |         2 |          60 |            3 |           0 |    63 |
+| Frank Yang    | WiFi    |    0 |         5 |          48 |            0 |           0 |    48 |
+| Juan Zou      | BT      |    0 |         0 |          47 |            0 |           0 |    47 |
+| Wesley Kuo    | BT      |    9 |         1 |          31 |            9 |           0 |    40 |
+| Steven1 Chen  | BT      |    4 |         8 |          33 |            3 |           0 |    36 |
+| Timdaway Lai  | WiFi    |    2 |         3 |          29 |            3 |           0 |    32 |
+| Frank Lee     | WiFi    |    3 |         8 |          29 |            2 |           0 |    31 |
+| Brenton Wu    | WiFi/BT |    1 |         3 |          29 |            0 |           2 |    31 |
+| Charles Chu   | WiFi    |    0 |         4 |          30 |            0 |           0 |    30 |
+| Jackx Lee     | -       |    1 |         0 |          26 |            0 |           0 |    26 |
+| Yu-wei Chen   | BT      |    0 |         5 |          18 |            0 |           2 |    20 |
+| Kj Fang       | WiFi    |    0 |         0 |          20 |            0 |           0 |    20 |
+| Matt Chen     | BT      |    0 |         8 |          18 |            0 |           0 |    18 |
+| Henryx Su     | -       |    2 |         1 |           9 |            1 |           0 |    10 |
+| Lydiax Chien  | -       |    0 |         1 |          10 |            0 |           0 |    10 |
+| Jonathan Tsao | -       |    0 |         0 |           2 |            0 |           0 |     2 |
+| KJ Fang       | WiFi    |    4 |        10 |           0 |            0 |           0 |     0 |
++---------------+---------+------+-----------+-------------+--------------+-------------+-------+
+
+Column definitions:
+  Jira         = currently open Jira issues assigned to the engineer
+  Stale IPS    = unpromoted IPS cases with no recent activity
+  Created IPS  = all IPS cases created in 2026 (open + closed)
+  Created JIRA = Jira-only issues created in 2026 (no linked IPS case)
+  Created HSD  = all HSD bugs created in 2026 (open + closed)
+  Total        = Created IPS + Created JIRA + Created HSD
+
+============================================================
+AI Feedback per Engineer  (generated by local LLM)
+============================================================
+  Bingyue Sun: Your strong performance in creating new IPs is setting the bar high for the team.
+  Zhiqiang Cai: Keep up the good work on IPS despite some Jira issues that need your attention next.
+  Frank Yang: Focus on improving stale IP count to reach full potential, great effort otherwise.
+  Juan Zou: Maintaining a zero-stale-IP record is impressive; let's see if you can keep this momentum going.
+  Wesley Kuo: Your Jira contributions are notable and complement your IPS work well, keep it up.
+  Steven1 Chen: Be proud of tackling those tough issues in the Jira queue, helping the team's overall efficiency.
+  Timdaway Lai: While there's room for improvement on stale IPs, your balance between IPS and Jira is encouraging.
+  Frank Lee: Continue to prioritize completing your tasks to avoid stale ips affecting your productivity.
+  Brenton Wu: Well done on your HSD contributions; now let's see how you can expand this into more areas.
+  Charles Chu: Your stability in producing IPS is appreciated, but some attention to stale IPs would be beneficial.
+  Jackx Lee: You're off to a great start with a zero-stale-IP record so far in the year, keep going!
+  Yu-wei Chen: Although there's room for improvement on your numbers overall, HSD contributions are a welcome addition.
+  Kj Fang: Maintaining such a low stale IP count is excellent, let's see if you can continue this trend.
+  Matt Chen: Focus on clearing up those Jira issues to get back in the game with more IPS creation.
+  Henryx Su: Your diverse set of skills shown through Jira and HSD contributions are valuable to the team, keep it up!
+  Jonathan Tsao: While your numbers may not be as high, consistently producing IPS is a notable achievement.
+  KJ Fang: Time to refocus and get back into creating some new IPs, you've got this.
+
+This email was auto-generated by run_weekly_current_yearly_issue_count.bat
+[INFO] Issue report exit code: 0
+[INFO] Running DB project/customer loading report...
+2026-07-07 16:00:45,782 [INFO][weekly_project_loading_from_db_report] Querying 2026 project/customer loading from ips_jira_bugs...
+2026-07-07 16:00:48,089 [INFO][weekly_project_loading_from_db_report] Found 17 engineers with DB project/customer loading data.
+2026-07-07 16:00:58,911 [INFO][weekly_project_loading_from_db_report] Generated Traditional Chinese DB project summary (150 chars).
+[DRY RUN] To: ['frank.lee@intel.com', 'zhiqiang.cai@intel.com', 'nicky.chen@intel.com', 'charles.p.chu@intel.com', 'kj.fang@intel.com', 'timdaway.lai@intel.com', 'frank.fc.yang@intel.com', 'matt.chen@intel.com', 'steven1.chen@intel.com', 'yu-wei.chen@intel.com', 'jackx.lee@intel.com', 'wesley.kuo@intel.com', 'bingyue.sun@intel.com', 'juan.zou@intel.com', 'arielx.fan@intel.com', 'brenton.wu@intel.com', 'wei-ling.chi@intel.com', 'yuan-yuan.tu@intel.com', 'cce.wireless.ce.cfe.wifi.gb@intel.com', 'cce.wireless.ce.cfe.bt.gb@intel.com']
+[DRY RUN] Cc: ['jonathan.tsao@intel.com']
+[DRY RUN] Subject: [2026 Project/Customer Loading] 2026-07-07 | 17 engineers | 539 DB issues
+
+--- Body Preview ---
+
+[2026 年度 Project/Customer Issue Loading 摘要（繁體中文）]
+根據ips_jira_bugs資料庫，2026 年度的項目客戶問題負載如下：共有539個問題待解決。工程師人數為17位，而問題分佈在幾名工程師手上相當不均衡，其中Bingyue Sun擁有75個問題，Zhiqiang Cai擁有63個，Frank Yang和Juan Zou各自擁有48和47個問題。
+
+============================================================
+
+2026 Project / Customer Issue Loading per Engineer
+============================================================
+Generated at : 2026-07-07 16:00:58
+Period       : 2026-01-01 ~ 2026-07-07
+Data source  : ips_jira_bugs
+Engineers    : 17
+Total issues : 539
+
++---------------+------+----+-------+-----+------+-----+-----------+-------+------------------------------------------------------------+
+| Owner         | WiFi | BT | Other | IPS | Jira | HSD | Customers | Total | Top Customers                                              |
++---------------+------+----+-------+-----+------+-----+-----------+-------+------------------------------------------------------------+
+| Bingyue Sun   |    0 | 75 |     0 |  75 |    0 |   0 |        10 |    75 | SAMSUNG (19), HONOR (16), INTEL (15)                       |
+| Zhiqiang Cai  |   58 |  2 |     3 |  60 |    3 |   0 |         8 |    63 | LENOVO (38), INTEL (6), SAMSUNG (6)                        |
+| Frank Yang    |   45 |  0 |     3 |  48 |    0 |   0 |         2 |    48 | DELL (39), INTEL (9)                                       |
+| Juan Zou      |    0 | 46 |     1 |  47 |    0 |   0 |         6 |    47 | LENOVO (38), INTEL (4), MICROSOFT (2)                      |
+| Wesley Kuo    |    0 | 39 |     1 |  31 |    9 |   0 |         6 |    40 | LENOVO (17), DELL (14), LG (3)                             |
+| Steven1 Chen  |    0 | 36 |     0 |  33 |    3 |   0 |         4 |    36 | HP (31), CLEVO (2), MICROSOFT (2)                          |
+| Timdaway Lai  |   32 |  0 |     0 |  29 |    3 |   0 |         5 |    32 | LENOVO (24), INTEL (2), MICROSOFT (2)                      |
+| Brenton Wu    |   10 | 19 |     2 |  29 |    0 |   2 |        10 |    31 | ASUS (9), NEC (7), TOSHIBA (4)                             |
+| Frank Lee     |   25 |  0 |     6 |  29 |    2 |   0 |         5 |    31 | HP (25), INTEL (3), HONOR (1)                              |
+| Charles Chu   |   30 |  0 |     0 |  30 |    0 |   0 |         4 |    30 | HONOR (23), INTEL (4), HP (2)                              |
+| Jackx Lee     |   23 |  0 |     3 |  26 |    0 |   0 |         8 |    26 | NEC (7), VAIO (5), TOSHIBA (4)                             |
+| KJ Fang       |   20 |  0 |     0 |  20 |    0 |   0 |         6 |    20 | SAMSUNG (8), INTEL (6), HP (3)                             |
+| Yu-Wei Chen   |    0 | 18 |     2 |  18 |    0 |   2 |         5 |    20 | ASUS (16), asustek_nvl_b9406cya (1), asustek_nvl_vzedc (1) |
+| Matt Chen     |    0 | 17 |     1 |  18 |    0 |   0 |         4 |    18 | ACER (12), INTEL (3), LENOVO (2)                           |
+| Henryx Su     |   10 |  0 |     0 |   9 |    1 |   0 |         3 |    10 | ASUS (8), INTEL (1), MICROSOFT (1)                         |
+| Lydiax Chien  |   10 |  0 |     0 |  10 |    0 |   0 |         3 |    10 | HONOR (7), INTEL (2), HP (1)                               |
+| Jonathan Tsao |    0 |  2 |     0 |   2 |    0 |   0 |         1 |     2 | MSI (2)                                                    |
++---------------+------+----+-------+-----+------+-----+-----------+-------+------------------------------------------------------------+
+
+Column definitions:
+  WiFi / BT / Other = issue count by bug_project / ips_product / jira_team
+  IPS / Jira / HSD  = issue count by available case identifier
+  Customers         = distinct customer count for that owner
+  Top Customers     = top customer names by issue count
+  Total             = all issues created this year in the DB source
+
+This email was auto-generated by run_weekly_current_yearly_issue_count.bat
+[INFO] Project report exit code: 0
+[INFO] ===== Weekly current yearly issue count end =====
+[INFO] Final exit code: 0

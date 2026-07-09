@@ -1,0 +1,75 @@
+[INFO] ===== Offload scheduler start =====
+[INFO] Timestamp: Sat 04/18/2026 14:53:02.90
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\
+[INFO] Current dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat
+C:\Python314\python.exe
+C:\Users\jtsao1\AppData\Local\Microsoft\WindowsApps\python.exe
+C:\Users\jtsao1\AppData\Local\Python\bin\python.exe
+[INFO] GRAPH_AUTH_MODE=delegated
+[INFO] GRAPH_SENDER_UPN=frank.lee@intel.com
+[INFO] OFFLOAD_RECEIVER_MAX_ISSUES=10
+[INFO] OFFLOAD_ALWAYS_EXCLUDED_REPORTERS=Jonathan Tsao
+[INFO] Running offload_reporter_issues.py --send-email
+[INFO] OFFLOAD_ALWAYS_EXCLUDED_REPORTERS=Jonathan Tsao
+2026-04-18 14:53:07,455 [INFO][ips_offload] Included 6 allowed reporter(s) with zero current issues for receiver rotation.
+2026-04-18 14:53:08,110 [INFO][ips_offload] Current issue calculation breakdown per reporter:
+2026-04-18 14:53:10,731 [INFO][ips_offload] Weighted loading trial enabled for visibility; offload decision remains based on Curr.
+2026-04-18 14:53:10,732 [INFO][ips_offload] Combined trial table (single table with category columns, decision still uses Curr):
+2026-04-18 14:53:10,733 [INFO][ips_offload] +--------------+------+------+------+-----------+-----------+-------+------------------+-------+------+------+--------------+-----+------+-----+--------+------+----------+-----------+-------------+-------------------+-------------------+---------+---------+-------------+------+------+--------+---------+--------------+-------------------+
+2026-04-18 14:53:10,735 [INFO][ips_offload] | Name         | uIPS | uHSD | Jira | Stale IPS | Stale HSD | Total | Weighted Loading | Audio | BIOS | BSOD | Connectivity | HLK | ICPS | IOP | Killer | MSFT | Miracast | OEM Tools | Performance | Power Consumption | Power on sequence | Roaming | Sensing | System Hang | UEFI | WAPI | WowLAN | YB/Lost | Needs-Triage | Unmapped(Default) |
+2026-04-18 14:53:10,735 [INFO][ips_offload] +--------------+------+------+------+-----------+-----------+-------+------------------+-------+------+------+--------------+-----+------+-----+--------+------+----------+-----------+-------------+-------------------+-------------------+---------+---------+-------------+------+------+--------+---------+--------------+-------------------+
+2026-04-18 14:53:10,735 [INFO][ips_offload] | Frank Lee    |   16 |    0 |    9 |        11 |         0 |    14 |            32.87 |     0 |    1 |    0 |            1 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           6 |                 0 |                 0 |       0 |       4 |           0 |    0 |    0 |      0 |       2 |            0 |                 0 |
+2026-04-18 14:53:10,735 [INFO][ips_offload] | Leo Chiang   |    8 |   15 |    0 |         7 |         2 |    14 |            14.94 |     0 |    0 |    0 |            1 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |            0 |                 0 |
+2026-04-18 14:53:10,735 [INFO][ips_offload] | Zhiqiang Cai |    4 |    0 |    9 |         1 |         0 |    12 |            19.78 |     0 |    0 |    1 |            0 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           3 |                 0 |                 0 |       0 |       1 |           0 |    1 |    0 |      0 |       1 |            0 |                 5 |
+2026-04-18 14:53:10,735 [INFO][ips_offload] | Brenton Wu   |    9 |    0 |    3 |         3 |         0 |     9 |            16.79 |     0 |    0 |    1 |            2 |   1 |    0 |   0 |      0 |    0 |        0 |         0 |           1 |                 0 |                 0 |       0 |       0 |           0 |    1 |    0 |      0 |       2 |            0 |                 1 |
+2026-04-18 14:53:10,735 [INFO][ips_offload] | Charles Chu  |   12 |    0 |    6 |         9 |         0 |     9 |            20.50 |     0 |    0 |    0 |            2 |   0 |    0 |   0 |      0 |    0 |        0 |         1 |           5 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |            0 |                 2 |
+2026-04-18 14:53:10,735 [INFO][ips_offload] | Timdaway Lai |    4 |   11 |    3 |         2 |         7 |     9 |            14.29 |     0 |    0 |    1 |            0 |   0 |    1 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       1 |           0 |    0 |    0 |      0 |       2 |            0 |                 1 |
+2026-04-18 14:53:10,735 [INFO][ips_offload] | Wesley Kuo   |   14 |    0 |    2 |         8 |         0 |     8 |            14.00 |     0 |    0 |    1 |            5 |   0 |    0 |   0 |      0 |    0 |        0 |         1 |           0 |                 0 |                 0 |       0 |       0 |           0 |    1 |    0 |      0 |       0 |            0 |                 0 |
+2026-04-18 14:53:10,735 [INFO][ips_offload] | Bingyue Sun  |    6 |    0 |    1 |         0 |         0 |     7 |            12.73 |     1 |    0 |    3 |            1 |   1 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       1 |            0 |                 0 |
+2026-04-18 14:53:10,735 [INFO][ips_offload] | Frank Yang   |    6 |    0 |    3 |         2 |         0 |     7 |            16.16 |     0 |    1 |    0 |            1 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           2 |                 0 |                 0 |       0 |       1 |           1 |    0 |    0 |      0 |       1 |            0 |                 0 |
+2026-04-18 14:53:10,735 [INFO][ips_offload] | Jackx Lee    |    3 |    0 |    5 |         1 |         0 |     7 |            14.19 |     0 |    0 |    0 |            1 |   0 |    0 |   0 |      0 |    0 |        0 |         2 |           2 |                 0 |                 0 |       0 |       1 |           0 |    0 |    0 |      0 |       0 |            0 |                 2 |
+2026-04-18 14:53:10,735 [INFO][ips_offload] | Tonyx Yeh    |    0 |    0 |    7 |         0 |         0 |     7 |            13.92 |     1 |    0 |    0 |            6 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |            0 |                 0 |
+2026-04-18 14:53:10,735 [INFO][ips_offload] | Kj Fang      |   28 |    0 |    2 |        24 |         0 |     6 |            13.17 |     0 |    0 |    0 |            3 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           2 |                 0 |                 0 |       0 |       1 |           0 |    0 |    0 |      0 |       0 |            0 |                 0 |
+2026-04-18 14:53:10,735 [INFO][ips_offload] | Steven1 Chen |   10 |    0 |    5 |        10 |         0 |     5 |            10.02 |     0 |    0 |    0 |            4 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       1 |            0 |                 0 |
+2026-04-18 14:53:10,735 [INFO][ips_offload] | Matt Chen    |    6 |    0 |    4 |         6 |         0 |     4 |             4.00 |     0 |    0 |    2 |            0 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |            0 |                 2 |
+2026-04-18 14:53:10,736 [INFO][ips_offload] | Henryx Su    |    2 |    0 |    0 |         0 |         0 |     2 |             3.64 |     0 |    0 |    1 |            0 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           1 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |            0 |                 0 |
+2026-04-18 14:53:10,736 [INFO][ips_offload] | Juan Zou     |    2 |    0 |    0 |         0 |         0 |     2 |             4.51 |     0 |    0 |    0 |            1 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           1 |    0 |    0 |      0 |       0 |            0 |                 0 |
+2026-04-18 14:53:10,736 [INFO][ips_offload] | Lydiax Chien |    0 |    0 |    1 |         0 |         0 |     1 |             2.64 |     0 |    0 |    0 |            0 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           1 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |            0 |                 0 |
+2026-04-18 14:53:10,736 [INFO][ips_offload] | Yu-wei Chen  |    3 |    0 |    0 |         2 |         0 |     1 |             2.26 |     0 |    0 |    0 |            0 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       1 |            0 |                 0 |
+2026-04-18 14:53:10,736 [INFO][ips_offload] +--------------+------+------+------+-----------+-----------+-------+------------------+-------+------+------+--------------+-----+------+-----+--------+------+----------+-----------+-------------+-------------------+-------------------+---------+---------+-------------+------+------+--------+---------+--------------+-------------------+
+2026-04-18 14:53:10,736 [INFO][ips_offload] Offload decision mode: Curr
+2026-04-18 14:53:11,349 [WARNING][ips_offload] No new IPS case found in Jonathan queue after history filtering.
+2026-04-18 14:53:11,351 [WARNING][ips_offload] Failed to load reporter_email_map from recipients.json: Expecting ',' delimiter: line 46 column 7 (char 1291)
+2026-04-18 14:53:11,351 [INFO][ips_offload] Sending informational notification: no queue case available for recommendation.
+2026-04-18 14:53:11,351 [INFO][ips_offload] Current load:
+- Bing Chang: 0.00 current issues
+- Johnsonx Su: 0.00 current issues
+- Leaweix Chen: 0.00 current issues
+- Xihaox Yang: 0.00 current issues
+- Zhanying Gao: 0.00 current issues
+- Zhiwei He: 0.00 current issues
+- Lydiax Chien: 1.00 current issues
+- Yu-wei Chen: 1.00 current issues
+- Henryx Su: 2.00 current issues
+- Juan Zou: 2.00 current issues
+- Matt Chen: 4.00 current issues
+- Steven1 Chen: 5.00 current issues
+- Kj Fang: 6.00 current issues
+- Bingyue Sun: 7.00 current issues
+- Frank Yang: 7.00 current issues
+- Jackx Lee: 7.00 current issues
+- Tonyx Yeh: 7.00 current issues
+- Wesley Kuo: 8.00 current issues
+- Brenton Wu: 9.00 current issues
+- Charles Chu: 9.00 current issues
+- Timdaway Lai: 9.00 current issues
+- Zhiqiang Cai: 12.00 current issues
+- Frank Lee: 14.00 current issues
+- Leo Chiang: 14.00 current issues
+2026-04-18 14:53:11,351 [INFO][ips_offload] Graph auth mode: delegated
+2026-04-18 14:53:12,796 [INFO][ips_offload] No email sent: no pending reminder and no recommendation/info content.
+[Config] Using GRAPH_CLIENT_SECRET from environment/.env.
+[Auth] Using cached Graph delegated token.
+[INFO] Finished with exit code 0
+[INFO] Exit code: 0
+[INFO] ===== Offload scheduler end =====

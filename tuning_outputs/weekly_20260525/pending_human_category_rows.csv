@@ -1,0 +1,82 @@
+assignee_email,assignee_team,technology,created_date,ips_title
+frank.lee@intel.com,wifi,WiFi,2026-05-19,Intel PCIE module compatible with new m.2 spec design problem
+zhiqiang.cai@intel.com,wifi,WiFi,2026-05-22,[DELL][Trinity][NVL-H][BE211]Schematic & Board file review
+charles.p.chu@intel.com,wifi,WiFi,2026-05-21,[Intel/Commercial][Internal][MTL][AX211][8Y851AV] Wi-Fi Dropping
+kj.fang@intel.com,wifi,WiFi,2026-05-21,[DELL][ARL/LNL]PIMS-418232 - ICC - Intel BE201 test failed in TAROKO_14_ARL/LNL
+timdaway.lai@intel.com,wifi,WiFi,2026-05-18,Modern Standby - Intel RST VMD and Wi-Fi 7 BE211 Remain Active During S0ix
+frank.fc.yang@intel.com,wifi,WiFi,2026-05-20,[Honor][ZhuQue][PTL][AX211 1216@160M][High probability]0x9f
+jackx.lee@intel.com,wifi,WiFi,2026-05-21,[ASUS][Luxshare][A7406CMA][AX211]WiFi function lost when run S4 test(FR:8/8 units)
+brenton.wu@intel.com,wifi,WiFi,2026-05-18,"[Lenovo][Huaqin][PTL][BE213][S511_14_16]5002 event occur during warmboot test. Total BE213 SKU FR1/5UUTs,90/1500cycles,Fail unit FR:90/300cycles"
+frank.lee@intel.com,wifi,WiFi,2026-05-18,Test - pls ignore
+zhiqiang.cai@intel.com,wifi,WiFi,2026-05-18,[Honor][LUX][Zhuque&Xuanwu][AX211][PTL][25H2]The wifi cant get internet
+matt.chen@intel.com,bt,BT,2026-05-20,"[Lenovo][AVC][WCL-H][BE213][Neo50Q-7] BT uninstall issue, 1/1Units, 1/1cycles"
+charles.p.chu@intel.com,wifi,WiFi,2026-05-18,[Honor][LUX][Zhuquan&xuanwu][PTL][AX211]The wifi connect fail because Four EAPOL authentication failures
+kj.fang@intel.com,wifi,WiFi,2026-05-20,"[Honor][LUX][NvwaC][ARL-HX][AX211][WiFi]When roaming between 2.4G and 5G, roaming occurs around a threshold of -70 dB."
+steven1.chen@intel.com,bt,BT,2026-05-18,[Xiaomi][PTL][AX211] Connecting a PC to a mobile phone via BLE takes a long time
+timdaway.lai@intel.com,wifi,WiFi,2026-05-19,[Honor][Huaqin][FeimiGlite][MTL][Intel AX201][WiFi][25H2]PAD-to-PC traffic streaming experiences zero drop
+yu-wei.chen@intel.com,bt,BT,2026-05-18,"""Bluetooth - Audio - Voice interrupt music with A2DP offload"" cannot be passed"
+frank.fc.yang@intel.com,wifi,WiFi,2026-05-18,[Panasonic][PTL][WhP2] Tx power is NG when Dynamic SAR is enabled
+jackx.lee@intel.com,wifi,WiFi,2026-05-19,-[Lenovo][Thinkpad-JP][LNL][BE201][T14SGen6] EWG issueMTS40 WIFI YB
+wesley.kuo@intel.com,bt,BT,2026-05-21,"[Lenovo][AVC][WCL-H][BE213][Neo50q-7]BT headset connection bug 4/4Units,4/4cycle"
+bingyue.sun@intel.com,bt,BT,2026-05-20,[ASUS_CCBU][9406CAA][BE211][PTL] Can not adjust BT headset volume when using awhile.
+juan.zou@intel.com,bt,BT,2026-05-21,[CLEVO][R100YU][R100YU_BE211_HEADSET_NO_MIC]
+brenton.wu@intel.com,wifi,WiFi,2026-05-18,[Colorful][BYD][PTL-H][N15QA2][AX211] S4 loop test BSOD 0x9f
+frank.lee@intel.com,other,Software,2026-05-20,[HP/SIO2482205/PTL/CashmereI/50.26.401.224] Example score only is not visible in ACM in dark mode.
+frank.lee@intel.com,wifi,WiFi,2022-03-17,HP -  SIO2087874 - [3LS] - SIP110836 - EB 1040 G6 / Huawei / GC / Intel WLAN Unexpected Roaming Issue / PC APJ / CN
+zhiqiang.cai@intel.com,wifi,WiFi,2026-03-16,"[ThinkPad][X13 Gen6][ARL][BE201] ABB ""France"" Roaming Frequently Disconnect & Reconnect Issue"
+charles.p.chu@intel.com,wifi,WiFi,2025-09-27,[Lenovo][wistron][GEN4_AX201][ADL]Intel AX201 WiFi Roaming Issue with Windows Cu
+kj.fang@intel.com,wifi,WiFi,2023-05-25,"[Lenovo ThinkPad JP][LCFC][ Libra][AX211]]The 5GHz band wifi will auto disconnected and disappeared in LowPwrRange which Roaming Aggressiveness:Medium,Preferred Band:Perfer 5GHz band"
+timdaway.lai@intel.com,wifi,WiFi,2021-08-25,[Huawei][Wingtech][Dirac][Intel Tiger Lake UP4][AX201][21H2] [WIFI]Cannot switch to 5 G after the roaming switches to 2.4G
+frank.fc.yang@intel.com,wifi,WiFi,2021-11-10,"[Huawei][Quanta][H99E][NobelF][AX201][21H2][WLAN] [AX201][BUG-20211111-37766] Connect to a dual-mode adaptive router, stay away from the router and cannot roam to 2.4G network"
+jackx.lee@intel.com,wifi,WiFi,2025-10-01,[Dell][Bolan LNL/FmP2] Persistent Wi-Fi roaming and disconnection problems affecting Dell laptops with Intel BE200/201/202 and AX211 adapters
+brenton.wu@intel.com,wifi,WiFi,2022-06-27,[Dynabook][Win11]Cannot get IP address after switching or roaming to other AP
+frank.lee@intel.com,wifi,WiFi,2021-11-09,[Dynabook][Win11]  roaming test failed for Wi-Fi 6E
+zhiqiang.cai@intel.com,wifi,WiFi,2020-08-12,[HUAWEI][HUAQIN][Harvey][AMD Renoir][Intel AX200][20H1]Video lag when SUT play video via Miracast projection screen to Xiaomi TV.
+charles.p.chu@intel.com,wifi,WiFi,2024-05-06,[HP/SIO2264021/Win11/ADL/GfP2/Vision] Miracast wireless display cannot be connected successfully
+kj.fang@intel.com,wifi,WiFi,2023-01-15,[MSFT Quanta Z96] Unable to project to external monitor via wireless display
+timdaway.lai@intel.com,wifi,WiFi,2018-09-28,[Lenovo-Thinkpad][LCFC][Ax85_Ryzen]The wifi icon show red X after connecting with WIDI and clicking the wifi icon on task bar
+frank.fc.yang@intel.com,wifi,WiFi,2022-12-27,[Jaguar3][Gfp2] Machine cannot connect to Wireless Display (FR:10/10 trials)
+jackx.lee@intel.com,wifi,WiFi,2024-08-07,[Samsung][RPL][AX211] This pairing drops because the system suddenly stops sending RTP packets to the sink device while pairing with this device for Miracast.
+brenton.wu@intel.com,wifi,WiFi,2026-03-02,"[ASUS][B3604CVF][AX211] After scan Samsung TV, Miracast connect fail"
+frank.lee@intel.com,wifi,WiFi,2018-03-08,"[HP/SIO1563281][Jaguars][GLK/9461/W10]It will Show""Your PC or mobile device doesn't support Miracast, so it can't project wirelessly"" and can't connect Miracast again after resume from closed lid S3/S4."
+zhiqiang.cai@intel.com,wifi,WiFi,2017-12-14,[Lenovo DT][M920][ECR467119][8265][Win7 32/64] Miracast connected display's delay time Test latency is over 200ms
+charles.p.chu@intel.com,wifi,WiFi,2021-06-20,[LG][15U70P][TGL/AX201/21H2] Miracast connection over infrastructure fails
+kj.fang@intel.com,wifi,WiFi,2017-09-07,[Samsung][Prism-13 KBL][SfP] 7E BSoD appears during miracast connecting.
+timdaway.lai@intel.com,wifi,WiFi,2018-02-07,"[Lenovo-ThinkPad E480E580][LCFC][Win10RS4]External monitor display is not synchronized with system when connect to wireless display, external monitor lag about 20s."
+frank.fc.yang@intel.com,wifi,WiFi,2021-02-17,[ASUS][TGL][WLAN]How to confirm the function of WoWLAN from MS is workable with DC mode ?
+jackx.lee@intel.com,wifi,WiFi,2017-10-24,"[Intel CISD-MK][WIFI driver, S5WOWLANEnable issue]"
+brenton.wu@intel.com,wifi,WiFi,2021-11-01,[ASUS-Gaming][ADL-P][GU603Z][AX211 2230] Not able to WoWLAN by remote desktop
+frank.lee@intel.com,wifi,WiFi,2018-04-23,[Asus-Motherboard][CFL][Q370] 9560/9260 cannot wake by magic packet in S4 when Wireless AMT enabled (S3 is okay)
+zhiqiang.cai@intel.com,wifi,WiFi,2018-10-17,[HP/SIO1663914][CFL/W10/22260] - [Comm Test][Intel CCP 22260][BPS][Intel CFL][Win10 RS4 17134][PV][WoWLAN] WoWLAN function can't work.
+charles.p.chu@intel.com,wifi,WiFi,2017-11-09,"[HP/SIO1528689][Scorpius][3168/7265/KBL/W10]Error ""Premature wake up. The unit woke up xxxxxx ms before scheduled WOL time"" occured when run WinPVT 9.0E_Hibernation Functional Test"
+kj.fang@intel.com,wifi,WiFi,2018-04-24,[HP/SIO1584996][Renegade][SKL/8265/W10] Func-CE-DT-ME-QTA/Renegade/Win7-64: Can not Wake on WLAN from S3/S4 via Magic Packet.
+timdaway.lai@intel.com,wifi,WiFi,2021-12-20,[lenovo_valkyrie] Wireless/WLAN  WoWLAN Wake Failure during s3/s4.
+frank.fc.yang@intel.com,wifi,WiFi,2024-10-15,[HP][SnowWhite]The unit can not wake from MS3 via WOWLAN in AC mode.
+jackx.lee@intel.com,wifi,WiFi,2025-12-11,"[HP][QTA][BNB][WCL][Cheddar] SIO2445127: The unit got ""0x9F"" BSOD during running WINPVT Wake-on-LAN Stress (S3S4S5+LAN_CHK_WOL.PVT) using LOM with IPV4/IPV6."
+brenton.wu@intel.com,wifi,WiFi,2018-02-11,[HP/SIO1567335][Armorhide][9560/CFL/Win10 Rs3]Can't wake up from S4 via Magic packet
+frank.lee@intel.com,wifi,WiFi,2021-05-20,[Huawei][Wingtech][Dirac][Intel Tiger Lake UP4][AX201][20H1] [WIFI]What is the throughput when the modules coexist? Can we modify the duty cycle
+zhiqiang.cai@intel.com,wifi,WiFi,2024-07-17,[Lenovo-IdeaPad][LNL][QIXIA][win11][FVT][FmP][S790_15_LNL_FVT_HF_stress]WiFI 11ac throughput cannot pass lenovo spec
+charles.p.chu@intel.com,wifi,WiFi,2023-09-26,WiFi 7 throughput abnormal
+kj.fang@intel.com,wifi,WiFi,2022-11-23,[ADL-N][HrP1][22.180][N7600ZM]AX101 The throughput drop at the attenuation of 92~95dB (picture is ax/ac 80MHz)
+brenton.wu@intel.com,bt,BT,2021-06-21,[HP] - SIO1991059 &  SIO1992792 [Corvette][TGL][HRP2-22560][20H2] ? LE BT mouse lag
+matt.chen@intel.com,bt,BT,2021-08-06,"[Huaqin][Samsung][BBY][win11]Bluetooth mouse appear delay 1S after idle about 10 min.(FR: 4 out of 4 units, 12 out of 12 times)"
+timdaway.lai@intel.com,wifi,WiFi,2025-07-23,PTL BE201 WiFi7 Throughput Tx Fail
+frank.fc.yang@intel.com,wifi,WiFi,2020-04-12,"[Huawei][Quanta][Euler][CML-U][AX201][WLAN][19H2]PC and Cell use hishare to transfer file, the throughput lower than 11 MBps(MCC is JP)"
+jackx.lee@intel.com,wifi,WiFi,2020-04-20,"[Huawei][Quanta][Euler][CML-U][AX201][WLAN][19H2]Connected with WPA3 AP, and after restart has fail rate that reconnected slowly."
+steven1.chen@intel.com,bt,BT,2024-01-30,[HUAWEI][Wingtech][EnzoH][MTL][23H2]Logitech BT BR3.0 mouse M336 lags when BT connect to DUT when downloading and playing music online at same time
+brenton.wu@intel.com,wifi,WiFi,2019-08-15,"[Xiaomi][MiShare][CML][9560]Create 5G(149) softAP when host has no AP connected, file transfer speed is slow."
+frank.lee@intel.com,wifi,WiFi,2025-05-28,[BYD][N14PR2][BE200][JP] Wifi 7 link speed does not reach 5764Mbps
+zhiqiang.cai@intel.com,wifi,WiFi,2023-12-24,[Lenovo_ThinkPad_JP][THAMES][MTL][GaP2] 11ac_80MHzBW_Ch.157_Rx low throughput
+yu-wei.chen@intel.com,bt,BT,2017-10-30,[Lenovo PCSD][KBL-Y][Yeti2][RS3][DVT]Local music output from BT headset have delay during a little bit of movement
+charles.p.chu@intel.com,wifi,WiFi,2025-11-27,SIP128610 - EB 1040 G1i 14(MasadaN)/Win11 24H2/Traveloka/GA/PC APJ/ Intel BE201 Mobile Hotspot not detected in 6GHz/ID
+kj.fang@intel.com,wifi,WiFi,2022-08-23,[Lenovo - Desktop] [Compal] [AIO 5 24IAP 07] [APL-H] [9560] [Win11 22H2 22621.317] [2/23] The Wlan(Intel AC-9560) show yellow bang in Device Manager during running Unigine heaven.
+timdaway.lai@intel.com,wifi,WiFi,2020-10-21,[ASUS-Gaming][GA503/GX551][AMD Cezanne][][AX200 22.0.0.6] Microsoft WiFi Direct driver YB issue on AMD Cezanne platform during aging test Frequent (20% - 90%)
+wesley.kuo@intel.com,bt,BT,2020-11-18,[Dell][Wistron][TGL-UP3][Hellcat] BT device yellow bang in device manager after S4 resume
+frank.fc.yang@intel.com,wifi,WiFi,2021-08-12,[HP/SIO2013549/Win11/ADL-S/HrP2/ArtiI] YB 43 after installed v22.70.2.1 then reboot system
+jackx.lee@intel.com,wifi,WiFi,2019-10-11,"[Lenovo ThinkPad China][L480/L580][Solo2Lando2_WHL_AX200] ""Device not detected: Bluetooth? during S4 longrun test and Unknown USB Device show yellow mark (code 43) in Device Manager"
+brenton.wu@intel.com,wifi,WiFi,2020-08-19,[Lenovo_Ideapad][Compal][Y750-15IMH][CML-H][20H1] Intel WLAN AX201 lost(or yellow bang) when download image or S4/CB
+frank.lee@intel.com,wifi,WiFi,2025-06-17,"[Dell][Bolan][LNL]Intel(R) Wi-Fi7 BE201 320MHz show Yellow Bang, error code 10"
+zhiqiang.cai@intel.com,wifi,WiFi,2021-10-13,"[Fujitsu]Yellow Bang and device lost on WLAN device, Bluetooth device lost"
+bingyue.sun@intel.com,bt,BT,2020-11-30,[HP] - [Laika][GLK][JFP1-9461][20H2 19042.630] ?  BT YB 10 after dash image
+juan.zou@intel.com,bt,BT,2018-05-24,[xiaomi][R10] BT became yellow bang after grading RS4 from RS1
+charles.p.chu@intel.com,wifi,WiFi,2023-08-30,[lenovo][wistron][G3 500W][Pentium][ AX201] [2H1][100%]wlan YB and BT device lost when system in Idle  (Only G3 can recovery).

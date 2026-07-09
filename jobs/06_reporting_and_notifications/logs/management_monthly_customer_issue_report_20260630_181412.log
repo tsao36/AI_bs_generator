@@ -1,0 +1,29 @@
+[INFO] ===== Management monthly customer issue report start =====
+[INFO] Timestamp: Tue 06/30/2026 18:14:12.22
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\
+[INFO] Project root: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..
+[INFO] Year: 2026
+[INFO] Python: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\customer issue analysis\.venv\Scripts\python.exe
+[INFO] PYTHONPATH: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\APIs;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\jobs\01_issue_category_tuning;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\jobs\03_offload_automation;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\jobs\04_wireless_bug_dashboard;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\jobs\06_reporting_and_notifications;
+[INFO] ISSUE_CATEGORY_PREDICT_BACKEND: ml
+[INFO] GRAPH_AUTH_MODE: app
+[INFO] Report script: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\customer issue analysis\send_management_monthly_issue_report.py
+[INFO] Recipients: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\customer issue analysis\recipients_management_monthly.json
+[INFO] Model: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\models\issue_category_model.joblib
+[INFO] Output dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\customer issue analysis\outputs
+[INFO] Scope: all customers, 2026 only, simplified monthly management HTML
+[OK] Customer issue analysis completed.
+[OK] Range: 2026-2026
+[OK] 2026: total_issues=572 wifi=283 bt=270
+[OK] JSON: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\customer issue analysis\outputs\all_customers_issue_analysis_2026_2026.json
+[OK] Detail CSV: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\customer issue analysis\outputs\all_customers_issue_analysis_2026_2026_detail.csv
+[OK] YoY CSV: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\customer issue analysis\outputs\all_customers_issue_analysis_2026_2026_yoy.csv
+[OK] Pie Chart Report (HTML): C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\customer issue analysis\outputs\all_customers_issue_analysis_2026_2026_report.html
+[INFO] Running base customer analysis for management monthly report...
+[INFO] Command: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\customer issue analysis\.venv\Scripts\python.exe C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\customer issue analysis\customer_issue_analysis.py --start-year 2026 --end-year 2026 --table ips_jira_bugs --model C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\models\issue_category_model.joblib --output-dir C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\customer issue analysis\outputs --customer all
+[OK] Management monthly report generated: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\customer issue analysis\outputs\all_customers_issue_analysis_management_monthly_2026_report.html
+[Config] Using GRAPH_CLIENT_SECRET from environment/.env.
+[WARN] Email send skipped due to error: Graph sendMail failed: 403 {"error":{"code":"ErrorAccessDenied","message":"Access is denied. Check credentials and try again."}}
+[WARN] Report files are generated successfully. Scheduler is allowed to continue.
+[OK] Management monthly customer issue report completed.
+[INFO] ===== Management monthly customer issue report end =====

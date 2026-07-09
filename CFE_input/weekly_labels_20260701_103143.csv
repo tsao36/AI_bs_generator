@@ -1,0 +1,4 @@
+ips_title,predicted_category,technology,human_category
+"[Lenovo-IdeaPad][Inhouse][KBL-R][Yoga930] Put system enter to Modern standby, roams AP, let system out of Moden standby, 9260 can not connect AP",Roaming,WiFi,Power Consumption
+PPAG function doesnt work when countrycode is set to CB(China).,RF,wifi,BIOS
+"[HUAWEI][HUAQIN][MachD][Intel TGL][Intel AX201][20H1] Test WOL function fail and system lost ""power management"" option to check DM with AX201 wireless lan.",WowLAN,WiFi,WowLAN

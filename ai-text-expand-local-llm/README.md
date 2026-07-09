@@ -103,9 +103,13 @@ The default config is in `config.example.json`:
 {
   "LOCAL_LLM_MODEL": "llama3.1:8b-instruct-q4_K_M",
   "OLLAMA_BASE_URL": "http://127.0.0.1:11434",
-  "timeout_seconds": 90
+  "timeout_seconds": 90,
+  "OLLAMA_NUM_GPU": 999
 }
 ```
+
+`OLLAMA_NUM_GPU` controls GPU offload layers for Ollama requests. The default package now prefers GPU by setting this to `999`.
+To confirm runtime device, run `ollama ps` and check the `PROCESSOR` column.
 
 You can change the model name if you prefer another local model, such as `qwen2.5:7b`, `llama3.1:8b`, or another model installed in Ollama. Instruction-tuned models usually follow the length options more reliably.
 

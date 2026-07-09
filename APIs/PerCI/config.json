@@ -1,0 +1,11 @@
+{
+    "root-requirements": "requirements.txt",
+    "allowed-disables": {
+        "*": "wrong-import-position",
+        "Sherlock.py": "invalid-name",
+        "DatabaseAPI/__init__.py": "import-outside-toplevel",
+        "jenkins_api.py": "consider-using-with"
+    },
+    "disallowed-files": ["PerCI\\file_validator.py", "PerCI\\Jenkinsfile"],
+    "versionless-packages": ["setuptools", "wheel", "pbr"]
+}

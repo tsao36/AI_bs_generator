@@ -1,0 +1,108 @@
+============================================================ 
+[START] Task started at: Sun 06/21/2026 20:58:41.70 
+[INFO] Working Directory: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard 
+[INFO] Python Version: 
+Python 3.14.3
+[INFO] Executing: Bug_Dashboard_checker.py --log-file db_vs_jira_validation.log 
+2026-06-21 20:58:42,245 [INFO] Logging initialized. console_level=INFO file=db_vs_jira_validation.log
+2026-06-21 20:58:42,246 [INFO] Starting validation. DB_HOST= DB_NAME= table=ips_jira_bugs test_jira=False limit=0
+Missing DB params in .env: ['database', 'user', 'password', 'host']
+[ERROR] Script failed with exit code: 1 
+[ERROR] Task failed at: Sun 06/21/2026 20:58:42.28 
+[INFO] Health status: error (script crashed, exit code 1) 
+[HEALTH NOTIFY] ERROR: DB credentials not found in .env — skipping sentinel update.
+[END] Task finished at: Sun 06/21/2026 20:58:42.28 
+============================================================ 
+ 
+============================================================ 
+[START] Task started at: Sun 06/21/2026 20:59:02.43 
+[INFO] Working Directory: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard 
+[INFO] Python Version: 
+Python 3.14.3
+[INFO] Executing: Bug_Dashboard_checker.py --log-file db_vs_jira_validation.log 
+2026-06-21 20:59:02,823 [INFO] Logging initialized. console_level=INFO file=db_vs_jira_validation.log
+2026-06-21 20:59:02,823 [INFO] Starting validation. DB_HOST=10-108-27-113.dbaas.intel.com DB_NAME=wirelesscustomerengineering table=ips_jira_bugs test_jira=False limit=0
+2026-06-21 20:59:05,285 [INFO] DB rows fetched: 249
+2026-06-21 20:59:07,240 [INFO] Connected to Jira server=https://jira.idoc.intel.com
+2026-06-21 20:59:09,295 [INFO] Jira issues found: 248 (from valid DB keys: 249)
+2026-06-21 20:59:09,295 [WARNING] Jira issues NOT found: 3. Sample: CIE-12507, WOT-68901, WOT-71695
+2026-06-21 20:59:09,296 [WARNING] Issue-level reporter mismatches detected: 6
+2026-06-21 20:59:09,296 [WARNING] Mismatch issue=BT-114738 | DB='Charles Chu' | Jira='Yeh, TonyX' | DB_key='charles chu' Jira_key='tonyx yeh'
+2026-06-21 20:59:09,296 [WARNING] Mismatch issue=CIE-11587 | DB='Charles Chu' | Jira='Rosenfeld, Israel' | DB_key='charles chu' Jira_key='israel rosenfeld'
+2026-06-21 20:59:09,297 [WARNING] Mismatch issue=CIE-11894 | DB='Charles Chu' | Jira='Alon, Motty' | DB_key='charles chu' Jira_key='alon motty'
+2026-06-21 20:59:09,297 [WARNING] Mismatch issue=CIE-12053 | DB='Charles Chu' | Jira='Alon, Motty' | DB_key='charles chu' Jira_key='alon motty'
+2026-06-21 20:59:09,297 [WARNING] Mismatch issue=CIE-12162 | DB='Charles Chu' | Jira='Terlikowska, Wioleta' | DB_key='charles chu' Jira_key='terlikowska wioleta'
+2026-06-21 20:59:09,297 [WARNING] Mismatch issue=CIE-12543 | DB='Charles Chu' | Jira='Fan, ArielX' | DB_key='charles chu' Jira_key='arielx fan'
+2026-06-21 20:59:09,298 [WARNING] Reporter count differences detected (Jira vs DB).
+2026-06-21 20:59:09,304 [WARNING] Diff report saved to: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\db_vs_jira_diff_report.txt
+2026-06-21 20:59:09,304 [WARNING] Count delta person_key='charles chu' DB=8 Jira=2 Delta=-6 (ex: DB='Charles Chu' Jira='Chu, Charles P')
+2026-06-21 20:59:09,304 [WARNING] Count delta person_key='alon motty' DB=75 Jira=77 Delta=+2 (ex: DB='Motty Alon' Jira='Alon, Motty')
+2026-06-21 20:59:09,304 [WARNING] Count delta person_key='tonyx yeh' DB=0 Jira=1 Delta=+1 (ex: DB='' Jira='Yeh, TonyX')
+2026-06-21 20:59:09,304 [WARNING] Count delta person_key='terlikowska wioleta' DB=0 Jira=1 Delta=+1 (ex: DB='' Jira='Terlikowska, Wioleta')
+2026-06-21 20:59:09,304 [WARNING] Count delta person_key='israel rosenfeld' DB=13 Jira=14 Delta=+1 (ex: DB='Israel Rosenfeld' Jira='Rosenfeld, Israel')
+2026-06-21 20:59:09,304 [WARNING] Count delta person_key='arielx fan' DB=0 Jira=1 Delta=+1 (ex: DB='' Jira='Fan, ArielX')
+2026-06-21 20:59:09,304 [INFO] DONE.
+[SUCCESS] Script completed successfully with exit code: 0 
+[SUCCESS] Validation check finished at: Sun 06/21/2026 20:59:09.34 
+[INFO] Health status: error (diff report exists - DB vs Jira mismatch detected) 
+[HEALTH NOTIFY] Sentinel updated: [DB HEALTH] DB not updated - ERROR | diff report exists - DB vs Jira mismatch detected (2026-06-21 20:59)
+[END] Task finished at: Sun 06/21/2026 20:59:09.34 
+============================================================ 
+ 
+============================================================ 
+[START] Task started at: Sun 06/21/2026 21:20:25.58 
+[INFO] Working Directory: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard 
+[INFO] Python Version: 
+Python 3.14.2
+[INFO] Executing: Bug_Dashboard_checker.py --log-file db_vs_jira_validation.log 
+2026-06-21 21:20:27,706 [INFO] Logging initialized. console_level=INFO file=db_vs_jira_validation.log
+2026-06-21 21:20:27,707 [INFO] Starting validation. DB_HOST=10-108-27-113.dbaas.intel.com DB_NAME=wirelesscustomerengineering table=ips_jira_bugs test_jira=False limit=0
+2026-06-21 21:20:30,386 [INFO] DB rows fetched: 248
+2026-06-21 21:20:32,174 [INFO] Connected to Jira server=https://jira.idoc.intel.com
+2026-06-21 21:20:34,212 [INFO] Jira issues found: 247 (from valid DB keys: 248)
+2026-06-21 21:20:34,213 [WARNING] Jira issues NOT found: 3. Sample: CIE-12507, WOT-68901, WOT-71695
+2026-06-21 21:20:34,219 [WARNING] Issue-level reporter mismatches detected: 6
+2026-06-21 21:20:34,220 [WARNING] Mismatch issue=BT-114738 | DB='Charles Chu' | Jira='Yeh, TonyX' | DB_key='charles chu' Jira_key='tonyx yeh'
+2026-06-21 21:20:34,220 [WARNING] Mismatch issue=CIE-11587 | DB='Charles Chu' | Jira='Rosenfeld, Israel' | DB_key='charles chu' Jira_key='israel rosenfeld'
+2026-06-21 21:20:34,221 [WARNING] Mismatch issue=CIE-11894 | DB='Charles Chu' | Jira='Alon, Motty' | DB_key='charles chu' Jira_key='alon motty'
+2026-06-21 21:20:34,221 [WARNING] Mismatch issue=CIE-12053 | DB='Charles Chu' | Jira='Alon, Motty' | DB_key='charles chu' Jira_key='alon motty'
+2026-06-21 21:20:34,223 [WARNING] Mismatch issue=CIE-12162 | DB='Charles Chu' | Jira='Terlikowska, Wioleta' | DB_key='charles chu' Jira_key='terlikowska wioleta'
+2026-06-21 21:20:34,224 [WARNING] Mismatch issue=CIE-12543 | DB='Charles Chu' | Jira='Fan, ArielX' | DB_key='charles chu' Jira_key='arielx fan'
+2026-06-21 21:20:34,227 [WARNING] Reporter count differences detected (Jira vs DB).
+2026-06-21 21:20:34,236 [WARNING] Diff report saved to: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\db_vs_jira_diff_report.txt
+2026-06-21 21:20:34,236 [WARNING] Count delta person_key='charles chu' DB=8 Jira=2 Delta=-6 (ex: DB='Charles Chu' Jira='Chu, Charles P')
+2026-06-21 21:20:34,237 [WARNING] Count delta person_key='alon motty' DB=75 Jira=77 Delta=+2 (ex: DB='Motty Alon' Jira='Alon, Motty')
+2026-06-21 21:20:34,237 [WARNING] Count delta person_key='tonyx yeh' DB=0 Jira=1 Delta=+1 (ex: DB='' Jira='Yeh, TonyX')
+2026-06-21 21:20:34,238 [WARNING] Count delta person_key='terlikowska wioleta' DB=0 Jira=1 Delta=+1 (ex: DB='' Jira='Terlikowska, Wioleta')
+2026-06-21 21:20:34,238 [WARNING] Count delta person_key='israel rosenfeld' DB=13 Jira=14 Delta=+1 (ex: DB='Israel Rosenfeld' Jira='Rosenfeld, Israel')
+2026-06-21 21:20:34,239 [WARNING] Count delta person_key='arielx fan' DB=0 Jira=1 Delta=+1 (ex: DB='' Jira='Fan, ArielX')
+2026-06-21 21:20:34,239 [INFO] DONE.
+[SUCCESS] Script completed successfully with exit code: 0 
+[SUCCESS] Validation check finished at: Sun 06/21/2026 21:20:34.31 
+[INFO] Health status: error (diff report exists - DB vs Jira mismatch detected) 
+[HEALTH NOTIFY] Sentinel updated: [DB HEALTH] DB not updated - ERROR | diff report exists - DB vs Jira mismatch detected (2026-06-21 21:20)
+[END] Task finished at: Sun 06/21/2026 21:20:34.31 
+============================================================ 
+ 
+============================================================ 
+[START] Task started at: Sun 06/21/2026 21:53:19.60 
+[INFO] Working Directory: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard 
+[INFO] Python Version: 
+Python 3.14.2
+[INFO] Executing: Bug_Dashboard_checker.py --log-file db_vs_jira_validation.log 
+2026-06-21 21:53:20,215 [INFO] Logging initialized. console_level=INFO file=db_vs_jira_validation.log
+2026-06-21 21:53:20,216 [INFO] Starting validation. DB_HOST=10-108-27-113.dbaas.intel.com DB_NAME=wirelesscustomerengineering table=ips_jira_bugs test_jira=False limit=0
+2026-06-21 21:53:22,842 [INFO] DB rows fetched: 248
+2026-06-21 21:53:24,476 [INFO] Connected to Jira server=https://jira.idoc.intel.com
+2026-06-21 21:53:26,523 [INFO] Jira issues found: 247 (from valid DB keys: 248)
+2026-06-21 21:53:26,524 [WARNING] Jira issues NOT found: 3. Sample: CIE-12507, WOT-68901, WOT-71695
+2026-06-21 21:53:26,539 [INFO] No differences found. DB matches Jira for this filter and these issues.
+2026-06-21 21:53:26,542 [INFO] Removed stale diff report: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\db_vs_jira_diff_report.txt
+2026-06-21 21:53:26,543 [INFO] DONE.
+[SUCCESS] Script completed successfully with exit code: 0 
+[SUCCESS] Validation check finished at: Sun 06/21/2026 21:53:26.65 
+[INFO] Health status: ok () 
+[HEALTH NOTIFY] Sentinel updated: [DB HEALTH] DB is accurate (checked 2026-06-21 21:53)
+[END] Task finished at: Sun 06/21/2026 21:53:26.65 
+============================================================ 
+ 

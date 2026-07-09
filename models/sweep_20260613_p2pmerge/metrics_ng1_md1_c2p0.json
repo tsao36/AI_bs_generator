@@ -1,0 +1,168 @@
+{
+  "accuracy": 0.8571428571428571,
+  "labels": [
+    "Audio",
+    "BIOS",
+    "BSOD",
+    "Connectivity",
+    "HLK",
+    "ICPS",
+    "Killer",
+    "OEM Tools",
+    "P2P",
+    "Performance",
+    "Power Consumption",
+    "RF",
+    "Roaming",
+    "Sensing",
+    "System Hang",
+    "UEFI",
+    "WowLAN",
+    "YB/Lost"
+  ],
+  "rows_total": 1266,
+  "rows_used": 1257,
+  "pseudo_csv": "c:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\high_confidence_training_from_component_map.csv",
+  "enable_pseudo": false,
+  "pseudo_weight": 1.0,
+  "pseudo_cap_k": 1,
+  "pseudo_rows_loaded": 0,
+  "pseudo_rows_used": 0,
+  "tfidf_ngram_max": 1,
+  "tfidf_min_df": 1,
+  "lr_c": 2.0,
+  "train_rows_human": 1005,
+  "train_rows_total": 1005,
+  "test_rows_human": 252,
+  "dropped_rare_labels": [
+    "Layout",
+    "MSFT",
+    "Need-Triage",
+    "Schematic"
+  ],
+  "test_size": 0.2,
+  "random_state": 42,
+  "classification_report": {
+    "Audio": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "BIOS": {
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1-score": 0.8,
+      "support": 4.0
+    },
+    "BSOD": {
+      "precision": 0.8333333333333334,
+      "recall": 0.7894736842105263,
+      "f1-score": 0.8108108108108109,
+      "support": 19.0
+    },
+    "Connectivity": {
+      "precision": 0.8656716417910447,
+      "recall": 0.8787878787878788,
+      "f1-score": 0.8721804511278195,
+      "support": 66.0
+    },
+    "HLK": {
+      "precision": 1.0,
+      "recall": 0.8888888888888888,
+      "f1-score": 0.9411764705882353,
+      "support": 9.0
+    },
+    "ICPS": {
+      "precision": 1.0,
+      "recall": 0.6875,
+      "f1-score": 0.8148148148148148,
+      "support": 16.0
+    },
+    "Killer": {
+      "precision": 0.7142857142857143,
+      "recall": 0.9090909090909091,
+      "f1-score": 0.8,
+      "support": 11.0
+    },
+    "OEM Tools": {
+      "precision": 0.8571428571428571,
+      "recall": 0.6,
+      "f1-score": 0.7058823529411765,
+      "support": 10.0
+    },
+    "P2P": {
+      "precision": 0.9523809523809523,
+      "recall": 0.9090909090909091,
+      "f1-score": 0.9302325581395349,
+      "support": 22.0
+    },
+    "Performance": {
+      "precision": 0.8214285714285714,
+      "recall": 0.92,
+      "f1-score": 0.8679245283018868,
+      "support": 25.0
+    },
+    "Power Consumption": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "RF": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 2.0
+    },
+    "Roaming": {
+      "precision": 0.7777777777777778,
+      "recall": 1.0,
+      "f1-score": 0.875,
+      "support": 7.0
+    },
+    "Sensing": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "System Hang": {
+      "precision": 1.0,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.5,
+      "support": 3.0
+    },
+    "UEFI": {
+      "precision": 1.0,
+      "recall": 0.8,
+      "f1-score": 0.8888888888888888,
+      "support": 5.0
+    },
+    "WowLAN": {
+      "precision": 1.0,
+      "recall": 0.9090909090909091,
+      "f1-score": 0.9523809523809523,
+      "support": 11.0
+    },
+    "YB/Lost": {
+      "precision": 0.775,
+      "recall": 0.9117647058823529,
+      "f1-score": 0.8378378378378378,
+      "support": 34.0
+    },
+    "accuracy": 0.8571428571428571,
+    "macro avg": {
+      "precision": 0.8479826397114956,
+      "recall": 0.8076122899097615,
+      "f1-score": 0.8109516481017756,
+      "support": 252.0
+    },
+    "weighted avg": {
+      "precision": 0.862481902656032,
+      "recall": 0.8571428571428571,
+      "f1-score": 0.8521075987115982,
+      "support": 252.0
+    }
+  }
+}

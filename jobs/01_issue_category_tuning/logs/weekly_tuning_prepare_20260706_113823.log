@@ -1,0 +1,70 @@
+[INFO] ===== Weekly tuning + prepare start =====
+[INFO] Timestamp: Mon 07/06/2026 11:38:23.31
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\
+[INFO] Parameters: threshold=0.45 topN=all
+[STEP 1/3] Weekly tuning
+[INFO] Running weekly category tuning...
+[INFO] Output directory: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\tuning_outputs\weekly_20260706
+[INFO] Low-confidence threshold: 0.45
+[INFO] Input directories: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\CFE_reviewed_issue,C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\CFE_input
+[INFO] Current model: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\models\issue_category_model.joblib
+[INFO] Python: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\customer issue analysis\.venv\Scripts\python.exe
+Tuning cycle complete
+Rows total: 1426
+Rows used: 1419
+Dropped rare labels (<5 rows): Layout, MSFT, Need-triage, System hang
+Best model by macro_f1: LinearSVC (0.8014)
+Model compare: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\tuning_outputs\weekly_20260706\model_compare_metrics.json
+Confusion matrix: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\tuning_outputs\weekly_20260706\best_model_confusion_matrix.csv
+Low-confidence candidates: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\tuning_outputs\weekly_20260706\low_confidence_candidates.csv (602 rows, threshold=0.45)
+[OK] Weekly tuning complete.
+[OK] Review these files:
+  C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\tuning_outputs\weekly_20260706\model_compare_metrics.json
+  C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\tuning_outputs\weekly_20260706\best_model_confusion_matrix.csv
+  C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\tuning_outputs\weekly_20260706\low_confidence_candidates.csv
+[STEP 2/3] Prepare labeling template
+[INFO] Preparing weekly labeling template...
+[INFO] Top N rows from last week's new issues: all (use 'all' to include all)
+[INFO] Python: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\customer issue analysis\.venv\Scripts\python.exe
+[INFO] Tuning root: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\tuning_outputs
+[INFO] Model: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\models\issue_category_model.joblib
+[INFO] Recipients: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\jobs\06_reporting_and_notifications\recipients.json
+2026-07-06 11:38:58,622 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-07-06 11:39:01,172 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-07-06 11:39:03,377 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-07-06 11:39:05,849 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-07-06 11:39:08,347 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-07-06 11:39:10,373 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-07-06 11:39:12,473 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-07-06 11:39:15,892 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+[INFO] Mixing in 10 low-confidence re-verify rows from: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\tuning_outputs\weekly_20260701\low_confidence_candidates.csv
+[INFO] Mixing in 61 targeted supplement rows from: targeted_labeling_supplement_20260612.csv
+[OK] Weekly labeling template: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\tuning_outputs\weekly_20260706\weekly_labeling_template.csv
+[OK] Last week range: 2026-06-29 to 2026-07-06
+[OK] New issues found: 11
+[OK] New-issue rows prepared: 11
+[OK] Low-confidence re-verify rows: 10
+[OK] Targeted supplement rows: 61
+[OK] Total rows in template: 66
+[OK] WiFi assignees: 8
+[OK] BT assignees: 7
+[OK] Assignees loaded: 14
+[OK] Assigned   8 issue(s) -> frank.lee@intel.com
+[OK] Assigned   8 issue(s) -> zhiqiang.cai@intel.com
+[OK] Assigned   8 issue(s) -> charles.p.chu@intel.com
+[OK] Assigned   7 issue(s) -> kj.fang@intel.com
+[OK] Assigned   7 issue(s) -> timdaway.lai@intel.com
+[OK] Assigned   6 issue(s) -> frank.fc.yang@intel.com
+[OK] Assigned   6 issue(s) -> jackx.lee@intel.com
+[OK] Assigned   7 issue(s) -> brenton.wu@intel.com
+[OK] Assigned   2 issue(s) -> matt.chen@intel.com
+[OK] Assigned   2 issue(s) -> steven1.chen@intel.com
+[OK] Assigned   2 issue(s) -> yu-wei.chen@intel.com
+[OK] Assigned   1 issue(s) -> wesley.kuo@intel.com
+[OK] Assigned   1 issue(s) -> bingyue.sun@intel.com
+[OK] Assigned   1 issue(s) -> juan.zou@intel.com
+[OK] Template generated from last week's new issues. Share weekly_labeling_template.csv with engineers.
+[STEP 3/3] Send labeling reminders for pending human_category
+[ERROR] Send labeling reminders failed. exit=1
+[INFO] Exit code: 1
+[INFO] ===== Weekly tuning + prepare end =====

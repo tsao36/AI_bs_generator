@@ -1,0 +1,36 @@
+[INFO] ===== Weekly current yearly issue count start ======
+[INFO] Timestamp: Wed 07/08/2026 14:52:42.76
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\
+[INFO] Current dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications
+[INFO] Project root: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..
+[INFO] Python: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\customer issue analysis\.venv\Scripts\python.exe
+[INFO] DB table: ips_jira_bugs
+[INFO] PYTHONPATH: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\APIs;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\jobs\01_issue_category_tuning;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\jobs\03_offload_automation;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\jobs\04_wireless_bug_dashboard;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\jobs\06_reporting_and_notifications;
+C:\Python314\python.exe
+C:\Users\jtsao1\AppData\Local\Microsoft\WindowsApps\python.exe
+C:\Users\jtsao1\AppData\Local\Python\bin\python.exe
+[INFO] GRAPH_AUTH_MODE=delegated
+[INFO] GRAPH_SENDER_UPN=frank.lee@intel.com
+[INFO] DB_TABLE=ips_jira_bugs
+[INFO] Running issue contribution report...
+2026-07-08 14:52:47,645 [INFO][weekly_issue_count_report] Querying 2026 issue loading from ips_jira_bugs (stale_days=365)...
+2026-07-08 14:52:50,524 [INFO][weekly_issue_count_report] Fetching yearly created counts (all statuses)...
+2026-07-08 14:52:51,064 [INFO][weekly_issue_count_report] Found 18 engineers with data.
+2026-07-08 14:52:51,322 [WARNING][weekly_issue_count_report] Local LLM unavailable, skipping summary: HTTP Error 403: Forbidden
+2026-07-08 14:52:51,472 [WARNING][weekly_issue_count_report] Local LLM unavailable for per-person comments: HTTP Error 403: Forbidden
+2026-07-08 14:52:53,698 [INFO][weekly_issue_count_report] Email sent to 20 recipients.
+2026-07-08 14:52:53,698 [INFO][weekly_issue_count_report] Cc: jonathan.tsao@intel.com
+[Config] Using GRAPH_CLIENT_SECRET from environment/.env.
+[Auth] Using cached Graph delegated token.
+[INFO] Issue report exit code: 0
+[INFO] Running DB project/customer loading report...
+2026-07-08 14:52:54,743 [INFO][weekly_project_loading_from_db_report] Querying 2026 project/customer loading from ips_jira_bugs...
+2026-07-08 14:52:57,066 [INFO][weekly_project_loading_from_db_report] Found 17 engineers with DB project/customer loading data.
+2026-07-08 14:52:57,229 [WARNING][weekly_project_loading_from_db_report] Local LLM unavailable for DB project summary: HTTP Error 403: Forbidden
+2026-07-08 14:52:59,385 [INFO][weekly_project_loading_from_db_report] Email sent to 20 recipients.
+2026-07-08 14:52:59,386 [INFO][weekly_project_loading_from_db_report] Cc: jonathan.tsao@intel.com
+[Config] Using GRAPH_CLIENT_SECRET from environment/.env.
+[Auth] Using cached Graph delegated token.
+[INFO] Project report exit code: 0
+[INFO] ===== Weekly current yearly issue count end =====
+[INFO] Final exit code: 0

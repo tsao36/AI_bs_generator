@@ -1,0 +1,39 @@
+﻿ips_title,predicted_category,technology,human_category
+[LG][16Z90U][PTL/BE211/Win11 25H2] Youtube lip-sync issue when connecting Bluetooth classic audio,Connectivity,BT,Connectivity
+[ASUS_CCBU][P5405CSA/P3405CVA][BE201/AX211] Cannot display extended mode on a second monitor via Miracast.,P2P,WiFi,P2P
+"[Samsung][PTL][BE211][P260422-06258] PC fails to connect to P2P Group Owner after PD exchange in QA environment (Wi-Fi, Panther Lake, 100%)",P2P,WiFi,P2P
+[Microsoft][UID 1295717][PTL/FmP/OOB 26581][PAS] PAS Audio Glitches during WiFi-BT Coex on 2.4ghz 20MHz (2.4ghz 20MHz CND),Connectivity,BT,Connectivity
+Fast Lane - Update IPCBridge BoostedAppInfoState on R3QO3 enabled activity detected,ICPS,Software,ICPS/Killer
+[Samsung][PTL][BE211][P260422-06258] PC P2P Client didnt start to connect after PD request/response.,P2P,WiFi,P2P
+[DELL][Field]Intel(R) Wi-Fi 7 BE200 is unable to connect WIFI-6E 6GHz networks in Windows 10/11 in Macao,P2P,WiFi,Connectivity
+[lenovo_ptl_mario]Field issue - WiFi connection issues (Romania),Performance,WiFi,Connectivity
+[Dell][SanctuaryMLK][ARL][GaP]LowTpt due to hitting assert during test,YB/Lost,WiFi,YB/Lost
+"[Samsung][PTL][BE211][P260422-06258] PC fails to connect to P2P GO after PD Request/Response on Panther Lake, Windows 11 25H2",P2P,WiFi,P2P
+[KPI][IHS] Long scan time for HS - sometimes - Beta,ICPS,Software,ICPS/Killer
+Restricted mode long reconnection time after resume from sleep,Power Consumption,wifi,Power Consumption
+"Roaming failed twice, with two failed attempts to reconnect to the 5G hotspot. F/R: 1/1u, 2/50C",Power Consumption,wifi,Connectivity
+[WCL][Roma] DUT still need to be connected under MS,Sensing,WiFi,WowLAN
+[HP][Sensing] PC didnt lock after user left inside 10s,P2P,WiFi,Sensing
+"[X17_PTL] WRT2G Tool get ""BIOS configuration is not vaild"" Warning",OEM Tools,Tools,OEM Tools
+[Dell][FXN][NVL-S][Citadel CSLP]  When running BIOS tool in WRT Tool fail,BIOS,WiFi,OEM Tools
+"The result show fail when running Stress-WiFi Ping (S4) test.(F/R:11/40units,13/4000cycles)",Connectivity,wifi,Connectivity
+HP Printing - Error when printing large format jobs causes brief disconnection - Intel Wi-Fi 6E AX211 and AX201 160Mhz,Sensing,WiFi,Connectivity
+[Samsung][PTL][BE211][P260422-06258] PC fails to initiate Wi-Fi P2P connection after PD exchange with Android GO on Panther Lake/BE211,P2P,WiFi,P2P
+[PSIRT]Killer CWE-426 on ISSetup.dll may impact CIA,Killer,Software,ICPS/Killer
+[HP][Sensing]PC lock when user sitting in front of it,Sensing,WiFi,Sensing
+"The result show fail when running Stress-WiFi Ping (S4) test.(F/R:11/40units,13/4000cycles)",Connectivity,wifi,Connectivity
+V7xxYU BE211 WCL BT YB,YB/Lost,BT,YB/Lost
+[Lenovo-DT][Huaqin][Yoga9][PTL] The yellow label of the Wifi/BT device appears in the reboot cycle stress test,Connectivity,BT,YB/Lost
+"[NEC][LCFC][PTL[Yukimura-IP][25H2][SIT][BE211]Under S0 with a Bluetooth headset connected and running 1080P, the PHM log shows that C10 does not reach 50%.FR: 9/10Cycles",Connectivity,BT,Power Consumption
+[Lenovo][LunarLake][BE201][25H2][20%][ICPS5.0]ICPS system tray icon doesnt exist intermittently,ICPS,Software,ICPS/Killer
+[HP] [Masada][LNL][FmP2-BE201][Win11 25H2 v26100.8246]Device keep going away for ~1min and comes back in NearSense UI view,Connectivity,BT,Connectivity
+[lenovo_ptl_paris] BT no prompt sound when pressing F2/F3 after Vantage enabled,Connectivity,BT,Audio
+[ICS][Smart Connect] Infinite loading in network list,Killer,Software,ICPS/Killer
+"[Lenovo][Kailash][PTL/BE211@1216/320Mhz][25H2]Assert 0x505 occurred when running MS-Resume Test on one specific unit. (F/R: 1/50 units, for this specific unit, fail rate is 100%)",Connectivity,WiFi,YB/Lost
+"[Intel][Internal][RPL-P (I)][AX211] WiFi Disconnect, not roaming, stationary",P2P,WiFi,Connectivity
+[Windows] NWLS consumes memory when LS tab is disabled,Killer,Software,ICPS/Killer
+[Samsung][PTL][BE211][P260422-06258] Windows PC fails to connect to Android GO after PD Request/Response in Wi-Fi P2P setup,P2P,WiFi,P2P
+TyP2 6GHz output power 2-5dBm drop on conductive test (3/19 and 4/16),Power Consumption,wifi,Performance
+[Dell][GhostRider 16 ARL] IPS report BSOD 0x13a issue during install Audio driver from 10.0.244.2_A05 to 10.0.328.1_A06.,BSOD,BT,BSOD
+[CLEVO][V740TUT1][V740TUT1_AX201_HEADSET_NO-MIC_AFTER_S4],Connectivity,BT,Connectivity
+"[ICPS5, UI] Black screen when launching ICPS after restart - Sometimes",ICPS,Software,ICPS/Killer

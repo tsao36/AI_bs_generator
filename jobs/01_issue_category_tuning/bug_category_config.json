@@ -1,0 +1,528 @@
+{
+	"default_categories": [
+		"Audio",
+		"BIOS",
+		"BSOD",
+		"Connectivity",
+		"HLK",
+		"ICPS/Killer",
+		"IOP",
+		"MSFT",
+		"P2P",
+		"OEM Tools",
+		"Performance",
+		"Power Consumption",
+		"Roaming",
+		"Sensing",
+		"System Hang",
+		"UEFI",
+		"WowLAN",
+		"YB/Lost",
+		"Need-Triage",
+		"RF",
+		"Field Issue"
+	],
+	"precedence": [
+		"BSOD",
+		"YB/Lost",
+		"System Hang",
+		"HLK",
+		"Power Consumption",
+		"Connectivity",
+		"Performance",
+		"RF",
+		"OEM Tools",
+		"ICPS/Killer",
+		"UEFI"
+	],
+	"category_matrix": [
+		{
+			"issue_type": "RF",
+			"technology": "WiFi"
+		},
+		{
+			"issue_type": "RF",
+			"technology": "BT"
+		},
+		{
+			"issue_type": "Audio",
+			"technology": "BT"
+		},
+		{
+			"issue_type": "BIOS",
+			"technology": "BT"
+		},
+		{
+			"issue_type": "BSOD",
+			"technology": "BT"
+		},
+		{
+			"issue_type": "BSOD",
+			"technology": "WiFi"
+		},
+		{
+			"issue_type": "Connectivity",
+			"technology": "BT"
+		},
+		{
+			"issue_type": "Connectivity",
+			"technology": "Tools"
+		},
+		{
+			"issue_type": "Connectivity",
+			"technology": "WiFi"
+		},
+		{
+			"issue_type": "HLK",
+			"technology": "BT"
+		},
+		{
+			"issue_type": "HLK",
+			"technology": "WiFi"
+		},
+		{
+			"issue_type": "Field Issue",
+			"technology": "BT"
+		},
+		{
+			"issue_type": "Field Issue",
+			"technology": "WiFi"
+		},
+		{
+			"issue_type": "ICPS/Killer",
+			"technology": "WiFi"
+		},
+		{
+			"issue_type": "ICPS/Killer",
+			"technology": "BT"
+		},
+		{
+			"issue_type": "ICPS/Killer",
+			"technology": "Software"
+		},
+		{
+			"issue_type": "IOP",
+			"technology": "BT"
+		},
+		{
+			"issue_type": "P2P",
+			"technology": "WiFi"
+		},
+		{
+			"issue_type": "OEM Tools",
+			"technology": "Tools"
+		},
+		{
+			"issue_type": "GNNR",
+			"technology": "Tools"
+		},
+		{
+			"issue_type": "DRTU",
+			"technology": "WiFi"
+		},
+		{
+			"issue_type": "DRTU",
+			"technology": "Tools"
+		},
+		{
+			"issue_type": "ANT",
+			"technology": "Tools"
+		},
+		{
+			"issue_type": "ANT",
+			"technology": "WiFi"
+		},
+		{
+			"issue_type": "CITU",
+			"technology": "WiFi"
+		},
+		{
+			"issue_type": "CITU",
+			"technology": "Tools"
+		},
+		{
+			"issue_type": "NDT",
+			"technology": "Tools"
+		},
+		{
+			"issue_type": "Performance",
+			"technology": "BT"
+		},
+		{
+			"issue_type": "Performance",
+			"technology": "WiFi"
+		},
+		{
+			"issue_type": "Power Consumption",
+			"technology": "BT"
+		},
+		{
+			"issue_type": "Power Consumption",
+			"technology": "WiFi"
+		},
+		{
+			"issue_type": "Power Consumption",
+			"technology": "Software"
+		},
+		{
+			"issue_type": "Roaming",
+			"technology": "WiFi"
+		},
+		{
+			"issue_type": "Sensing",
+			"technology": "WiFi"
+		},
+		{
+			"issue_type": "System Hang",
+			"technology": "WiFi"
+		},
+		{
+			"issue_type": "UEFI",
+			"technology": "BT"
+		},
+		{
+			"issue_type": "UEFI",
+			"technology": "WiFi"
+		},
+		{
+			"issue_type": "UEFI",
+			"technology": "Tools"
+		},
+		{
+			"issue_type": "WowLAN",
+			"technology": "WiFi"
+		},
+		{
+			"issue_type": "YB/Lost",
+			"technology": "BT"
+		},
+		{
+			"issue_type": "YB/Lost",
+			"technology": "Tools"
+		},
+		{
+			"issue_type": "YB/Lost",
+			"technology": "WiFi"
+		},
+		{
+			"issue_type": "P2P",
+			"technology": "WiFi"
+		},
+		{
+			"issue_type": "P2P",
+			"technology": "BT"
+		}
+	],
+	"category_cues": {
+		"Performance": [
+			"slow",
+			"lag",
+			"latency",
+			"throughput",
+			"tpt",
+			"speed",
+			"fps",
+			"stutter",
+			"bandwidth",
+			"throughput drop",
+			"low rate",
+			"coex",
+			"coexistence",
+			"interference"
+		],
+		"Power Consumption": [
+			"battery",
+			"battery life",
+			"drain",
+			"power",
+			"power draw",
+			"power consumption",
+			"hot",
+			"heat",
+			"sleep",
+			"suspend"
+		],
+		"Connectivity": [
+			"disconnect",
+			"cannot connect",
+			"drop",
+			"pairing",
+			"pair",
+			"assoc",
+			"roam",
+			"link",
+			"ssid",
+			"wlan",
+			"wifi",
+			"bluetooth",
+			"bt",
+			"miracast",
+			"wowlan",
+			"wapi",
+			"cannot detect",
+			"no adapter",
+			"no wifi",
+			"cannot see"
+		],
+		"YB/Lost": [
+			"yellow bang",
+			"yb",
+			"assert",
+			"5002",
+			"5010",
+			"error 43",
+			"error code 43",
+			"code43",
+			"pldr",
+			"disappeared",
+			"lost device",
+			"device missing",
+			"not present",
+			"no device"
+		],
+		"HLK": [
+			"hlk",
+			"whql"
+		],
+		"RF": [
+			"sar",
+			"Rx sensitivity",
+			"sensitivity",
+			"Spectrum",
+			"tas",
+			"Tx power",
+			"ppag"
+		],
+		"OEM Tools": [
+			"gnnr",
+			"ant",
+			"citu",
+			"drtu",
+			"ndt"
+		],
+		"BIOS": [
+			"bios",
+			"wrt bios",
+			"_dsm",
+			"acpi",
+			"bios sar",
+			"wrds",
+			"wgds",
+			"uefiCnvWlan",
+			"dsm func"
+		],
+		"Sensing": [
+			"sensing",
+			"spd",
+			"woa",
+			"wal",
+			"presence",
+			"wi-fi sensing",
+			"wifi sensing",
+			"wake on approach",
+			"wake on leaving",
+			"lean back"
+		],
+		"UEFI": [
+			"uefi",
+			"uats",
+			"dsm",
+			"bios setting",
+			"VLP",
+			"mcc"
+		],
+		"BSOD": [
+			"bsod",
+			"blue screen",
+			"bugcheck",
+			"stop code",
+			"0x"
+		],
+		"System Hang": [
+			"hang",
+			"freeze",
+			"stuck",
+			"no response",
+			"not responding",
+			"hung",
+			"lockup",
+			"system hang",
+			"black screen",
+			"blackscreen",
+			"auto-restart",
+			"stuck at bootup"
+		],
+		"ICPS/Killer": [
+			"icps",
+			"icpslauncher",
+			"icps launcher",
+			"smart access point",
+			"network intelligence",
+			"killer intelligence",
+			"killer"
+		],
+		"P2P": [
+			"p2p",
+			"miracast",
+			"wi-fi direct",
+			"widi",
+			"wireless display",
+			"softap",
+			"group owner",
+			"GO"
+		]
+	},
+	"hard_overrides": [
+		{
+			"phrase": "sar",
+			"category": "RF"
+		},
+		{
+			"phrase": "killer",
+			"category": "ICPS/Killer",
+			"unless": ["BSOD", "System Hang"]
+		},
+		{
+			"phrase": "icps",
+			"category": "ICPS/Killer",
+			"unless": ["BSOD", "System Hang"]
+		},
+		{
+			"phrase": "icpslauncher",
+			"category": "ICPS/Killer",
+			"unless": ["BSOD", "System Hang"]
+		},
+		{
+			"phrase": "smart access point",
+			"category": "ICPS/Killer",
+			"unless": ["BSOD", "System Hang"]
+		},
+		{
+			"phrase": "killer intelligence",
+			"category": "ICPS/Killer",
+			"unless": ["BSOD", "System Hang"]
+		},
+		{
+			"phrase": "5002",
+			"category": "YB/Lost",
+			"unless": ["BSOD", "System Hang"]
+		},
+		{
+			"phrase": "assert",
+			"category": "YB/Lost",
+			"unless": ["BSOD", "System Hang"]
+		},
+ 		{
+ 			"phrase": "citu",
+ 			"category": "OEM Tools",
+ 			"unless": ["BSOD", "System Hang"]
+ 		},
+		{
+			"phrase": "gnnr",
+			"category": "OEM Tools",
+			"unless": ["BSOD", "System Hang"]
+		},
+		{
+			"phrase": "ant",
+			"category": "OEM Tools",
+			"unless": ["BSOD", "System Hang"]
+		},
+		{
+			"phrase": "ndt",
+			"category": "OEM Tools",
+			"unless": ["BSOD", "System Hang"]
+		},
+		{
+			"phrase": "drtu",
+			"category": "OEM Tools",
+			"unless": ["BSOD", "System Hang"]
+		},
+		{
+			"phrase": "sar",
+			"category": "RF",
+			"unless": ["BSOD", "System Hang"]
+		},
+		{
+			"phrase": "system hang",
+			"category": "System Hang",
+			"unless": ["BSOD", "Connectivity"]
+		},
+		{
+			"phrase": "black screen",
+			"category": "System Hang",
+			"unless": ["BSOD"]
+		},
+		{
+			"phrase": "blackscreen",
+			"category": "System Hang",
+			"unless": ["BSOD"]
+		},
+		{
+			"phrase": "stuck at bootup",
+			"category": "System Hang",
+			"unless": ["BSOD"]
+		},
+		{
+			"phrase": "reconnect",
+			"category": "Connectivity",
+			"unless": ["BSOD", "System Hang", "YB/Lost"]
+		},
+		{
+			"phrase": "reconnection",
+			"category": "Connectivity",
+			"unless": ["BSOD", "System Hang", "YB/Lost"]
+		},
+		{
+			"phrase": "network drop",
+			"category": "Connectivity",
+			"unless": ["BSOD", "System Hang", "YB/Lost"]
+		},
+		{
+			"phrase": "disconnects",
+			"category": "Connectivity",
+			"unless": ["BSOD", "System Hang", "YB/Lost"]
+		},
+		{
+			"phrase": "auto-restart",
+			"category": "System Hang",
+			"unless": ["BSOD"]
+		},
+
+		{
+			"phrase": "miracast",
+			"category": "P2P",
+			"unless": ["BSOD", "System Hang", "YB/Lost"]
+		},
+		{
+			"phrase": "wi-fi direct",
+			"category": "P2P",
+			"unless": ["BSOD", "System Hang", "YB/Lost"]
+		},
+		{
+			"phrase": "widi",
+			"category": "P2P",
+			"unless": ["BSOD", "System Hang", "YB/Lost"]
+		},
+		{
+			"phrase": "wi-fi sensing",
+			"category": "Sensing",
+			"unless": ["BSOD", "System Hang", "YB/Lost"]
+		},
+		{
+			"phrase": "wifi sensing",
+			"category": "Sensing",
+			"unless": ["BSOD", "System Hang", "YB/Lost"]
+		},
+		{
+			"phrase": "wrt bios",
+			"category": "BIOS",
+			"unless": ["BSOD", "System Hang", "YB/Lost"]
+		},
+		{
+			"phrase": "_dsm",
+			"category": "BIOS",
+			"unless": ["BSOD", "System Hang", "YB/Lost"]
+		}
+	]
+}
+

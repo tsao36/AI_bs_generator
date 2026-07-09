@@ -1,0 +1,9 @@
+2026-06-21 21:53:20,215 [INFO] Logging initialized. console_level=INFO file=db_vs_jira_validation.log
+2026-06-21 21:53:20,216 [INFO] Starting validation. DB_HOST=10-108-27-113.dbaas.intel.com DB_NAME=wirelesscustomerengineering table=ips_jira_bugs test_jira=False limit=0
+2026-06-21 21:53:22,842 [INFO] DB rows fetched: 248
+2026-06-21 21:53:24,476 [INFO] Connected to Jira server=https://jira.idoc.intel.com
+2026-06-21 21:53:26,523 [INFO] Jira issues found: 247 (from valid DB keys: 248)
+2026-06-21 21:53:26,524 [WARNING] Jira issues NOT found: 3. Sample: CIE-12507, WOT-68901, WOT-71695
+2026-06-21 21:53:26,539 [INFO] No differences found. DB matches Jira for this filter and these issues.
+2026-06-21 21:53:26,542 [INFO] Removed stale diff report: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\db_vs_jira_diff_report.txt
+2026-06-21 21:53:26,543 [INFO] DONE.

@@ -1,0 +1,11 @@
+[INFO] ===== OneNote summary email start =====
+[INFO] Timestamp: Mon 07/06/2026 11:38:25.29
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\
+[INFO] Current dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications
+[INFO] Command: python Meeting_agenda_OneNote.py --send-email 
+C:\Python314\python.exe
+C:\Users\jtsao1\AppData\Local\Microsoft\WindowsApps\python.exe
+C:\Users\jtsao1\AppData\Local\Python\bin\python.exe
+[Error] AZURE_TENANT_ID not configured. Set it in .env file.
+[INFO] Exit code: 3
+[INFO] ===== OneNote summary email end =====

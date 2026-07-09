@@ -1,0 +1,42 @@
+assignment,row_id,technology,ips_title,predicted_category,human_category,label_notes,risk_score,risk_reason
+piece_06_of_07,1845,bt,Abnormal disconnection and connection failure.,Connectivity,,,4,few_words<=5;generic:failure;no_digits
+piece_06_of_07,4160,software,"The Killer app will hang after apply extend current network or create hotspot function in Killer Control Center app.(F/R:2/2 units,2/8 times)",Killer,,,2,generic:hang
+piece_06_of_07,905,bt,PC scan automotive slowly by 10% duty cycle,Performance,,,0,
+piece_06_of_07,548,bt,Bluetooth headset fails to connect automatically after Windows is resume from shutdown,Connectivity,,,3,generic:fail;no_digits
+piece_06_of_07,1191,bt,"WHQL item ""Bluetooth - Initiate platform-level device reset"" test failed",HLK,,,3,generic:fail;no_digits
+piece_06_of_07,205,bt,bluetooth mouse lag when cpu high loading,Connectivity,,,1,no_digits
+piece_06_of_07,603,bt,CPU Exception occurs when BIOS starts with UEFI BLE Driver,UEFI,,,1,no_digits
+piece_06_of_07,1344,bt,BT exception causeDUT stuck at bootup screen for a long time) - Repeated Boot up events DSBR command,System Hang,,,1,no_digits
+piece_06_of_07,3355,bt,DUT OPP received picture will show abnormal if transferring files with BT headset music playing,Connectivity,,,1,no_digits
+piece_06_of_07,3145,bt,The sound has caton murmur when DUT play music with a bluetooth speaker,Connectivity,,,1,no_digits
+piece_06_of_07,3757,software,":Error ID 1000(IDBWM.exe) was found during S4 stress test(F/R:1/13 units,1/1950 total trials) -- IDBWM+0xb4019",Killer,,,2,generic:error
+piece_06_of_07,248,bt,Bluetooth driver missing,Connectivity,,,6,short<=28c;few_words<=3;no_digits
+piece_06_of_07,3011,software,Missing AX1675,Killer,,,6,very_short<=18c;few_words<=3
+piece_06_of_07,3147,bt,LMP response timeout during LMP feature exchange on 22.200,System Hang,,,2,generic:hang
+piece_06_of_07,1716,software,Error in services activation causes a reboot after install / re-install / uninstall ICPS,ICPS,,,3,generic:error;no_digits
+piece_06_of_07,98,bt,Please help to check the log of ibtWikoCfaFeatureExt driver.,Connectivity,,,1,no_digits
+piece_06_of_07,1834,bt,BT SAR table in bios ACPI code problem,RF,,,3,generic:problem;no_digits
+piece_06_of_07,1838,bt,ABS - 0x139_a_GUARD_ICALL_CHECK_FAILURE_ibtpci!WlanInterfaceDereference While Device Not in Use,BSOD,,,2,generic:failure
+piece_06_of_07,1035,bt,The BLE mouse cant reconnect resuming from MS,OEM Tools,,,3,generic:cant;no_digits
+piece_06_of_07,18,bt,HLK fail:Bluetooth - Initiate platform-level device reset,HLK,,,3,generic:fail;no_digits
+piece_06_of_07,3162,bt,HLK Bluetooth - Audio - Sink increase music volume with A2DP offload fail.,HLK,,,2,generic:fail
+piece_06_of_07,1552,bt,"Using Bluetooth earphones to watch videos, the earphone sound is intermittent and there is a current sound",Connectivity,,,3,generic:intermittent;no_digits
+piece_06_of_07,2354,software,- Killer 4.0 ISO/Over Clocking pop-up window doesnt have close X click on top right corner.,Killer,,,0,
+piece_06_of_07,3339,bt,Strange name of msi package appears when removing BT driver,Connectivity,,,1,no_digits
+piece_06_of_07,1452,bt,UUT report error message during run Winpvt S4/Reboot test when use bluetooth connect Wireless USB+Bluetooth Keyboard/Mouse.,YB/Lost,,,2,generic:error
+piece_06_of_07,3299,bt,"Connect BT headset to system, and then it will only show connected voice and the sound out put from PC speaker.",Connectivity,,,1,no_digits
+piece_06_of_07,56,bt,Intel BE201 BT device lost and USB YB(code 43) in device manager,YB/Lost,,,0,
+piece_06_of_07,4102,software,About Intel Killer software,Killer,,,4,short<=28c;few_words<=5;no_digits
+piece_06_of_07,409,bt,BT headset can not adjust audio volume,Connectivity,,,1,no_digits
+piece_06_of_07,1715,software,ICPS Manual Interface configuration does not work,ICPS,,,1,no_digits
+piece_06_of_07,1883,software,Sidebar icons cut off when resizing app window,Killer,,,1,no_digits
+piece_06_of_07,475,bt,PC scan phone slowly with 100% duty,Performance,,,0,
+piece_06_of_07,1407,bt,Pista ARL BE201 Wireless Headset pause button is no function via Bluetooth.,Connectivity,,,0,
+piece_06_of_07,1901,software,#NAME?,Killer,,,7,very_short<=18c;few_words<=3;no_digits
+piece_06_of_07,1774,bt,Teams call L and R earcup render not synced,Connectivity,,,1,no_digits
+piece_06_of_07,3719,software,The pdb debug file exists in the package UWD\Win64\Drivers\ICPSComponent\Symbols directory,ICPS,,,2,generic:bug
+piece_06_of_07,1097,bt,DUT 100% fail to bootup when BIOS BT config to PCIe (boot flow stuck at CNViBTConfig),System Hang,,,2,generic:fail
+piece_06_of_07,1324,bt,The mouse quickly paired failed,Connectivity,,,4,few_words<=5;generic:fail;no_digits
+piece_06_of_07,1706,software,Change VR Network Status Polling Time,Killer,,,3,generic:hang;no_digits
+piece_06_of_07,2024,software,#NAME?,Killer,,,7,very_short<=18c;few_words<=3;no_digits
+piece_06_of_07,2369,software,Audio quality indicator is not shown when user is in Teams call,Killer,,,1,no_digits

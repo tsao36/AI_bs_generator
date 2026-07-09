@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WiFi/BT Root Cause Analysis 2021-2026</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --ink: #13233a;
+      --muted: #5f728a;
+      --accent: #0f6cbd;
+      --line: #d7e0ea;
+      --head: #eaf2fb;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans TC", Arial, sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at top right, #dbeafe 0%, var(--bg) 50%);
+    }
+    .wrap {
+      max-width: 1400px;
+      margin: 24px auto;
+      padding: 0 16px 28px;
+    }
+    .hero {
+      background: linear-gradient(120deg, #0f6cbd, #1f8de0);
+      color: #fff;
+      border-radius: 14px;
+      padding: 20px 22px;
+      box-shadow: 0 10px 26px rgba(15,108,189,.25);
+    }
+    .hero h1 { margin: 0 0 6px; font-size: 26px; }
+    .hero p { margin: 0; opacity: .95; }
+    .kpi {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(180px, 1fr));
+      gap: 12px;
+      margin: 14px 0 0;
+    }
+    .kpi .card {
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+    .kpi .n { font-size: 24px; font-weight: 700; line-height: 1.1; }
+    .sec {
+      margin-top: 16px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px;
+      box-shadow: 0 6px 18px rgba(16,24,40,.06);
+    }
+    .sec h2 { margin: 4px 0 10px; font-size: 20px; }
+    .mono {
+      background: #f8fbff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 13px;
+      color: var(--muted);
+      overflow: auto;
+    }
+    .tbl-wrap { overflow: auto; }
+    table.tbl {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      min-width: 980px;
+    }
+    .tbl th, .tbl td {
+      border: 1px solid var(--line);
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+    .tbl th {
+      background: var(--head);
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    .foot { margin-top: 14px; color: var(--muted); font-size: 12px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>WiFi/BT Root Cause Analysis (2021-2026)</h1>
+      <p>? Jira Created Date ?????????????????? Category ??? Root Cause Type Top 6?</p>
+      <div class="kpi">
+        <div class="card"><div class="n">817</div><div>?????</div></div>
+        <div class="card"><div class="n">504</div><div>WiFi ??</div></div>
+        <div class="card"><div class="n">313</div><div>BT ??</div></div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <h2>????</h2>
+      <div class="mono"># WiFi/BT Root Cause Analysis (2021-2026)<br><br>- Input file: customer issue analysis/outputs/WiFi BT JIRA all time closed with SW FIX.csv<br>- Rows analyzed (WIFI+BT, year in 2021-2026): 817<br><br>## Generic Root Cause Description by Category<br><br>### WIFI<br>- Connectivity: 主因多落在 Firmware Config / Parameter / Tuning (70)、Insufficient Root-Cause Detail (68)、Power State / Reset / PLDR (44)。<br>- YB/Lost: 主因多落在 State Machine / Flow Handling (9)、Firmware Config / Parameter / Tuning (7)、Power State / Reset / PLDR (6)。<br>- BSOD: 主因多落在 Power State / Reset / PLDR (67)、Firmware Config / Parameter / Tuning (67)、Race / Timing / Interrupt Ordering (55)。<br>- Performance: 主因多落在 RF / Coexistence / Channel Behavior (13)、Firmware Config / Parameter / Tuning (10)、Race / Timing / Interrupt Ordering (6)。<br><br>### BT<br>- Connectivity: 主因多落在 Power State / Reset / PLDR (67)、Race / Timing / Interrupt Ordering (67)、Firmware Config / Parameter / Tuning (56)。<br>- YB/Lost: 主因多落在 Power State / Reset / PLDR (27)、Race / Timing / Interrupt Ordering (15)、State Machine / Flow Handling (15)。<br>- BSOD: 主因多落在 Power State / Reset / PLDR (15)、Driver-OS Interface / API / OID (10)、Firmware Config / Parameter / Tuning (9)。<br>- HLK: 主因多落在 Power State / Reset / PLDR (4)、Security / Signature / Validation (4)、Firmware Config / Parameter / Tuning (3)。<br><br>## Table Files<br><br>- WIFI by year table: customer issue analysis/outputs/root_cause_table_WIFI_by_year_2021_2026.csv<br>- BT by year table: customer issue analysis/outputs/root_cause_table_BT_by_year_2021_2026.csv<br>- Categorized row-level export: customer issue analysis/outputs/root_cause_categorized_rows_WIFI_BT_2021_2026.csv</div>
+    </section>
+
+    <section class="sec">
+      <h2>Year Coverage</h2>
+      <div class="tbl-wrap"><table border="1" class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>project</th>
+      <th>year</th>
+      <th>Issue Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>BT</td>
+      <td>2021</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <td>BT</td>
+      <td>2022</td>
+      <td>43</td>
+    </tr>
+    <tr>
+      <td>BT</td>
+      <td>2023</td>
+      <td>43</td>
+    </tr>
+    <tr>
+      <td>BT</td>
+      <td>2024</td>
+      <td>107</td>
+    </tr>
+    <tr>
+      <td>BT</td>
+      <td>2025</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <td>BT</td>
+      <td>2026</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>WIFI</td>
+      <td>2021</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <td>WIFI</td>
+      <td>2022</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <td>WIFI</td>
+      <td>2023</td>
+      <td>127</td>
+    </tr>
+    <tr>
+      <td>WIFI</td>
+      <td>2024</td>
+      <td>106</td>
+    </tr>
+    <tr>
+      <td>WIFI</td>
+      <td>2025</td>
+      <td>95</td>
+    </tr>
+    <tr>
+      <td>WIFI</td>
+      <td>2026</td>
+      <td>24</td>
+    </tr>
+  </tbody>
+</table></div>
+    </section>
+
+    <section class="sec">
+      <h2>WIFI ?? Root Cause Type ?</h2>
+      <div class="tbl-wrap"><table border="1" class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Year</th>
+      <th>Category</th>
+      <th>Root Cause Type 1</th>
+      <th>Root Cause Type 2</th>
+      <th>Root Cause Type 3</th>
+      <th>Root Cause Type 4</th>
+      <th>Root Cause Type 5</th>
+      <th>Root Cause Type 6</th>
+      <th>Issue Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2021</td>
+      <td>Connectivity</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>RF / Coexistence / Channel Behavior</td>
+      <td>State Machine / Flow Handling</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>YB/Lost</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>State Machine / Flow Handling</td>
+      <td>Memory / Pointer / Resource Handling</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>Security / Signature / Validation</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>BSOD</td>
+      <td>Driver-OS Interface / API / OID</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>State Machine / Flow Handling</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>Memory / Pointer / Resource Handling</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>Performance</td>
+      <td>RF / Coexistence / Channel Behavior</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>State Machine / Flow Handling</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>Security / Signature / Validation</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td>Connectivity</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>RF / Coexistence / Channel Behavior</td>
+      <td>State Machine / Flow Handling</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td>YB/Lost</td>
+      <td>State Machine / Flow Handling</td>
+      <td>RF / Coexistence / Channel Behavior</td>
+      <td>Tool / Test / Process Gap</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>NaN</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td>BSOD</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>RF / Coexistence / Channel Behavior</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>State Machine / Flow Handling</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>Memory / Pointer / Resource Handling</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td>Performance</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>State Machine / Flow Handling</td>
+      <td>RF / Coexistence / Channel Behavior</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>NaN</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>Connectivity</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>State Machine / Flow Handling</td>
+      <td>RF / Coexistence / Channel Behavior</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>55</td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>YB/Lost</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>State Machine / Flow Handling</td>
+      <td>Memory / Pointer / Resource Handling</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>BSOD</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>Memory / Pointer / Resource Handling</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>State Machine / Flow Handling</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>Performance</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>RF / Coexistence / Channel Behavior</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>Tool / Test / Process Gap</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>NaN</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>Connectivity</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>State Machine / Flow Handling</td>
+      <td>RF / Coexistence / Channel Behavior</td>
+      <td>39</td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>YB/Lost</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>State Machine / Flow Handling</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>BSOD</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>State Machine / Flow Handling</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>Memory / Pointer / Resource Handling</td>
+      <td>57</td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>Performance</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>State Machine / Flow Handling</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>RF / Coexistence / Channel Behavior</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>Connectivity</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>Tool / Test / Process Gap</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>State Machine / Flow Handling</td>
+      <td>RF / Coexistence / Channel Behavior</td>
+      <td>51</td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>YB/Lost</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Tool / Test / Process Gap</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>RF / Coexistence / Channel Behavior</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>BSOD</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>RF / Coexistence / Channel Behavior</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>State Machine / Flow Handling</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>Performance</td>
+      <td>RF / Coexistence / Channel Behavior</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>State Machine / Flow Handling</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>Tool / Test / Process Gap</td>
+      <td>Driver-OS Interface / API / OID</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>Connectivity</td>
+      <td>State Machine / Flow Handling</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>RF / Coexistence / Channel Behavior</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>YB/Lost</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>BSOD</td>
+      <td>State Machine / Flow Handling</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Memory / Pointer / Resource Handling</td>
+      <td>Driver-OS Interface / API / OID</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>Performance</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>RF / Coexistence / Channel Behavior</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table></div>
+    </section>
+
+    <section class="sec">
+      <h2>BT ?? Root Cause Type ?</h2>
+      <div class="tbl-wrap"><table border="1" class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Year</th>
+      <th>Category</th>
+      <th>Root Cause Type 1</th>
+      <th>Root Cause Type 2</th>
+      <th>Root Cause Type 3</th>
+      <th>Root Cause Type 4</th>
+      <th>Root Cause Type 5</th>
+      <th>Root Cause Type 6</th>
+      <th>Issue Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2021</td>
+      <td>Connectivity</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>RF / Coexistence / Channel Behavior</td>
+      <td>Memory / Pointer / Resource Handling</td>
+      <td>Driver-OS Interface / API / OID</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>YB/Lost</td>
+      <td>State Machine / Flow Handling</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Memory / Pointer / Resource Handling</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>NaN</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>BSOD</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>Driver-OS Interface / API / OID</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>NaN</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>HLK</td>
+      <td>Security / Signature / Validation</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td>Connectivity</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>RF / Coexistence / Channel Behavior</td>
+      <td>Driver-OS Interface / API / OID</td>
+      <td>39</td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td>YB/Lost</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td>BSOD</td>
+      <td>RF / Coexistence / Channel Behavior</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td>HLK</td>
+      <td>State Machine / Flow Handling</td>
+      <td>Memory / Pointer / Resource Handling</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Security / Signature / Validation</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>Connectivity</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>Security / Signature / Validation</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>Driver-OS Interface / API / OID</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>YB/Lost</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Security / Signature / Validation</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>Tool / Test / Process Gap</td>
+      <td>State Machine / Flow Handling</td>
+      <td>NaN</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>BSOD</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Driver-OS Interface / API / OID</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>HLK</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>Security / Signature / Validation</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>Connectivity</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>State Machine / Flow Handling</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>Memory / Pointer / Resource Handling</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>YB/Lost</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>State Machine / Flow Handling</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>Security / Signature / Validation</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>BSOD</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Driver-OS Interface / API / OID</td>
+      <td>Memory / Pointer / Resource Handling</td>
+      <td>State Machine / Flow Handling</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>HLK</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>Connectivity</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>State Machine / Flow Handling</td>
+      <td>Memory / Pointer / Resource Handling</td>
+      <td>55</td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>YB/Lost</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>Memory / Pointer / Resource Handling</td>
+      <td>State Machine / Flow Handling</td>
+      <td>Security / Signature / Validation</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>BSOD</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>State Machine / Flow Handling</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>Memory / Pointer / Resource Handling</td>
+      <td>Driver-OS Interface / API / OID</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>HLK</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>Driver-OS Interface / API / OID</td>
+      <td>Security / Signature / Validation</td>
+      <td>NaN</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>Connectivity</td>
+      <td>State Machine / Flow Handling</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>Insufficient Root-Cause Detail</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>Security / Signature / Validation</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>YB/Lost</td>
+      <td>Race / Timing / Interrupt Ordering</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Security / Signature / Validation</td>
+      <td>State Machine / Flow Handling</td>
+      <td>Memory / Pointer / Resource Handling</td>
+      <td>NaN</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>BSOD</td>
+      <td>State Machine / Flow Handling</td>
+      <td>Memory / Pointer / Resource Handling</td>
+      <td>Driver-OS Interface / API / OID</td>
+      <td>Power State / Reset / PLDR</td>
+      <td>Firmware Config / Parameter / Tuning</td>
+      <td>NaN</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>HLK</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></div>
+    </section>
+
+    <div class="foot">Generated from: customer issue analysis\outputs\root_cause_table_WIFI_by_year_2021_2026.csv / customer issue analysis\outputs\root_cause_table_BT_by_year_2021_2026.csv</div>
+  </div>
+</body>
+</html>

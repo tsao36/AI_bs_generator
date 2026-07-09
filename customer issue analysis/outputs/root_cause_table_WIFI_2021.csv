@@ -1,0 +1,5 @@
+﻿Category,Root Cause Type 1,Root Cause Type 2,Root Cause Type 3,Root Cause Type 4,Root Cause Type 5,Root Cause Type 6,Issue Count
+Connectivity,Insufficient Root-Cause Detail,State Machine / Flow Handling,RF / Coexistence / Channel Behavior,Race / Timing / Interrupt Ordering,Firmware Config / Parameter / Tuning,Memory / Pointer / Resource Handling,65
+YB/Lost,,,,,,,0
+BSOD,Power State / Reset / PLDR,Memory / Pointer / Resource Handling,State Machine / Flow Handling,Driver-OS Interface / API / OID,Race / Timing / Interrupt Ordering,,6
+Performance,Race / Timing / Interrupt Ordering,Power State / Reset / PLDR,Insufficient Root-Cause Detail,RF / Coexistence / Channel Behavior,State Machine / Flow Handling,Memory / Pointer / Resource Handling,5

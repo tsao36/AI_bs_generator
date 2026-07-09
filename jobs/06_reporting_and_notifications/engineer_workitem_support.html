@@ -1,0 +1,1281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engineer-Work Item Support Map</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-1: #edf3fb;
+      --bg-2: #ffffff;
+      --ink-1: #0c1830;
+      --ink-2: #2f4564;
+      --line: #c7d5e6;
+      --accent: #007fb8;
+      --accent-2: #005f98;
+      --ok: #0f8a4b;
+      --shadow: 0 20px 50px rgba(8, 26, 52, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+      color: var(--ink-1);
+      background:
+        radial-gradient(circle at 10% -10%, #b8e8ff 0%, transparent 34%),
+        radial-gradient(circle at 100% 0%, #c8f2d9 0%, transparent 30%),
+        linear-gradient(180deg, #f3f9ff 0%, var(--bg-1) 70%);
+    }
+
+    .wrap {
+      max-width: min(1760px, calc(100vw - 20px));
+      margin: 0 auto;
+      padding: clamp(12px, 2vw, 28px) clamp(10px, 1.5vw, 18px) 28px;
+    }
+
+    .hero {
+      background: linear-gradient(120deg, #014a86 0%, #007fb8 58%, #00a7b9 100%);
+      color: #f4fbff;
+      border-radius: 20px;
+      padding: 24px 24px 20px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      right: -120px;
+      top: -120px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .title {
+      margin: 0;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 32px;
+      letter-spacing: 0.2px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .subtitle {
+      margin: 8px 0 0;
+      font-size: 14px;
+      opacity: 0.94;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(120px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 14px;
+      padding: 10px 12px;
+      backdrop-filter: blur(2px);
+    }
+
+    .stat .k {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .stat .l {
+      font-size: 12px;
+      margin-top: 4px;
+      opacity: 0.92;
+    }
+
+    .panel {
+      margin-top: 16px;
+      background: var(--bg-2);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      border: 1px solid #d4e2f1;
+      padding: 14px;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .toolbar h2 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink-1);
+      letter-spacing: 0.1px;
+    }
+
+    .toolbar select {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink-1);
+      border-radius: 10px;
+      padding: 7px 10px;
+      font: inherit;
+      font-size: 13px;
+      min-width: 220px;
+    }
+
+    .editor {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #f2f9ff;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .editor p {
+      margin: 0 0 8px;
+      font-size: 12px;
+      color: #39526f;
+    }
+
+    .editor-table-wrap {
+      max-height: 320px;
+    }
+
+    #editableMatrix {
+      min-width: 980px;
+    }
+
+    #editableMatrix th,
+    #editableMatrix td {
+      min-width: 92px;
+      white-space: nowrap;
+    }
+
+    #editableMatrix .editable {
+      background: #ffffff;
+      outline: none;
+      cursor: text;
+    }
+
+    #editableMatrix .editable:focus {
+      box-shadow: inset 0 0 0 2px #5bbef0;
+      background: #eef8ff;
+    }
+
+    .editor-actions {
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .paste-input {
+      width: 100%;
+      min-height: 120px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 8px;
+      font-size: 12px;
+      font-family: Consolas, "Courier New", monospace;
+      background: #fff;
+      color: var(--ink-1);
+      resize: vertical;
+    }
+
+    .btn {
+      border: 1px solid #9bbddd;
+      border-radius: 10px;
+      padding: 6px 10px;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      background: #ffffff;
+      color: #123c66;
+      cursor: pointer;
+    }
+
+    .btn.primary {
+      border-color: #007fb8;
+      background: #007fb8;
+      color: #ffffff;
+    }
+
+    #editorStatus {
+      font-size: 12px;
+      color: #35506d;
+    }
+
+    #lastSavedInfo {
+      font-size: 12px;
+      color: #5b6f86;
+    }
+
+    .debug-box {
+      margin-top: 8px;
+      border: 1px dashed #b6cbe0;
+      border-radius: 10px;
+      background: #f8fbff;
+      padding: 8px;
+      font-size: 12px;
+      color: #2e4d6c;
+    }
+
+    #debugMeta {
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    #debugList {
+      margin: 0;
+      padding-left: 16px;
+      max-height: 160px;
+      overflow: auto;
+      line-height: 1.45;
+    }
+
+    #relationBoard {
+      width: 100%;
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 260px;
+      gap: 8px;
+      align-items: start;
+    }
+
+    .column {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #f4f9ff;
+      padding: 8px;
+      min-height: 0;
+    }
+
+    .column h3 {
+      margin: 2px 2px 8px;
+      font-size: 12px;
+      color: #21415f;
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
+    }
+
+    .stack {
+      display: grid;
+      gap: 0;
+    }
+
+    .task-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .node-card {
+      border: 1px solid #d8e5f2;
+      background: #ffffff;
+      border-radius: 0;
+      padding: 8px 10px;
+      margin: 0;
+      cursor: grab;
+      user-select: none;
+    }
+
+    .node-card + .node-card {
+      border-top: 0;
+    }
+
+    .node-card:active {
+      cursor: grabbing;
+    }
+
+    .task-card {
+      min-height: 110px;
+      max-height: 138px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      background: linear-gradient(120deg, #e0f2ff 0%, #ffffff 100%);
+      overflow: auto;
+      transition: opacity 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .task-card.theme-ivg {
+      border-color: #23a455;
+      background: linear-gradient(120deg, #d7f6e2 0%, #ffffff 100%);
+    }
+
+    .task-card.theme-sha {
+      border-color: #1f7fda;
+      background: linear-gradient(120deg, #d9ebff 0%, #ffffff 100%);
+    }
+
+    .task-card.theme-icps-killer {
+      border-color: #4a74d1;
+      background: linear-gradient(120deg, #dfe8ff 0%, #ffffff 100%);
+    }
+
+    .task-card.theme-thunderbolt {
+      border-color: #ff9c2b;
+      background: linear-gradient(120deg, #ffe8ca 0%, #ffffff 100%);
+    }
+
+    .task-card.theme-cce {
+      border-color: #8f6bff;
+      background: linear-gradient(120deg, #ece2ff 0%, #ffffff 100%);
+    }
+
+    .task-card.dim {
+      opacity: 0.3;
+    }
+
+    .task-card.highlight {
+      opacity: 1;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 16px rgba(18, 58, 108, 0.22);
+    }
+
+    .task-card.active {
+      border-color: #007fb8;
+      box-shadow: inset 0 0 0 1px #007fb8;
+      background: linear-gradient(120deg, #cfeaff 0%, #f1f9ff 100%);
+    }
+
+    .eng-card {
+      min-height: 58px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .name-row {
+      font-weight: 600;
+      color: #132b44;
+      font-size: 13px;
+      line-height: 1.2;
+      margin-bottom: 5px;
+    }
+
+    .meta-row {
+      font-size: 11px;
+      color: #5c728e;
+    }
+
+    .chip-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pct-chip {
+      display: inline-block;
+      border: 1px solid #b7d1ea;
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 11px;
+      color: #1a4974;
+      background: #ebf6ff;
+      white-space: nowrap;
+    }
+
+    .pct-chip.on {
+      border-color: #8ad7aa;
+      color: #0f6839;
+      background: #dff8ea;
+    }
+
+    .task-eng-list {
+      margin-top: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .eng-pill {
+      display: inline-block;
+      border: 1px solid #b5d1eb;
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 11px;
+      color: #124168;
+      background: #eaf5ff;
+      white-space: nowrap;
+      transition: transform 0.12s ease;
+    }
+
+    .eng-pill[data-engineer] {
+      cursor: pointer;
+    }
+
+    .eng-pill[data-engineer]:hover {
+      transform: translateY(-1px);
+    }
+
+    .eng-pill.person-active {
+      border-color: #0f74e2;
+      background: #cae4ff;
+      color: #0c3d7a;
+      box-shadow: 0 0 0 1px #0f74e2;
+    }
+
+    .eng-pill.person-dim {
+      opacity: 0.35;
+    }
+
+    .eng-pill.fund-wcs {
+      border-color: #23a455;
+      background: #d7f6e2;
+      color: #0d5c32;
+    }
+
+    .eng-pill.fund-thunderbolt {
+      border-color: #ff9c2b;
+      background: #ffe8ca;
+      color: #8a4b00;
+    }
+
+    .eng-pill.fund-cce {
+      border-color: #8f6bff;
+      background: #ece2ff;
+      color: #4e2a99;
+    }
+
+    .legend-box {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #f4f9ff;
+      padding: 10px;
+    }
+
+    .legend-box h3 {
+      margin: 2px 2px 10px;
+      font-size: 12px;
+      color: #21415f;
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
+    }
+
+    .legend-item {
+      margin-bottom: 10px;
+      font-size: 12px;
+      color: #2f4864;
+    }
+
+    .legend-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .legend-item .label {
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .table-wrap {
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 980px;
+      background: #fff;
+    }
+
+    thead th {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: #dcecff;
+      color: #1f3552;
+      text-align: right;
+      padding: 10px 8px;
+      border-bottom: 1px solid var(--line);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    thead th:first-child,
+    tbody td:first-child {
+      text-align: left;
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      background: #ecf5ff;
+    }
+
+    tbody td {
+      padding: 8px;
+      border-bottom: 1px solid #edf2f7;
+      text-align: right;
+      font-size: 12px;
+      color: var(--ink-2);
+    }
+
+    tbody tr:hover td {
+      background: #e8f4ff;
+      color: var(--ink-1);
+    }
+
+    .chip {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      border: 1px solid #9fdbba;
+      color: var(--ok);
+      background: #dff6e8;
+    }
+
+    @media (max-width: 900px) {
+      .title { font-size: 24px; }
+      .stats { grid-template-columns: repeat(2, minmax(100px, 1fr)); }
+      .board { grid-template-columns: 1fr; }
+      .column { min-height: 280px; }
+      .task-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 640px) {
+      .task-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1 class="title">Engineer-Work Item Support Graph</h1>
+      <p class="subtitle">Professional relationship view of workload capability mix based on your editable baseline mapping table.</p>
+      <div class="stats" id="stats"></div>
+    </section>
+
+    <section class="panel">
+      <div class="toolbar">
+        <h2>Relationship Blocks (Equal Task Size)</h2>
+        <div>
+          <select id="engineerFilter">
+            <option value="ALL">All Engineers</option>
+          </select>
+        </div>
+      </div>
+      <div id="relationBoard"></div>
+      <div class="editor">
+        <p>Manual mapping table: directly edit cells below. First column is worker name; other columns are task percentages (0-100, optional %).</p>
+        <div class="table-wrap editor-table-wrap">
+          <table id="editableMatrix"></table>
+        </div>
+        <div class="editor-actions">
+          <button class="btn" id="loadPastedAvgBtn" type="button">Load From Pasted Text</button>
+          <button class="btn" id="addWorkerBtn" type="button">Add Worker Row</button>
+          <button class="btn" id="addTaskBtn" type="button">Add Task Column</button>
+          <button class="btn" id="resetTableBtn" type="button">Reset To Current Data</button>
+          <button class="btn" id="saveTableBtn" type="button">Save Table</button>
+          <button class="btn primary" id="applyTableBtn" type="button">Regenerate From Table</button>
+          <span id="editorStatus">Ready</span>
+          <span id="lastSavedInfo">Last saved: not yet</span>
+        </div>
+        <textarea id="avgViewPasteInput" class="paste-input" placeholder="Paste rows copied from AverageView tab here (tab-separated)."></textarea>
+        <div class="debug-box" id="avgViewDebugBox">
+          <div id="debugMeta">AverageView debug: using in-page baseline (not loaded from Excel yet).</div>
+          <ul id="debugList"></ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    let workItems = [
+      "TPE Issue Reproduction", "WiFi Sensing", "AI Triage Development", "UX lab validation", "CFE role",
+      "Killer", "ICPS", "Customer Validation", "Power consumption", "Demo",
+      "Layout review", "Thunderbolt share", "SHA Issue Reproduction", "Validation automation", "IVG validation"
+    ];
+
+    let baselineEntries = [
+      { name: "Alex", alloc: { Steven: 33, Wesley: 65 } },
+      { name: "Angus", alloc: { Matt: 14, Steven: 86 } },
+      { name: "Ariel", alloc: { Richard: 40, "Sam.Hsu": 60 } },
+      { name: "Ben", alloc: { Matt: 30, Steven: 40, Wesley: 20, others: 10 } },
+      { name: "Dean", alloc: { "Frank.L": 80, Walter: 10, others: 10 } },
+      { name: "Ernie", alloc: { KJ: 45, Steven: 40, Wesley: 15 } },
+      { name: "Hannah", alloc: { "Frank.Y": 20, others: 80 } },
+      { name: "Henry", alloc: { Customer: 50, KJ: 20, Walter: 30 } },
+      { name: "Jack", alloc: { Customer: 65, "Frank.Y": 5, KJ: 20, Jonathan: 10 } },
+      { name: "Kevin", alloc: { IVG: 60, KC: 10, Nicky: 20, Walter: 10 } },
+      { name: "Lydia", alloc: { Charles: 5, Customer: 15, KJ: 80 } },
+      { name: "Margo", alloc: { Charles: 100 } },
+      { name: "Robin", alloc: { Wesley: 50, others: 50 } },
+      { name: "Steve", alloc: { IVG: 100 } },
+      { name: "Tony", alloc: { Brenton: 10, Jonathan: 15, KC: 60, Wesley: 15 } },
+      { name: "Max", alloc: { "Layout review": 100 } },
+      { name: "Leon", alloc: { "Thunderbolt share": 100 } },
+      { name: "Minjie", alloc: { "SHA Issue Reproduction": 100 } }
+    ];
+
+    function mapSourceToTask(rowName, sourceCol) {
+      // Special rules provided by user.
+      if (rowName === "Henry" && sourceCol === "Walter") return "Power consumption";
+      if (rowName === "Tony" && sourceCol === "Jonathan") return "Demo";
+      if (rowName === "Jack" && sourceCol === "Jonathan") return "Demo";
+      if (rowName === "Ben" && sourceCol === "Steven") return "Validation automation";
+      if (sourceCol === "Layout review") return "Layout review";
+      if (sourceCol === "Thunderbolt share") return "Thunderbolt share";
+      if (sourceCol === "SHA Issue Reproduction") return "SHA Issue Reproduction";
+
+      if (sourceCol === "Charles") return "WiFi Sensing";
+      if (sourceCol === "KJ") return "AI Triage Development";
+      if (sourceCol === "Steven") return "UX lab validation";
+      if (sourceCol === "Customer") return "CFE role";
+      if (sourceCol === "Richard") return "Killer";
+      if (sourceCol === "Sam" || sourceCol === "Sam.Hsu") return "ICPS";
+      if (sourceCol === "Walter" || sourceCol === "KC" || sourceCol === "Nicky") return "Customer Validation";
+      if (sourceCol === "IVG") return "IVG validation";
+
+      return "TPE Issue Reproduction";
+    }
+
+    function buildRowsFromBaseline() {
+      return baselineEntries.map((row) => {
+        const taskTotals = Object.fromEntries(workItems.map((t) => [t, 0]));
+        Object.entries(row.alloc).forEach(([src, v]) => {
+          if (!v) return;
+          const task = mapSourceToTask(row.name, src);
+          taskTotals[task] += v;
+        });
+        return { name: row.name, vals: workItems.map((t) => taskTotals[t]) };
+      });
+    }
+
+    let rows = buildRowsFromBaseline();
+    const filterEl = document.getElementById("engineerFilter");
+    const relationBoardEl = document.getElementById("relationBoard");
+    const editableMatrixEl = document.getElementById("editableMatrix");
+    const applyTableBtn = document.getElementById("applyTableBtn");
+    const resetTableBtn = document.getElementById("resetTableBtn");
+    const saveTableBtn = document.getElementById("saveTableBtn");
+    const addWorkerBtn = document.getElementById("addWorkerBtn");
+    const addTaskBtn = document.getElementById("addTaskBtn");
+    const avgViewPasteInputEl = document.getElementById("avgViewPasteInput");
+    const loadPastedAvgBtn = document.getElementById("loadPastedAvgBtn");
+    const editorStatusEl = document.getElementById("editorStatus");
+    const lastSavedInfoEl = document.getElementById("lastSavedInfo");
+    const debugMetaEl = document.getElementById("debugMeta");
+    const debugListEl = document.getElementById("debugList");
+    let selectedTask = workItems[0];
+
+    const TABLE_SNAPSHOT_KEY = "engineerWorkitemTableSnapshot.v1";
+
+    const palette = [
+      "#0b7fab", "#0f4c81", "#1e9eb7", "#2f6faa", "#1b8a5a",
+      "#4b76cc", "#bb6a18", "#8a5ecf", "#2d9d91", "#9c4f6e"
+    ];
+
+    function fillStats() {
+      const activeCells = rows.reduce((acc, r) => acc + r.vals.filter(v => v > 0).length, 0);
+      const dominantMix = rows.filter(r => Math.max(...r.vals) >= 80).length;
+      const totalFlow = rows.reduce((acc, r) => acc + r.vals.reduce((a, b) => a + b, 0), 0);
+
+      const stats = [
+        { k: rows.length, l: "Engineers" },
+        { k: workItems.length, l: "Work Items" },
+        { k: activeCells, l: "Active Support Links" },
+        { k: dominantMix, l: "Highly Specialized (>=80%)" }
+      ];
+
+      const host = document.getElementById("stats");
+      host.innerHTML = stats
+        .map(s => `<div class=\"stat\"><div class=\"k\">${s.k}</div><div class=\"l\">${s.l}</div></div>`)
+        .join("");
+
+      console.log("Total flow:", totalFlow);
+    }
+
+    function buildFilter() {
+      filterEl.innerHTML = "<option value=\"ALL\">All Engineers</option>";
+      rows.forEach(r => {
+        const opt = document.createElement("option");
+        opt.value = r.name;
+        opt.textContent = r.name;
+        filterEl.appendChild(opt);
+      });
+    }
+
+    function buildTable() {
+      const table = document.getElementById("matrix");
+      if (!table) return;
+      const thead = `
+        <thead>
+          <tr>
+            <th>Name</th>
+            ${workItems.map(w => `<th>${w}</th>`).join("")}
+          </tr>
+        </thead>`;
+
+      const tbody = `
+        <tbody>
+          ${rows.map(r => `
+            <tr>
+              <td><strong>${r.name}</strong></td>
+              ${r.vals.map(v => `<td>${v}%</td>`).join("")}
+            </tr>
+          `).join("")}
+        </tbody>`;
+
+      table.innerHTML = thead + tbody;
+    }
+
+    function parsePct(raw) {
+      const cleaned = String(raw || "").trim().replace(/%/g, "");
+      if (!cleaned) return 0;
+      const num = Number(cleaned);
+      if (!Number.isFinite(num) || num < 0 || num > 100) {
+        throw new Error(`Invalid percent value: ${raw}`);
+      }
+      return num;
+    }
+
+    function normalizeHeaderText(v) {
+      return String(v || "").trim().toLowerCase();
+    }
+
+    function parsePercentCell(v) {
+      if (v === null || v === undefined || v === "") return 0;
+      if (typeof v === "number") {
+        if (v <= 1) return Math.round(v * 10000) / 100;
+        return Math.round(v * 100) / 100;
+      }
+      const txt = String(v).trim();
+      if (!txt) return 0;
+      const m = txt.match(/^(-?\d+(?:\.\d+)?)\s*%?$/);
+      if (!m) return 0;
+      let num = Number(m[1]);
+      if (!Number.isFinite(num)) return 0;
+      if (num <= 1 && txt.includes(".")) num = num * 100;
+      return Math.round(num * 100) / 100;
+    }
+
+    function shouldSkipAverageViewRowName(name) {
+      const normalized = String(name || "")
+        .replace(/\*/g, "")
+        .trim()
+        .toLowerCase();
+      return normalized === "total cw utilization by cfe";
+    }
+
+    function parseAverageViewBaselineGrid(grid) {
+      if (!Array.isArray(grid) || !grid.length) {
+        throw new Error("AverageView sheet is empty.");
+      }
+
+      const isNameHeader = (x) => {
+        const t = normalizeHeaderText(x);
+        return t === "name" || t === "engineer" || t === "worker" || t === "owner";
+      };
+
+      let headerRowIdx = -1;
+      for (let i = 0; i < grid.length; i++) {
+        const row = grid[i] || [];
+        const nonEmpty = row.filter((c) => String(c || "").trim() !== "").length;
+        if (nonEmpty < 2) continue;
+        if (row.some((c) => isNameHeader(c))) {
+          headerRowIdx = i;
+          break;
+        }
+      }
+      if (headerRowIdx < 0) {
+        headerRowIdx = grid.findIndex((r) => (r || []).filter((c) => String(c || "").trim() !== "").length >= 3);
+      }
+      if (headerRowIdx < 0) {
+        throw new Error("Cannot locate header row in AverageView.");
+      }
+
+      const headers = (grid[headerRowIdx] || []).map((x) => String(x || "").trim());
+      let nameCol = headers.findIndex((h) => isNameHeader(h));
+      if (nameCol < 0) nameCol = 0;
+
+      const skipHeader = (h) => {
+        const t = normalizeHeaderText(h);
+        return (
+          !t ||
+          t === "no" ||
+          t === "no." ||
+          t === "technology" ||
+          t === "tech" ||
+          t === "cw" ||
+          t === "total" ||
+          t === "avg" ||
+          t === "average" ||
+          t.includes("allocation") ||
+          t.includes("utilization") ||
+          t.includes("remark") ||
+          t.includes("note")
+        );
+      };
+
+      const srcCols = headers
+        .map((h, idx) => ({ h, idx }))
+        .filter((x) => x.idx !== nameCol && !skipHeader(x.h));
+
+      if (!srcCols.length) {
+        throw new Error("No source columns found in AverageView header.");
+      }
+
+      const parsed = [];
+      for (let r = headerRowIdx + 1; r < grid.length; r++) {
+        const row = grid[r] || [];
+        const name = String(row[nameCol] || "").trim();
+        if (!name) continue;
+        if (shouldSkipAverageViewRowName(name)) continue;
+
+        const alloc = {};
+        srcCols.forEach(({ h, idx }) => {
+          const pct = parsePercentCell(row[idx]);
+          if (pct > 0) alloc[h] = pct;
+        });
+        parsed.push({ name, alloc });
+      }
+
+      if (!parsed.length) {
+        throw new Error("No engineer rows found in AverageView.");
+      }
+      return parsed;
+    }
+
+    function parseAverageViewTextGrid(rawText) {
+      const text = String(rawText || "").replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+      const lines = text.split("\n").filter((ln) => ln.trim() !== "");
+      if (!lines.length) {
+        throw new Error("Pasted text is empty.");
+      }
+      const rows = lines.map((ln) => ln.split("\t").map((c) => String(c || "").trim()));
+      return rows;
+    }
+
+    async function loadAverageViewFromPastedText() {
+      const raw = avgViewPasteInputEl ? avgViewPasteInputEl.value : "";
+      const grid = parseAverageViewTextGrid(raw);
+      baselineEntries = parseAverageViewBaselineGrid(grid);
+      rows = buildRowsFromBaseline();
+      selectedTask = workItems[0] || "";
+      refreshAll();
+
+      const angus = baselineEntries.find((r) => normalizeHeaderText(r.name) === "angus");
+      const angusMatt = angus && angus.alloc ? (angus.alloc.Matt || angus.alloc.matt || 0) : 0;
+      const angusSteven = angus && angus.alloc ? (angus.alloc.Steven || angus.alloc.steven || 0) : 0;
+      setEditorStatus(
+        `Loaded ${baselineEntries.length} engineers from pasted text. Angus parsed: Matt=${angusMatt}% Steven=${angusSteven}%.`
+      );
+      renderAverageViewDebug(
+        `AverageView debug: source=pasted text; parsed_rows=${baselineEntries.length}`,
+        baselineEntries
+      );
+      saveTableSnapshot("pasted_text");
+    }
+
+    function buildEditableTable() {
+      const thead = `
+        <thead>
+          <tr>
+            <th contenteditable="true" class="editable">Name</th>
+            ${workItems.map((w) => `<th contenteditable="true" class="editable task-header">${w}</th>`).join("")}
+          </tr>
+        </thead>`;
+
+      const tbody = `
+        <tbody>
+          ${rows.map((r) => `
+            <tr>
+              <td contenteditable="true" class="editable worker-cell"><strong>${r.name}</strong></td>
+              ${r.vals.map((v) => `<td contenteditable="true" class="editable pct-cell">${v}%</td>`).join("")}
+            </tr>
+          `).join("")}
+        </tbody>`;
+
+      editableMatrixEl.innerHTML = thead + tbody;
+    }
+
+    function parseTableData() {
+      const headerCells = Array.from(editableMatrixEl.querySelectorAll("thead th.task-header"));
+      const parsedWorkItems = headerCells
+        .map((cell) => cell.textContent.trim())
+        .filter(Boolean);
+
+      if (!parsedWorkItems.length) {
+        throw new Error("Please keep at least one task column.");
+      }
+
+      const bodyRows = Array.from(editableMatrixEl.querySelectorAll("tbody tr"));
+      if (!bodyRows.length) {
+        throw new Error("Please keep at least one worker row.");
+      }
+
+      const parsedRows = bodyRows.map((tr, idx) => {
+        const workerCell = tr.querySelector(".worker-cell");
+        const name = (workerCell?.textContent || "").trim();
+        if (!name) {
+          throw new Error(`Worker name is empty at row ${idx + 1}.`);
+        }
+
+        const pctCells = Array.from(tr.querySelectorAll(".pct-cell"));
+        const vals = parsedWorkItems.map((_, colIdx) => parsePct((pctCells[colIdx]?.textContent || "0").trim()));
+        return { name, vals };
+      });
+
+      return { parsedWorkItems, parsedRows };
+    }
+
+    function setEditorStatus(text, isError = false) {
+      editorStatusEl.textContent = text;
+      editorStatusEl.style.color = isError ? "#b42318" : "#35506d";
+    }
+
+    function renderAverageViewDebug(metaText, entries) {
+      if (debugMetaEl) {
+        debugMetaEl.textContent = metaText || "AverageView debug";
+      }
+      if (!debugListEl) return;
+
+      const top = (entries || []).slice(0, 8);
+      if (!top.length) {
+        debugListEl.innerHTML = "<li>(no parsed rows)</li>";
+        return;
+      }
+
+      debugListEl.innerHTML = top.map((row) => {
+        const parts = Object.entries(row.alloc || {})
+          .map(([k, v]) => `${k}=${v}%`)
+          .join(", ");
+        return `<li><b>${row.name}</b>: ${parts || "(empty)"}</li>`;
+      }).join("");
+    }
+
+    function buildAllocEntriesFromCurrentRows() {
+      return rows.map((r) => {
+        const alloc = {};
+        workItems.forEach((task, idx) => {
+          const v = Number(r.vals[idx] || 0);
+          if (Number.isFinite(v) && v > 0) alloc[task] = v;
+        });
+        return { name: r.name, alloc };
+      });
+    }
+
+    function renderLastSavedInfo(savedAtIso) {
+      if (!lastSavedInfoEl) return;
+      if (!savedAtIso) {
+        lastSavedInfoEl.textContent = "Last saved: not yet";
+        return;
+      }
+      const d = new Date(savedAtIso);
+      if (Number.isNaN(d.getTime())) {
+        lastSavedInfoEl.textContent = "Last saved: unknown";
+        return;
+      }
+      const stamp = d.toLocaleString();
+      lastSavedInfoEl.textContent = `Last saved: ${stamp}`;
+    }
+
+    function saveTableSnapshot(reason = "") {
+      try {
+        const savedAt = new Date().toISOString();
+        const payload = {
+          version: 1,
+          savedAt,
+          reason,
+          selectedTask,
+          workItems,
+          rows,
+        };
+        localStorage.setItem(TABLE_SNAPSHOT_KEY, JSON.stringify(payload));
+        renderLastSavedInfo(savedAt);
+        return true;
+      } catch (err) {
+        console.warn("Failed to save table snapshot:", err);
+        return false;
+      }
+    }
+
+    function restoreTableSnapshot() {
+      try {
+        const raw = localStorage.getItem(TABLE_SNAPSHOT_KEY);
+        if (!raw) return false;
+
+        const payload = JSON.parse(raw);
+        if (!payload || !Array.isArray(payload.workItems) || !Array.isArray(payload.rows)) {
+          return false;
+        }
+
+        workItems = payload.workItems.map((x) => String(x || "").trim()).filter(Boolean);
+        rows = payload.rows
+          .map((r) => ({
+            name: String((r && r.name) || "").trim(),
+            vals: Array.isArray(r && r.vals) ? r.vals.map((v) => Number(v) || 0) : [],
+          }))
+          .filter((r) => r.name);
+
+        if (!workItems.length || !rows.length) return false;
+
+        rows = rows.map((r) => {
+          const vals = workItems.map((_, idx) => Number(r.vals[idx] || 0));
+          return { name: r.name, vals };
+        });
+
+        selectedTask = String(payload.selectedTask || "").trim();
+        refreshAll();
+  renderLastSavedInfo(payload.savedAt);
+        setEditorStatus(`Restored last saved table (${rows.length} workers, ${workItems.length} tasks).`);
+        renderAverageViewDebug("AverageView debug: restored from last saved table.", buildAllocEntriesFromCurrentRows());
+        return true;
+      } catch (err) {
+        console.warn("Failed to restore table snapshot:", err);
+        return false;
+      }
+    }
+
+    function refreshAll() {
+      if (!workItems.includes(selectedTask)) {
+        selectedTask = workItems[0] || "";
+      }
+      buildFilter();
+      fillStats();
+      buildTable();
+      renderRelationBlocks(filterEl.value);
+      buildEditableTable();
+    }
+
+    function enableStackDrag(stackId, itemClass) {
+      const stack = document.getElementById(stackId);
+      if (!stack) return;
+
+      let dragging = null;
+
+      stack.querySelectorAll(itemClass).forEach((el) => {
+        el.setAttribute("draggable", "true");
+
+        el.addEventListener("dragstart", (e) => {
+          dragging = el;
+          e.dataTransfer.effectAllowed = "move";
+          e.dataTransfer.setData("text/plain", el.dataset.key || "");
+        });
+
+        el.addEventListener("dragover", (e) => {
+          e.preventDefault();
+          e.dataTransfer.dropEffect = "move";
+        });
+
+        el.addEventListener("drop", (e) => {
+          e.preventDefault();
+          if (!dragging || dragging === el) return;
+          const rect = el.getBoundingClientRect();
+          const after = e.clientY > rect.top + rect.height / 2;
+          if (after) {
+            el.after(dragging);
+          } else {
+            el.before(dragging);
+          }
+        });
+      });
+    }
+
+    function renderRelationBlocks(engineer = "ALL") {
+      const useRows = engineer === "ALL" ? rows : rows.filter(r => r.name === engineer);
+
+      const wcsFundedEngineers = new Set(["Margo", "Kevin", "Steve"]);
+      const thunderboltFundedEngineers = new Set(["Leon"]);
+      const allEngineerNames = Array.from(new Set(rows.map((r) => r.name)));
+      const wcsFundedList = allEngineerNames.filter((n) => wcsFundedEngineers.has(n));
+      const thunderboltFundedList = allEngineerNames.filter((n) => thunderboltFundedEngineers.has(n));
+      const cceFundedList = allEngineerNames.filter((n) => !wcsFundedEngineers.has(n) && !thunderboltFundedEngineers.has(n));
+
+      function buildLegendPills(names, cls) {
+        if (!names.length) return `<span class="eng-pill ${cls}">None</span>`;
+        return names.map((name) => `<span class="eng-pill ${cls}" data-engineer="${name}">${name}</span>`).join("");
+      }
+
+      function fundingClass(name) {
+        if (wcsFundedEngineers.has(name)) return "fund-wcs";
+        if (thunderboltFundedEngineers.has(name)) return "fund-thunderbolt";
+        return "fund-cce";
+      }
+
+      function taskThemeClass(taskName) {
+        if (taskName === "IVG validation") return "theme-ivg";
+        if (taskName === "SHA Issue Reproduction") return "theme-sha";
+        if (taskName === "ICPS" || taskName === "Killer") return "theme-icps-killer";
+        if (taskName === "Thunderbolt share") return "theme-thunderbolt";
+        return "theme-cce";
+      }
+
+      const taskCards = workItems.map((task, i) => {
+        const assignments = useRows
+          .map((r) => ({ name: r.name, pct: r.vals[i] || 0 }))
+          .filter((x) => x.pct > 0)
+          .sort((a, b) => b.pct - a.pct);
+
+        const engineerNames = assignments.map((x) => x.name).join("|");
+        const chips = assignments.length
+          ? assignments.map((x) => `<span class="eng-pill ${fundingClass(x.name)}" data-engineer="${x.name}">${x.name}: ${x.pct}%</span>`).join("")
+          : `<span class="eng-pill">No engineer assigned</span>`;
+
+        const themeClass = taskThemeClass(task);
+
+        return `
+          <div class="node-card task-card ${themeClass}" data-key="${task}" data-task="${task}" data-engineers="${engineerNames}">
+            <div class="name-row">${task}</div>
+            <div class="task-eng-list">${chips}</div>
+          </div>
+        `;
+      }).join("");
+
+      relationBoardEl.innerHTML = `
+        <div class="board">
+          <div class="column">
+            <h3>Tasks with Engineers</h3>
+            <div class="task-grid" id="taskStack">${taskCards}</div>
+          </div>
+          <aside class="legend-box">
+            <h3>Funding Legend</h3>
+            <div class="legend-item">
+              <div class="label">WCS funded (${wcsFundedList.length})</div>
+              ${buildLegendPills(wcsFundedList, "fund-wcs")}
+            </div>
+            <div class="legend-item">
+              <div class="label">Thunderbolt funded (${thunderboltFundedList.length})</div>
+              ${buildLegendPills(thunderboltFundedList, "fund-thunderbolt")}
+            </div>
+            <div class="legend-item">
+              <div class="label">CCE Wireless funded (${cceFundedList.length})</div>
+              ${buildLegendPills(cceFundedList, "fund-cce")}
+            </div>
+          </aside>
+        </div>
+      `;
+
+      function applyEngineerHover(targetEngineer) {
+        const taskEls = relationBoardEl.querySelectorAll(".task-card");
+        taskEls.forEach((card) => {
+          const engineers = (card.dataset.engineers || "").split("|").filter(Boolean);
+          const hit = engineers.includes(targetEngineer);
+          card.classList.toggle("highlight", hit);
+          card.classList.toggle("dim", !hit);
+        });
+
+        const pills = relationBoardEl.querySelectorAll(".eng-pill[data-engineer]");
+        pills.forEach((pill) => {
+          const isTarget = pill.dataset.engineer === targetEngineer;
+          pill.classList.toggle("person-active", isTarget);
+          pill.classList.toggle("person-dim", !isTarget);
+        });
+      }
+
+      function clearEngineerHover() {
+        const taskEls = relationBoardEl.querySelectorAll(".task-card");
+        taskEls.forEach((card) => {
+          card.classList.remove("highlight");
+          card.classList.remove("dim");
+        });
+
+        const pills = relationBoardEl.querySelectorAll(".eng-pill[data-engineer]");
+        pills.forEach((pill) => {
+          pill.classList.remove("person-active");
+          pill.classList.remove("person-dim");
+        });
+      }
+
+      relationBoardEl.querySelectorAll(".eng-pill[data-engineer]").forEach((pill) => {
+        pill.addEventListener("mouseenter", () => applyEngineerHover(pill.dataset.engineer));
+        pill.addEventListener("mouseleave", clearEngineerHover);
+      });
+
+      enableStackDrag("taskStack", ".task-card");
+    }
+
+    filterEl.addEventListener("change", () => renderRelationBlocks(filterEl.value));
+    resetTableBtn.addEventListener("click", () => {
+      buildEditableTable();
+      setEditorStatus("Editable table reset to current page data.");
+    });
+
+    addWorkerBtn.addEventListener("click", () => {
+      rows.push({ name: `New Worker ${rows.length + 1}`, vals: workItems.map(() => 0) });
+      buildEditableTable();
+      setEditorStatus("Added one worker row. Edit values then click Regenerate.");
+      saveTableSnapshot("add_worker");
+    });
+
+    addTaskBtn.addEventListener("click", () => {
+      workItems.push(`New Task ${workItems.length + 1}`);
+      rows = rows.map((r) => ({ ...r, vals: [...r.vals, 0] }));
+      buildEditableTable();
+      setEditorStatus("Added one task column. Edit values then click Regenerate.");
+      saveTableSnapshot("add_task");
+    });
+
+    loadPastedAvgBtn.addEventListener("click", async () => {
+      try {
+        await loadAverageViewFromPastedText();
+      } catch (err) {
+        setEditorStatus(err.message || String(err), true);
+      }
+    });
+
+    saveTableBtn.addEventListener("click", () => {
+      if (saveTableSnapshot("manual_save")) {
+        setEditorStatus("Table saved to browser storage.");
+      } else {
+        setEditorStatus("Failed to save table snapshot.", true);
+      }
+    });
+
+    applyTableBtn.addEventListener("click", () => {
+      try {
+        const { parsedWorkItems, parsedRows } = parseTableData();
+        workItems = parsedWorkItems;
+        rows = parsedRows;
+        selectedTask = workItems[0] || "";
+        buildFilter();
+        fillStats();
+        buildTable();
+        renderRelationBlocks("ALL");
+        buildEditableTable();
+        setEditorStatus(`Regenerated: ${rows.length} workers, ${workItems.length} tasks.`);
+        saveTableSnapshot("regenerate");
+      } catch (err) {
+        setEditorStatus(err.message || "Failed to parse editable table.", true);
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      renderRelationBlocks(filterEl.value);
+    });
+
+    renderLastSavedInfo("");
+    refreshAll();
+    renderAverageViewDebug("AverageView debug: using in-page baseline fallback.", baselineEntries);
+    if (!restoreTableSnapshot()) {
+      saveTableSnapshot("initial_fallback");
+    }
+  </script>
+</body>
+</html>

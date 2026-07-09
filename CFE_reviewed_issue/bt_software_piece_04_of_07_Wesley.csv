@@ -1,0 +1,38 @@
+﻿assignment,row_id,technology,ips_title,predicted_category,human_category,label_notes,risk_score,risk_reason
+piece_04_of_07,2864,software,ICPS borderless windows,ICPS,ICPS/Killer,,6,short<=28c;few_words<=3;no_digits
+piece_04_of_07,1201,software,ICPS app is stopped and closed when changing settings,ICPS,ICPS/Killer,,3,generic:hang;no_digits
+piece_04_of_07,195,bt,Unnecessary BT LE Sideband device and YB,RF,YB/Lost,,1,no_digits
+piece_04_of_07,3464,bt,"call active, R power off, L no sound for 5~10 sec",Power Consumption,Connectivity,,0,
+piece_04_of_07,922,bt,BT device lost and unknow USB device show yellow bang(code 43) after resuming from MS,YB/Lost,YB/Lost,,0,
+piece_04_of_07,1676,software,Bandwidth limitation is not taking effect after prioritization on/off/on cycle in settings,Killer,ICPS/Killer,,1,no_digits
+piece_04_of_07,3329,bt,A2DP Offload feature is enabled in JfP on TGL and HrP on ADL when feature is not supported.,Connectivity,Connectivity,,0,
+piece_04_of_07,3291,bt,Unable to run testharness tool on HostPC,Connectivity,OEM Tools,,3,generic:unable;no_digits
+piece_04_of_07,363,bt,"SIT, Win11 x64 25H2, Bluetooth LE Audio VSAP - Stereo Render with Mono Capture related items failed on HLK kit not detected, FR: 5/5",HLK,HLK,,2,generic:fail
+piece_04_of_07,2301,software,Settings --> Change lowercase letters to uppercase for reset buttons strings,Killer,ICPS/Killer,,3,generic:hang;no_digits
+piece_04_of_07,3488,bt,BT Device missing - NO_SUCH_DEVICE,YB/Lost,YB/Lost,,2,few_words<=5;no_digits
+piece_04_of_07,511,bt,"The units show BSOD(stop code:DRIVER_POWER_STATE_FALURE, bug check ID:0x9f) after restart.(F/R:1/2units, 1/6cycles).",BSOD,BSOD,,2,generic:bug
+piece_04_of_07,254,bt,WHQL BT test fail,HLK,HLK,,7,very_short<=18c;few_words<=5;generic:fail;no_digits
+piece_04_of_07,1947,software,Killer intelligence Engine: Radio button fails color contrast.,Killer,ICPS/Killer,,3,generic:fail;no_digits
+piece_04_of_07,3173,bt,MDUT Reconnection - HCI_Encription_Change increases the reconnection time,System Hang,Connectivity,,3,generic:hang;no_digits
+piece_04_of_07,2058,software,The RNIdle task remains in Task Scheduler after ICPS uninstallation,ICPS,ICPS/Killer,,1,no_digits
+piece_04_of_07,1214,software,"The button ""Reset"" all settings to default does not works.",Killer,ICPS/Killer,,1,no_digits
+piece_04_of_07,593,bt,system hang while BE201 BT enable issue,System Hang,System Hang,,2,generic:issue
+piece_04_of_07,152,bt,The BT switch show gray and BT function disappear,Connectivity,YB/Lost,,1,no_digits
+piece_04_of_07,11,bt,"When using the iper3 tool to run RX and TX while connecting to a 2.4G WiFi and Bluetooth device, the Bluetooth speaker experiences stuttering issues.",Connectivity,Connectivity,,2,generic:issue
+piece_04_of_07,1782,bt,[HP][SnowWhite/LNL/FmP][PCIe] Bluetooth LE Mouse can not be used during connected state. - [Connection timeout],Connectivity,Connectivity,,1,no_digits
+piece_04_of_07,3696,bt,Bluetooth Keyboard pairing failure,YB/Lost,Connectivity,,4,few_words<=5;generic:failure;no_digits
+piece_04_of_07,1524,software,a blank parenthesis will appears in the ICPS Bluetooth device list after changing Bluetooth device name,ICPS,ICPS/Killer,,3,generic:hang;no_digits
+piece_04_of_07,3031,software,"ICPS Enablement bit not present installation, UI shows services disconnected, but does not show invalid platform message.",ICPS,ICPS/Killer,,1,no_digits
+piece_04_of_07,1725,bt,Intel LNL RVP + GaP discrete offload fail to work (music no sound),Connectivity,Connectivity,,3,generic:fail;no_digits
+piece_04_of_07,927,bt,Intel AX211 WLAN became hidden (code 45) in device manager after resume from sleep,Power Consumption,YB/Lost,,0,
+piece_04_of_07,841,bt,PC scan Speaker slowly with 100% duty,Performance,Performance,,0,
+piece_04_of_07,3431,bt,BT device lost during S4.,Connectivity,YB/Lost,,3,short<=28c;few_words<=5
+piece_04_of_07,672,software,ICPS cant be installed,ICPS,ICPS/Killer,,6,short<=28c;few_words<=5;generic:cant;no_digits
+piece_04_of_07,312,bt,HLK DirectedFxSystemTest test fail,HLK,HLK,,4,few_words<=5;generic:fail;no_digits
+piece_04_of_07,3677,bt,BT lost w/o any PLDR during coldboot testing. (FR: 1/41 unit),YB/Lost,YB/Lost,,0,
+piece_04_of_07,1507,bt,The Bluetooth related device lost when using the MIKE II tool to run hibernate resume (manual resume) Fail Rate: 1unit 2/2 trials.,Connectivity,YB/Lost,,2,generic:fail
+piece_04_of_07,3769,software,AP used WEP connection fails on ICPS app.,ICPS,ICPS/Killer,,3,generic:fail;no_digits
+piece_04_of_07,365,bt,Win11(25H2)_Hybrid Stress_S4_Device_YB_Intel(R) Dual Bluetooth(R) PCI Enumerator.,YB/Lost,YB/Lost,,0,
+piece_04_of_07,2035,software,Frequent roaming observed during Teams meetings when ICPS is installed.,ICPS,ICPS/Killer,,1,no_digits
+piece_04_of_07,3456,bt,LE anchor point and CIS 2nd and 3rd subevent overlaps,Connectivity,Connectivity,,0,
+piece_04_of_07,1007,bt,Unable to play any videos or music (online/local) after playing YouTube videos overnight,Connectivity,Connectivity,,3,generic:unable;no_digits

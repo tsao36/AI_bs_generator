@@ -1,0 +1,55 @@
+[INFO] ===== Weekly tuning + prepare start =====
+[INFO] Timestamp: Mon 06/01/2026 11:01:01.53
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\
+[INFO] Parameters: threshold=0.45 topN=all
+[STEP 1/3] Weekly tuning
+[INFO] Running weekly category tuning...
+[INFO] Output directory: tuning_outputs\weekly_20260601
+[INFO] Low-confidence threshold: 0.45
+Tuning cycle complete
+Rows total: 1039
+Rows used: 1031
+Dropped rare labels (<5 rows): Killer, Layout, MSFT, Schematic
+Best model by macro_f1: LinearSVC (0.8493)
+Model compare: tuning_outputs\weekly_20260601\model_compare_metrics.json
+Confusion matrix: tuning_outputs\weekly_20260601\best_model_confusion_matrix.csv
+Low-confidence candidates: tuning_outputs\weekly_20260601\low_confidence_candidates.csv (385 rows, threshold=0.45)
+[OK] Weekly tuning complete.
+[OK] Review these files:
+  tuning_outputs\weekly_20260601\model_compare_metrics.json
+  tuning_outputs\weekly_20260601\best_model_confusion_matrix.csv
+  tuning_outputs\weekly_20260601\low_confidence_candidates.csv
+[STEP 2/3] Prepare labeling template
+[INFO] Preparing weekly labeling template...
+[INFO] Top N rows from last week's new issues: all (use 'all' to include all)
+[INFO] Mixing in 10 low-confidence re-verify rows from: tuning_outputs\weekly_20260525\low_confidence_candidates.csv
+[INFO] Mixing in 61 targeted supplement rows from: targeted_labeling_supplement_20260530.csv
+[OK] Weekly labeling template: tuning_outputs\weekly_20260601\weekly_labeling_template.csv
+[OK] Last week range: 2026-05-25 to 2026-06-01
+[OK] New issues found: 20
+[OK] New-issue rows prepared: 20
+[OK] Low-confidence re-verify rows: 10
+[OK] Targeted supplement rows: 61
+[OK] Total rows in template: 90
+[OK] WiFi assignees: 8
+[OK] BT assignees: 7
+[OK] Assignees loaded: 14
+[OK] Assigned  10 issue(s) -> frank.lee@intel.com
+[OK] Assigned  10 issue(s) -> zhiqiang.cai@intel.com
+[OK] Assigned   8 issue(s) -> charles.p.chu@intel.com
+[OK] Assigned   8 issue(s) -> kj.fang@intel.com
+[OK] Assigned   8 issue(s) -> timdaway.lai@intel.com
+[OK] Assigned   8 issue(s) -> frank.fc.yang@intel.com
+[OK] Assigned   8 issue(s) -> jackx.lee@intel.com
+[OK] Assigned  11 issue(s) -> brenton.wu@intel.com
+[OK] Assigned   4 issue(s) -> matt.chen@intel.com
+[OK] Assigned   3 issue(s) -> steven1.chen@intel.com
+[OK] Assigned   3 issue(s) -> yu-wei.chen@intel.com
+[OK] Assigned   3 issue(s) -> wesley.kuo@intel.com
+[OK] Assigned   3 issue(s) -> bingyue.sun@intel.com
+[OK] Assigned   3 issue(s) -> juan.zou@intel.com
+[OK] Template generated from last week's new issues. Share weekly_labeling_template.csv with engineers.
+[STEP 3/3] Send labeling reminders for pending human_category
+[OK] Weekly tuning + labeling preparation + reminder complete.
+[INFO] Verify in this log: line '[OK] Targeted supplement rows: N' from prepare_weekly_labeling_template.py
+[INFO] ===== Weekly tuning + prepare end =====

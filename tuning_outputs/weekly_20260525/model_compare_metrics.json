@@ -1,0 +1,31 @@
+{
+  "input_dirs": [
+    "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\CFE_reviewed_issue",
+    "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\CFE_input"
+  ],
+  "rows_total": 1039,
+  "rows_used": 1031,
+  "dropped_rare_labels": [
+    "Killer",
+    "Layout",
+    "MSFT",
+    "Schematic"
+  ],
+  "test_size": 0.2,
+  "random_state": 42,
+  "models": [
+    {
+      "model": "LogisticRegression",
+      "accuracy": 0.8309178743961353,
+      "macro_f1": 0.8021833501282392,
+      "weighted_f1": 0.8365981332071712
+    },
+    {
+      "model": "LinearSVC",
+      "accuracy": 0.8888888888888888,
+      "macro_f1": 0.849281644061885,
+      "weighted_f1": 0.8873088256525454
+    }
+  ],
+  "best_model": "LinearSVC"
+}

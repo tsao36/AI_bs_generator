@@ -1,0 +1,49 @@
+﻿Technology,Category,Root Cause Type 1,Root Cause Type 2,Root Cause Type 3,Root Cause Type 4,Issue Count,Year
+WIFI,Connectivity,Firmware Configuration and Parameter Tuning Issues,,,,1,2021
+WIFI,YB/Lost,Firmware Configuration and Parameter Tuning Issues,Duplicate or Reference Case (follow linked Jira root cause),,,3,2021
+WIFI,BSOD,Timing Synchronization and Race Condition Issues,Memory and Resource Management Issues,Driver and OS Interface Contract Issues,Firmware and Hardware Interface Communication Issues,8,2021
+WIFI,Performance,Firmware Configuration and Parameter Tuning Issues,,,,2,2021
+BT,Connectivity,Timing Synchronization and Race Condition Issues,,,,1,2021
+BT,YB/Lost,,,,,0,2021
+BT,BSOD,Driver and OS Interface Contract Issues,,,,1,2021
+BT,HLK,,,,,0,2021
+WIFI,Connectivity,Driver and OS Interface Contract Issues,Memory and Resource Management Issues,,,2,2022
+WIFI,YB/Lost,Firmware and Hardware Interface Communication Issues,,,,1,2022
+WIFI,BSOD,Firmware Configuration and Parameter Tuning Issues,,,,1,2022
+WIFI,Performance,Firmware Configuration and Parameter Tuning Issues,Firmware and Hardware Interface Communication Issues,RF Coexistence and Channel Behavior Issues,,3,2022
+BT,Connectivity,Power State Transition and Reset Recovery Issues,Timing Synchronization and Race Condition Issues,State Machine Transition and Flow Handling Issues,,4,2022
+BT,YB/Lost,,,,,0,2022
+BT,BSOD,,,,,0,2022
+BT,HLK,,,,,0,2022
+WIFI,Connectivity,Firmware Configuration and Parameter Tuning Issues,,,,2,2023
+WIFI,YB/Lost,Firmware Configuration and Parameter Tuning Issues,Power State Transition and Reset Recovery Issues,Firmware and Hardware Interface Communication Issues,,7,2023
+WIFI,BSOD,Memory and Resource Management Issues,Power State Transition and Reset Recovery Issues,,,3,2023
+WIFI,Performance,Firmware Configuration and Parameter Tuning Issues,Timing Synchronization and Race Condition Issues,,,3,2023
+BT,Connectivity,,,,,0,2023
+BT,YB/Lost,,,,,0,2023
+BT,BSOD,Timing Synchronization and Race Condition Issues,,,,1,2023
+BT,HLK,Firmware and Hardware Interface Communication Issues,,,,1,2023
+WIFI,Connectivity,State Machine Transition and Flow Handling Issues,Timing Synchronization and Race Condition Issues,Firmware Configuration and Parameter Tuning Issues,Duplicate or Reference Case (follow linked Jira root cause),5,2024
+WIFI,YB/Lost,Firmware Configuration and Parameter Tuning Issues,,,,6,2024
+WIFI,BSOD,Memory and Resource Management Issues,State Machine Transition and Flow Handling Issues,Validation Coverage Gap and Test Escape Issues,Timing Synchronization and Race Condition Issues,6,2024
+WIFI,Performance,Driver and OS Interface Contract Issues,Firmware Configuration and Parameter Tuning Issues,Duplicate or Reference Case (follow linked Jira root cause),,3,2024
+BT,Connectivity,Memory and Resource Management Issues,Firmware and Hardware Interface Communication Issues,,,4,2024
+BT,YB/Lost,Firmware and Hardware Interface Communication Issues,Timing Synchronization and Race Condition Issues,State Machine Transition and Flow Handling Issues,Security Validation and Protection Control Issues,11,2024
+BT,BSOD,Driver and OS Interface Contract Issues,Memory and Resource Management Issues,,,3,2024
+BT,HLK,,,,,0,2024
+WIFI,Connectivity,Firmware Configuration and Parameter Tuning Issues,RF Coexistence and Channel Behavior Issues,Timing Synchronization and Race Condition Issues,Security Validation and Protection Control Issues,13,2025
+WIFI,YB/Lost,Firmware Configuration and Parameter Tuning Issues,Duplicate or Reference Case (follow linked Jira root cause),Timing Synchronization and Race Condition Issues,Power State Transition and Reset Recovery Issues,5,2025
+WIFI,BSOD,Power State Transition and Reset Recovery Issues,Memory and Resource Management Issues,,,2,2025
+WIFI,Performance,Timing Synchronization and Race Condition Issues,Firmware and Hardware Interface Communication Issues,,,2,2025
+BT,Connectivity,Timing Synchronization and Race Condition Issues,Validation Coverage Gap and Test Escape Issues,Power State Transition and Reset Recovery Issues,Duplicate or Reference Case (follow linked Jira root cause),5,2025
+BT,YB/Lost,Memory and Resource Management Issues,Firmware and Hardware Interface Communication Issues,Firmware Configuration and Parameter Tuning Issues,,6,2025
+BT,BSOD,,,,,0,2025
+BT,HLK,,,,,0,2025
+WIFI,Connectivity,State Machine Transition and Flow Handling Issues,,,,1,2026
+WIFI,YB/Lost,,,,,0,2026
+WIFI,BSOD,State Machine Transition and Flow Handling Issues,Memory and Resource Management Issues,,,2,2026
+WIFI,Performance,Firmware Configuration and Parameter Tuning Issues,,,,1,2026
+BT,Connectivity,,,,,0,2026
+BT,YB/Lost,Security Validation and Protection Control Issues,State Machine Transition and Flow Handling Issues,,,2,2026
+BT,BSOD,,,,,0,2026
+BT,HLK,,,,,0,2026

@@ -1,0 +1,25 @@
+﻿Year,Category,Root Cause Type 1,Root Cause Type 2,Root Cause Type 3,Root Cause Type 4,Root Cause Type 5,Root Cause Type 6,Issue Count
+2021,Connectivity,Insufficient Root-Cause Detail,Power State / Reset / PLDR,Firmware Config / Parameter / Tuning,RF / Coexistence / Channel Behavior,State Machine / Flow Handling,Race / Timing / Interrupt Ordering,29
+2021,YB/Lost,Insufficient Root-Cause Detail,State Machine / Flow Handling,Memory / Pointer / Resource Handling,Power State / Reset / PLDR,Race / Timing / Interrupt Ordering,Security / Signature / Validation,4
+2021,BSOD,Driver-OS Interface / API / OID,Insufficient Root-Cause Detail,Race / Timing / Interrupt Ordering,State Machine / Flow Handling,Firmware Config / Parameter / Tuning,Memory / Pointer / Resource Handling,37
+2021,Performance,RF / Coexistence / Channel Behavior,Insufficient Root-Cause Detail,State Machine / Flow Handling,Power State / Reset / PLDR,Firmware Config / Parameter / Tuning,Security / Signature / Validation,6
+2022,Connectivity,Firmware Config / Parameter / Tuning,Insufficient Root-Cause Detail,Power State / Reset / PLDR,RF / Coexistence / Channel Behavior,State Machine / Flow Handling,Race / Timing / Interrupt Ordering,50
+2022,YB/Lost,State Machine / Flow Handling,RF / Coexistence / Channel Behavior,Tool / Test / Process Gap,Power State / Reset / PLDR,Insufficient Root-Cause Detail,,6
+2022,BSOD,Firmware Config / Parameter / Tuning,RF / Coexistence / Channel Behavior,Power State / Reset / PLDR,State Machine / Flow Handling,Race / Timing / Interrupt Ordering,Memory / Pointer / Resource Handling,14
+2022,Performance,Firmware Config / Parameter / Tuning,State Machine / Flow Handling,RF / Coexistence / Channel Behavior,Power State / Reset / PLDR,Race / Timing / Interrupt Ordering,,6
+2023,Connectivity,Firmware Config / Parameter / Tuning,Insufficient Root-Cause Detail,Power State / Reset / PLDR,State Machine / Flow Handling,RF / Coexistence / Channel Behavior,Race / Timing / Interrupt Ordering,55
+2023,YB/Lost,Race / Timing / Interrupt Ordering,Firmware Config / Parameter / Tuning,State Machine / Flow Handling,Memory / Pointer / Resource Handling,Power State / Reset / PLDR,Insufficient Root-Cause Detail,9
+2023,BSOD,Firmware Config / Parameter / Tuning,Power State / Reset / PLDR,Race / Timing / Interrupt Ordering,Memory / Pointer / Resource Handling,Insufficient Root-Cause Detail,State Machine / Flow Handling,59
+2023,Performance,Race / Timing / Interrupt Ordering,RF / Coexistence / Channel Behavior,Firmware Config / Parameter / Tuning,Tool / Test / Process Gap,Insufficient Root-Cause Detail,,4
+2024,Connectivity,Insufficient Root-Cause Detail,Firmware Config / Parameter / Tuning,Race / Timing / Interrupt Ordering,Power State / Reset / PLDR,State Machine / Flow Handling,RF / Coexistence / Channel Behavior,39
+2024,YB/Lost,Firmware Config / Parameter / Tuning,State Machine / Flow Handling,,,,,3
+2024,BSOD,Power State / Reset / PLDR,Insufficient Root-Cause Detail,Race / Timing / Interrupt Ordering,State Machine / Flow Handling,Firmware Config / Parameter / Tuning,Memory / Pointer / Resource Handling,57
+2024,Performance,Firmware Config / Parameter / Tuning,Insufficient Root-Cause Detail,State Machine / Flow Handling,Power State / Reset / PLDR,RF / Coexistence / Channel Behavior,Race / Timing / Interrupt Ordering,7
+2025,Connectivity,Firmware Config / Parameter / Tuning,Insufficient Root-Cause Detail,Tool / Test / Process Gap,Power State / Reset / PLDR,State Machine / Flow Handling,RF / Coexistence / Channel Behavior,51
+2025,YB/Lost,Power State / Reset / PLDR,Tool / Test / Process Gap,Insufficient Root-Cause Detail,RF / Coexistence / Channel Behavior,,,3
+2025,BSOD,Power State / Reset / PLDR,Race / Timing / Interrupt Ordering,RF / Coexistence / Channel Behavior,Insufficient Root-Cause Detail,Firmware Config / Parameter / Tuning,State Machine / Flow Handling,35
+2025,Performance,RF / Coexistence / Channel Behavior,Insufficient Root-Cause Detail,State Machine / Flow Handling,Firmware Config / Parameter / Tuning,Tool / Test / Process Gap,Driver-OS Interface / API / OID,6
+2026,Connectivity,State Machine / Flow Handling,Power State / Reset / PLDR,Insufficient Root-Cause Detail,Race / Timing / Interrupt Ordering,Firmware Config / Parameter / Tuning,RF / Coexistence / Channel Behavior,10
+2026,YB/Lost,Power State / Reset / PLDR,Firmware Config / Parameter / Tuning,,,,,1
+2026,BSOD,State Machine / Flow Handling,Firmware Config / Parameter / Tuning,Power State / Reset / PLDR,Memory / Pointer / Resource Handling,Driver-OS Interface / API / OID,Race / Timing / Interrupt Ordering,11
+2026,Performance,Power State / Reset / PLDR,Firmware Config / Parameter / Tuning,Race / Timing / Interrupt Ordering,RF / Coexistence / Channel Behavior,,,2

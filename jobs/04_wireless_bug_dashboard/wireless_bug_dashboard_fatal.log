@@ -1,0 +1,247 @@
+================================================================================
+stage=runtime time=2026-05-20T19:34:57.815471
+type=UndefinedColumn
+message=column "bug_created_date" does not exist
+LINE 15: ...hsd_submitted_date::date, ips_created_date::date, bug_create...
+                                                              ^
+HINT:  Perhaps you meant to reference the column "ips_jira_bugs.ips_created_date".
+
+traceback:
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\wireless_bug_dashboard_ips_hsd_jira.py", line 618, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\wireless_bug_dashboard_ips_hsd_jira.py", line 555, in main
+    _clear_hsd_scope_before_sync(args.hsd_table, args.hsd_owner_filter, years)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\wireless_bug_dashboard_ips_hsd_jira.py", line 346, in _clear_hsd_scope_before_sync
+    cleared = db_manager.clear_hsd_snapshot_scope(table_name, owners, start_date)
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\Wireless_bug_dashboard.py", line 1704, in clear_hsd_snapshot_scope
+    self.__cursor.execute(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        f'''
+        ^^^^
+    ...<31 lines>...
+        ),
+        ^^
+    )
+    ^
+psycopg2.errors.UndefinedColumn: column "bug_created_date" does not exist
+LINE 15: ...hsd_submitted_date::date, ips_created_date::date, bug_create...
+                                                              ^
+HINT:  Perhaps you meant to reference the column "ips_jira_bugs.ips_created_date".
+
+================================================================================
+stage=import time=2026-06-21T16:00:44.838340
+type=ModuleNotFoundError
+message=No module named 'HSD_access'
+traceback:
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py", line 41, in <module>
+    import HSD_access as hsd_access  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'HSD_access'
+================================================================================
+stage=import time=2026-06-21T16:01:27.695152
+type=ModuleNotFoundError
+message=No module named 'HSD_access'
+traceback:
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py", line 41, in <module>
+    import HSD_access as hsd_access  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'HSD_access'
+================================================================================
+stage=import time=2026-06-21T16:02:17.535329
+type=ModuleNotFoundError
+message=No module named 'Sherlock'
+traceback:
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py", line 42, in <module>
+    from Wireless_bug_dashboard import (  # type: ignore
+    ...<14 lines>...
+    )
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\Wireless_bug_dashboard.py", line 75, in <module>
+    import Sherlock
+ModuleNotFoundError: No module named 'Sherlock'
+================================================================================
+stage=runtime time=2026-06-21T17:53:40.027771
+type=InterfaceError
+message=connection already closed
+traceback:
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\05_hsd_jira_data_pipeline\..\..\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py", line 638, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\05_hsd_jira_data_pipeline\..\..\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py", line 576, in main
+    _insert_hsd_into_db(opt, hsd_data, args.hsd_table)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\05_hsd_jira_data_pipeline\..\..\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py", line 396, in _insert_hsd_into_db
+    updated = db_manager.update_hsd_columns(
+        table_name,
+    ...<2 lines>...
+        update_customer_from_hsd=True,
+    )
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\Wireless_bug_dashboard.py", line 2142, in update_hsd_columns
+    self.__connection.commit()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+psycopg2.InterfaceError: connection already closed
+================================================================================
+stage=import time=2026-06-25T14:39:27.399205
+type=ModuleNotFoundError
+message=No module named 'HSD_access'
+traceback:
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py", line 41, in <module>
+    import HSD_access as hsd_access  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'HSD_access'
+================================================================================
+stage=import time=2026-06-25T14:40:31.350790
+type=ModuleNotFoundError
+message=No module named 'Sherlock'
+traceback:
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py", line 42, in <module>
+    from Wireless_bug_dashboard import (  # type: ignore
+    ...<15 lines>...
+    )
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\Wireless_bug_dashboard.py", line 76, in <module>
+    import Sherlock
+ModuleNotFoundError: No module named 'Sherlock'
+================================================================================
+stage=runtime time=2026-06-25T14:48:20.024452
+type=ModuleNotFoundError
+message=Snowflake connector is unavailable. Install `snowflake-connector-python` and remove the conflicting `snowflake` package if present.
+traceback:
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py", line 662, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py", line 613, in main
+    ips_data.extend(ips.get_all_bugs())
+                    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\Wireless_bug_dashboard.py", line 608, in get_all_bugs
+    raise ModuleNotFoundError(
+    ...<2 lines>...
+    )
+ModuleNotFoundError: Snowflake connector is unavailable. Install `snowflake-connector-python` and remove the conflicting `snowflake` package if present.
+================================================================================
+stage=runtime time=2026-06-25T15:01:39.983887
+type=ModuleNotFoundError
+message=Snowflake connector is unavailable. Install `snowflake-connector-python` and remove the conflicting `snowflake` package if present.
+traceback:
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py", line 662, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py", line 613, in main
+    ips_data.extend(ips.get_all_bugs())
+                    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\Wireless_bug_dashboard.py", line 608, in get_all_bugs
+    raise ModuleNotFoundError(
+    ...<2 lines>...
+    )
+ModuleNotFoundError: Snowflake connector is unavailable. Install `snowflake-connector-python` and remove the conflicting `snowflake` package if present.
+================================================================================
+stage=runtime time=2026-06-26T12:33:00.777984
+type=AssertionError
+message=unsupported format for DB
+traceback:
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py", line 662, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py", line 638, in main
+    _insert_into_db(opt, merged)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py", line 404, in _insert_into_db
+    db_manager.insert_to_table("ips_jira_bugs", rows, opt.db_recreate_table, opt=opt)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\Wireless_bug_dashboard.py", line 2467, in insert_to_table
+    row_schema = self.__get_table_fields_for_db(value_dict[0])
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\Wireless_bug_dashboard.py", line 2378, in __get_table_fields_for_db
+    temp_data_list += self.__get_table_fields_for_db(getattr(data_obj, _field.name))
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\Wireless_bug_dashboard.py", line 2403, in __get_table_fields_for_db
+    assert False, "unsupported format for DB"
+           ^^^^^
+AssertionError: unsupported format for DB
+================================================================================
+stage=runtime time=2026-06-26T12:33:52.405948
+type=ModuleNotFoundError
+message=Snowflake connector is unavailable. Install `snowflake-connector-python` and remove the conflicting `snowflake` package if present.
+traceback:
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py", line 662, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py", line 613, in main
+    ips_data.extend(ips.get_all_bugs())
+                    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\Wireless_bug_dashboard.py", line 608, in get_all_bugs
+    raise ModuleNotFoundError(
+    ...<2 lines>...
+    )
+ModuleNotFoundError: Snowflake connector is unavailable. Install `snowflake-connector-python` and remove the conflicting `snowflake` package if present.
+================================================================================
+stage=runtime time=2026-06-26T14:41:49.039591
+type=UndefinedColumn
+message=column "jira_type" of relation "ips_jira_bugs" does not exist
+LINE 1: ...modified_date, jira_id, jira_title, jira_summary, jira_type,...
+                                                             ^
+
+traceback:
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py", line 662, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py", line 638, in main
+    _insert_into_db(opt, merged)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py", line 404, in _insert_into_db
+    db_manager.insert_to_table("ips_jira_bugs", rows, opt.db_recreate_table, opt=opt)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\Wireless_bug_dashboard.py", line 2616, in insert_to_table
+    execute_values(
+    ~~~~~~~~~~~~~~^
+        self.__cursor,
+        ^^^^^^^^^^^^^^
+    ...<2 lines>...
+        page_size=opt.db_batch_page_size,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\psycopg2\extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column "jira_type" of relation "ips_jira_bugs" does not exist
+LINE 1: ...modified_date, jira_id, jira_title, jira_summary, jira_type,...
+                                                             ^
+
+================================================================================
+stage=runtime time=2026-07-02T22:51:28.698459
+type=ModuleNotFoundError
+message=Snowflake connector is unavailable. Install `snowflake-connector-python` and remove the conflicting `snowflake` package if present.
+traceback:
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py", line 662, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py", line 613, in main
+    ips_data.extend(ips.get_all_bugs())
+                    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\04_wireless_bug_dashboard\Wireless_bug_dashboard.py", line 609, in get_all_bugs
+    raise ModuleNotFoundError(
+    ...<2 lines>...
+    )
+ModuleNotFoundError: Snowflake connector is unavailable. Install `snowflake-connector-python` and remove the conflicting `snowflake` package if present.
+================================================================================
+stage=import time=2026-07-07T16:25:40.243183
+type=ModuleNotFoundError
+message=No module named 'psycopg2'
+traceback:
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\05_hsd_jira_data_pipeline\..\..\jobs\04_wireless_bug_dashboard\wireless_bug_dashboard_ips_hsd_jira.py", line 51, in <module>
+    import psycopg2
+ModuleNotFoundError: No module named 'psycopg2'

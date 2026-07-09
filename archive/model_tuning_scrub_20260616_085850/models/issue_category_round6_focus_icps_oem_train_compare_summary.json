@@ -1,0 +1,28 @@
+{
+  "review_template": "models/issue_category_manual_review_top20_20260614_focus_icps_oemtools_edit_template_v2.csv",
+  "dual_review_summary_json": "models/issue_category_manual_review_top20_20260614_focus_icps_oemtools_dual_review_summary.json",
+  "apply_relabels_report_json": "models/issue_category_manual_review_top20_20260614_focus_icps_oemtools_apply_relabels_report.json",
+  "new_golden": "golden_training_set_20260614_p2pmerge_round6_focus_icps_oem.csv",
+  "candidate_model": "models/issue_category_model_20260614_p2pmerge_round6_focus_icps_oem.joblib",
+  "candidate_metrics": "models/issue_category_metrics_20260614_p2pmerge_round6_focus_icps_oem.json",
+  "fair_eval_on_round6_golden": {
+    "round4b": {
+      "accuracy": 0.966,
+      "macro_f1": 0.766,
+      "weighted_f1": 0.963,
+      "n": 1266
+    },
+    "round6_candidate": {
+      "accuracy": 0.8957,
+      "macro_f1": 0.681,
+      "weighted_f1": 0.8775,
+      "n": 1266
+    },
+    "delta_round6_minus_round4b": {
+      "accuracy": -0.0703,
+      "macro_f1": -0.085,
+      "weighted_f1": -0.0855
+    }
+  },
+  "decision": "do_not_promote_round6_candidate"
+}

@@ -1,0 +1,7 @@
+[INFO] ===== Offload scheduler start =====
+[INFO] Timestamp: Sun 06/14/2026  3:02:06.97
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\
+[INFO] Current dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat
+[WARN] Cannot reach 10-108-27-113.dbaas.intel.com - VPN may be down. Skipping run.
+[INFO] Exit code: 0 (skipped - no network)
+[INFO] ===== Offload scheduler end =====

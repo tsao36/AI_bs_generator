@@ -1,0 +1,16 @@
+ips_title,predicted_category,technology,human_category
+PPAG function doesnt work when countrycode is set to CB(China).,RF,wifi,BIOS
+WLAN NDT test result has higher noise result,OEM Tools,tools,OEM Tools
+The system wakes when a person walks 1.2m horizontally behind it,Power Consumption,wifi,Sensing
+TAS enable some question for AX411 - DCR-1833 should fix,RF,wifi,BIOS
+"[HP/SIO2013965/Win10/KBL/SfP/ComputronW14] De-authorised from the Wi-Fi network while roaming, and could not connect back.",Roaming,WiFi,Roaming
+[HUAWEI][HUAQIN][MachD][Intel TGL][Intel AX 201][WIFI][Win11]WiFi will automatically roam to a router that is further away when the computer remains stationary.,Roaming,WiFi,P2P
+(Copy Of 00952724) [Dell_RPL]Intel AX211 on Multiple Platforms WLAN Disconnect when Roaming Cisco AP,Roaming,WiFi,WowLAN
+"[XiaoMi][Bitland][A11][ADL-P][Win11][100%]During the miracast ( PC to PC via AP), the screen garbage and horizontal stripes can be observed on the PCwhich is projected.",Miracast,WiFi,Performance
+[Huawei][Quanta][WrightD][TGL-U][AX201][20H1][WiFi][BUG-20200825-8614]Mobile phone cannot connect to DUT by Miracast function.,Miracast,WiFi,YB/Lost
+[HP/SIO1386969][Chiefs 1.0][AMD/7265/WIN10]The display of external monitor doesn't change when operating units with connecting a monitor via miracast.,Miracast,WiFi,YB/Lost
+[Lenovo][in-house][ARL-S][AX211][PCB2/M970ts]Cannot detect Wireless display in scan list by Win+K,Miracast,WiFi,P2P
+[Dynabook][Win10] target PC cannot be woken up from Hibernation by a magic packet  on  models which support modern standby.,WowLAN,WiFi,WowLAN
+[LG][16Z90P][TGL/AX201/20H2] WiFi Rx throughput of 11ax(5GHz) becomes much lower with BT mouse connected,Performance,WiFi,Performance
+[Samsung][AX211][P230216-02248]Yellow Bang after 22.200 Driver update,YB/Lost,WiFi,YB/Lost
+"[Lenovo_IdeaPad][Wenchang?][LCFC][LNL][24H2][BE201]5055-FW_HW_ERROR & 5002-FW_ASSERT and BT show YB when do S4 Stress test, FR: 2/3 Units, 100cycles/unit",YB/Lost,WiFi,YB/Lost

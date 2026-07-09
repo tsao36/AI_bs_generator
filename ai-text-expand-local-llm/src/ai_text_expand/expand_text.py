@@ -13,6 +13,7 @@ from urllib.request import ProxyHandler, Request, build_opener, urlopen
 
 DEFAULT_MODEL = "llama3.1:8b-instruct-q4_K_M"
 DEFAULT_OLLAMA_URL = "http://127.0.0.1:11434"
+DEFAULT_NUM_GPU = 999
 
 SYSTEM_PROMPT = (
     "You rewrite selected text into clearer, more complete wording. "
@@ -56,6 +57,24 @@ def get_setting(config: dict[str, Any], name: str, default: str) -> str:
     return default
 
 
+def get_int_setting(config: dict[str, Any], name: str, default: int) -> int:
+    env_value = os.environ.get(name)
+    if env_value and env_value.strip():
+        try:
+            return int(env_value.strip())
+        except ValueError:
+            return default
+
+    value = config.get(name.lower())
+    if value is None:
+        value = config.get(name)
+
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return default
+
+
 def count_sentences(text: str) -> int:
     normalized = re.sub(r"\s+", " ", text.strip())
     if not normalized:
@@ -87,6 +106,7 @@ def send_ollama_chat(
     model: str,
     ollama_url: str,
     timeout_seconds: int,
+    num_gpu: int,
 ) -> str:
     payload = {
         "model": model,
@@ -94,6 +114,7 @@ def send_ollama_chat(
         "messages": messages,
         "options": {
             "temperature": 0.2,
+            "num_gpu": num_gpu,
         },
     }
 
@@ -143,13 +164,14 @@ def expand_with_ollama(
     ollama_url: str,
     timeout_seconds: int,
     length_mode: str,
+    num_gpu: int,
 ) -> str:
     messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user", "content": build_user_prompt(text, length_mode)},
     ]
 
-    result = send_ollama_chat(messages, model, ollama_url, timeout_seconds)
+    result = send_ollama_chat(messages, model, ollama_url, timeout_seconds, num_gpu)
     target_count = TARGET_SENTENCE_COUNTS.get(length_mode)
     if target_count is None:
         return result
@@ -162,7 +184,7 @@ def expand_with_ollama(
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": build_correction_prompt(text, result, target_count)},
         ]
-        result = send_ollama_chat(messages, model, ollama_url, timeout_seconds)
+        result = send_ollama_chat(messages, model, ollama_url, timeout_seconds, num_gpu)
 
     actual_count = count_sentences(result)
     if actual_count != target_count:
@@ -206,12 +228,14 @@ def main() -> int:
         model = get_setting(config, "LOCAL_LLM_MODEL", DEFAULT_MODEL)
         ollama_url = get_setting(config, "OLLAMA_BASE_URL", DEFAULT_OLLAMA_URL)
         timeout_seconds = int(config.get("timeout_seconds", 90))
+        num_gpu = get_int_setting(config, "OLLAMA_NUM_GPU", DEFAULT_NUM_GPU)
         expanded_text = expand_with_ollama(
             selected_text,
             model,
             ollama_url,
             timeout_seconds,
             args.length,
+            num_gpu,
         )
         output_path.write_text(expanded_text, encoding="utf-8")
     except Exception as exc:  # noqa: BLE001

@@ -1,0 +1,34 @@
+ips_case_number,ips_created_date,ips_owner_name,ips_oem,ips_reporter_account_name,customer,ips_title
+594779,2021-02-24 01:43:00,Nicky Chen,NA,,,Wifi device lost after resume from S4/S5.
+594779,2021-02-24 01:43:00,Nicky Chen,NA,,,Wifi device lost after resume from S4/S5.
+594779,2021-02-24 01:43:00,Nicky Chen,NA,,,Wifi device lost after resume from S4/S5.
+599045,2021-03-12 01:15:00,Nicky Chen,NA,NA,NA,Wrong text in BIOS setting
+599445,2021-03-15 02:36:00,Nicky Chen,NA,NA,NA,[ADL] Wrong text in BIOS setting
+614817,2021-05-13 02:24:00,Nicky Chen,NA,,,test why investigating
+614817,2021-05-13 02:24:00,Nicky Chen,NA,,,test why investigating
+614817,2021-05-13 02:24:00,Nicky Chen,NA,,,test why investigating
+631622,2021-07-21 04:26:00,Nicky Chen,NA,,,[Gigabyte] install 22.40.0.7 but MDA Validation shows 22.60.0.6
+631622,2021-07-21 04:26:00,Nicky Chen,NA,,,[Gigabyte] install 22.40.0.7 but MDA Validation shows 22.60.0.6
+631622,2021-07-21 04:26:00,Nicky Chen,NA,,,[Gigabyte] install 22.40.0.7 but MDA Validation shows 22.60.0.6
+634355,2021-08-02 01:25:00,Nicky Chen,NA,,,[LCM1 SIT][EV1][WiFi]The yellow mark shows up on Device Manager of Wi-Fi adapter after execute PLDRTest.exe about 4-5 times.
+634355,2021-08-02 01:25:00,Nicky Chen,NA,,,[LCM1 SIT][EV1][WiFi]The yellow mark shows up on Device Manager of Wi-Fi adapter after execute PLDRTest.exe about 4-5 times.
+634355,2021-08-02 01:25:00,Nicky Chen,NA,,,[LCM1 SIT][EV1][WiFi]The yellow mark shows up on Device Manager of Wi-Fi adapter after execute PLDRTest.exe about 4-5 times.
+639101,2021-08-19 16:00:00,Franky Yang,NA,,,"In Russia, Intel AX200 failed to connect to the wireless routers in 11ax mode"
+639101,2021-08-19 16:00:00,Franky Yang,NA,,,"In Russia, Intel AX200 failed to connect to the wireless routers in 11ax mode"
+639101,2021-08-19 16:00:00,Franky Yang,NA,,,"In Russia, Intel AX200 failed to connect to the wireless routers in 11ax mode"
+649800,2021-10-04 18:50:00,Nicky Chen,NA,,,[Intel UID 549989][EV1][PST] Intel(R) Wi-Fi 6 AX201 160MHz is Banged Out in Device Manager.
+649800,2021-10-04 18:50:00,Nicky Chen,NA,,,[Intel UID 549989][EV1][PST] Intel(R) Wi-Fi 6 AX201 160MHz is Banged Out in Device Manager.
+649800,2021-10-04 18:50:00,Nicky Chen,NA,,,[Intel UID 549989][EV1][PST] Intel(R) Wi-Fi 6 AX201 160MHz is Banged Out in Device Manager.
+651845,2021-10-13 09:51:00,Nicky Chen,NA,,,10/6 WAE production-bug#NA-Intel WIFI-!-DRTU Tool-! DRTU connection check fail
+651845,2021-10-13 09:51:00,Nicky Chen,NA,,,10/6 WAE production-bug#NA-Intel WIFI-!-DRTU Tool-! DRTU connection check fail
+651845,2021-10-13 09:51:00,Nicky Chen,NA,,,10/6 WAE production-bug#NA-Intel WIFI-!-DRTU Tool-! DRTU connection check fail
+701363,2022-04-26 23:31:00,Nicky Chen,NA,,,[ADL-P]Device lost after enabled wifi boot feature (vRPO SKU)
+701363,2022-04-26 23:31:00,Nicky Chen,NA,,,[ADL-P]Device lost after enabled wifi boot feature (vRPO SKU)
+701363,2022-04-26 23:31:00,Nicky Chen,NA,,,[ADL-P]Device lost after enabled wifi boot feature (vRPO SKU)
+726468,2022-08-02 20:12:00,Nicky Chen,NA,,,[ASUS] 22H2 WHQL FAIL
+726468,2022-08-02 20:12:00,Nicky Chen,NA,,,[ASUS] 22H2 WHQL FAIL
+726468,2022-08-02 20:12:00,Nicky Chen,NA,,,[ASUS] 22H2 WHQL FAIL
+727761,2022-08-08 11:30:00,Nicky Chen,NA,,,[Intel][Alder Lake][DRTU][AC9560][PHWFW06537_22.150.1.1]ECS- ??MF50AL????????tool
+727761,2022-08-08 11:30:00,Nicky Chen,NA,,,[Intel][Alder Lake][DRTU][AC9560][PHWFW06537_22.150.1.1]ECS- ??MF50AL????????tool
+727761,2022-08-08 11:30:00,Nicky Chen,NA,,,[Intel][Alder Lake][DRTU][AC9560][PHWFW06537_22.150.1.1]ECS- ??MF50AL????????tool
+777055,2023-01-09 02:11:00,Nicky Chen,NA,NA,NA,[DRTU][GaP ES1][22.205] Command XVT_CMD_MCC_CONTROL failed with status 31

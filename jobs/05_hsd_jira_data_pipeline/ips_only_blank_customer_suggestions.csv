@@ -1,0 +1,66 @@
+﻿ips_id,ips_created_date,ips_title,suggested_customer,reason
+997200,2026-01-23 06:56:29,[Test][NvwaB][RPL][AX211][WiFi]The wifi disconnect and cant research the wifi,,unknown_bracket_token:TEST
+989476,2025-11-28 03:37:27,[Sakura][LFP30][EVT] AX211 Wifi card cannot be detected properly after being swapped from BE211,,unknown_bracket_token:SAKURA
+984949,2025-11-03 09:16:53,[LFP30][Sakura][WiDi] WLAN and WiDi auto disconnect.,,unknown_bracket_token:LFP30
+977291,2025-09-16 07:50:21,PN252 CNVI+TBT4 review,,no_clear_keyword
+976836,2025-09-15 02:16:27,cnvi,,no_clear_keyword
+974254,2025-08-29 06:48:24,[LNL][LP88]BE200MIC,,unknown_bracket_token:LNL
+970471,2025-08-06 06:16:49,Panther Lake H 484 Layout file review for M.2 WIFI module,,no_clear_keyword
+970462,2025-08-06 05:55:45,Panther Lake H 484 Schematic review for M.2 WIFI module,,no_clear_keyword
+970454,2025-08-06 05:40:55,cnvi Schematic review,,no_clear_keyword
+968825,2025-07-28 12:48:26,[PTL][M16P][BE211/AE211] The WLAN link speed would drop under DC mode,,unknown_bracket_token:PTL
+967304,2025-07-21 07:49:58,Bluetooth audio offload can not enable on ARL U platform with GFP2 AX211,,no_clear_keyword
+966556,2025-07-16 06:24:16,"After the Intel AX201/AX211 WLAN card is woken up via network S3, the display shows no image.",,no_clear_keyword
+964108,2025-07-02 12:44:41,Wireless AX210NG Linux Driver + FW + DRTU,,no_clear_keyword
+961457,2025-06-18 03:35:03,Auto Cold Boot TestBT Device YB(error code 38),,no_clear_keyword
+956878,2025-05-20 16:58:07,Issue with AX210 modules,,no_clear_keyword
+955921,2025-05-15 07:39:41,[SU][ARL/MTL] No BT mic device if installing 23.110.0.4/23.120.0.4/23.140.0.5 Drv. with AX201/101 card,,unknown_bracket_token:SU
+947102,2025-04-01 06:58:19,Arrow Lake H 45W Layout file review for M.2 WIFI module,,no_clear_keyword
+947099,2025-04-01 06:50:54,Arrow Lake H 45W Schematic review for M.2 WIFI module,,no_clear_keyword
+944487,2025-03-17 14:05:19,Test,,no_clear_keyword
+943773,2025-03-13 02:19:29,[Haier][BOE][RPL-P][AX201]BIOS Sar feature no function,,unknown_bracket_token:HAIER
+929562,2024-12-18 08:36:54,[H3C][THS_G3][Raptor Lake -H refresh] [24H2]Bluetooth - LE Audio VSAP all WHQL test item are fail in 24h2 windows OS [FR 100%],,unknown_bracket_token:H3C
+929491,2024-12-18 06:01:16,Cannot adjust volume when playing audio by BT device,,no_clear_keyword
+921439,2024-11-13 02:04:20,[Alstone][X6AR5xxx][ARL Hx][AX211]CNVi layout review,,unknown_bracket_token:ALSTONE
+921345,2024-11-12 11:05:28,[Alstone][X6AR5xxx][ARL Hx][AX211]CNVi schematic review,,unknown_bracket_token:ALSTONE
+921008,2024-11-11 07:43:02,[Haier][BOE][NB53B][MTL-H][AX201]AX201 device will show yellow bang after testing PLDR,,unknown_bracket_token:HAIER
+920856,2024-11-08 14:56:42,DRTU for  core89 binary package from Intel RDC#831836,,no_clear_keyword
+920176,2024-11-06 09:13:03,[WW45 MCS Train][WEIBU][A15xMLR100][Arrow Lake H][BT.14][wifi.7]FailThe machine cannot connect to Miracast to cast the screen,,unknown_bracket_token:WW45 MCS TRAIN
+920114,2024-11-06 07:04:42,"[WW45 MCS Train][WEIBU][A15xMLR100][Arrow Lake H][BT.13][wifi.7]Fail When the Bluetooth headset enters and goes out of the test range, the audio does not automatically switch to the headset autoplay",,unknown_bracket_token:WW45 MCS TRAIN
+920111,2024-11-06 06:53:46,[WW45 MCS Train][WEIBU][A15xMLR100][Arrow Lake H][BT.15]Fail Bluetooth headset audio playback doesnt pause during a Skype call,,unknown_bracket_token:WW45 MCS TRAIN
+920106,2024-11-06 06:44:10,[WW45 MCS Train][WEIBU][A15xMLR100][Arrow Lake H][WIFI 15]Fail The machine cant wake up,,unknown_bracket_token:WW45 MCS TRAIN
+920055,2024-11-06 04:03:49,"[WW45 MCS Train][WEIBU][A15xMLR100][Arrow Lake H][BT.08]Fail Connect the Bluetooth headset to Skype for video calls, and the headset has no sound output",,unknown_bracket_token:WW45 MCS TRAIN
+919794,2024-11-05 05:52:22,"[WW45 MCS Train][WEIBU][A15xMLR100][Arrow Lake H][BT.13][wifi.7]Fail When the Bluetooth headset enters and goes out of the test range, the audio does not automatically switch to the headset autoplay",,unknown_bracket_token:WW45 MCS TRAIN
+911949,2024-09-26 03:32:43,[Haier][BOE][NB537][MTL][AX201]wifi card show YB with new driver 23.80.1.3,,unknown_bracket_token:HAIER
+890198,2024-06-19 00:59:18,The problem of programing Intel i210 card by EepromAccessTool,,no_clear_keyword
+864794,2024-02-23 08:15:54,[Haier][BOE][NB537][MTL-H][AX201]Mobile hotspot cannot select 5G band when system was connected 2.4G WIFI,,unknown_bracket_token:HAIER
+862057,2024-02-05 07:38:25,[ODM][RPL-R][INTEL/AX101][X14/15/1704VAP]Wi-Fi AP  in UEFi Wi-Fi AP ,,unknown_bracket_token:ODM
+860314,2024-01-29 02:59:26,[Haier][BOE][NB536][RPL-P][AX201]Sound need about 20s to output from BT speaker,,unknown_bracket_token:HAIER
+855311,2024-01-08 11:22:29,[Generic][PEGA][MTL][BE200][B3403]BT Tx power can not meet eps0.97 p.89 Table6-7,,unknown_bracket_token:GENERIC
+777055,2023-01-09 02:11:00,[DRTU][GaP ES1][22.205] Command XVT_CMD_MCC_CONTROL failed with status 31,,unknown_bracket_token:DRTU
+727761,2022-08-08 11:30:00,[Intel][Alder Lake][DRTU][AC9560][PHWFW06537_22.150.1.1]ECS- ??MF50AL????????tool,,unknown_bracket_token:INTEL
+727761,2022-08-08 11:30:00,[Intel][Alder Lake][DRTU][AC9560][PHWFW06537_22.150.1.1]ECS- ??MF50AL????????tool,,unknown_bracket_token:INTEL
+727761,2022-08-08 11:30:00,[Intel][Alder Lake][DRTU][AC9560][PHWFW06537_22.150.1.1]ECS- ??MF50AL????????tool,,unknown_bracket_token:INTEL
+701363,2022-04-26 23:31:00,[ADL-P]Device lost after enabled wifi boot feature (vRPO SKU),,unknown_bracket_token:ADL-P
+701363,2022-04-26 23:31:00,[ADL-P]Device lost after enabled wifi boot feature (vRPO SKU),,unknown_bracket_token:ADL-P
+701363,2022-04-26 23:31:00,[ADL-P]Device lost after enabled wifi boot feature (vRPO SKU),,unknown_bracket_token:ADL-P
+651845,2021-10-13 09:51:00,10/6 WAE production-bug#NA-Intel WIFI-!-DRTU Tool-! DRTU connection check fail,,no_clear_keyword
+651845,2021-10-13 09:51:00,10/6 WAE production-bug#NA-Intel WIFI-!-DRTU Tool-! DRTU connection check fail,,no_clear_keyword
+651845,2021-10-13 09:51:00,10/6 WAE production-bug#NA-Intel WIFI-!-DRTU Tool-! DRTU connection check fail,,no_clear_keyword
+649800,2021-10-04 18:50:00,[Intel UID 549989][EV1][PST] Intel(R) Wi-Fi 6 AX201 160MHz is Banged Out in Device Manager.,,unknown_bracket_token:INTEL UID 549989
+649800,2021-10-04 18:50:00,[Intel UID 549989][EV1][PST] Intel(R) Wi-Fi 6 AX201 160MHz is Banged Out in Device Manager.,,unknown_bracket_token:INTEL UID 549989
+649800,2021-10-04 18:50:00,[Intel UID 549989][EV1][PST] Intel(R) Wi-Fi 6 AX201 160MHz is Banged Out in Device Manager.,,unknown_bracket_token:INTEL UID 549989
+639101,2021-08-19 16:00:00,"In Russia, Intel AX200 failed to connect to the wireless routers in 11ax mode",,no_clear_keyword
+639101,2021-08-19 16:00:00,"In Russia, Intel AX200 failed to connect to the wireless routers in 11ax mode",,no_clear_keyword
+639101,2021-08-19 16:00:00,"In Russia, Intel AX200 failed to connect to the wireless routers in 11ax mode",,no_clear_keyword
+634355,2021-08-02 01:25:00,[LCM1 SIT][EV1][WiFi]The yellow mark shows up on Device Manager of Wi-Fi adapter after execute PLDRTest.exe about 4-5 times.,,unknown_bracket_token:LCM1 SIT
+634355,2021-08-02 01:25:00,[LCM1 SIT][EV1][WiFi]The yellow mark shows up on Device Manager of Wi-Fi adapter after execute PLDRTest.exe about 4-5 times.,,unknown_bracket_token:LCM1 SIT
+634355,2021-08-02 01:25:00,[LCM1 SIT][EV1][WiFi]The yellow mark shows up on Device Manager of Wi-Fi adapter after execute PLDRTest.exe about 4-5 times.,,unknown_bracket_token:LCM1 SIT
+614817,2021-05-13 02:24:00,test why investigating,,no_clear_keyword
+614817,2021-05-13 02:24:00,test why investigating,,no_clear_keyword
+614817,2021-05-13 02:24:00,test why investigating,,no_clear_keyword
+599445,2021-03-15 02:36:00,[ADL] Wrong text in BIOS setting,,unknown_bracket_token:ADL
+599045,2021-03-12 01:15:00,Wrong text in BIOS setting,,no_clear_keyword
+594779,2021-02-24 01:43:00,Wifi device lost after resume from S4/S5.,,no_clear_keyword
+594779,2021-02-24 01:43:00,Wifi device lost after resume from S4/S5.,,no_clear_keyword
+594779,2021-02-24 01:43:00,Wifi device lost after resume from S4/S5.,,no_clear_keyword

@@ -1,0 +1,156 @@
+[INFO] ===== Offload loading-summary daily start =====
+[INFO] Timestamp: Sat 06/13/2026 10:30:47.90
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\
+[INFO] Current dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat
+C:\Python314\python.exe
+C:\Users\jtsao1\AppData\Local\Microsoft\WindowsApps\python.exe
+C:\Users\jtsao1\AppData\Local\Python\bin\python.exe
+[INFO] GRAPH_AUTH_MODE=delegated
+[INFO] GRAPH_SENDER_UPN=frank.lee@intel.com
+[INFO] OFFLOAD_ALWAYS_EXCLUDED_REPORTERS=Jonathan Tsao
+[INFO] Command: run_offload_reporter_issues.bat --send-email --summary-only-email 
+[INFO] Running offload_reporter_issues.py --send-email --summary-only-email
+[INFO] OFFLOAD_ALWAYS_EXCLUDED_ENGINEERS=Jonathan Tsao
+2026-06-13 10:30:51,739 [INFO][ips_offload] Included 7 allowed reporter(s) with zero current issues for receiver rotation.
+2026-06-13 10:30:52,324 [INFO][ips_offload] Current issue calculation breakdown per reporter:
+2026-06-13 10:30:56,321 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:30:58,401 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:00,405 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:02,074 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:04,988 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:07,098 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:09,036 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:11,096 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:13,161 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:15,251 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:17,336 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:19,388 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:21,365 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:23,380 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:25,489 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:27,356 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:29,417 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:31,573 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:33,670 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:35,615 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:37,624 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:39,576 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:41,551 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:43,271 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:45,263 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:47,286 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:49,300 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:51,357 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:53,282 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:55,394 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:57,124 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:31:59,204 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:01,225 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:04,002 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:05,770 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:07,790 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:09,883 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:11,959 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:13,944 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:16,027 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:18,111 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:20,134 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:22,211 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:24,207 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:26,268 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:28,276 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:30,353 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:32,475 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:34,538 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:36,307 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:38,249 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:40,275 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:42,267 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:44,342 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:46,425 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:48,430 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:50,601 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:52,425 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:54,501 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:56,513 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:32:58,615 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:00,535 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:02,682 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:04,835 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:06,583 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:08,726 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:11,003 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:13,221 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:15,316 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:17,534 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:19,619 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:21,632 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:23,706 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:25,792 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:27,898 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:29,826 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:31,824 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:33,944 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:35,994 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:38,049 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:40,167 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:42,283 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:44,355 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:46,432 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:48,226 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:50,289 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:52,372 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:54,363 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:56,419 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:33:58,490 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:34:00,640 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:34:02,727 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:34:04,736 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:34:06,908 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:34:09,051 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:34:11,144 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:34:13,164 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:34:15,185 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:34:17,182 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:34:19,254 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:34:21,243 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:34:23,241 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:34:25,012 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:34:26,729 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:34:28,519 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:34:30,589 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:34:32,739 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:34:34,786 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:34:36,606 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 10:34:36,608 [INFO][ips_offload] Weighted loading trial enabled for visibility; offload decision remains based on Curr.
+2026-06-13 10:34:36,610 [INFO][ips_offload] Combined trial table (single table with category columns, decision still uses Curr):
+2026-06-13 10:34:36,610 [INFO][ips_offload] +---------------+------+------+------+-----------+-----------+-------+------------------+-------+------+------+--------------+-----+------+-----+--------+------+----------+-----------+-------------+-------------------+-------------------+---------+---------+-------------+------+------+--------+---------+-----+----+--------------+
+2026-06-13 10:34:36,610 [INFO][ips_offload] | Name          | uIPS | uHSD | Jira | Stale IPS | Stale HSD | Total | Weighted Loading | Audio | BIOS | BSOD | Connectivity | HLK | ICPS | IOP | Killer | MSFT | Miracast | OEM Tools | Performance | Power Consumption | Power on sequence | Roaming | Sensing | System Hang | UEFI | WAPI | WowLAN | YB/Lost | P2P | RF | Needs-Triage |
+2026-06-13 10:34:36,610 [INFO][ips_offload] +---------------+------+------+------+-----------+-----------+-------+------------------+-------+------+------+--------------+-----+------+-----+--------+------+----------+-----------+-------------+-------------------+-------------------+---------+---------+-------------+------+------+--------+---------+-----+----+--------------+
+2026-06-13 10:34:36,610 [INFO][ips_offload] | Frank Lee     |   13 |    0 |    8 |         8 |         0 |    13 |            28.27 |     0 |    0 |    1 |            4 |   0 |    4 |   0 |      0 |    0 |        0 |         0 |           0 |                 1 |                 0 |       0 |       0 |           0 |    1 |    0 |      0 |       1 |   4 |  0 |            0 |
+2026-06-13 10:34:36,610 [INFO][ips_offload] | Zhiqiang Cai  |    6 |    0 |    5 |         0 |         0 |    11 |            24.95 |     0 |    0 |    1 |            3 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           1 |                 0 |                 0 |       0 |       1 |           0 |    1 |    0 |      0 |       1 |   5 |  0 |            0 |
+2026-06-13 10:34:36,610 [INFO][ips_offload] | Wesley Kuo    |    3 |    0 |    8 |         2 |         0 |     9 |            16.58 |     0 |    0 |    0 |            6 |   2 |    0 |   0 |      0 |    0 |        0 |         1 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-06-13 10:34:36,610 [INFO][ips_offload] | Timdaway Lai  |    6 |    1 |    2 |         2 |         0 |     7 |            22.89 |     0 |    1 |    1 |            2 |   0 |    1 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           2 |    0 |    0 |      0 |       2 |   2 |  0 |            0 |
+2026-06-13 10:34:36,610 [INFO][ips_offload] | KJ Fang       |   11 |    0 |    4 |         9 |         0 |     6 |            16.33 |     0 |    0 |    0 |            3 |   0 |    0 |   0 |      0 |    0 |        0 |         1 |           1 |                 0 |                 0 |       1 |       0 |           0 |    0 |    0 |      0 |       0 |   2 |  0 |            0 |
+2026-06-13 10:34:36,611 [INFO][ips_offload] | Steven1 Chen  |    9 |    1 |    3 |         6 |         1 |     6 |            11.62 |     0 |    0 |    0 |            4 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 1 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       1 |   0 |  0 |            0 |
+2026-06-13 10:34:36,611 [INFO][ips_offload] | Bingyue Sun   |    7 |    0 |    2 |         4 |         0 |     5 |             9.26 |     0 |    0 |    1 |            4 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-06-13 10:34:36,611 [INFO][ips_offload] | Brenton Wu    |    9 |    0 |    2 |         6 |         0 |     5 |             9.68 |     0 |    0 |    0 |            4 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   1 |  0 |            0 |
+2026-06-13 10:34:36,611 [INFO][ips_offload] | Lydiax Chien  |    4 |    0 |    1 |         0 |         0 |     5 |             9.39 |     0 |    0 |    1 |            1 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       1 |       0 |           0 |    0 |    0 |      0 |       0 |   2 |  0 |            0 |
+2026-06-13 10:34:36,611 [INFO][ips_offload] | Matt Chen     |   10 |    0 |    1 |         6 |         0 |     5 |            15.49 |     0 |    0 |    0 |            5 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   3 |  0 |            0 |
+2026-06-13 10:34:36,611 [INFO][ips_offload] | Yu-Wei Chen   |    5 |    1 |    2 |         2 |         1 |     5 |             9.92 |     0 |    1 |    0 |            3 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       1 |   0 |  0 |            0 |
+2026-06-13 10:34:36,611 [INFO][ips_offload] | Frank Yang    |    5 |    0 |    3 |         4 |         0 |     4 |            23.30 |     0 |    1 |    2 |            4 |   0 |    2 |   0 |      0 |    0 |        0 |         2 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       1 |   1 |  1 |            0 |
+2026-06-13 10:34:36,611 [INFO][ips_offload] | Charles Chu   |    7 |    0 |    1 |         5 |         0 |     3 |             8.23 |     0 |    0 |    1 |            2 |   0 |    0 |   0 |      0 |    0 |        0 |         1 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   1 |  0 |            0 |
+2026-06-13 10:34:36,611 [INFO][ips_offload] | Jackx Lee     |    0 |    0 |    3 |         0 |         0 |     3 |             7.14 |     0 |    0 |    0 |            2 |   0 |    0 |   0 |      0 |    0 |        0 |         1 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  1 |            0 |
+2026-06-13 10:34:36,611 [INFO][ips_offload] | Juan Zou      |    1 |    1 |    2 |         0 |         1 |     3 |             5.64 |     0 |    0 |    0 |            1 |   0 |    0 |   0 |      0 |    0 |        0 |         1 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       1 |   0 |  0 |            0 |
+2026-06-13 10:34:36,611 [INFO][ips_offload] | Henryx Su     |    1 |    0 |    1 |         1 |         0 |     1 |             3.86 |     0 |    0 |    0 |            2 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-06-13 10:34:36,611 [INFO][ips_offload] | Jonathan Tsao |    0 |    0 |    0 |         0 |         0 |     0 |             0.00 |     0 |    0 |    0 |            0 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-06-13 10:34:36,611 [INFO][ips_offload] | Leo Chiang    |    0 |    0 |    0 |         0 |         0 |     0 |             2.26 |     0 |    0 |    0 |            0 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       1 |   0 |  0 |            0 |
+2026-06-13 10:34:36,611 [INFO][ips_offload] +---------------+------+------+------+-----------+-----------+-------+------------------+-------+------+------+--------------+-----+------+-----+--------+------+----------+-----------+-------------+-------------------+-------------------+---------+---------+-------------+------+------+--------+---------+-----+----+--------------+
+2026-06-13 10:34:36,611 [INFO][ips_offload] Offload decision mode: Curr
+2026-06-13 10:34:36,613 [INFO][ips_offload] Graph auth mode: delegated
+2026-06-13 10:34:40,247 [INFO][ips_offload] Summary-only loading email sent to 20 recipient(s).
+[Config] Using GRAPH_CLIENT_SECRET from environment/.env.
+[Auth] Using cached Graph delegated token.
+[INFO] Finished with exit code 0
+[INFO] Exit code: 0
+[INFO] ===== Offload loading-summary daily end =====

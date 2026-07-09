@@ -1,0 +1,96 @@
+[Thu 01/29/2026  0:52:38.26] Starting HSD-only job 
+2026-01-29 00:52:40,435 [INFO] Run options: RunOptions(enable_jira_tat=True, enable_jira_comment_analysis=True, enable_jira_initial_component=True, enable_jira_duplicate_sw_check=True, log_jira_tat_dict=False, limit_ips=0, limit_jira=0, enable_db_insert=True, db_recreate_table=True, db_use_batch_insert=False, db_batch_page_size=200)
+2026-01-29 00:52:40,435 [INFO][wireless_ips_hsd] Run options: RunOptions(enable_jira_tat=True, enable_jira_comment_analysis=True, enable_jira_initial_component=True, enable_jira_duplicate_sw_check=True, log_jira_tat_dict=False, limit_ips=0, limit_jira=0, enable_db_insert=True, db_recreate_table=True, db_use_batch_insert=False, db_batch_page_size=200)
+2026-01-29 00:52:40,436 [WARNING] KRB5CCNAME not set; Kerberos will use the system default credential cache.
+2026-01-29 00:52:40,436 [WARNING][hsd_access] KRB5CCNAME not set; Kerberos will use the system default credential cache.
+2026-01-29 00:52:40,437 [INFO] Kerberos credential cache in use: system default
+2026-01-29 00:52:40,437 [INFO][hsd_access] Kerberos credential cache in use: system default
+2026-01-29 00:52:40,437 [INFO] Using Kerberos authentication; ensure 'kinit' has been run and KRB5CCNAME is set.
+2026-01-29 00:52:40,437 [INFO][hsd_access] Using Kerberos authentication; ensure 'kinit' has been run and KRB5CCNAME is set.
+2026-01-29 00:52:40,437 [INFO] HSD authentication mode in use: kerberos
+2026-01-29 00:52:40,437 [INFO][hsd_access] HSD authentication mode in use: kerberos
+2026-01-29 00:52:40,438 [INFO] Fetching bugs from saved query ID: 16021056445 (limit: 500)
+2026-01-29 00:52:40,438 [INFO][hsd_access] Fetching bugs from saved query ID: 16021056445 (limit: 500)
+2026-01-29 00:52:40,438 [INFO] Query URL: https://hsdes.intel.com/appstore/generalapps/#/pages/community/1203659509?queryId=16021056445
+2026-01-29 00:52:40,438 [INFO][hsd_access] Query URL: https://hsdes.intel.com/appstore/generalapps/#/pages/community/1203659509?queryId=16021056445
+2026-01-29 00:52:40,438 [INFO] [Attempt 1/5] Trying endpoint: https://hsdes-api.intel.com/rest/query/16021056445
+2026-01-29 00:52:40,438 [INFO][hsd_access] [Attempt 1/5] Trying endpoint: https://hsdes-api.intel.com/rest/query/16021056445
+2026-01-29 00:52:40,438 [DEBUG][hsd_access] API request: GET https://hsdes-api.intel.com/rest/query/16021056445
+2026-01-29 00:52:42,525 [ERROR] API request failed: GET https://hsdes-api.intel.com/rest/query/16021056445 - HTTPSConnectionPool(host='hsdes-api.intel.com', port=443): Max retries exceeded with url: /rest/query/16021056445?include_text_fields=Y&start_at=1&max_results=500 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1081)')))
+2026-01-29 00:52:42,525 [ERROR][hsd_access] API request failed: GET https://hsdes-api.intel.com/rest/query/16021056445 - HTTPSConnectionPool(host='hsdes-api.intel.com', port=443): Max retries exceeded with url: /rest/query/16021056445?include_text_fields=Y&start_at=1&max_results=500 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1081)')))
+2026-01-29 00:52:42,526 [DEBUG][hsd_access] Endpoint {'path': 'query/16021056445', 'params': {'include_text_fields': 'Y', 'start_at': 1, 'max_results': 500}} error: HTTPSConnectionPool(host='hsdes-api.intel.com', port=443): Max retries exceeded with url: /rest/query/16021056445?include_text_fields=Y&start_at=1&max_results=500 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1081)')))
+2026-01-29 00:52:42,528 [INFO] [Attempt 2/5] Trying endpoint: https://hsdes-api.intel.com/rest/query/execute/16021056445
+2026-01-29 00:52:42,528 [INFO][hsd_access] [Attempt 2/5] Trying endpoint: https://hsdes-api.intel.com/rest/query/execute/16021056445
+2026-01-29 00:52:42,528 [DEBUG][hsd_access] API request: GET https://hsdes-api.intel.com/rest/query/execute/16021056445
+2026-01-29 00:52:43,253 [ERROR] API request failed: GET https://hsdes-api.intel.com/rest/query/execute/16021056445 - HTTPSConnectionPool(host='hsdes-api.intel.com', port=443): Max retries exceeded with url: /rest/query/execute/16021056445?limit=500 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1081)')))
+2026-01-29 00:52:43,253 [ERROR][hsd_access] API request failed: GET https://hsdes-api.intel.com/rest/query/execute/16021056445 - HTTPSConnectionPool(host='hsdes-api.intel.com', port=443): Max retries exceeded with url: /rest/query/execute/16021056445?limit=500 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1081)')))
+2026-01-29 00:52:43,253 [DEBUG][hsd_access] Endpoint {'path': 'query/execute/16021056445', 'params': {'limit': 500}} error: HTTPSConnectionPool(host='hsdes-api.intel.com', port=443): Max retries exceeded with url: /rest/query/execute/16021056445?limit=500 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1081)')))
+2026-01-29 00:52:43,255 [INFO] [Attempt 3/5] Trying endpoint: https://hsdes-api.intel.com/rest/query/16021056445/execute
+2026-01-29 00:52:43,255 [INFO][hsd_access] [Attempt 3/5] Trying endpoint: https://hsdes-api.intel.com/rest/query/16021056445/execute
+2026-01-29 00:52:43,255 [DEBUG][hsd_access] API request: GET https://hsdes-api.intel.com/rest/query/16021056445/execute
+2026-01-29 00:52:44,003 [ERROR] API request failed: GET https://hsdes-api.intel.com/rest/query/16021056445/execute - HTTPSConnectionPool(host='hsdes-api.intel.com', port=443): Max retries exceeded with url: /rest/query/16021056445/execute?limit=500 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1081)')))
+2026-01-29 00:52:44,003 [ERROR][hsd_access] API request failed: GET https://hsdes-api.intel.com/rest/query/16021056445/execute - HTTPSConnectionPool(host='hsdes-api.intel.com', port=443): Max retries exceeded with url: /rest/query/16021056445/execute?limit=500 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1081)')))
+2026-01-29 00:52:44,003 [DEBUG][hsd_access] Endpoint {'path': 'query/16021056445/execute', 'params': {'limit': 500}} error: HTTPSConnectionPool(host='hsdes-api.intel.com', port=443): Max retries exceeded with url: /rest/query/16021056445/execute?limit=500 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1081)')))
+2026-01-29 00:52:44,004 [INFO] [Attempt 4/5] Trying endpoint: https://hsdes-api.intel.com/rest/savedquery/16021056445
+2026-01-29 00:52:44,004 [INFO][hsd_access] [Attempt 4/5] Trying endpoint: https://hsdes-api.intel.com/rest/savedquery/16021056445
+2026-01-29 00:52:44,005 [DEBUG][hsd_access] API request: GET https://hsdes-api.intel.com/rest/savedquery/16021056445
+2026-01-29 00:52:44,738 [ERROR] API request failed: GET https://hsdes-api.intel.com/rest/savedquery/16021056445 - HTTPSConnectionPool(host='hsdes-api.intel.com', port=443): Max retries exceeded with url: /rest/savedquery/16021056445?limit=500 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1081)')))
+2026-01-29 00:52:44,738 [ERROR][hsd_access] API request failed: GET https://hsdes-api.intel.com/rest/savedquery/16021056445 - HTTPSConnectionPool(host='hsdes-api.intel.com', port=443): Max retries exceeded with url: /rest/savedquery/16021056445?limit=500 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1081)')))
+2026-01-29 00:52:44,739 [DEBUG][hsd_access] Endpoint {'path': 'savedquery/16021056445', 'params': {'limit': 500}} error: HTTPSConnectionPool(host='hsdes-api.intel.com', port=443): Max retries exceeded with url: /rest/savedquery/16021056445?limit=500 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1081)')))
+2026-01-29 00:52:44,740 [INFO] [Attempt 5/5] Trying endpoint: https://hsdes-api.intel.com/rest/article/query/16021056445
+2026-01-29 00:52:44,740 [INFO][hsd_access] [Attempt 5/5] Trying endpoint: https://hsdes-api.intel.com/rest/article/query/16021056445
+2026-01-29 00:52:44,740 [DEBUG][hsd_access] API request: GET https://hsdes-api.intel.com/rest/article/query/16021056445
+2026-01-29 00:52:45,255 [ERROR] API request failed: GET https://hsdes-api.intel.com/rest/article/query/16021056445 - HTTPSConnectionPool(host='hsdes-api.intel.com', port=443): Max retries exceeded with url: /rest/article/query/16021056445?limit=500 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1081)')))
+2026-01-29 00:52:45,255 [ERROR][hsd_access] API request failed: GET https://hsdes-api.intel.com/rest/article/query/16021056445 - HTTPSConnectionPool(host='hsdes-api.intel.com', port=443): Max retries exceeded with url: /rest/article/query/16021056445?limit=500 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1081)')))
+2026-01-29 00:52:45,256 [DEBUG][hsd_access] Endpoint {'path': 'article/query/16021056445', 'params': {'limit': 500}} error: HTTPSConnectionPool(host='hsdes-api.intel.com', port=443): Max retries exceeded with url: /rest/article/query/16021056445?limit=500 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1081)')))
+2026-01-29 00:52:45,256 [WARNING] Could not fetch bugs from query ID 16021056445 via API endpoints
+2026-01-29 00:52:45,256 [WARNING][hsd_access] Could not fetch bugs from query ID 16021056445 via API endpoints
+2026-01-29 00:52:45,256 [INFO] You may need to access the query directly via web interface or use alternate authentication
+2026-01-29 00:52:45,256 [INFO][hsd_access] You may need to access the query directly via web interface or use alternate authentication
+2026-01-29 00:52:45,256 [INFO] ======================================================================
+2026-01-29 00:52:45,256 [INFO][hsd_access] ======================================================================
+2026-01-29 00:52:45,256 [INFO] HSD API Authentication Failed - Alternative Options:
+2026-01-29 00:52:45,256 [INFO][hsd_access] HSD API Authentication Failed - Alternative Options:
+2026-01-29 00:52:45,256 [INFO] ======================================================================
+2026-01-29 00:52:45,256 [INFO][hsd_access] ======================================================================
+2026-01-29 00:52:45,256 [INFO] 1. Validate Kerberos ticket:
+2026-01-29 00:52:45,256 [INFO][hsd_access] 1. Validate Kerberos ticket:
+2026-01-29 00:52:45,256 [INFO]    - Run 'klist' to verify a valid ticket exists
+2026-01-29 00:52:45,256 [INFO][hsd_access]    - Run 'klist' to verify a valid ticket exists
+2026-01-29 00:52:45,256 [INFO]    - If expired or missing, run 'kinit your_upi@INTEL.COM'
+2026-01-29 00:52:45,256 [INFO][hsd_access]    - If expired or missing, run 'kinit your_upi@INTEL.COM'
+2026-01-29 00:52:45,256 [INFO] 
+2026-01-29 00:52:45,256 [INFO][hsd_access] 
+2026-01-29 00:52:45,256 [INFO] 2. Manual Export (recommended for now):
+2026-01-29 00:52:45,256 [INFO][hsd_access] 2. Manual Export (recommended for now):
+2026-01-29 00:52:45,256 [INFO]    - Visit: https://hsdes.intel.com/appstore/generalapps/#/pages/community/1203659509?queryId=16021056445
+2026-01-29 00:52:45,256 [INFO][hsd_access]    - Visit: https://hsdes.intel.com/appstore/generalapps/#/pages/community/1203659509?queryId=16021056445
+2026-01-29 00:52:45,257 [INFO]    - Click 'Export' button
+2026-01-29 00:52:45,257 [INFO][hsd_access]    - Click 'Export' button
+2026-01-29 00:52:45,257 [INFO]    - Save as CSV/Excel
+2026-01-29 00:52:45,257 [INFO][hsd_access]    - Save as CSV/Excel
+2026-01-29 00:52:45,257 [INFO] 
+2026-01-29 00:52:45,257 [INFO][hsd_access] 
+2026-01-29 00:52:45,257 [INFO] 3. Request Faceless Account:
+2026-01-29 00:52:45,257 [INFO][hsd_access] 3. Request Faceless Account:
+2026-01-29 00:52:45,257 [INFO]    - Email: ags@intel.com
+2026-01-29 00:52:45,257 [INFO][hsd_access]    - Email: ags@intel.com
+2026-01-29 00:52:45,257 [INFO]    - Subject: 'Faceless Account for HSD API Access'
+2026-01-29 00:52:45,257 [INFO][hsd_access]    - Subject: 'Faceless Account for HSD API Access'
+2026-01-29 00:52:45,257 [INFO]    - Get dedicated service account credentials
+2026-01-29 00:52:45,257 [INFO][hsd_access]    - Get dedicated service account credentials
+2026-01-29 00:52:45,257 [INFO] ======================================================================
+2026-01-29 00:52:45,257 [INFO][hsd_access] ======================================================================
+2026-01-29 00:52:45,257 [INFO] Fetched 0 HSD bug(s) via API
+2026-01-29 00:52:45,257 [INFO][wireless_ips_hsd] Fetched 0 HSD bug(s) via API
+2026-01-29 00:52:45,257 [INFO] No HSD rows to insert; skipping Postgres stage.
+2026-01-29 00:52:45,257 [INFO][wireless_ips_hsd] No HSD rows to insert; skipping Postgres stage.
+2026-01-29 00:52:45,257 [INFO] === Stage timing summary (seconds) ===
+2026-01-29 00:52:45,257 [INFO][wireless_ips_hsd] === Stage timing summary (seconds) ===
+2026-01-29 00:52:45,257 [INFO] HSD_fetch          4.82
+2026-01-29 00:52:45,257 [INFO][wireless_ips_hsd] HSD_fetch          4.82
+2026-01-29 00:52:45,257 [INFO] Postgres_insert    0.00
+2026-01-29 00:52:45,257 [INFO][wireless_ips_hsd] Postgres_insert    0.00
+2026-01-29 00:52:45,257 [INFO] TOTAL              4.82
+2026-01-29 00:52:45,257 [INFO][wireless_ips_hsd] TOTAL              4.82
+[Thu 01/29/2026  0:52:45.37] Finished with exit code 0 

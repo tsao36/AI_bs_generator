@@ -1,0 +1,163 @@
+[INFO] ===== Weekly current yearly issue count start ======
+[INFO] Timestamp: Tue 07/07/2026 15:20:40.47
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\
+[INFO] Current dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications
+[INFO] Project root: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..
+[INFO] Python: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\customer issue analysis\.venv\Scripts\python.exe
+[INFO] Project Python: C:\Python314\python.exe
+[INFO] PYTHONPATH: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\APIs;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\jobs\01_issue_category_tuning;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\jobs\03_offload_automation;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\jobs\04_wireless_bug_dashboard;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications\..\..\jobs\06_reporting_and_notifications;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\APIs;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\06_reporting_and_notifications;
+C:\Python314\python.exe
+C:\Users\jtsao1\AppData\Local\Microsoft\WindowsApps\python.exe
+C:\Users\jtsao1\AppData\Local\Python\bin\python.exe
+[INFO] GRAPH_AUTH_MODE=delegated
+[INFO] GRAPH_SENDER_UPN=frank.lee@intel.com
+[INFO] Running issue contribution report...
+2026-07-07 15:20:42,117 [INFO][weekly_issue_count_report] Querying 2026 issue loading from ips_jira_bugs (stale_days=365)...
+2026-07-07 15:20:44,573 [INFO][weekly_issue_count_report] Fetching yearly created counts (all statuses)...
+2026-07-07 15:20:45,046 [INFO][weekly_issue_count_report] Found 18 engineers with data.
+2026-07-07 15:20:56,667 [INFO][weekly_issue_count_report] Generated Traditional Chinese summary (153 chars).
+2026-07-07 15:21:38,768 [INFO][weekly_issue_count_report] Generated per-person LLM comments for 18 engineers.
+[DRY RUN] To: ['frank.lee@intel.com', 'zhiqiang.cai@intel.com', 'nicky.chen@intel.com', 'charles.p.chu@intel.com', 'kj.fang@intel.com', 'timdaway.lai@intel.com', 'frank.fc.yang@intel.com', 'matt.chen@intel.com', 'steven1.chen@intel.com', 'yu-wei.chen@intel.com', 'jackx.lee@intel.com', 'wesley.kuo@intel.com', 'bingyue.sun@intel.com', 'juan.zou@intel.com', 'arielx.fan@intel.com', 'brenton.wu@intel.com', 'wei-ling.chi@intel.com', 'yuan-yuan.tu@intel.com', 'cce.wireless.ce.cfe.wifi.gb@intel.com', 'cce.wireless.ce.cfe.bt.gb@intel.com']
+[DRY RUN] Cc: ['jonathan.tsao@intel.com']
+[DRY RUN] Subject: [2026 Issue Contribution] 2026-07-07 | 18 engineers | 539 created (IPS 514 / Jira 21 / HSD 4)
+
+--- Body Preview ---
+
+[2026 年度各工程師開案負載摘要（繁體中文）]
+2026 年度，我們團隊的工程師共為客戶處理了539個新的工程案件。其中，Bingyue Sun以75個案件的成績排名第一位，而Zhiqiang Cai和Frank Yang則緊隨其後，分別有63和48個案件。值得注意的是，有18名工程師在這一年都沒有接到新的工程案件，但我們團隊仍然保持著良好的工作效率。
+
+============================================================
+
+2026 Issue Loading per Engineer (Year-to-Date)
+============================================================
+Generated at : 2026-07-07 15:21:38
+Period       : 2026-01-01 ~ 2026-07-07
+Data source  : ips_jira_bugs
+Engineers    : 18
+Grand total  : 539 total created (IPS 514 + Jira 21 + HSD 4) in 2026
+
++---------------+---------+------+-----------+-------------+--------------+-------------+-------+
+| Reporter      | Group   | Jira | Stale IPS | Created IPS | Created JIRA | Created HSD | Total |
++---------------+---------+------+-----------+-------------+--------------+-------------+-------+
+| Bingyue Sun   | BT      |    0 |         0 |          75 |            0 |           0 |    75 |
+| Zhiqiang Cai  | WiFi    |    4 |         2 |          60 |            3 |           0 |    63 |
+| Frank Yang    | WiFi    |    0 |         5 |          48 |            0 |           0 |    48 |
+| Juan Zou      | BT      |    0 |         0 |          47 |            0 |           0 |    47 |
+| Wesley Kuo    | BT      |    9 |         1 |          31 |            9 |           0 |    40 |
+| Steven1 Chen  | BT      |    4 |         8 |          33 |            3 |           0 |    36 |
+| Timdaway Lai  | WiFi    |    2 |         3 |          29 |            3 |           0 |    32 |
+| Frank Lee     | WiFi    |    3 |         8 |          29 |            2 |           0 |    31 |
+| Brenton Wu    | WiFi/BT |    1 |         3 |          29 |            0 |           2 |    31 |
+| Charles Chu   | WiFi    |    0 |         4 |          30 |            0 |           0 |    30 |
+| Jackx Lee     | -       |    1 |         0 |          26 |            0 |           0 |    26 |
+| Yu-wei Chen   | BT      |    0 |         5 |          18 |            0 |           2 |    20 |
+| Kj Fang       | WiFi    |    0 |         0 |          20 |            0 |           0 |    20 |
+| Matt Chen     | BT      |    0 |         8 |          18 |            0 |           0 |    18 |
+| Henryx Su     | -       |    2 |         1 |           9 |            1 |           0 |    10 |
+| Lydiax Chien  | -       |    0 |         1 |          10 |            0 |           0 |    10 |
+| Jonathan Tsao | -       |    0 |         0 |           2 |            0 |           0 |     2 |
+| KJ Fang       | WiFi    |    4 |        10 |           0 |            0 |           0 |     0 |
++---------------+---------+------+-----------+-------------+--------------+-------------+-------+
+
+Column definitions:
+  Jira         = currently open Jira issues assigned to the engineer
+  Stale IPS    = unpromoted IPS cases with no recent activity
+  Created IPS  = all IPS cases created in 2026 (open + closed)
+  Created JIRA = Jira-only issues created in 2026 (no linked IPS case)
+  Created HSD  = all HSD bugs created in 2026 (open + closed)
+  Total        = Created IPS + Created JIRA + Created HSD
+
+============================================================
+AI Feedback per Engineer  (generated by local LLM)
+============================================================
+  Bingyue Sun: Exceptional performance with 75 created issues and zero stale IPs, setting a high standard for the team.
+  Zhiqiang Cai: Strong effort with 63 total created issues despite a few stale IPS instances to address.
+  Frank Yang: Resilient work on 48 created issues despite a higher-than-ideal stale IP count.
+  Juan Zou: Consistent output of 47 high-quality issues and zero stale IPs, well done!
+  Wesley Kuo: Active contributor with 40 total issues, including some Jira-only creations to help the team.
+  Steven1 Chen: Productive work on 36 created issues despite a higher-than-ideal stale IP count.
+  Timdaway Lai: Encouraging start with 32 created issues and relatively low stale IPs for the team.
+  Frank Lee: Solid contribution of 31 high-quality issues, keeping his focus sharp.
+  Brenton Wu: Balanced output of 31 total issues across IPS and HSD categories.
+  Charles Chu: Reliable performer with 30 created issues, showing steady improvement.
+  Jackx Lee: Good start with 26 created issues and zero stale IPs to build upon.
+  Yu-wei Chen: Growing contributions with 20 total issues, including some valuable HSD additions.
+  Kj Fang: Strong foundation established with 20 high-quality issues in the first half of the year.
+  Matt Chen: Steady effort with 18 created issues, working towards a more balanced output.
+  Henryx Su: Nice momentum gained with 10 created issues and a good stale IP ratio.
+  Jonathan Tsao: Excellent focus maintaining zero stale IPs despite fewer contributions.
+  KJ Fang: Opportunity to recharge and refocus after a slower start, come back strong!
+
+This email was auto-generated by run_weekly_current_yearly_issue_count.bat
+[INFO] Issue report exit code: 0
+[INFO] Running project loading report...
+2026-07-07 15:21:39,919 [INFO] Reading tasks from: C:\Users\jtsao1\OneDrive - Intel Corporation\CFE Team Folder\CFE Work Package Overview\CFE work overview.xlsx
+2026-07-07 15:21:39,998 [INFO] Loaded 131 task-owner entries.
+2026-07-07 15:21:39,998 [INFO] Aggregated 12 owners.
+2026-07-07 15:22:06,474 [INFO] Generated project LLM comments for 12 owners.
+2026-07-07 15:22:22,700 [INFO] Generated Traditional Chinese project summary (197 chars).
+[DRY RUN] To: ['frank.lee@intel.com', 'zhiqiang.cai@intel.com', 'nicky.chen@intel.com', 'charles.p.chu@intel.com', 'kj.fang@intel.com', 'timdaway.lai@intel.com', 'frank.fc.yang@intel.com', 'matt.chen@intel.com', 'steven1.chen@intel.com', 'yu-wei.chen@intel.com', 'jackx.lee@intel.com', 'wesley.kuo@intel.com', 'bingyue.sun@intel.com', 'juan.zou@intel.com', 'arielx.fan@intel.com', 'brenton.wu@intel.com', 'wei-ling.chi@intel.com', 'yuan-yuan.tu@intel.com', 'cce.wireless.ce.cfe.wifi.gb@intel.com', 'cce.wireless.ce.cfe.bt.gb@intel.com']
+[DRY RUN] Cc: ['jonathan.tsao@intel.com']
+[DRY RUN] Subject: [2026 Project Loading] 2026-07-07 | 12 engineers | 131 tasks assigned (partial)
+
+--- Body Preview ---
+
+[2026 年度各工程師專案任務分配摘要（繁體中文）]
+2026 年的無線工程團隊專案管理現況報告已經開始更新。截至目前，我們總共分配了 131 個任務，其中22項被列為高優先級任務。其中，Charles Chu負責14項任務（包括5項高優先級和7項中等優先級），Wesley Kuo負責16項任務（包括5項高優先級和3項中等優先級），Frank Yang負責19項任務（包括3項高優先級和11項中等優先級）。目前，共有12位工程師正在執行這些專案。
+
+============================================================
+
+2026 Project / Task Loading per Engineer
+============================================================
+Generated at : 2026-07-07 15:22:22
+Source file  : C:\Users\jtsao1\OneDrive - Intel Corporation\CFE Team Folder\CFE Work Package Overview\CFE work overview.xlsx
+Source sheet : CFE_tasks
+Engineers    : 12
+Total tasks  : 131  (partial — table still being updated)
+
++---------------+------+-----+-----+-------+
+| Owner         | High | Med | Low | Total |
++---------------+------+-----+-----+-------+
+| Charles Chu   |    5 |   7 |   2 |    14 |
+| Wesley Kuo    |    5 |   3 |   8 |    16 |
+| Frank Yang    |    3 |  11 |   5 |    19 |
+| Kj Fang       |    2 |   4 |  11 |    17 |
+| Frank Lee     |    2 |   4 |   1 |     7 |
+| Yu-wei Chen   |    2 |   2 |  11 |    15 |
+| Brenton Wu    |    2 |   2 |   2 |     6 |
+| Steven1 Chen  |    1 |  10 |   4 |    15 |
+| Timdaway Lai  |    0 |   6 |   3 |     9 |
+| Matt Chen     |    0 |   4 |   4 |     8 |
+| Henryx Su     |    0 |   0 |   4 |     4 |
+| Jonathan Tsao |    0 |   0 |   1 |     1 |
++---------------+------+-----+-----+-------+
+
+Column definitions:
+  High   = Priority 3 tasks
+  Med    = Priority 2 tasks
+  Low    = Priority 1 tasks
+  Total  = High + Med + Low
+  Note: tasks marked 'Account based' or 'Looking for owner' are excluded
+  Note: table is still being filled in — counts are partial and not final
+
+============================================================
+AI Feedback per Engineer  (generated by local LLM)
+============================================================
+  [Note: This section is still a work in progress and will be improved in future iterations.]
+
+  Charles Chu: Currently assigned to 14 tasks across multiple priority levels.
+  Wesley Kuo: Assigned to a total of 16 tasks including high, medium, and low priorities.
+  Frank Yang: Has been assigned 19 tasks across the spectrum of high to low priority.
+  Kj Fang: Currently working on 17 tasks with a mix of high, medium, and low priority counts.
+  Frank Lee: Has been assigned a total of 7 tasks with a balance of high and low priorities.
+  Yu-wei Chen: Currently responsible for 15 tasks including both high and low priorities.
+  Brenton Wu: Assigned to a total of 6 tasks across multiple levels of priority.
+  Steven1 Chen: Working on 15 tasks with a focus on medium priority tasks and others.
+  Timdaway Lai: Has been assigned 9 tasks mostly falling into the medium and low priority ranges.
+  Matt Chen: Currently working on 8 tasks including a mix of high, medium, and low priorities.
+  Henryx Su: Responsible for 4 tasks which are all categorized as low priority.
+  Jonathan Tsao: Assigned to just 1 task with a low priority designation.
+
+This email was auto-generated by run_weekly_current_yearly_issue_count.bat
+[INFO] Project report exit code: 0
+[INFO] ===== Weekly current yearly issue count end =====

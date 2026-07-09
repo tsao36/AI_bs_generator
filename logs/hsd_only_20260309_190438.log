@@ -1,0 +1,16 @@
+[Mon 03/09/2026 19:04:38.61] Starting HSD-only job 
+[INFO] Python executable: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\.venv\Scripts\python.exe 
+did not find executable at 'C:\Program Files\Python314\python.exe': The system cannot find the file specified.
+
+[WARN] Selected Python is not runnable. Falling back to PATH python. 
+[INFO] Python executable fallback: python 
+Python 3.14.3
+[INFO] REQUESTS_CA_BUNDLE=C:\Python314\Lib\site-packages\certifi\cacert.pem 
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\wireless_bug_dashboard_ips_hsd_jira.py", line 18, in <module>
+    import HSD_access as hsd_access  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\HSD_access.py", line 37, in <module>
+    from requests_kerberos import HTTPKerberosAuth, OPTIONAL
+ModuleNotFoundError: No module named 'requests_kerberos'
+[Mon 03/09/2026 19:04:39.06] Finished with exit code 1 

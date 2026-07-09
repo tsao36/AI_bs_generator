@@ -1,0 +1,257 @@
+{
+  "overall_pass": false,
+  "round_completion": {
+    "round_complete": false,
+    "details": "labels_stable=True, recent_labels=[26, 74, 73], avg_gain=0.072256, max_abs_avg_gain=0.003, gain_plateau=False, conf_sums=[11, 8, 6], conf_non_increasing=True, conf_drop=5, max_confusion_drop=1, conf_plateau=False",
+    "stability_weeks": 3,
+    "max_abs_avg_gain": 0.003,
+    "max_confusion_drop": 1
+  },
+  "latest_week": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260601",
+  "checks": {
+    "accepted_labels": {
+      "pass": true,
+      "details": "accepted_labels=73, threshold=10"
+    },
+    "macro_f1_gain_trend": {
+      "pass": false,
+      "details": "recent_gains=[-0.024906165362951205, -0.025819883356606343, 0.26376837659374197, -0.021180847520234414], avg_gain=0.047965, positive_ratio=0.25"
+    },
+    "top_confusions_shrink": {
+      "pass": true,
+      "details": "prev_top3_sum=8, latest_on_prev_pairs_sum=2, pairs=[Performance->Connectivity: 3->2; YB/Lost->Connectivity: 3->0; P2P->Performance: 2->0]"
+    }
+  },
+  "weeks": [
+    {
+      "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260413",
+      "accepted_labels": 0,
+      "macro_f1": 0.5613333333333335,
+      "macro_f1_gain": null,
+      "top_confusions": [
+        {
+          "true": "ICPS",
+          "pred": "Killer",
+          "count": 2
+        },
+        {
+          "true": "Performance",
+          "pred": "Connectivity",
+          "count": 2
+        },
+        {
+          "true": "YB/Lost",
+          "pred": "YB",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260417",
+      "accepted_labels": 0,
+      "macro_f1": 0.5613333333333335,
+      "macro_f1_gain": 0.0,
+      "top_confusions": [
+        {
+          "true": "ICPS",
+          "pred": "Killer",
+          "count": 2
+        },
+        {
+          "true": "Performance",
+          "pred": "Connectivity",
+          "count": 2
+        },
+        {
+          "true": "YB/Lost",
+          "pred": "YB",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260421",
+      "accepted_labels": 33,
+      "macro_f1": 0.7539409250240677,
+      "macro_f1_gain": 0.16748103035556472,
+      "top_confusions": [
+        {
+          "true": "Connectivity",
+          "pred": "OEM Tools",
+          "count": 3
+        },
+        {
+          "true": "Connectivity",
+          "pred": "System Hang",
+          "count": 3
+        },
+        {
+          "true": "YB/Lost",
+          "pred": "BSOD",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260425",
+      "accepted_labels": 0,
+      "macro_f1": 0.7427568730155368,
+      "macro_f1_gain": -0.011184052008530898,
+      "top_confusions": [
+        {
+          "true": "Connectivity",
+          "pred": "YB/Lost",
+          "count": 4
+        },
+        {
+          "true": "Connectivity",
+          "pred": "OEM Tools",
+          "count": 2
+        },
+        {
+          "true": "Connectivity",
+          "pred": "System Hang",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260427",
+      "accepted_labels": 30,
+      "macro_f1": 0.7418228532553475,
+      "macro_f1_gain": -0.02919044184413022,
+      "top_confusions": [
+        {
+          "true": "ICPS",
+          "pred": "Killer",
+          "count": 3
+        },
+        {
+          "true": "Connectivity",
+          "pred": "System Hang",
+          "count": 2
+        },
+        {
+          "true": "Sensing",
+          "pred": "Connectivity",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260504",
+      "accepted_labels": 38,
+      "macro_f1": 0.7834127685851823,
+      "macro_f1_gain": -0.004635430889756154,
+      "top_confusions": [
+        {
+          "true": "Connectivity",
+          "pred": "System Hang",
+          "count": 3
+        },
+        {
+          "true": "P2P",
+          "pred": "Connectivity",
+          "count": 2
+        },
+        {
+          "true": "Performance",
+          "pred": "Connectivity",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260511",
+      "accepted_labels": 14,
+      "macro_f1": 0.7575728201337957,
+      "macro_f1_gain": -0.024906165362951205,
+      "top_confusions": [
+        {
+          "true": "Performance",
+          "pred": "Connectivity",
+          "count": 3
+        },
+        {
+          "true": "YB/Lost",
+          "pred": "Connectivity",
+          "count": 3
+        },
+        {
+          "true": "Connectivity",
+          "pred": "System Hang",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260518",
+      "accepted_labels": 26,
+      "macro_f1": 0.7317529367771893,
+      "macro_f1_gain": -0.025819883356606343,
+      "top_confusions": [
+        {
+          "true": "Connectivity",
+          "pred": "System Hang",
+          "count": 4
+        },
+        {
+          "true": "ICPS",
+          "pred": "Killer",
+          "count": 4
+        },
+        {
+          "true": "Performance",
+          "pred": "Power Consumption",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260525",
+      "accepted_labels": 74,
+      "macro_f1": 0.849281644061885,
+      "macro_f1_gain": 0.26376837659374197,
+      "top_confusions": [
+        {
+          "true": "Performance",
+          "pred": "Connectivity",
+          "count": 3
+        },
+        {
+          "true": "YB/Lost",
+          "pred": "Connectivity",
+          "count": 3
+        },
+        {
+          "true": "P2P",
+          "pred": "Performance",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260601",
+      "accepted_labels": 73,
+      "macro_f1": 0.843188304789612,
+      "macro_f1_gain": -0.021180847520234414,
+      "top_confusions": [
+        {
+          "true": "Connectivity",
+          "pred": "Miracast",
+          "count": 2
+        },
+        {
+          "true": "Performance",
+          "pred": "Connectivity",
+          "count": 2
+        },
+        {
+          "true": "YB/Lost",
+          "pred": "BSOD",
+          "count": 2
+        }
+      ]
+    }
+  ]
+}

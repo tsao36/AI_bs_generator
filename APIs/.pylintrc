@@ -1,0 +1,62 @@
+
+[MASTER]
+init-hook="from pylint.config import find_pylintrc; import os, sys; sys.path.append(os.path.dirname(find_pylintrc()))"
+ignore-patterns=.*\/iamws\/.*
+
+[MESSAGES CONTROL]
+
+disable=broad-except,
+        fixme,
+        too-many-locals,
+        too-many-branches,
+        too-many-arguments,
+        too-many-statements,
+        too-few-public-methods,
+        too-many-public-methods,
+        dangerous-default-value,
+        too-many-return-statements,
+        too-many-instance-attributes,
+
+bad-names=foo,
+          bar,
+          baz,
+          toto,
+          tutu,
+          tata
+
+good-names=i,
+           j,
+           f,
+           k,
+           ex,
+           Run,
+           _,
+           log,
+           logging,
+           db,
+           ArtifactoryCLI,
+           ArtifactoryAPI,
+           DatabaseAPI,
+           ExtendedLogging,
+           GerritAPI,
+           GitAPI,
+           LdapAPI,
+           Sherlock
+
+# Maximum number of characters on a single line.
+max-line-length=120
+
+extension-pkg-whitelist=pyodbc
+
+[IMPORTS]
+known-third-party=flask,fasteners,git,jira,smbclient
+
+[STRING]
+check-quote-consistency=yes
+
+[TYPECHECK]
+ignored-modules=flask,fasteners,git,jira,smbclient
+
+[REPORTS]
+reports=no
+score=no

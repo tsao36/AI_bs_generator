@@ -1,0 +1,25 @@
+﻿customer,count,first_seen,last_seen,sample_ips_id,sample_created_date,sample_title
+DYNABOOK INC.,57,2021-04-15,2022-12-06,759606,2022-12-06 19:01:00,[Dynabook][ICPS]BSOD happens when set Manually Configure Connection settings
+"COMPAL ELECTRONICS, INC.",49,2021-01-25,2022-12-27,774825,2022-12-27 18:31:00,[Compal] WHQL_SleepIO_the format of the specified network name is invalid
+"HUAQIN TECHNOLOGY CO., LTD",37,2021-01-17,2022-12-19,773137,2022-12-19 21:48:00,AX101
+QUANTA COMPUTER INC.,25,2021-02-21,2023-08-06,821165,2023-08-06 23:24:00,[EQB_MTH][ZPZ] CITU program test
+WISTRON CORPORATION,24,2021-01-31,2023-02-13,784551,2023-02-13 01:12:00,[Thinkpad L13-G3][DOA][AX201]wifi disconnected randomly in customer environment
+OTHER - OEM,18,2023-02-14,2023-12-29,853688,2023-12-29 09:00:30,[TONGFANG][Meteor Lake H][GX] Bluetooth disconnected after resume from S4
+PEGATRON CORPORATION,17,2021-06-25,2023-02-07,783428,2023-02-07 19:38:00,[HB] 22.200 DRTU Tool Issue for RPL SoC + AX211 module
+GUANGDONG OPPO MOBILE TELECOMMUNICATIONSCORP. LTD.,12,2021-01-22,2021-07-07,628162,2021-07-07 20:54:00,???GC??PC???GO?????????10??????
+"SHENZHEN EMDOOR ELECTRONIC TECHNOLOGY CO., LTD.",12,2021-01-27,2022-11-13,753373,2022-11-13 18:41:00,Intel AC3165 ??????WIFI????????SSID
+"SHENZHEN BITLAND INFORMATION TECHNOLOGYCO., LTD.",9,2021-04-12,2022-01-22,678151,2022-01-22 02:04:00,[Unis][Bitland][Tianjian-Lake][Comet-Lake/Rocket-Lake][21H2][2/2units]Intel Bluetooth device will show yellow markLog after WHLK test.
+AISTONE,6,2021-03-16,2021-06-15,622656,2021-06-15 18:29:00,[SPG][Whitebook][TGL-H][King County] BSOD when running cold boot and warm boot
+NEXSTGO COMPANY LIMITED,6,2021-11-18,2021-12-08,667197,2021-12-08 23:29:00,[Nexstgo][ADL_28W_RVP][Win11_21H2][WIFI_9560] WLAN(jfp2) device yellow bang (Code:10) during warm boot
+"SHANGHAI WINGTECH ELECTRONICS TECHNOLOGYCO., LTD.",6,2021-11-30,2022-02-20,684529,2022-02-20 17:33:00,"[Haier][Wingtech][G1][ADL][Ax201][21H2]The PC wake up from S4,  WLAN driver appears with YB"
+SHENZHEN IP3 CENTRY INTELLIGENT TECHNOLO,6,2021-03-02,2021-10-20,653623,2021-10-20 01:26:00,[Jasperlake][CNVI][JN10]The CNVI net adapter may fail to read SubSystem ID
+GETAC,4,2023-03-24,2024-08-20,903676,2024-08-20 04:18:02,Bluetooth LE Audio Offload function cannot remain functional after re-connected
+ACCOUNT FOR DEACTIVATED CONTACTS,3,2022-02-16,2022-02-16,683603,2022-02-16 02:57:00,RSSI test issue (Alder Lake/Win11/AX201)
+"ALLION TEST LABS, INC.",3,2022-09-13,2022-09-13,737481,2022-09-13 22:24:00,"[Kohaku][TyP2]Message ""Please restart your system"" shows in notification area one week later after installing WLAN driver."
+"EDIMAX TECHNOLOGY CO., LTD.",3,2022-05-19,2022-05-19,706765,2022-05-19 01:19:00,AX210 can not scan bandwidth 160MHz band4
+FAYTECH AG,3,2021-08-04,2021-08-04,635281,2021-08-04 18:27:00,Needs DRTU software of AC3168NGW
+HAIER,3,2023-08-12,2023-12-28,853465,2023-12-28 06:07:31,"[Quanta][Haier][Casper][BE202][NLZG_NLZF_NLY]Intel BE202 when run S4 stress , BT device lost"
+JAGUAR LAND ROVER - END CUSTOMER,3,2021-09-29,2021-09-29,648801,2021-09-29 01:05:00,DRTU support for Wilkins Peak
+WEIBU - PRC,3,2022-06-28,2022-06-28,716810,2022-06-28 19:59:00,Intel(R) Wi-Fi 6E AX211 160MHz ????
+BYD COMPANY LIMITED,1,2023-09-13,2023-09-13,830553,2023-09-13 19:49:00,BYD-S10-RPL-HX-REFRESH-QS-IOMT issue
+MITAC,1,2023-03-27,2023-03-27,793097,2023-03-27 05:27:33,"[Pictor]Base of case #00784859, please share development on PIE SDK that support"

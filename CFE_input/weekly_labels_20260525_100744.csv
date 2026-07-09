@@ -1,0 +1,27 @@
+ips_title,predicted_category,technology,human_category
+"[Lenovo][Compal]PTL][BE200][ideapad S5P]Stress_CB, Unit show Check device Fail(Intel(R) Wireless Bluetooth(R)(!))during test.(Intel BT YB in Device manager) (F/R:2/4u)",YB/Lost,BT,YB/Lost
+[Samsung][GB6U-16 PTL][WhP2] Controller does not report LE EXT ADV consistently,Connectivity,BT,Connectivity
+"(Copy Of 01011382) [Samsung][Huaqin][WCL][Titan6-14_WCL_BE][Win11]Unit show BSOD 0x139 after idle for 30mins after Benchmark test finished and point to Intel WIFI driver..(F/R:1/20 units, 1/20 times)",BSOD,WiFi,BSOD
+"[Lenovo][Compal][ARL][AX203][Ideapad S5P]Buzzing noise is heard from the Bluetooth headset during teams meetings.(F/R:3/3u,6/6c)",Connectivity,BT,Audio
+[honor][LUX][NvwaC][ARL-hx][AX211][BT]The 0x1E bsod,BSOD,BT,BSOD
+Restricted mode long reconnection time after resume from sleep,Power Consumption,wifi,Connectivity
+[Asus][B5406FMA][Luxshare][WCL]  Wifi device not foud during Reboot cycling.,P2P,WiFi,Connectivity
+Auth failed when doing connect and ping stress test,Connectivity,wifi,Connectivity
+TyP2 6GHz output power 2-5dBm drop on conductive test (3/19 and 4/16),Power Consumption,wifi,Power Consumption
+(Copy Of 01002269)][MTL-RPL][AX211][GFP][P14sGen5/Gen4]  Users experience frequent disconnections during roaming between access points when 802.11ax is enabled,Performance,WiFi,Roaming
+Restricted mode long reconnection time after resume from sleep,Power Consumption,wifi,Connectivity
+[Samsung][WCL][NB8532A][Intel AX211]Unit cannot be ping when in MS status,Sensing,WiFi,Connectivity
+Restricted mode long reconnection time after resume from sleep,Power Consumption,wifi,Connectivity
+"[Samsung][WCL][NB8532A][Intel AX211]WHQL test_""Bluetooth - Audio - Check Sideband DDI"" show fail",Connectivity,BT,HLK
+"[Samsung][WCL][NB8532A][Intel AX211]Connect the BT speaker first, then connect the BT BR headset, will cause the the BT MIC not show up",Connectivity,BT,Connectivity
+[Acer/Compal][Mandolin_PTW] Intel BE211.D2WG.NV_BT SAR Read Fail on v24.40,Connectivity,BT,OEM Tools
+(Copy Of 00964370) [HP] No sound output from earbuds/ internal speakers when manually reconnecting the earbuds after turn off/on BT,Connectivity,BT,Connectivity
+(Copy Of 01008072) [Honor][LUX][NvwaB][ARL-HX][AX211][BT] The BSOD 0x133 releated to BthPan,BSOD,BT,BSOD
+[ASUS][NVL][WIFI][BE211] BT Device controller yellow issue (FR:100&%),Connectivity,BT,YB/Lost
+"[Acer][Longcheer][Anko_WK][WCL]After turn off and turn on Bluetooth ,The Bluetooth mouse can be reconnected  but no functions.",Connectivity,BT,Connectivity
+[Acer][Quanta][BT][HLK WHQL] Bluetooth LE Audio VSAP fail,HLK,BT,HLK
+[Dell][Wistron][GhostRider]Fail to connect with wifi during BIOS post.,Performance,WiFi,UEFI
+Restricted mode long reconnection time after resume from sleep,Power Consumption,wifi,Connectivity
+[HP][IEC] - [CashmereI][PTL][Win11 25H2]SW Drips 0%,Power Consumption,BT,Power Consumption
+"[Samsung][Huaqin][WCL][Titan6-14_WCL_BE][Win11]Video show lag after paring BT headphone.(F/R: 2/2 units, 6/6 times)",Connectivity,BT,Performance
+TyP2 6GHz output power 2-5dBm drop on conductive test (3/19 and 4/16),Power Consumption,wifi,Performance

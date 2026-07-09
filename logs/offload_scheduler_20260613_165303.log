@@ -1,0 +1,292 @@
+[INFO] ===== Offload scheduler start =====
+[INFO] Timestamp: Sat 06/13/2026 16:53:03.41
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\
+[INFO] Current dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat
+[INFO] DB host reachable: 10-108-27-113.dbaas.intel.com
+C:\Python314\python.exe
+C:\Users\jtsao1\AppData\Local\Microsoft\WindowsApps\python.exe
+C:\Users\jtsao1\AppData\Local\Python\bin\python.exe
+[INFO] GRAPH_AUTH_MODE=delegated
+[INFO] GRAPH_SENDER_UPN=frank.lee@intel.com
+[INFO] OFFLOAD_RECEIVER_MAX_ISSUES=10
+[INFO] OFFLOAD_ALWAYS_EXCLUDED_REPORTERS=Jonathan Tsao
+[INFO] Running offload_reporter_issues.py --send-email
+[INFO] OFFLOAD_ALWAYS_EXCLUDED_ENGINEERS=Jonathan Tsao
+2026-06-13 16:53:08,725 [INFO][ips_offload] Included 7 allowed reporter(s) with zero current issues for receiver rotation.
+2026-06-13 16:53:09,441 [INFO][ips_offload] Current issue calculation breakdown per reporter:
+2026-06-13 16:53:15,630 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:53:17,806 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:53:20,701 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:53:23,178 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:53:25,592 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:53:27,745 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:53:30,129 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:53:32,998 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:53:35,390 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:53:38,123 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:53:40,212 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:53:42,675 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:53:44,842 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:53:47,012 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:53:49,190 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:53:51,387 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:53:53,154 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:53:55,364 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:53:57,617 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:00,789 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:02,959 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:05,159 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:07,531 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:09,820 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:12,015 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:14,312 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:16,439 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:18,918 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:21,117 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:23,600 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:25,861 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:28,025 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:30,196 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:32,354 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:34,677 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:36,827 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:38,876 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:41,023 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:43,179 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:45,393 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:47,373 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:49,509 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:51,951 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:53,876 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:56,305 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:54:58,589 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:00,883 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:02,997 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:04,975 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:06,830 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:09,081 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:11,274 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:13,348 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:15,508 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:17,583 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:19,659 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:21,515 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:23,637 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:25,809 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:27,937 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:30,137 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:32,749 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:34,961 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:37,308 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:39,636 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:41,797 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:43,938 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:46,377 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:48,524 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:51,275 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:53,386 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:55,640 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:55:57,809 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:56:00,158 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 16:56:02,091 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 17:09:52,392 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: HTTP Error 403: FORBIDDEN
+2026-06-13 17:09:52,402 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:53,700 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:53,713 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:53,749 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:53,756 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:53,782 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:53,858 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:53,879 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:53,903 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:53,921 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:53,950 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:53,975 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:53,981 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:53,989 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:54,011 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:54,033 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:54,051 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:54,062 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:54,067 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:54,074 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:54,080 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:54,089 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:54,109 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:54,138 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:54,156 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:54,192 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:54,198 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:54,616 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:54,640 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:54,653 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:54,678 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:54,717 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:54,884 [WARNING][issue_category_model] LLM predict via HTTP fallback failed, fallback to ML: <urlopen error [Errno 11001] getaddrinfo failed>
+2026-06-13 17:09:54,897 [INFO][ips_offload] Weighted loading trial enabled for visibility; offload decision remains based on Curr.
+2026-06-13 17:09:54,905 [INFO][ips_offload] Combined trial table (single table with category columns, decision still uses Curr):
+2026-06-13 17:09:54,910 [INFO][ips_offload] +---------------+------+------+------+-----------+-----------+-------+------------------+-------+------+------+--------------+-----+------+-----+--------+------+-----------+-------------+-------------------+-------------------+---------+---------+-------------+------+------+--------+---------+-----+----+--------------+
+2026-06-13 17:09:54,910 [INFO][ips_offload] | Name          | uIPS | uHSD | Jira | Stale IPS | Stale HSD | Total | Weighted Loading | Audio | BIOS | BSOD | Connectivity | HLK | ICPS | IOP | Killer | MSFT | OEM Tools | Performance | Power Consumption | Power on sequence | Roaming | Sensing | System Hang | UEFI | WAPI | WowLAN | YB/Lost | P2P | RF | Needs-Triage |
+2026-06-13 17:09:54,910 [INFO][ips_offload] +---------------+------+------+------+-----------+-----------+-------+------------------+-------+------+------+--------------+-----+------+-----+--------+------+-----------+-------------+-------------------+-------------------+---------+---------+-------------+------+------+--------+---------+-----+----+--------------+
+2026-06-13 17:09:54,910 [INFO][ips_offload] | Frank Lee     |   13 |    0 |    8 |         8 |         0 |    13 |            28.27 |     0 |    0 |    1 |            4 |   0 |    4 |   0 |      0 |    0 |         0 |           0 |                 1 |                 0 |       0 |       0 |           0 |    1 |    0 |      0 |       1 |   4 |  0 |            0 |
+2026-06-13 17:09:54,910 [INFO][ips_offload] | Zhiqiang Cai  |    6 |    0 |    5 |         0 |         0 |    11 |            24.95 |     0 |    0 |    1 |            3 |   0 |    0 |   0 |      0 |    0 |         0 |           1 |                 0 |                 0 |       0 |       1 |           0 |    1 |    0 |      0 |       1 |   5 |  0 |            0 |
+2026-06-13 17:09:54,910 [INFO][ips_offload] | Wesley Kuo    |    3 |    0 |    8 |         2 |         0 |     9 |            16.58 |     0 |    0 |    0 |            6 |   2 |    0 |   0 |      0 |    0 |         1 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-06-13 17:09:54,911 [INFO][ips_offload] | Timdaway Lai  |    6 |    1 |    2 |         2 |         0 |     7 |            22.89 |     0 |    1 |    1 |            2 |   0 |    1 |   0 |      0 |    0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           2 |    0 |    0 |      0 |       2 |   2 |  0 |            0 |
+2026-06-13 17:09:54,911 [INFO][ips_offload] | KJ Fang       |   11 |    0 |    4 |         9 |         0 |     6 |            16.33 |     0 |    0 |    0 |            3 |   0 |    0 |   0 |      0 |    0 |         1 |           1 |                 0 |                 0 |       1 |       0 |           0 |    0 |    0 |      0 |       0 |   2 |  0 |            0 |
+2026-06-13 17:09:54,911 [INFO][ips_offload] | Steven1 Chen  |    9 |    0 |    3 |         6 |         0 |     6 |            11.62 |     0 |    0 |    0 |            4 |   0 |    0 |   0 |      0 |    0 |         0 |           0 |                 1 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       1 |   0 |  0 |            0 |
+2026-06-13 17:09:54,911 [INFO][ips_offload] | Bingyue Sun   |    7 |    0 |    2 |         4 |         0 |     5 |             9.26 |     0 |    0 |    1 |            4 |   0 |    0 |   0 |      0 |    0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-06-13 17:09:54,911 [INFO][ips_offload] | Brenton Wu    |    9 |    0 |    2 |         6 |         0 |     5 |             9.68 |     0 |    0 |    0 |            4 |   0 |    0 |   0 |      0 |    0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   1 |  0 |            0 |
+2026-06-13 17:09:54,911 [INFO][ips_offload] | Lydiax Chien  |    4 |    0 |    1 |         0 |         0 |     5 |             9.39 |     0 |    0 |    1 |            1 |   0 |    0 |   0 |      0 |    0 |         0 |           0 |                 0 |                 0 |       1 |       0 |           0 |    0 |    0 |      0 |       0 |   2 |  0 |            0 |
+2026-06-13 17:09:54,911 [INFO][ips_offload] | Matt Chen     |   10 |    0 |    1 |         6 |         0 |     5 |            15.49 |     0 |    0 |    0 |            5 |   0 |    0 |   0 |      0 |    0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   3 |  0 |            0 |
+2026-06-13 17:09:54,911 [INFO][ips_offload] | Yu-Wei Chen   |    5 |    1 |    2 |         2 |         1 |     5 |             9.92 |     0 |    1 |    0 |            3 |   0 |    0 |   0 |      0 |    0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       1 |   0 |  0 |            0 |
+2026-06-13 17:09:54,911 [INFO][ips_offload] | Frank Yang    |    5 |    0 |    3 |         4 |         0 |     4 |            23.30 |     0 |    1 |    2 |            4 |   0 |    2 |   0 |      0 |    0 |         2 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       1 |   1 |  1 |            0 |
+2026-06-13 17:09:54,911 [INFO][ips_offload] | Charles Chu   |    7 |    0 |    1 |         5 |         0 |     3 |             8.23 |     0 |    0 |    1 |            2 |   0 |    0 |   0 |      0 |    0 |         1 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   1 |  0 |            0 |
+2026-06-13 17:09:54,912 [INFO][ips_offload] | Jackx Lee     |    0 |    0 |    3 |         0 |         0 |     3 |             7.14 |     0 |    0 |    0 |            2 |   0 |    0 |   0 |      0 |    0 |         1 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  1 |            0 |
+2026-06-13 17:09:54,912 [INFO][ips_offload] | Juan Zou      |    1 |    1 |    2 |         0 |         1 |     3 |             5.64 |     0 |    0 |    0 |            1 |   0 |    0 |   0 |      0 |    0 |         1 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       1 |   0 |  0 |            0 |
+2026-06-13 17:09:54,912 [INFO][ips_offload] | Henryx Su     |    1 |    0 |    1 |         1 |         0 |     1 |             3.86 |     0 |    0 |    0 |            2 |   0 |    0 |   0 |      0 |    0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-06-13 17:09:54,912 [INFO][ips_offload] | Jonathan Tsao |    0 |    0 |    0 |         0 |         0 |     0 |             0.00 |     0 |    0 |    0 |            0 |   0 |    0 |   0 |      0 |    0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-06-13 17:09:54,912 [INFO][ips_offload] | Leo Chiang    |    0 |    0 |    0 |         0 |         0 |     0 |             2.26 |     0 |    0 |    0 |            0 |   0 |    0 |   0 |      0 |    0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       1 |   0 |  0 |            0 |
+2026-06-13 17:09:54,912 [INFO][ips_offload] +---------------+------+------+------+-----------+-----------+-------+------------------+-------+------+------+--------------+-----+------+-----+--------+------+-----------+-------------+-------------------+-------------------+---------+---------+-------------+------+------+--------+---------+-----+----+--------------+
+2026-06-13 17:09:54,913 [INFO][ips_offload] Offload decision mode: Curr
+2026-06-13 17:09:54,915 [INFO][ips_offload] No over-threshold reporters found; stage-2 offload recommendation skipped.
+2026-06-13 17:09:54,925 [INFO][ips_offload] Sending informational notification: no queue case available for recommendation.
+2026-06-13 17:09:54,926 [INFO][ips_offload] Current load:
+- Bing Chang: 0.00 current issues
+- Johnsonx Su: 0.00 current issues
+- Leaweix Chen: 0.00 current issues
+- Leo Chiang: 0.00 current issues
+- Tonyx Yeh: 0.00 current issues
+- Xihaox Yang: 0.00 current issues
+- Zhanying Gao: 0.00 current issues
+- Zhiwei He: 0.00 current issues
+- Henryx Su: 1.00 current issues
+- Charles Chu: 3.00 current issues
+- Jackx Lee: 3.00 current issues
+- Juan Zou: 3.00 current issues
+- Frank Yang: 4.00 current issues
+- Bingyue Sun: 5.00 current issues
+- Brenton Wu: 5.00 current issues
+- Lydiax Chien: 5.00 current issues
+- Matt Chen: 5.00 current issues
+- Yu-Wei Chen: 5.00 current issues
+- KJ Fang: 6.00 current issues
+- Steven1 Chen: 6.00 current issues
+- Timdaway Lai: 7.00 current issues
+- Wesley Kuo: 9.00 current issues
+- Zhiqiang Cai: 11.00 current issues
+- Frank Lee: 13.00 current issues
+2026-06-13 17:09:54,928 [INFO][ips_offload] Graph auth mode: delegated
+2026-06-13 17:09:55,044 [WARNING][urllib3.connectionpool] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001CC5314F8C0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /46c98d88-e344-4ed4-8496-4ed7712e255d/v2.0/.well-known/openid-configuration
+[Config] Using GRAPH_CLIENT_SECRET from environment/.env.
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+        (self._dns_host, self.port), self.timeout, **extra_kw
+    )
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\urllib3\util\connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\socket.py", line 983, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\urllib3\connectionpool.py", line 716, in urlopen
+    httplib_response = self._make_request(
+        conn,
+    ...<5 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\urllib3\connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\urllib3\connectionpool.py", line 1061, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\urllib3\connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+        self, "Failed to establish a new connection: %s" % e
+    )
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x000001CC5308B9D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\requests\adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\urllib3\connectionpool.py", line 830, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<11 lines>...
+        **response_kw
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\urllib3\connectionpool.py", line 802, in urlopen
+    retries = retries.increment(
+        method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\urllib3\util\retry.py", line 594, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='login.microsoftonline.com', port=443): Max retries exceeded with url: /46c98d88-e344-4ed4-8496-4ed7712e255d/v2.0/.well-known/openid-configuration (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001CC5308B9D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\offload_reporter_issues.py", line 4395, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\offload_reporter_issues.py", line 4270, in main
+    token = get_graph_token_delegated_with_secret(secret)
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\Meeting_agenda_OneNote.py", line 397, in get_graph_token_delegated_with_secret
+    app = msal.ConfidentialClientApplication(
+        client_id=CLIENT_ID,
+    ...<2 lines>...
+        token_cache=token_cache,
+    )
+  File "C:\Python314\Lib\site-packages\msal\application.py", line 645, in __init__
+    self.authority = Authority(
+                     ~~~~~~~~~^
+        authority_to_use,
+        ^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        oidc_authority_url=oidc_authority,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+  File "C:\Python314\Lib\site-packages\msal\authority.py", line 79, in __init__
+    openid_config = tenant_discovery(
+        tenant_discovery_endpoint,
+        self._http_client)
+  File "C:\Python314\Lib\site-packages\msal\authority.py", line 210, in tenant_discovery
+    resp = http_client.get(tenant_discovery_endpoint, **kwargs)
+  File "C:\Python314\Lib\site-packages\msal\individual_cache.py", line 273, in wrapper
+    value = function(*args, **kwargs)
+  File "C:\Python314\Lib\site-packages\msal\throttled_http_client.py", line 99, in get
+    return NormalizedResponse(self.http_client.get(*args, **kwargs))
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\requests\sessions.py", line 671, in get
+    return self.request("GET", url, params=params, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\requests\sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\requests\sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\jtsao1\AppData\Roaming\Python\Python314\site-packages\requests\adapters.py", line 729, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='login.microsoftonline.com', port=443): Max retries exceeded with url: /46c98d88-e344-4ed4-8496-4ed7712e255d/v2.0/.well-known/openid-configuration (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001CC5308B9D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+[INFO] Finished with exit code 1
+[INFO] Exit code: 1
+[INFO] ===== Offload scheduler end =====

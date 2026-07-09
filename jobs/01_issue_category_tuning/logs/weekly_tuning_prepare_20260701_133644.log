@@ -1,0 +1,21 @@
+[INFO] ===== Weekly tuning + prepare start =====
+[INFO] Timestamp: Wed 07/01/2026 13:36:44.36
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\
+[INFO] Parameters: threshold=0.45 topN=all
+[STEP 1/3] Weekly tuning
+[INFO] Running weekly category tuning...
+[INFO] Output directory: tuning_outputs\weekly_20260701
+[INFO] Low-confidence threshold: 0.45
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\run_category_tuning_cycle.py", line 297, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\run_category_tuning_cycle.py", line 205, in main
+    rows = _load_training_rows(input_dirs)
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\train_issue_category_model.py", line 156, in _load_training_rows
+    raise FileNotFoundError(f"No CSV files found under: {', '.join(input_dirs)}")
+FileNotFoundError: No CSV files found under: CFE_reviewed_issue, CFE_input
+[ERROR] Weekly tuning failed.
+[ERROR] Weekly tuning failed. exit=1
+[INFO] Exit code: 1
+[INFO] ===== Weekly tuning + prepare end =====

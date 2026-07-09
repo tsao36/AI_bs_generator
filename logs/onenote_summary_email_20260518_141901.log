@@ -1,0 +1,145 @@
+[INFO] ===== OneNote summary email start =====
+[INFO] Timestamp: Mon 05/18/2026 14:19:01.06
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\
+[INFO] Current dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat
+[INFO] Command: python Meeting_agenda_OneNote.py --send-email 
+C:\Python314\python.exe
+C:\Users\jtsao1\AppData\Local\Microsoft\WindowsApps\python.exe
+C:\Users\jtsao1\AppData\Local\Python\bin\python.exe
+[Config] Using GRAPH_CLIENT_SECRET from environment/.env.
+[Config] Using GNAI_TOKEN from environment/.env.
+[Auth] Using cached Graph delegated token.
+[Lookup] Using section id: 1-03f44d4c-a88a-418f-a72c-bb3afec2d7b5
+[Lookup] No page title provided. Using latest page: 'WW20'26' (id: 1-2e6151b76ac40ec41e2893c28aa3533a!1-03f44d4c-a88a-418f-a72c-bb3afec2d7b5) created at 2026-05-04T19:01:38.033Z
+[OCR] Found 13 image(s); sending to VLM at http://localhost:11434...
+[OCR] [--------------------] 0/13 Starting image 1/13...
+[OCR] [#-------------------] 1/13 Image 1/13 done in 63.8s | ok=1 no_text=0 failed=0
+[OCR] [#-------------------] 1/13 Starting image 2/13...
+[OCR] [###-----------------] 2/13 Image 2/13 done in 34.1s | ok=2 no_text=0 failed=0
+[OCR] [###-----------------] 2/13 Starting image 3/13...
+[OCR] [####----------------] 3/13 Image 3/13 done in 19.6s | ok=3 no_text=0 failed=0
+[OCR] [####----------------] 3/13 Starting image 4/13...
+[OCR] [######--------------] 4/13 Image 4/13 done in 24.1s | ok=4 no_text=0 failed=0
+[OCR] [######--------------] 4/13 Starting image 5/13...
+[OCR] [#######-------------] 5/13 Image 5/13 done in 32.8s | ok=5 no_text=0 failed=0
+[OCR] [#######-------------] 5/13 Starting image 6/13...
+[OCR] [#########-----------] 6/13 Image 6/13 done in 28.4s | ok=6 no_text=0 failed=0
+[OCR] [#########-----------] 6/13 Starting image 7/13...
+[OCR] [##########----------] 7/13 Image 7/13 done in 56.7s | ok=7 no_text=0 failed=0
+[OCR] [##########----------] 7/13 Starting image 8/13...
+[OCR] [############--------] 8/13 Image 8/13 done in 36.4s | ok=8 no_text=0 failed=0
+[OCR] [############--------] 8/13 Starting image 9/13...
+[OCR] [#############-------] 9/13 Image 9/13 failed in 93.2s: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=90) | ok=8 no_text=0 failed=1
+[OCR] [#############-------] 9/13 Starting image 10/13...
+[OCR] [###############-----] 10/13 Image 10/13: no text detected in 15.3s | ok=8 no_text=1 failed=1
+[OCR] [###############-----] 10/13 Starting image 11/13...
+[OCR] [################----] 11/13 Image 11/13 failed in 2.9s: 400 Client Error: Bad Request for url: http://localhost:11434/v1/chat/completions | ok=8 no_text=1 failed=2
+[OCR] [################----] 11/13 Starting image 12/13...
+[OCR] [##################--] 12/13 Image 12/13 done in 21.0s | ok=9 no_text=1 failed=2
+[OCR] [##################--] 12/13 Starting image 13/13...
+[OCR] [####################] 13/13 Image 13/13 done in 38.8s | ok=10 no_text=1 failed=2
+[OCR] Completed image OCR: total=13 ok=10 no_text=1 failed=2
+[Info] Large page. Summarizing in 3 chunks...
+[OK] Saved summary to: onenote_summary.md
+
+=== Page Summary (GNAI) ===
+
+# WW20'26 – CFE Staff Summary
+
+## Executive Summary
+
+This summary covers CFE staff updates for WW20'26, including Wi-Fi/BT product priorities, customer feedback, technical blockers, CPU roadmap projections (2026–2028), and feature enablement roles. Key highlights: prioritization of CHRE + Channel Sounding for BE211/BE213, critical DELL RFIm/BW320 issue, stable but declining ICPS SW quality, and multiple roadmap/strategy sessions focused on AI adoption and platform differentiation. Risks include memory constraints for HDT, ICPS quality decline, and platform-specific technical gaps. CPU roadmap features multiple launches and transitions through 2028, with clear delineation of feature and account owner responsibilities.
+
+---
+
+## Key Points
+
+### Product/Technical Priorities
+- CHRE + Channel Sounding prioritized over Dual MAC for BE211/BE213.
+- HB remains on RZL; no schedule delay.
+- Not enough memory for HDT implementation.
+- WPA3 Enterprise fast transition required for Wi-Fi 6 certification; WPA3 on Windows now requires netadapter.
+- New BIOS JSON available for sensing feature display.
+
+### DELL/RFIm Issue
+- DELL RFIm does not support BW320 by default; manual configuration required.
+- Throughput drops observed with 320BW on 6G band.
+- Reference docs: 816192, 640438.
+- Example: Channel 69/BW320 fails (DDR freq stuck at 6385), Channel 85/BW20 works (DDR freq moves to 5985).
+
+### Customer/Market Updates
+- Googlebook launching as premium device brand (Acer, ASUS, Lenovo on Intel; Dell, HP on QCOM).
+- Features: Gemini Intelligence, new contextual features.
+- HP: Highest ASP ($7.5), high attach rates; Lenovo: lowest ASP ($4), rebate issues.
+- Acer secured 100% Aspire volume via ICPS bundles.
+- MSI lost share to AMD CPUs; fighting to retain Wi-Fi share.
+
+### Customer Survey (Q1 2026)
+- CSAT: 83.6% (up 1.5% from Q3'25), "Good" range.
+- Top OEMs: MSI (97%), Panasonic Connect (96%), Microsoft (96%), Dell (95%), Acer (94%).
+- ICPS SW Quality at 64% (−6%), Support at 70% (−4%)—both declining.
+- NPS scores stable in "Favorable" range.
+
+### Roadmap/Strategy Sessions
+- Focus on AI PC with local NPU, hardware/software roadmap reviews, customer engagement.
+- AI adoption: Code commit rates up, but review bottlenecks; prediction that only 50% of engineers needed in two years due to AI.
+- Platform differentiation: More field demos, UX-based testing.
+
+### CPU Product Roadmap (2026–2028)
+- Planned launches: Granite Rapids, Halo, Arrow Lake Refresh, Nova Lake (DT & Mobile), Panther Lake, Wildcat Lake Refresh, Raptor Lake S/HX Next, Twin Lake, Razor Lake, Moon Lake.
+- Nova Lake DT/Mobile production starts Q4’26/Q1’27; Panther Lake/Wildcat Lake refreshes in Q’27; Moon Lake 16W pulled in.
+- Arrow Lake HX-R vs Nova Lake HX: Up to 24-core vs 28-core; improvements in MT, gaming, battery life, AI, BOM.
+- Pin/package compatibility between Nova Lake HX and NHL.
+
+### Feature Enablement Roles
+- Feature Owner: Deep feature expertise, demo readiness.
+- Account Owner: Customer support and real-world enablement.
+
+### Miscellaneous
+- "WiTS" noted without context.
+
+---
+
+## Decisions
+
+- Prioritize CHRE + Channel Sounding on BE211/BE213 over Dual MAC.
+- Customer must manually add BW320 support to RFIm configuration.
+- Continue Wi-Fi 6 PTL through NVL/RZL timeline despite missing out on some MU.
+- MSFT prefers Lossless audio; SCI prioritized over Lossless.
+
+---
+
+## Action Items
+
+- **DELL RFIm Issue**: Customer to manually add BW320 support; refer to docs 816192 & 640438. *(Owner: DELL/Intel support)*
+- **BIOS Update**: Teams to reference new BIOS JSON for sensing feature display.
+- **ICPS Quality**: Focused attention needed to address declining ICPS SW quality/support. *(Owner: Engineering/Support teams)*
+- **Acer**: Provide data on BT testing Neo. *(Owner: Izhak)*
+- **Asus**: Provide data on Wi-Fi 6 comps vs GfP2. *(Owner: Unspecified)*
+- **MSFT**: Set up SharePoint site for SW sharing; plan HDT enablement for 2027–28.
+- **SCI Dongle Solution**: Offer to achieve 2KHz as interim solution.
+
+---
+
+## Risks/Blockers
+
+- Not enough memory for HDT implementation.
+- ICPS SW Quality and Support declining—risk to customer satisfaction.
+- Vaio and Compal have lowest CSAT scores; risk of customer churn.
+- DELL RFIm/BW320 issue may impact throughput if not addressed.
+- Review bottlenecks slowing AI-driven code commits.
+- Platform-specific technical gaps (e.g., WiFi Aware onboarding not supported on iOS/Android).
+
+---
+
+## Open Questions
+
+- Why does CNVi save power? Engineering team unclear.
+- Will Asus increase Wi-Fi attach/value?
+- How to normalize CSAT scores for more accurate OEM comparisons?
+- What is the timeline for deleting all rebates by the Lenovo contract in 2027?
+- What is the plan for broader WiFi Aware onboarding support?
+
+[OK] Email sent via Graph to: frank.lee@intel.com, zhiqiang.cai@intel.com, nicky.chen@intel.com, charles.p.chu@intel.com, kj.fang@intel.com, timdaway.lai@intel.com, frank.fc.yang@intel.com, matt.chen@intel.com, steven1.chen@intel.com, yu-wei.chen@intel.com, jackx.lee@intel.com, wesley.kuo@intel.com, bingyue.sun@intel.com, juan.zou@intel.com, arielx.fan@intel.com, brenton.wu@intel.com, wei-ling.chi@intel.com, yuan-yuan.tu@intel.com, cce.wireless.ce.cfe.wifi.gb@intel.com, cce.wireless.ce.cfe.bt.gb@intel.com (cc: jonathan.tsao@intel.com)
+[INFO] Exit code: 0
+[INFO] ===== OneNote summary email end =====

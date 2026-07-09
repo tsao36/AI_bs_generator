@@ -1,0 +1,27 @@
+[INFO] ===== Labeling reminder daily start =====
+[INFO] Timestamp: Fri 05/29/2026 11:07:36.94
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\
+[INFO] Current dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat
+C:\Python314\python.exe
+C:\Users\jtsao1\AppData\Local\Microsoft\WindowsApps\python.exe
+C:\Users\jtsao1\AppData\Local\Python\bin\python.exe
+[INFO] Latest weekly dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\tuning_outputs\weekly_20260525
+[INFO] Target CSV: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\tuning_outputs\weekly_20260525\weekly_labeling_template.csv
+[INFO] Command: python send_labeling_reminders.py --send-email --graph-auth-mode delegated --weekly-dir "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\tuning_outputs\weekly_20260525" 
+2026-05-29 11:07:38,093 [INFO] Pending source path: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\tuning_outputs\weekly_20260525\weekly_labeling_template.xlsx
+2026-05-29 11:07:41,195 [INFO] Using cloud-fresh source copy for pending check: C:\Users\jtsao1\AppData\Local\Temp\labeling_cloud_a4nv2c2g.xlsx
+2026-05-29 11:07:42,418 [INFO] Loaded pending rows from XLSX C:\Users\jtsao1\AppData\Local\Temp\labeling_cloud_a4nv2c2g.xlsx: assignees=5
+2026-05-29 11:07:42,419 [INFO] Pending assignees: 5, pending rows: 23
+2026-05-29 11:07:42,419 [INFO] Graph auth mode: delegated
+2026-05-29 11:07:47,773 [INFO] Reminder sent to frank.lee@intel.com (pending=10)
+2026-05-29 11:07:48,348 [INFO] Reminder sent to jackx.lee@intel.com (pending=1)
+2026-05-29 11:07:48,873 [INFO] Reminder sent to kj.fang@intel.com (pending=1)
+2026-05-29 11:07:49,350 [INFO] Reminder sent to yu-wei.chen@intel.com (pending=2)
+2026-05-29 11:07:49,814 [INFO] Reminder sent to zhiqiang.cai@intel.com (pending=9)
+2026-05-29 11:07:49,814 [INFO] Reminder email sent to 5 assignee(s).
+[Config] Using GRAPH_CLIENT_SECRET from environment/.env.
+[Auth] Using cached Graph delegated token.
+[Config] Using GRAPH_CLIENT_SECRET from environment/.env.
+[Auth] Using cached Graph delegated token.
+[INFO] Exit code: 0
+[INFO] ===== Labeling reminder daily end =====

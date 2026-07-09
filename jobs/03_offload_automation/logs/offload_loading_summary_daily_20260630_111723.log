@@ -1,0 +1,51 @@
+[INFO] ===== Offload loading-summary daily start =====
+[INFO] Timestamp: Tue 06/30/2026 11:17:23.35
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation\
+[INFO] Current dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation
+C:\Python314\python.exe
+C:\Users\jtsao1\AppData\Local\Microsoft\WindowsApps\python.exe
+C:\Users\jtsao1\AppData\Local\Python\bin\python.exe
+[INFO] GRAPH_AUTH_MODE=delegated
+[INFO] GRAPH_SENDER_UPN=frank.lee@intel.com
+[INFO] OFFLOAD_ALWAYS_EXCLUDED_REPORTERS=Jonathan Tsao
+[INFO] Command: run_offload_reporter_issues.bat --send-email --summary-only-email 
+[INFO] Running offload_reporter_issues.py --send-email --summary-only-email
+[INFO] OFFLOAD_ALWAYS_EXCLUDED_ENGINEERS=Jonathan Tsao
+[INFO] PYTHONPATH=C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation\..\..;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation\..\..\APIs;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation\..\..\jobs\04_wireless_bug_dashboard;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation\..\..\jobs\06_reporting_and_notifications;
+2026-06-30 11:17:28,511 [INFO][ips_offload] Included 7 allowed reporter(s) with zero current issues for receiver rotation.
+2026-06-30 11:17:28,512 [INFO][ips_offload] Applying 2 pending offload(s) from history to avoid duplicate recommendations.
+2026-06-30 11:17:29,037 [INFO][ips_offload] Current issue calculation breakdown per reporter:
+2026-06-30 11:17:29,038 [WARNING][ips_offload] Category weighting disabled (dependency/import issue): No module named 'issue_category_model'
+2026-06-30 11:17:29,038 [INFO][ips_offload] Combined trial table (single table with category columns, decision still uses Curr):
+2026-06-30 11:17:29,039 [INFO][ips_offload] +---------------+------+------+------+-----------+-----------+-------+------------------+
+2026-06-30 11:17:29,039 [INFO][ips_offload] | Name          | uIPS | uHSD | Jira | Stale IPS | Stale HSD | Total | Weighted Loading |
+2026-06-30 11:17:29,039 [INFO][ips_offload] +---------------+------+------+------+-----------+-----------+-------+------------------+
+2026-06-30 11:17:29,039 [INFO][ips_offload] | Frank Lee     |   10 |    0 |   10 |         7 |         0 |    13 |                  |
+2026-06-30 11:17:29,039 [INFO][ips_offload] | Zhiqiang Cai  |    6 |    0 |    7 |         2 |         0 |    11 |                  |
+2026-06-30 11:17:29,039 [INFO][ips_offload] | KJ Fang       |   11 |    0 |    7 |         9 |         0 |     9 |                  |
+2026-06-30 11:17:29,039 [INFO][ips_offload] | Steven1 Chen  |    9 |    0 |    6 |         7 |         0 |     8 |                  |
+2026-06-30 11:17:29,039 [INFO][ips_offload] | Brenton Wu    |    4 |    2 |    5 |         3 |         1 |     7 |                  |
+2026-06-30 11:17:29,040 [INFO][ips_offload] | Bingyue Sun   |    5 |    0 |    2 |         1 |         0 |     6 |                  |
+2026-06-30 11:17:29,040 [INFO][ips_offload] | Jackx Lee     |    2 |    0 |    4 |         0 |         0 |     6 |                  |
+2026-06-30 11:17:29,040 [INFO][ips_offload] | Wesley Kuo    |    3 |    0 |    4 |         1 |         0 |     6 |                  |
+2026-06-30 11:17:29,040 [INFO][ips_offload] | Matt Chen     |   10 |    0 |    1 |         7 |         0 |     4 |                  |
+2026-06-30 11:17:29,040 [INFO][ips_offload] | Timdaway Lai  |    6 |    0 |    1 |         3 |         0 |     4 |                  |
+2026-06-30 11:17:29,040 [INFO][ips_offload] | Frank Yang    |    7 |    0 |    1 |         5 |         0 |     3 |                  |
+2026-06-30 11:17:29,040 [INFO][ips_offload] | Henryx Su     |    2 |    0 |    2 |         1 |         0 |     3 |                  |
+2026-06-30 11:17:29,040 [INFO][ips_offload] | Juan Zou      |    2 |    0 |    1 |         0 |         0 |     3 |                  |
+2026-06-30 11:17:29,040 [INFO][ips_offload] | Yu-Wei Chen   |    5 |    2 |    0 |         4 |         0 |     3 |                  |
+2026-06-30 11:17:29,040 [INFO][ips_offload] | Charles Chu   |    4 |    0 |    2 |         4 |         0 |     2 |                  |
+2026-06-30 11:17:29,040 [INFO][ips_offload] | Jonathan Tsao |    2 |    0 |    0 |         0 |         0 |     2 |                  |
+2026-06-30 11:17:29,040 [INFO][ips_offload] | Lydiax Chien  |    1 |    0 |    1 |         1 |         0 |     1 |                  |
+2026-06-30 11:17:29,041 [INFO][ips_offload] +---------------+------+------+------+-----------+-----------+-------+------------------+
+2026-06-30 11:17:29,041 [INFO][ips_offload] Offload decision mode: Curr
+2026-06-30 11:17:29,041 [INFO][ips_offload] Graph auth mode: delegated
+2026-06-30 11:17:34,721 [INFO][ips_offload] Summary-only loading email sent to 1 recipient(s).
+[Config] Using GRAPH_CLIENT_SECRET from environment/.env.
+[Auth] Opening browser for sign-in...
+[Auth] If it doesn't open, paste this URL into a browser:
+https://login.microsoftonline.com/46c98d88-e344-4ed4-8496-4ed7712e255d/oauth2/v2.0/authorize?client_id=72643139-b5d0-4166-8872-4a00d4f31d11&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8400%2FgetToken&scope=Mail.Send+Notes.Read+offline_access+openid+profile&state=lTSUnNPWKZBeoVOp&code_challenge=J3YRDVhUz121z3DGXt9maEoWT5OZMg4bXgOjsIRV_-E&code_challenge_method=S256&nonce=5d992464d2be4f5857a036637c071c002c59a744614033f0afc32b22e2ffb4ac&client_info=1
+
+[INFO] Finished with exit code 0
+[INFO] Exit code: 0
+[INFO] ===== Offload loading-summary daily end =====

@@ -1,0 +1,42 @@
+assignment,row_id,technology,ips_title,predicted_category,human_category,label_notes,risk_score,risk_reason
+piece_05_of_07,3076,software,Connection Timeout,Killer,,,7,very_short<=18c;few_words<=3;no_digits
+piece_05_of_07,1719,bt,<IGNORE>>Dummy Jira To Check we if Make a Customer Bug Child of Internal,Connectivity,,,3,generic:bug;no_digits
+piece_05_of_07,677,bt,25H2 HLK System Test with Bluetooth v23.160 PV,HLK,,,0,
+piece_05_of_07,1635,bt,BLE broadcast not found,Connectivity,,,4,short<=28c;few_words<=5;no_digits
+piece_05_of_07,1542,bt,BT automatically disconnects when transferring 100M data file via BT with AX211 / Killer1675i card. FR: 8/10 cycle,Killer,,,0,
+piece_05_of_07,3247,bt,"HDUT does not support mute/unmute button, it can only support boom arm for mute/unmute",Connectivity,,,1,no_digits
+piece_05_of_07,3712,software,Alternate Data Stream Detected,Killer,,,2,few_words<=5;no_digits
+piece_05_of_07,794,bt,ibtpci BSOD 0x7e while running TBT test (Thunderbolt test).,BSOD,,,0,
+piece_05_of_07,250,bt,WHQL BT test fail,HLK,,,7,very_short<=18c;few_words<=5;generic:fail;no_digits
+piece_05_of_07,2946,software,ICPS app fails to upgrade SW driver from 1.1122 to 2.1022,ICPS,,,2,generic:fail
+piece_05_of_07,1578,bt,HLK Bluetooth test item fail,HLK,,,6,short<=28c;few_words<=5;generic:fail;no_digits
+piece_05_of_07,812,bt,System 25H2 Modern standby fail,Connectivity,,,3,few_words<=5;generic:fail
+piece_05_of_07,1296,software,KIC app error message Unhandled exception has occurred in your application.,Killer,,,3,generic:error;no_digits
+piece_05_of_07,2059,software,test,Killer,,,7,very_short<=18c;few_words<=3;no_digits
+piece_05_of_07,1536,bt,Bluetooth headset is 3 meters away and the sound is lag,Connectivity,,,0,
+piece_05_of_07,3167,bt,MDUT Reconnection - HCI_Encription_Change increases the reconnection time.,System Hang,,,3,generic:hang;no_digits
+piece_05_of_07,3446,bt,Late LE audio reconnection of second bud (Galaxy Buds2 Pro),Connectivity,,,0,
+piece_05_of_07,936,bt,Intel Wireless Dual Bluetooth Device show Yellow Bang and BT-related Device lost after CB/S4/WB/S0i3. (F/R: 2/2u;1/30c),YB/Lost,,,0,
+piece_05_of_07,3390,bt,HW Error occures if using Quick Share app while BLE advertising by SmartThings,Connectivity,,,3,generic:error;no_digits
+piece_05_of_07,2281,software,App crashes when navigating to Doubleshot tab,Killer,,,3,generic:crash;no_digits
+piece_05_of_07,2942,software,ICPS 21.23.2115 .exe Install Wizard shows the No valid Dell hardware found error message on the HP system (non-English),ICPS,,,2,generic:error
+piece_05_of_07,3466,bt,Japan BLE Tx Power must not exceed at 6dBm,Power Consumption,,,0,
+piece_05_of_07,478,bt,Use WRT tool to check BIOS Value show error.,UEFI,,,3,generic:error;no_digits
+piece_05_of_07,3351,bt,Intel 9560 Wireless Bluetooth will show Yellow Bang during S3 stress test,YB/Lost,,,0,
+piece_05_of_07,3000,software,Snap layout feature support,Killer,,,4,short<=28c;few_words<=5;no_digits
+piece_05_of_07,346,bt,"Play music with BT Headset/Speaker no sound, and device show yellow bang.",YB/Lost,,,1,no_digits
+piece_05_of_07,1145,bt,ENG build found BT YB after WB,YB/Lost,,,1,no_digits
+piece_05_of_07,3676,bt,BT Device will lost when idle in OS - lc_CmuHandleReceivedArqn_Fiq,Connectivity,,,1,no_digits
+piece_05_of_07,2947,software,Dell Smartbyte APP impact T-put,Killer,,,2,few_words<=5;no_digits
+piece_05_of_07,3023,software,KCC no Wi-Fi Score on Windows 11_XPS 13 7390.,Killer,,,0,
+piece_05_of_07,3172,bt,MDUT Reconnection - HCI_Encription_Change increases the reconnection time,System Hang,,,3,generic:hang;no_digits
+piece_05_of_07,2336,software,4119822 - Resource leak,Killer,,,3,short<=28c;few_words<=5
+piece_05_of_07,1812,bt,: BIS#1 sending empty packets while broadcast streaming with 24_1 config,Connectivity,,,0,
+piece_05_of_07,88,bt,"WHQL test , Bluetooth - HciExtensionsV2 (Development and Integration) test item fail.",HLK,,,2,generic:fail
+piece_05_of_07,2893,software,"ICPS 30.24.576 .exe installer fails to complete installation with wizard message ""All program components will be installed (Need more disk space)""",ICPS,,,2,generic:fail
+piece_05_of_07,1602,bt,Noise is heard from BT headphone when other people speak during teams call.(BE201),Connectivity,,,0,
+piece_05_of_07,1756,bt,BT YB with high fail rate when Samsung launch Samsung DRTU test case in 404 4Xe3 - CNVI_AUX_A2A_EXCEPTION_IRQ,YB/Lost,,,2,generic:fail
+piece_05_of_07,3353,bt,"Error message ""your speaker arent working"" pops ups when do video call by Teams with BT headset connected.",Connectivity,,,3,generic:error;no_digits
+piece_05_of_07,4117,software,"When ICPS shows Korean, text on the menu is truncated",ICPS,,,1,no_digits
+piece_05_of_07,3169,bt,Device Information Service - MDUT FW version doesnt match.,Connectivity,,,1,no_digits
+piece_05_of_07,3093,software,Intel Connect service says disconnected,Killer,,,2,few_words<=5;no_digits

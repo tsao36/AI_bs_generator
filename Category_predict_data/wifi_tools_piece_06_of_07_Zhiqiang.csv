@@ -1,0 +1,45 @@
+assignment,row_id,technology,ips_title,predicted_category,human_category,label_notes,risk_score,risk_reason
+piece_06_of_07,3830,wifi,PAD mouse operate lag from PAD to PC move after PC and Pad multi-screen synergy through Huawei Butler(HUAWEI PC manager),Performance,,,1,no_digits
+piece_06_of_07,4090,wifi,WiFi Direct discovery & connection to peer takes a long time as ICPS installed.,ICPS,,,1,no_digits
+piece_06_of_07,2809,wifi,BSOD 0xD1 happens when running Intel PETS PM_ST_6,BSOD,,,0,
+piece_06_of_07,3629,wifi,Losing audio while using teams,Connectivity,,,2,few_words<=5;no_digits
+piece_06_of_07,2665,wifi,AX101 WiFi throughput drop when BT is enabled but not connected to BT device,Connectivity,,,0,
+piece_06_of_07,90,wifi,The 2.4G network auto disconnect after connect USB wireless keyboard and mouse under about -70dBm RSSl.,YB/Lost,,,0,
+piece_06_of_07,1141,wifi,"Event ERROR ID 5002, 5005, 5007: Netwaw16 happened while S0 Idle",YB/Lost,,,2,generic:error
+piece_06_of_07,1354,wifi,P178G002/P179G002 update KC Wifi 7,Connectivity,,,1,few_words<=5
+piece_06_of_07,278,wifi,Obtain wrt log consultation,Connectivity,,,4,short<=28c;few_words<=5;no_digits
+piece_06_of_07,4076,wifi,Wi-Fi Sensing UEFI variable does not work,UEFI,,,1,no_digits
+piece_06_of_07,734,wifi,CITU not work with 23.165,OEM Tools,,,3,short<=28c;few_words<=5
+piece_06_of_07,729,wifi,Wireless WiFi is lost on 23.160,Connectivity,,,0,
+piece_06_of_07,2745,wifi,BSOD occurred when running restart Test+AP/LAN+ACDC,BSOD,,,1,no_digits
+piece_06_of_07,521,wifi,PPAG Fucntion Porting,RF,,,6,short<=28c;few_words<=3;no_digits
+piece_06_of_07,221,wifi,NP50RW NB playing MV lag during Wi-Fi WIDI,Performance,,,0,
+piece_06_of_07,2486,tools,ADL-S CITU tool cant run with AX201,OEM Tools,,,2,generic:cant
+piece_06_of_07,3501,wifi,PC didnt receive packets from android several times so android device finally decided to disconnect from PC.,Connectivity,,,1,no_digits
+piece_06_of_07,2545,wifi,BUGCODE_NDIS_DRIVER_LIVE_DUMP (15e) during PST testing,BSOD,,,3,few_words<=5;generic:bug
+piece_06_of_07,2777,wifi,WD NMI (0x34) - interrupts were not called for 200 ms,BSOD,,,0,
+piece_06_of_07,1368,wifi,The system is connected to a Wireless Display TV and the video playback is stuck or Screen freezes,YB/Lost,,,1,no_digits
+piece_06_of_07,3841,wifi,ChainB power is different from BIOS SAR setting,RF,,,1,no_digits
+piece_06_of_07,607,wifi,The 6G Wi-Fi list cannot be found after changing the MCC to US through ANT tool,System Hang,,,2,generic:hang
+piece_06_of_07,2784,wifi,11N 20MHz conductive throughput 95db attenuation fail,Performance,,,2,generic:fail
+piece_06_of_07,3994,wifi,Z93 WiFi 5Ghz band 160M-BW DFS fail issue,Connectivity,,,2,generic:issue
+piece_06_of_07,3814,tools,UEFI variable display,UEFI,,,6,short<=28c;few_words<=3;no_digits
+piece_06_of_07,464,wifi,"The result show fail when running Stress-WiFi Ping (S4) test.(F/R:11/40units,13/4000cycles)",Connectivity,,,2,generic:fail
+piece_06_of_07,2510,wifi,Random disconnect seen,Connectivity,,,6,short<=28c;few_words<=3;no_digits
+piece_06_of_07,257,wifi,wifi icon lost and the system hang when ESD test,System Hang,,,3,generic:hang;no_digits
+piece_06_of_07,1363,wifi,"When set router 2.4G/5G wifi authentication type: WPA-PSA and RF mode:802.11b/g/n/ax,after the machine connect it and display 802.11n instead of 802.11ax(F/R:3/3 6/6cycles)",Connectivity,,,0,
+piece_06_of_07,4041,wifi,Intermittent unexplained low downlink throughput,Connectivity,,,4,few_words<=5;generic:intermittent;no_digits
+piece_06_of_07,934,wifi,"WIFI show YB(Assert_0x20104009/20100505) when run CB.(F/R 1/1 UUTs, 5/200Cycles)",YB/Lost,,,0,
+piece_06_of_07,4014,wifi,UefiCnvWlanWRDS value can be read by WRT but no function.,Connectivity,,,1,no_digits
+piece_06_of_07,2641,wifi,BSOD-0x7E issue when enable SAR table,RF,,,2,generic:issue
+piece_06_of_07,541,wifi,wireless connection and network performance issues,Connectivity,,,3,generic:issue;no_digits
+piece_06_of_07,3557,wifi,System hang on ASUS logo by BitLocker Network unlock function with UEFI-Release-221522272.,System Hang,,,2,generic:hang
+piece_06_of_07,435,wifi,Ant Tool DLL ERROR,OEM Tools,,,7,very_short<=18c;few_words<=5;generic:error;no_digits
+piece_06_of_07,595,wifi,"when an AP is connected, DUT wakes up intermittently without human detection",Connectivity,,,3,generic:intermittent;no_digits
+piece_06_of_07,4044,wifi,FmP2 got lower RX TPT against Netgear RS700 than GaP2,Performance,,,0,
+piece_06_of_07,2160,wifi,Windows UI and netsh keep showing old channel and Band . After the DUT connected mobile hotspot switches from the 2.4G band to the 5G band,Power Consumption,,,0,
+piece_06_of_07,3844,wifi,"During PVT testing , one unit meet BSOD 9F 0x9F_4_vwifimp_Netwtw10_IMAGE_vwifibus.sys",BSOD,,,0,
+piece_06_of_07,1587,wifi,PX AX210 Wifi 6G _DSM support_OEM,Connectivity,,,0,
+piece_06_of_07,2177,wifi,SPD not working < 30cm from edge of laptop but isolation is good,Connectivity,,,2,generic:not working
+piece_06_of_07,2253,wifi,Cannot connect to WPA2 Enterprise via UEFI,Connectivity,,,0,
+piece_06_of_07,2601,wifi,Connectivity failure. 0x8FE assert seen in corporate environment. Customer suspects roaming from 40MHz to 80MHz network,YB/Lost,,,2,generic:failure

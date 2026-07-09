@@ -1,0 +1,9 @@
+﻿Technology,Category,Root Cause Type 1,Root Cause Type 2,Root Cause Type 3,Root Cause Type 4,Issue Count
+WIFI,Connectivity,Insufficient Root-Cause Detail,Firmware Config / Parameter / Tuning,State Machine / Flow Handling,Driver-OS Interface / API / OID,842
+WIFI,YB/Lost,Insufficient Root-Cause Detail,Firmware Config / Parameter / Tuning,State Machine / Flow Handling,Power State / Reset / PLDR,292
+WIFI,BSOD,Insufficient Root-Cause Detail,State Machine / Flow Handling,Firmware Config / Parameter / Tuning,Memory / Pointer / Resource Handling,279
+WIFI,Performance,Insufficient Root-Cause Detail,Firmware Config / Parameter / Tuning,RF / Coexistence / Channel Behavior,State Machine / Flow Handling,120
+BT,Connectivity,Insufficient Root-Cause Detail,Firmware Config / Parameter / Tuning,Memory / Pointer / Resource Handling,State Machine / Flow Handling,398
+BT,YB/Lost,Insufficient Root-Cause Detail,Firmware Config / Parameter / Tuning,Race / Timing / Interrupt Ordering,Power State / Reset / PLDR,239
+BT,BSOD,Insufficient Root-Cause Detail,Firmware Config / Parameter / Tuning,Power State / Reset / PLDR,Driver-OS Interface / API / OID,43
+BT,HLK,Insufficient Root-Cause Detail,Firmware Config / Parameter / Tuning,,,16

@@ -1,0 +1,9 @@
+[Sat 01/24/2026 23:28:11.41] Starting HSD-only job 
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\wireless_bug_dashboard_ips_hsd_jira.py", line 18, in <module>
+    import HSD_access as hsd_access  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\HSD_access.py", line 35, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+[Sat 01/24/2026 23:28:11.97] Finished with exit code 1 

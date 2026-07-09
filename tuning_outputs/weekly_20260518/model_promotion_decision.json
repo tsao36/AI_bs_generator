@@ -1,0 +1,8 @@
+{
+  "timestamp": "20260525_100744",
+  "action": "skip",
+  "reason": "accepted labels 26 < min_new_labels 999999",
+  "accepted_labels": 26,
+  "reviewed_rows": 38,
+  "weekly_dir": "tuning_outputs\\weekly_20260518"
+}

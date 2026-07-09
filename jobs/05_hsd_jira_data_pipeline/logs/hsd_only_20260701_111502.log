@@ -1,0 +1,50 @@
+[Wed 07/01/2026 11:15:02.37] Starting HSD-only job 
+[INFO] Python executable: python 
+Python 3.14.3
+[INFO] REQUESTS_CA_BUNDLE=C:\Python314\Lib\site-packages\certifi\cacert.pem 
+2026-07-01 11:15:07,242 [WARNING] DDL safeguard active: forcing append mode (no DROP/CREATE). Use --allow-ddl to override.
+2026-07-01 11:15:07,242 [WARNING][wireless_ips_hsd] DDL safeguard active: forcing append mode (no DROP/CREATE). Use --allow-ddl to override.
+2026-07-01 11:15:07,242 [INFO] Run options: RunOptions(enable_jira_tat=True, enable_jira_comment_analysis=False, enable_jira_initial_component=True, enable_jira_duplicate_sw_check=True, log_jira_tat_dict=False, limit_ips=0, limit_jira=0, enable_db_insert=True, db_recreate_table=False, db_auto_add_missing_columns=False, db_use_batch_insert=True, db_batch_page_size=200)
+2026-07-01 11:15:07,242 [INFO][wireless_ips_hsd] Run options: RunOptions(enable_jira_tat=True, enable_jira_comment_analysis=False, enable_jira_initial_component=True, enable_jira_duplicate_sw_check=True, log_jira_tat_dict=False, limit_ips=0, limit_jira=0, enable_db_insert=True, db_recreate_table=False, db_auto_add_missing_columns=False, db_use_batch_insert=True, db_batch_page_size=200)
+2026-07-01 11:15:07,243 [DEBUG][hsd_access] Using existing KRB5CCNAME=FILE:C:\Temp\krb5cache
+2026-07-01 11:15:07,245 [INFO] Kerberos credential cache in use: FILE:C:\Temp\krb5cache
+2026-07-01 11:15:07,245 [INFO][hsd_access] Kerberos credential cache in use: FILE:C:\Temp\krb5cache
+2026-07-01 11:15:07,245 [INFO] Using Kerberos authentication with cache FILE:C:\Temp\krb5cache
+2026-07-01 11:15:07,245 [INFO][hsd_access] Using Kerberos authentication with cache FILE:C:\Temp\krb5cache
+2026-07-01 11:15:07,246 [WARNING] SSL verification disabled for HSD API requests; set HSD_CA_CERT to enable.
+2026-07-01 11:15:07,246 [WARNING][hsd_access] SSL verification disabled for HSD API requests; set HSD_CA_CERT to enable.
+2026-07-01 11:15:07,246 [INFO] HSD authentication mode in use: kerberos
+2026-07-01 11:15:07,246 [INFO][hsd_access] HSD authentication mode in use: kerberos
+2026-07-01 11:15:07,246 [INFO] Fetching bugs from saved query ID: 15019575844 (limit: 5000)
+2026-07-01 11:15:07,246 [INFO][hsd_access] Fetching bugs from saved query ID: 15019575844 (limit: 5000)
+2026-07-01 11:15:07,247 [INFO] Query URL: https://hsdes.intel.com/appstore/generalapps/#/pages/community/1203659509?queryId=15019575844
+2026-07-01 11:15:07,247 [INFO][hsd_access] Query URL: https://hsdes.intel.com/appstore/generalapps/#/pages/community/1203659509?queryId=15019575844
+2026-07-01 11:15:07,247 [INFO] [Attempt 1/5] Trying endpoint: https://hsdes-api.intel.com/rest/query/15019575844
+2026-07-01 11:15:07,247 [INFO][hsd_access] [Attempt 1/5] Trying endpoint: https://hsdes-api.intel.com/rest/query/15019575844
+2026-07-01 11:15:07,248 [DEBUG][hsd_access] API request: GET https://hsdes-api.intel.com/rest/query/15019575844
+2026-07-01 11:15:10,550 [INFO] Successfully fetched 6 bugs from query 15019575844
+2026-07-01 11:15:10,550 [INFO][hsd_access] Successfully fetched 6 bugs from query 15019575844
+2026-07-01 11:15:10,552 [INFO] Owner filter reduced HSD list to 6 rows
+2026-07-01 11:15:10,552 [INFO][wireless_ips_hsd] Owner filter reduced HSD list to 6 rows
+2026-07-01 11:15:10,552 [INFO] Fetched 6 HSD bug(s) via API
+2026-07-01 11:15:10,552 [INFO][wireless_ips_hsd] Fetched 6 HSD bug(s) via API
+2026-07-01 11:15:10,554 [INFO] HSD fetched ids: 14027712332, 14028060253, 1407264451, 22015396764, 1607823019, 14028042351
+2026-07-01 11:15:10,554 [INFO][wireless_ips_hsd] HSD fetched ids: 14027712332, 14028060253, 1407264451, 22015396764, 1607823019, 14028042351
+2026-07-01 11:15:10,555 [INFO] HSD pre-sync cleanup disabled; preserving existing HSD rows in ips_jira_bugs.
+2026-07-01 11:15:10,555 [INFO][wireless_ips_hsd] HSD pre-sync cleanup disabled; preserving existing HSD rows in ips_jira_bugs.
+2026-07-01 11:15:10,555 [INFO][CUSTOMER_BUGS] CTOR - DbConnector
+2026-07-01 11:15:13,477 [INFO][CUSTOMER_BUGS] DB connection info: host=10-108-27-113.dbaas.intel.com db=wirelesscustomerengineering schema=public search_path="$user", public, dbaas_admin
+2026-07-01 11:15:16,544 [INFO][CUSTOMER_BUGS] HSD refresh in ips_jira_bugs: updated 4 row(s); engineer refreshed 0; inserted 0 new; skipped 0 unmatched
+2026-07-01 11:15:16,544 [INFO][CUSTOMER_BUGS] HSD matches: hsd_id=14027712332 promoted=NA via hsd_id=14027712332; hsd_id=14028060253 promoted=NA via hsd_id=14028060253; hsd_id=22015396764 promoted=NA via hsd_id=22015396764; hsd_id=14028042351 promoted=NA via hsd_id=14028042351
+2026-07-01 11:15:16,544 [INFO] HSD-only: refreshed 4 row(s) in ips_jira_bugs (input rows=4)
+2026-07-01 11:15:16,544 [INFO][wireless_ips_hsd] HSD-only: refreshed 4 row(s) in ips_jira_bugs (input rows=4)
+2026-07-01 11:15:16,544 [INFO][CUSTOMER_BUGS] DTOR - DbConnector
+2026-07-01 11:15:16,545 [INFO] === Stage timing summary (seconds) ===
+2026-07-01 11:15:16,545 [INFO][wireless_ips_hsd] === Stage timing summary (seconds) ===
+2026-07-01 11:15:16,545 [INFO] HSD_fetch          3.31
+2026-07-01 11:15:16,545 [INFO][wireless_ips_hsd] HSD_fetch          3.31
+2026-07-01 11:15:16,545 [INFO] Postgres_insert    5.99
+2026-07-01 11:15:16,545 [INFO][wireless_ips_hsd] Postgres_insert    5.99
+2026-07-01 11:15:16,545 [INFO] TOTAL              9.30
+2026-07-01 11:15:16,545 [INFO][wireless_ips_hsd] TOTAL              9.30
+[Wed 07/01/2026 11:15:17.15] Finished with exit code 0 

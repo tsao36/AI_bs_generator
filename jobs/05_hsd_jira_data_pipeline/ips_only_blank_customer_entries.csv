@@ -1,0 +1,132 @@
+﻿ips_id,ips_created_date,ips_title,customer
+1008622,2026-04-17 07:57:55,[MADIGI][BV55B-ML03][MTL-H][DVT]BT headphone take about 25 seconds to output audio after connection. (FR: 9/9 cycles; 3/3 units),NA
+1008619,2026-04-17 07:52:00,[MADIGI][BV55B-ML03][MTL-H][DVT]Microphone of BT headphone can not be detected after connection.(FR: 9/9 cycles; 3/3 units),NA
+1005921,2026-03-30 11:34:07,[BYD][X86_POS_S12][MTL-U][EVT][SKU1]AX211 WIFI 2.4g 11n/11ax 40mhz,NA
+1005920,2026-03-30 11:23:47,[BYD][X86_POS_S12][MTL-U][EVT][SKU1]AX211 WIFI ,NA
+1005785,2026-03-29 09:19:07,[Mechrevo][Huaqin][XINGYAO15][AMD][Intel AX210][WiFi][25H2]MS scenario WLAN driver YB,NA
+1004710,2026-03-20 09:42:08,[Mechrevo][Alstonel[RPL_HX]AX210 PLDR fail after adding AX211 BT lost solution,NA
+1002149,2026-03-04 07:52:30,[EPSON][BE200] Unable to establish a 320MHz connection,NA
+1001606,2026-03-02 09:48:31,[BYD][X86_POS_S12][MTL-U][EVT][SKU1]AX211 WIFI 11AX 6GHZ RF performance fail,NA
+998102,2026-01-29 06:48:46,[Mechrevo][Alstonel[RPL_HX]BE200 BT YB or BT lost during auto coldboot/S4 test.,NA
+997609,2026-01-27 09:02:04,[AISTONE][Intel RPL-HX]HLK fail after adding the BT lost solution,NA
+997439,2026-01-26 11:39:46,[AISTONE][Intel RPL-HX]HLK fail:Bluetooth - Initiate platform-level device reset,NA
+997200,2026-01-23 06:56:29,[Test][NvwaB][RPL][AX211][WiFi]The wifi disconnect and cant research the wifi,NA
+996060,2026-01-16 02:52:07,[Mechrevo][AIstone][IDJ-PTL][BE211@2230]ANT req on the PTL platform,NA
+995440,2026-01-12 07:59:37,[Mechrevo][AISTONE][RPL-HX] AX210 BT device Lost or BT&WLAN YB during auto coldboot/S4 test,NA
+993404,2025-12-24 09:25:33,[Mechrevo][AIstone][IDJ-PTL][AX211@2230 160M]Failed to activate BT LE function test,NA
+991658,2025-12-15 03:24:11,[Mechrevo][AIstone][IDJ-PTL]BT headset sound output need 15S when perform BT on,NA
+991127,2025-12-10 06:21:40,[Epson][Camel][ARL-S] WHQL BT test fail,NA
+989572,2025-11-28 09:16:56,[Mechrevo][AIstone][IDJ-PTL] Bluetooth headphone only have audio no MIC function,NA
+989476,2025-11-28 03:37:27,[Sakura][LFP30][EVT] AX211 Wifi card cannot be detected properly after being swapped from BE211,NA
+988868,2025-11-25 05:33:58,[AISTONE][Intel RPL-HX]BSOD 0x7E occurred when installing OS with WLAN AX210,NA
+986560,2025-11-11 03:43:20,[Mechrevo][AIstone][PTL-H]X6PT47TJ Layout review for CNVio2/3 M.2 WIFI module,NA
+986554,2025-11-11 03:17:12,[Mechrevo][AIstone][PTL-H]X6PT47TJ Schematic review for CNVio2/3 M.2 WIFI module,NA
+986421,2025-11-10 08:24:08,[Emdoor][RPL525][RPL-H][9560] Wi-Fi disconnected while no AP list found after video streaming long run test,NA
+985729,2025-11-05 09:07:27,[Mechrevo][Longcheer][N776][PTL-H][AX211][25h2] WLAN Layout review request,NA
+985724,2025-11-05 08:55:16,[Mechrevo][Longcheer][N776][PTL-H][AX211][25h2] WLAN Schematics review request,NA
+985647,2025-11-05 03:19:50,[Mechrevo][Alstone][IDJ-PTL]long run S4 BT YB,NA
+984949,2025-11-03 09:16:53,[LFP30][Sakura][WiDi] WLAN and WiDi auto disconnect.,NA
+984244,2025-10-29 08:52:58,"[H3C][Sixunited][LP88][LNL][BE200]The output sound device of the Bluetooth headset is recognized, but the input sound device is not.",NA
+983190,2025-10-22 11:02:01,[H3C][Sixunited][LP88][LNL][BE200]Connected Bluetooth audio devices will disconnect automatically when an external monitor with audio capabilities is connected to Windows,NA
+983187,2025-10-22 10:55:49,[H3C][Sixunited][LP88][LNL][BE200]Bluetooth headset experiences audio stuttering during prolonged audio playback (as a stress test) on Windows,NA
+983183,2025-10-22 10:41:57,[H3C][Sixunited][LP88][LNL][BE200]Bluetooth headset fails to connect automatically after Windows is resume from shutdown,NA
+983176,2025-10-22 10:20:37,[H3C][Sixunited][LP88][LNL][BE200]Bluetooth mouse connected but unresponsive after resume from shutdown,NA
+977291,2025-09-16 07:50:21,PN252 CNVI+TBT4 review,NA
+976836,2025-09-15 02:16:27,cnvi,NA
+976727,2025-09-12 09:35:58,"[H3C][Sixunited]BE200 Connect to a WIFI7 Router, Protocol shows Wi-Fi 6 (802.11ax)",NA
+976243,2025-09-10 07:25:48,[BYD][PTL-H484]Sonya12 WIFI layout check,NA
+975687,2025-09-08 02:15:49,[Mechrevo][AIstone][PTL-H]X6PT47TJ Layout review for M.2 WIFI module,NA
+975239,2025-09-04 03:00:21,[Uniwill/NA][Uniwill][MTL][BE200][X5MT457S]Conductive TPT test fail,NA
+974254,2025-08-29 06:48:24,[LNL][LP88]BE200MIC,NA
+973722,2025-08-26 12:07:39,[H3C][Sixunited][LP88][LNL][BE200]WiFi disconnect and re-connected several times then show YB after connect to a specific AP,NA
+973641,2025-08-26 07:07:45,"[N776][Longcheer][MECHREVO][AX211&BT][23.150], PC20.",NA
+972985,2025-08-21 02:33:40,[BYD][N15QA2][PTL-H-484][EVT] WLAN Schematic review,NA
+972881,2025-08-20 08:41:09,[BYD][N15QA2][PTL-H-484][EVT] WLAN Layout review,NA
+972852,2025-08-20 07:46:24,[Mechrevo][AIstone][PTL-H]X6PT47TJ Schematic review for M.2 WIFI module,NA
+971615,2025-08-13 08:51:34,[AISTONE][MTL-H] AX211/AX201 BT YB or BT Lost during auto coldboot/S4 test,NA
+970867,2025-08-08 01:59:34,[AISTONE][MTL-H] BE200 Wifi lost during warm boot,NA
+970471,2025-08-06 06:16:49,Panther Lake H 484 Layout file review for M.2 WIFI module,NA
+970462,2025-08-06 05:55:45,Panther Lake H 484 Schematic review for M.2 WIFI module,NA
+970454,2025-08-06 05:40:55,cnvi Schematic review,NA
+968825,2025-07-28 12:48:26,[PTL][M16P][BE211/AE211] The WLAN link speed would drop under DC mode,NA
+967304,2025-07-21 07:49:58,Bluetooth audio offload can not enable on ARL U platform with GFP2 AX211,NA
+966556,2025-07-16 06:24:16,"After the Intel AX201/AX211 WLAN card is woken up via network S3, the display shows no image.",NA
+964630,2025-07-05 02:22:27,[AIstone][Arrow lake]Auto S4 BT device lost,NA
+964108,2025-07-02 12:44:41,Wireless AX210NG Linux Driver + FW + DRTU,NA
+961457,2025-06-18 03:35:03,Auto Cold Boot TestBT Device YB(error code 38),NA
+959802,2025-06-09 06:45:17,[N776][Longcheer][AX211][MECHREVO][ARL]Recording cannot be done using Bluetooth headphones.,NA
+959113,2025-06-04 07:24:20,"[AIstone][Arrow lake] The manual reboot of the DC is significantly slower, taking approximately 30 to 40 seconds longer than other machines",NA
+958268,2025-05-29 08:18:43,[Mechrevo][Longcheer][[ARL] [N776][EVT][Sch][layout]Cnvi HW Review Request,NA
+958206,2025-05-29 03:37:18,[BYD][N14PR2][BE200][JP] Wifi 7 link speed does not reach 5764Mbps,NA
+956878,2025-05-20 16:58:07,Issue with AX210 modules,NA
+955921,2025-05-15 07:39:41,[SU][ARL/MTL] No BT mic device if installing 23.110.0.4/23.120.0.4/23.140.0.5 Drv. with AX201/101 card,NA
+954797,2025-05-08 09:25:25,[Longcheer][MECHREVO][AX210][DVT1][24H2]WIFI device will YB after running MS.,NA
+954795,2025-05-08 09:18:50,[Longcheer][MECHREVO][AX210][DVT1][24H2]Canot Miracast to project the screen to this device wirelessly,NA
+954789,2025-05-08 09:10:24,[Longcheer][MECHREVO][AX210][DVT1][24H2]AX210 WIFI PLDR test fail.,NA
+951869,2025-04-21 14:22:28,[Aistone][ARL H 45] BE200: BT lost in Cold boot/S4/Warm boot cycling test,NA
+949411,2025-04-08 02:33:57,[MADIGI][DVT][Arrow Lake H]Reboot stress test  appear BSOD or hang up5/15 Units,NA
+947102,2025-04-01 06:58:19,Arrow Lake H 45W Layout file review for M.2 WIFI module,NA
+947099,2025-04-01 06:50:54,Arrow Lake H 45W Schematic review for M.2 WIFI module,NA
+945472,2025-03-21 06:46:19,[BYD][ARL-H][N15QA1]S4 loop test BSOD 0x9Fdump file related to wifi,NA
+945471,2025-03-21 06:46:14,[BYD][ARL-H][N15QA1][AX211]S4 loop test BSOD 0x9Fdump file related to wifi,NA
+944487,2025-03-17 14:05:19,Test,NA
+943773,2025-03-13 02:19:29,[Haier][BOE][RPL-P][AX201]BIOS Sar feature no function,NA
+943544,2025-03-12 03:04:27,[AIstone][Arrow lake]BSOD 0x9f dump during Auto warm boot,NA
+940800,2025-02-26 01:59:09,[Mechrevo][Longcheer][P916L][LNL][BE201]CNVi layout review request,NA
+940795,2025-02-26 01:52:31,[Mechrevo][Longcheer][P916L][LNL][BE201]CNVi schematic review request,NA
+929916,2024-12-20 02:03:27,[EPSON][BE200] How to measure or calculate the junction temperature?,NA
+929562,2024-12-18 08:36:54,[H3C][THS_G3][Raptor Lake -H refresh] [24H2]Bluetooth - LE Audio VSAP all WHQL test item are fail in 24h2 windows OS [FR 100%],NA
+929491,2024-12-18 06:01:16,Cannot adjust volume when playing audio by BT device,NA
+927292,2024-12-09 06:36:23,[AIstone][ARL Hx][X6AR5xxx]Cannot record when connected to a Bluetooth headset,NA
+925862,2024-12-03 03:10:35,[Emdoor][Medion][LNL326][Lunar lake]Confirm LE audio function,NA
+921439,2024-11-13 02:04:20,[Alstone][X6AR5xxx][ARL Hx][AX211]CNVi layout review,NA
+921345,2024-11-12 11:05:28,[Alstone][X6AR5xxx][ARL Hx][AX211]CNVi schematic review,NA
+921008,2024-11-11 07:43:02,[Haier][BOE][NB53B][MTL-H][AX201]AX201 device will show yellow bang after testing PLDR,NA
+920856,2024-11-08 14:56:42,DRTU for  core89 binary package from Intel RDC#831836,NA
+920751,2024-11-08 06:42:32,[Medion][Emdoor][LNL326][Ultra 5 226V][BE201]Lunar Lake platform BE201 layout re,NA
+920749,2024-11-08 06:34:51,[Medion][Emdoor][LNL326][Ultra 5 226V][BE201]Lunar Lake platform BE201 schematic,NA
+920176,2024-11-06 09:13:03,[WW45 MCS Train][WEIBU][A15xMLR100][Arrow Lake H][BT.14][wifi.7]FailThe machine cannot connect to Miracast to cast the screen,NA
+920114,2024-11-06 07:04:42,"[WW45 MCS Train][WEIBU][A15xMLR100][Arrow Lake H][BT.13][wifi.7]Fail When the Bluetooth headset enters and goes out of the test range, the audio does not automatically switch to the headset autoplay",NA
+920111,2024-11-06 06:53:46,[WW45 MCS Train][WEIBU][A15xMLR100][Arrow Lake H][BT.15]Fail Bluetooth headset audio playback doesnt pause during a Skype call,NA
+920106,2024-11-06 06:44:10,[WW45 MCS Train][WEIBU][A15xMLR100][Arrow Lake H][WIFI 15]Fail The machine cant wake up,NA
+920055,2024-11-06 04:03:49,"[WW45 MCS Train][WEIBU][A15xMLR100][Arrow Lake H][BT.08]Fail Connect the Bluetooth headset to Skype for video calls, and the headset has no sound output",NA
+919794,2024-11-05 05:52:22,"[WW45 MCS Train][WEIBU][A15xMLR100][Arrow Lake H][BT.13][wifi.7]Fail When the Bluetooth headset enters and goes out of the test range, the audio does not automatically switch to the headset autoplay",NA
+918226,2024-10-28 08:47:23,[Emdoor][Thunderobot][LNL326][Lunar lake]BE201 driver can not be install,NA
+911949,2024-09-26 03:32:43,[Haier][BOE][NB537][MTL][AX201]wifi card show YB with new driver 23.80.1.3,NA
+893707,2024-07-04 11:19:52,[Emdoor][ADL][WIFI] WIFI Device dont show PowerManagement page on device Manager,NA
+890715,2024-06-20 08:29:42,"[Emdoor][JS168][WIFI/BT]Running S3/S4/REBOOT, WIFI/BT Yellow Sensation",NA
+890198,2024-06-19 00:59:18,The problem of programing Intel i210 card by EepromAccessTool,NA
+886509,2024-05-31 05:46:31,"[Emdoor][SBER][RPL656][Raptor lake][AX201]Turn off HW RF KILL switch and shutdown to G3, then boot up to S0 and turn on HW RF KILL, Wi-Fi&BT still in RF KILL mode.",NA
+886317,2024-05-30 09:32:02,[Emdoor][WIFI]AX201S5WiFi&BT,NA
+883156,2024-05-15 09:01:51,[Emdoor][BT MAC]The BT MAC address will change when a new BT driver is installed,NA
+864794,2024-02-23 08:15:54,[Haier][BOE][NB537][MTL-H][AX201]Mobile hotspot cannot select 5G band when system was connected 2.4G WIFI,NA
+862057,2024-02-05 07:38:25,[ODM][RPL-R][INTEL/AX101][X14/15/1704VAP]Wi-Fi AP  in UEFi Wi-Fi AP ,NA
+860314,2024-01-29 02:59:26,[Haier][BOE][NB536][RPL-P][AX201]Sound need about 20s to output from BT speaker,NA
+855311,2024-01-08 11:22:29,[Generic][PEGA][MTL][BE200][B3403]BT Tx power can not meet eps0.97 p.89 Table6-7,NA
+777055,2023-01-09 02:11:00,[DRTU][GaP ES1][22.205] Command XVT_CMD_MCC_CONTROL failed with status 31,NA
+727761,2022-08-08 11:30:00,[Intel][Alder Lake][DRTU][AC9560][PHWFW06537_22.150.1.1]ECS- ??MF50AL????????tool,
+727761,2022-08-08 11:30:00,[Intel][Alder Lake][DRTU][AC9560][PHWFW06537_22.150.1.1]ECS- ??MF50AL????????tool,
+727761,2022-08-08 11:30:00,[Intel][Alder Lake][DRTU][AC9560][PHWFW06537_22.150.1.1]ECS- ??MF50AL????????tool,
+701363,2022-04-26 23:31:00,[ADL-P]Device lost after enabled wifi boot feature (vRPO SKU),
+701363,2022-04-26 23:31:00,[ADL-P]Device lost after enabled wifi boot feature (vRPO SKU),
+701363,2022-04-26 23:31:00,[ADL-P]Device lost after enabled wifi boot feature (vRPO SKU),
+651845,2021-10-13 09:51:00,10/6 WAE production-bug#NA-Intel WIFI-!-DRTU Tool-! DRTU connection check fail,
+651845,2021-10-13 09:51:00,10/6 WAE production-bug#NA-Intel WIFI-!-DRTU Tool-! DRTU connection check fail,
+651845,2021-10-13 09:51:00,10/6 WAE production-bug#NA-Intel WIFI-!-DRTU Tool-! DRTU connection check fail,
+649800,2021-10-04 18:50:00,[Intel UID 549989][EV1][PST] Intel(R) Wi-Fi 6 AX201 160MHz is Banged Out in Device Manager.,
+649800,2021-10-04 18:50:00,[Intel UID 549989][EV1][PST] Intel(R) Wi-Fi 6 AX201 160MHz is Banged Out in Device Manager.,
+649800,2021-10-04 18:50:00,[Intel UID 549989][EV1][PST] Intel(R) Wi-Fi 6 AX201 160MHz is Banged Out in Device Manager.,
+639101,2021-08-19 16:00:00,"In Russia, Intel AX200 failed to connect to the wireless routers in 11ax mode",
+639101,2021-08-19 16:00:00,"In Russia, Intel AX200 failed to connect to the wireless routers in 11ax mode",
+639101,2021-08-19 16:00:00,"In Russia, Intel AX200 failed to connect to the wireless routers in 11ax mode",
+634355,2021-08-02 01:25:00,[LCM1 SIT][EV1][WiFi]The yellow mark shows up on Device Manager of Wi-Fi adapter after execute PLDRTest.exe about 4-5 times.,
+634355,2021-08-02 01:25:00,[LCM1 SIT][EV1][WiFi]The yellow mark shows up on Device Manager of Wi-Fi adapter after execute PLDRTest.exe about 4-5 times.,
+634355,2021-08-02 01:25:00,[LCM1 SIT][EV1][WiFi]The yellow mark shows up on Device Manager of Wi-Fi adapter after execute PLDRTest.exe about 4-5 times.,
+614817,2021-05-13 02:24:00,test why investigating,
+614817,2021-05-13 02:24:00,test why investigating,
+614817,2021-05-13 02:24:00,test why investigating,
+599445,2021-03-15 02:36:00,[ADL] Wrong text in BIOS setting,NA
+599045,2021-03-12 01:15:00,Wrong text in BIOS setting,NA
+594779,2021-02-24 01:43:00,Wifi device lost after resume from S4/S5.,
+594779,2021-02-24 01:43:00,Wifi device lost after resume from S4/S5.,
+594779,2021-02-24 01:43:00,Wifi device lost after resume from S4/S5.,

@@ -1,0 +1,5 @@
+﻿Category,Root Cause Type 1,Root Cause Type 2,Root Cause Type 3,Root Cause Type 4,Issue Count
+Connectivity,Validation Coverage Gap and Test Escape Issues,,,,1
+YB/Lost,Firmware Configuration and Parameter Tuning Issues,Duplicate or Reference Case (follow linked Jira root cause),,,3
+BSOD,Memory and Resource Management Issues,Timing Synchronization and Race Condition Issues,Driver and OS Interface Contract Issues,Duplicate or Reference Case (follow linked Jira root cause),8
+Performance,Firmware Configuration and Parameter Tuning Issues,,,,2

@@ -1,0 +1,38 @@
+[Thu 01/29/2026 12:29:09.45] Starting HSD-only job 
+2026-01-29 12:29:10,479 [INFO] Run options: RunOptions(enable_jira_tat=True, enable_jira_comment_analysis=True, enable_jira_initial_component=True, enable_jira_duplicate_sw_check=True, log_jira_tat_dict=False, limit_ips=0, limit_jira=0, enable_db_insert=True, db_recreate_table=True, db_use_batch_insert=False, db_batch_page_size=200)
+2026-01-29 12:29:10,479 [INFO][wireless_ips_hsd] Run options: RunOptions(enable_jira_tat=True, enable_jira_comment_analysis=True, enable_jira_initial_component=True, enable_jira_duplicate_sw_check=True, log_jira_tat_dict=False, limit_ips=0, limit_jira=0, enable_db_insert=True, db_recreate_table=True, db_use_batch_insert=False, db_batch_page_size=200)
+2026-01-29 12:29:10,480 [DEBUG][hsd_access] Using existing KRB5CCNAME=FILE:C:\Temp\krb5cache
+2026-01-29 12:29:10,480 [INFO] Kerberos credential cache in use: FILE:C:\Temp\krb5cache
+2026-01-29 12:29:10,480 [INFO][hsd_access] Kerberos credential cache in use: FILE:C:\Temp\krb5cache
+2026-01-29 12:29:10,481 [INFO] Using Kerberos authentication with cache FILE:C:\Temp\krb5cache
+2026-01-29 12:29:10,481 [INFO][hsd_access] Using Kerberos authentication with cache FILE:C:\Temp\krb5cache
+2026-01-29 12:29:10,481 [WARNING] SSL verification disabled for HSD API requests; set HSD_CA_CERT to enable.
+2026-01-29 12:29:10,481 [WARNING][hsd_access] SSL verification disabled for HSD API requests; set HSD_CA_CERT to enable.
+2026-01-29 12:29:10,481 [INFO] HSD authentication mode in use: kerberos
+2026-01-29 12:29:10,481 [INFO][hsd_access] HSD authentication mode in use: kerberos
+2026-01-29 12:29:10,481 [INFO] Fetching bugs from saved query ID: 16021056445 (limit: 500)
+2026-01-29 12:29:10,481 [INFO][hsd_access] Fetching bugs from saved query ID: 16021056445 (limit: 500)
+2026-01-29 12:29:10,481 [INFO] Query URL: https://hsdes.intel.com/appstore/generalapps/#/pages/community/1203659509?queryId=16021056445
+2026-01-29 12:29:10,481 [INFO][hsd_access] Query URL: https://hsdes.intel.com/appstore/generalapps/#/pages/community/1203659509?queryId=16021056445
+2026-01-29 12:29:10,481 [INFO] [Attempt 1/5] Trying endpoint: https://hsdes-api.intel.com/rest/query/16021056445
+2026-01-29 12:29:10,481 [INFO][hsd_access] [Attempt 1/5] Trying endpoint: https://hsdes-api.intel.com/rest/query/16021056445
+2026-01-29 12:29:10,481 [DEBUG][hsd_access] API request: GET https://hsdes-api.intel.com/rest/query/16021056445
+2026-01-29 12:29:12,441 [INFO] Successfully fetched 4 bugs from query 16021056445
+2026-01-29 12:29:12,441 [INFO][hsd_access] Successfully fetched 4 bugs from query 16021056445
+2026-01-29 12:29:12,442 [INFO] Fetched 4 HSD bug(s) via API
+2026-01-29 12:29:12,442 [INFO][wireless_ips_hsd] Fetched 4 HSD bug(s) via API
+2026-01-29 12:29:12,443 [INFO][CUSTOMER_BUGS] CTOR - DbConnector
+2026-01-29 12:29:15,066 [INFO][CUSTOMER_BUGS] DB connection info: host=postgres5108-lb-ir-in.dbaas.intel.com db=wirelesscustomerengineering schema=public search_path="$user", public
+2026-01-29 12:29:16,330 [INFO][CUSTOMER_BUGS] HSD refresh in ips_jira_bugs: updated 2 row(s); skipped 2 unmatched (sample unmatched: NA, NA)
+2026-01-29 12:29:16,330 [INFO] HSD-only: refreshed 2 row(s) in ips_jira_bugs (input rows=4)
+2026-01-29 12:29:16,330 [INFO][wireless_ips_hsd] HSD-only: refreshed 2 row(s) in ips_jira_bugs (input rows=4)
+2026-01-29 12:29:16,330 [INFO][CUSTOMER_BUGS] DTOR - DbConnector
+2026-01-29 12:29:16,332 [INFO] === Stage timing summary (seconds) ===
+2026-01-29 12:29:16,332 [INFO][wireless_ips_hsd] === Stage timing summary (seconds) ===
+2026-01-29 12:29:16,332 [INFO] HSD_fetch          1.96
+2026-01-29 12:29:16,332 [INFO][wireless_ips_hsd] HSD_fetch          1.96
+2026-01-29 12:29:16,332 [INFO] Postgres_insert    3.89
+2026-01-29 12:29:16,332 [INFO][wireless_ips_hsd] Postgres_insert    3.89
+2026-01-29 12:29:16,332 [INFO] TOTAL              5.85
+2026-01-29 12:29:16,332 [INFO][wireless_ips_hsd] TOTAL              5.85
+[Thu 01/29/2026 12:29:16.65] Finished with exit code 0 

@@ -1,0 +1,45 @@
+﻿assignment,row_id,technology,ips_title,predicted_category,human_category,label_notes,risk_score,risk_reason
+piece_04_of_07,3811,tools,"After install WRT tool, enter S4 , resume from S4 , boot to desktop , cant adjust brightness immediately around 15 sec",OEM Tools,OEM Tools,,2,generic:cant
+piece_04_of_07,2636,wifi,"[HP][RPL][AX211][Roc][Win11][22H2][BSOD][0x9F]: The unit cant be resume and ""9f""BSOD occure when resume unit from MS - Wdf01000!FxIoTarget::Send+0x17 [minkernel\wdf\framework\shared\inc\private\km\FxIoTargetKm.hpp @ 268]",BSOD,BSOD,,2,generic:cant
+piece_04_of_07,3810,tools,WRT does not make logs on the korean machine names.,Connectivity,OEM Tools,,1,no_digits
+piece_04_of_07,2795,wifi,UEFI Wi-Fi authentication issue,UEFI,UEFI,,4,few_words<=5;generic:issue;no_digits
+piece_04_of_07,701,wifi,"Roaming failed twice, with two failed attempts to reconnect to the 5G hotspot. F/R: 1/1u, 2/50C",Power Consumption,Connectivity,,2,generic:fail
+piece_04_of_07,2398,tools,"add result for ANT tool ""-get_per_country_6e_bios_settings""",OEM Tools,OEM Tools,,0,
+piece_04_of_07,320,wifi,"0x28af/0x10028af and AP disconnect when ""MS<--->Resume"" stress test",BSOD,BSOD,,0,
+piece_04_of_07,757,wifi,WiFi-PPAG power increase is limited,Power Consumption,UEFI,,2,few_words<=5;no_digits
+piece_04_of_07,930,wifi,0x9F WLAN BSOD,BSOD,BSOD,,6,very_short<=18c;few_words<=3
+piece_04_of_07,4012,wifi,WiFi drops intermittently while on a teams call,Connectivity,Connectivity,,3,generic:intermittent;no_digits
+piece_04_of_07,2622,wifi,Intermittent YB,YB/Lost,YB/Lost,,9,very_short<=18c;few_words<=3;generic:intermittent;no_digits
+piece_04_of_07,561,wifi,VLP support on Brazil,UEFI,UEFI,,4,short<=28c;few_words<=5;no_digits
+piece_04_of_07,2095,wifi,The system wakes when a person walks 1.2m horizontally behind it,Power Consumption,Sensing,,0,
+piece_04_of_07,853,wifi,BE211 conductive T-PUT Rx is unexpected.,RF,Performance,,0,
+piece_04_of_07,1235,wifi,The 6GHz frequency band can be searched when use Intel WLAN card without any setting.,Connectivity,Connectivity,,0,
+piece_04_of_07,926,wifi,BSOD point to 0x9F_3_IMAGE_Netwtw14.sys (from MSFT never crash),BSOD,BSOD,,2,generic:crash
+piece_04_of_07,4003,wifi,System hang on black screen during S3/S4/S5 test WinPVT,System Hang,System Hang,,2,generic:hang
+piece_04_of_07,3870,wifi,Mobile hotspot cannot be opened when selecting 5GHz band,Power Consumption,Connectivity,,0,
+piece_04_of_07,3649,wifi,BSOD 0x7e occurred during running MS.,BSOD,BSOD,,0,
+piece_04_of_07,542,wifi,"Stress-MS, BE211 320MHZ caused SW&HW drips(SW:2%/HW:2%) not meet SPEC(90%).",Performance,Power Consumption,,0,
+piece_04_of_07,1460,wifi,WHEA error in event log after reboot (F/R:100%),BSOD,Need-Triage,,2,generic:error
+piece_04_of_07,1393,wifi,SIP126226 - 1040 G11/Win11 24H2/NA/PC US/Intel WLAN driver causes 0xa bug check,BSOD,BSOD,,2,generic:bug
+piece_04_of_07,4061,wifi,There is Event ID 5002 - assert 0x28bf - in log after running WiFi Connection Reliability test.,YB/Lost,YB/Lost,,0,
+piece_04_of_07,1172,wifi,P2P pairing failure as it didnt attempt to connect to the Group Owner (GO).,Connectivity,P2P,,2,generic:failure
+piece_04_of_07,326,wifi,Merino16W PV report WLAN YB code 10,YB/Lost,YB/Lost,,0,
+piece_04_of_07,785,tools,UEFI Wi-Fi no function.,UEFI,UEFI,,4,short<=28c;few_words<=5;no_digits
+piece_04_of_07,322,wifi,"0x28af/0x32d occurred when doing ""MS<-->Resume"" stress test",BSOD,BSOD,,0,
+piece_04_of_07,1067,wifi,WIFI 7 blocked SW Drips 0,Connectivity,Power Consumption,,2,short<=28c
+piece_04_of_07,2079,tools,Use SKILL instead of XML for applying DRC,OEM Tools,Need-Triage,,1,no_digits
+piece_04_of_07,1266,wifi,"BSOD:0x9F(0x9F_3_Netwaw16_IMAGE_pci.sys) happened resume from MS, FR: 1/10Units, 1/93cycles",BSOD,BSOD,,0,
+piece_04_of_07,2560,wifi,MEI BSOD DRIVER_POWER_STATE_FAILURE (9f) cause by WiMan,BSOD,BSOD,,2,generic:failure
+piece_04_of_07,96,wifi,TAS test failed,RF,UEFI,,9,very_short<=18c;few_words<=3;generic:fail;no_digits
+piece_04_of_07,2169,wifi,Miracast channel does not align with BSS channel,Connectivity,P2P,,1,no_digits
+piece_04_of_07,2841,wifi,unable to create GO on 5G bandwidth low frequency channels,Performance,P2P,,2,generic:unable
+piece_04_of_07,3815,wifi,WLAN Device show YB in device manager.,YB/Lost,YB/Lost,,1,no_digits
+piece_04_of_07,2385,tools,TAS function no trigger issue,RF,BIOS,,4,few_words<=5;generic:issue;no_digits
+piece_04_of_07,613,wifi,"SUT cant search for 5.0GHz Wi-Fi after setting ""Wi-Fi Channel"" to 165 and then idling for about 2 minutes.",OEM Tools,Connectivity,,2,generic:cant
+piece_04_of_07,316,wifi,P2P Pairing Failure,Connectivity,P2P,,7,short<=28c;few_words<=3;generic:failure
+piece_04_of_07,1437,wifi,The wifi will disconnect when enter to MS,Connectivity,P2P,,1,no_digits
+piece_04_of_07,2698,wifi,Miracast use CH165 which is not supported by the TV,Connectivity,P2P,,0,
+piece_04_of_07,2458,tools,"Opening and ending tag mismatch on ""LPI"" in PowerTable output",Power Consumption,Connectivity,,1,no_digits
+piece_04_of_07,2490,tools,Different version of tool on same device at the same time will cause connection failed,OEM Tools,OEM Tools,,3,generic:fail;no_digits
+piece_04_of_07,3571,wifi,UEFI-Release-221522232 function Scan error.,UEFI,UEFI,,3,few_words<=5;generic:error
+piece_04_of_07,1253,wifi,BSOD(Point to intelppm.sys) during installing BE200 driver.(F/R: 100%),BSOD,BSOD,,0,

@@ -1,0 +1,6 @@
+[Mon 03/09/2026 18:46:50.69] Starting HSD-only job 
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\wireless_bug_dashboard_ips_hsd_jira.py", line 17, in <module>
+    import psycopg2
+ModuleNotFoundError: No module named 'psycopg2'
+[Mon 03/09/2026 18:46:50.80] Finished with exit code 1 

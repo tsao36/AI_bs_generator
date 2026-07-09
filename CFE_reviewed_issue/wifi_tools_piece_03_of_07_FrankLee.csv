@@ -1,0 +1,40 @@
+﻿assignment,row_id,technology,ips_title,predicted_category,human_category,label_notes,risk_score,risk_reason
+piece_03_of_07,2710,wifi,TyP2 6GHz output power 2-5dBm drop on conductive test (3/19 and 4/16),Power Consumption,RF,,0,
+piece_03_of_07,4084,wifi,Driver cannot read DSM function by ACPI source,UEFI,BIOS,,1,no_digits
+piece_03_of_07,169,wifi,P2P pairing - GO finding failure.,Connectivity,P2P,,2,generic:failure
+piece_03_of_07,2463,tools,"DRTU commands work fine after OTP commit, but fail before OTP write.",OEM Tools,OEM Tools,,3,generic:fail;no_digits
+piece_03_of_07,3934,wifi,WLAN card AX201 test CITU tool would have 0x31B Assert,YB/Lost,YB/Lost,,0,
+piece_03_of_07,3969,wifi,"[Haier][Wingtech][G1][ADL-P][Ax210][21H2]With the PC connection to the WiFi for a long-time suspension test, the WLAN driver has a loss problem [3 / 3]",Connectivity,Connectivity,,2,generic:problem
+piece_03_of_07,3594,wifi,[Dell][RPLS][CSLP][Widowmaker MLK][WW18]observed Driver log errors pointing Wi-Fi Driver during S4 and S5 cycling [fw assert0x315],YB/Lost,YB/Lost,,2,generic:error
+piece_03_of_07,640,wifi,"When connecting to a 6GHz AP, UHB is being used for SPD.",Connectivity,Sensing,,0,
+piece_03_of_07,1195,wifi,Device Lost issue - 0x152e,BSOD,YB/Lost,,5,short<=28c;few_words<=5;generic:issue
+piece_03_of_07,3875,wifi,WiFi TX power above SAR table limit in user mode after Airplane mode on\off,RF,RF,,1,no_digits
+piece_03_of_07,753,wifi,DRTU 2.4GHz testing 100% on 4/11 DUT not work with 23.165 assert 0x2010121E,YB/Lost,YB/Lost,,0,
+piece_03_of_07,3800,tools,WRT can not function for Killer Module,Killer,OEM Tools,,1,no_digits
+piece_03_of_07,3539,wifi,Conducted TX spectrum Mask fail IEEE specification,RF,RF,,3,generic:fail;no_digits
+piece_03_of_07,2148,wifi,Cannot wake from S3 by EMA server.,Connectivity,WowLAN,,0,
+piece_03_of_07,2247,wifi,multiple roamings in stationary environment,Connectivity,Connectivity,,2,few_words<=5;no_digits
+piece_03_of_07,2633,wifi,DDD log cant deocode,OEM Tools,Need-Triage,,6,short<=28c;few_words<=5;generic:cant;no_digits
+piece_03_of_07,3802,tools,ibterverify version error,Connectivity,OEM Tools,,8,short<=28c;few_words<=3;generic:error;no_digits
+piece_03_of_07,4010,wifi,Killer FmP2 marketing name incorrect in driver,Killer,ICPS/Killer,,0,
+piece_03_of_07,2506,wifi,WB with SYSTEM_THREAD_EXCEPTION_NOT_HANDLED,BSOD,BSOD,,4,few_words<=3;no_digits
+piece_03_of_07,1509,wifi,WLAN device shows YB after resuming from S4/MS - FW assert 0x13ce,YB/Lost,YB/Lost,,0,
+piece_03_of_07,3797,tools,WRT prevents removal of BT device on device error,Connectivity,OEM Tools,,3,generic:error;no_digits
+piece_03_of_07,2377,tools,WRT2G WRT_CNV_BIOS_Conf.json cant parsing PPAG Revision3 UEFI variable content,OEM Tools,OEM Tools,,2,generic:cant
+piece_03_of_07,2716,wifi,BIOS SAR table not correct,RF,BIOS,,4,short<=28c;few_words<=5;no_digits
+piece_03_of_07,1428,wifi,S4 loop test BSOD 0x9Fdump file related to wifi,BSOD,BSOD,,0,
+piece_03_of_07,814,wifi,"WLAN sometimes do not show 2 MLO links but only 1 link with the command ""netsh wlan show i"" after MLO AP is connected (F/R: 3/10)",Connectivity,Connectivity,,0,
+piece_03_of_07,2766,wifi,BSOD due to stack overflow error.,BSOD,BSOD,,3,generic:error;no_digits
+piece_03_of_07,2515,wifi,Reset/Recovery seen during disconnected standby due to ASSERT_00002B87 on Multiple routers,YB/Lost,YB/Lost,,0,
+piece_03_of_07,2127,wifi,DRTU needs the GMPD readback API to provide correct temperature details,OEM Tools,OEM Tools,,1,no_digits
+piece_03_of_07,3846,wifi,"Connect the wifi Network and play Online Video , Unit occur 0x9f BSOD point to 0x9F_VRF_3_Netwtw10_IMAGE_pci.sys",BSOD,BSOD,,0,
+piece_03_of_07,971,wifi,"Frequent assert 0x4446 when host is sharing the 5G hotspot, 3/3Units, 3/3cycles in noisy environment",YB/Lost,YB/Lost,,0,
+piece_03_of_07,2409,tools,CNVio Marginal Test Fail with CITU tool,OEM Tools,OEM Tools,,3,generic:fail;no_digits
+piece_03_of_07,2748,wifi,Netwtw10!dclReadFwMemApi+0x87 when run MS stress(DPPM: 100),BSOD,BSOD,,0,
+piece_03_of_07,1453,wifi,The WoWLAN support behavior,Connectivity,WowLAN,,4,short<=28c;few_words<=5;no_digits
+piece_03_of_07,2673,wifi,It takes about 3 mins to change the network band information when the system re-connects to 5G hotspot wifi,System Hang,OS,,2,generic:hang
+piece_03_of_07,2655,wifi,WiFi adapter fails to perform OKC fast roam after missing Beacons detected.,Connectivity,Connectivity,,3,generic:fail;no_digits
+piece_03_of_07,2662,wifi,WiFi YB or WiFi lost,YB/Lost,YB/Lost,,4,short<=28c;few_words<=5;no_digits
+piece_03_of_07,2473,tools,TX power value is incorrect,Power Consumption,RF,,4,short<=28c;few_words<=5;no_digits
+piece_03_of_07,1270,wifi,SIP126564 - 840 G10 / Win 11 22H2 / Nestle / NA / PC US / 211 WLAN stuck in code,System Hang,System Hang,,0,
+piece_03_of_07,4053,wifi,SW/HW Drip is too low during ModernStandby,Performance,Power Consumption,,1,no_digits

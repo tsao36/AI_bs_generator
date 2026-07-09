@@ -1,0 +1,86 @@
+[INFO] ===== Offload job start =====
+[INFO] Job: run_offload_reporter_issues_send_email_scheduler.bat
+[INFO] Timestamp: Wed 07/08/2026 11:23:02.88
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation\
+[INFO] Current dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation
+[INFO] Args: 
+[INFO] DB host reachable: 10-108-27-113.dbaas.intel.com
+C:\Python314\python.exe
+C:\Users\jtsao1\AppData\Local\Microsoft\WindowsApps\python.exe
+C:\Users\jtsao1\AppData\Local\Python\bin\python.exe
+[INFO] GRAPH_AUTH_MODE=delegated
+[INFO] GRAPH_SENDER_UPN=frank.lee@intel.com
+[INFO] OFFLOAD_RECEIVER_MAX_ISSUES=10
+[INFO] OFFLOAD_ALWAYS_EXCLUDED_REPORTERS=Jonathan Tsao
+[INFO] Running offload_reporter_issues.py --send-email
+[INFO] OFFLOAD_ALWAYS_EXCLUDED_ENGINEERS=Jonathan Tsao
+[INFO] PYTHONPATH=C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation\..\..;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation\..\..\APIs;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation\..\..\jobs\01_issue_category_tuning;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation\..\..\jobs\04_wireless_bug_dashboard;C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation\..\..\jobs\06_reporting_and_notifications;
+[INFO] PY_EXE=C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation\..\..\customer issue analysis\.venv\Scripts\python.exe
+[INFO] PY_ARGS=
+[INFO] OFFLOAD_CATEGORY_MODEL=C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation\..\..\models\issue_category_model.joblib
+[INFO] OFFLOAD_CATEGORY_WEIGHT_MAP=C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation\..\..\jobs\01_issue_category_tuning\issue_category_weights.json
+[INFO] ISSUE_CATEGORY_PREDICT_BACKEND=ml
+2026-07-08 11:23:14,559 [INFO][ips_offload] Included 8 allowed reporter(s) with zero current issues for receiver rotation.
+2026-07-08 11:23:14,560 [INFO][ips_offload] Applying 2 pending offload(s) from history to avoid duplicate recommendations.
+2026-07-08 11:23:15,071 [INFO][ips_offload] Current issue calculation breakdown per reporter:
+2026-07-08 11:23:20,315 [INFO][ips_offload] Weighted loading trial enabled for visibility; offload decision remains based on Curr.
+2026-07-08 11:23:20,317 [INFO][ips_offload] Combined trial table (single table with category columns, decision still uses Curr):
+2026-07-08 11:23:20,318 [INFO][ips_offload] +---------------+------+------+------+-----------+-----------+-------+------------------+-------+------+------+--------------+-----+-------------+-----+------+-----------+-------------+-------------------+---------+---------+-------------+------+--------+---------+-----+----+-------------+
+2026-07-08 11:23:20,318 [INFO][ips_offload] | Name          | uIPS | uHSD | Jira | Stale IPS | Stale HSD | Total | Weighted Loading | Audio | BIOS | BSOD | Connectivity | HLK | ICPS/Killer | IOP | MSFT | OEM Tools | Performance | Power Consumption | Roaming | Sensing | System Hang | UEFI | WowLAN | YB/Lost | P2P | RF | Need-Triage |
+2026-07-08 11:23:20,318 [INFO][ips_offload] +---------------+------+------+------+-----------+-----------+-------+------------------+-------+------+------+--------------+-----+-------------+-----+------+-----------+-------------+-------------------+---------+---------+-------------+------+--------+---------+-----+----+-------------+
+2026-07-08 11:23:20,318 [INFO][ips_offload] | Wesley Kuo    |    3 |    0 |    8 |         2 |         0 |     9 |            19.51 |     0 |    0 |    0 |            1 |   1 |           0 |   0 |    0 |         0 |           0 |                 0 |       0 |       0 |           0 |    0 |      0 |       7 |   0 |  0 |           0 |
+2026-07-08 11:23:20,318 [INFO][ips_offload] | Zhiqiang Cai  |    4 |    0 |    5 |         1 |         0 |     8 |            16.77 |     0 |    0 |    0 |            6 |   0 |           0 |   0 |    0 |         0 |           0 |                 0 |       0 |       0 |           0 |    1 |      0 |       0 |   2 |  0 |           0 |
+2026-07-08 11:23:20,318 [INFO][ips_offload] | Frank Lee     |   11 |    0 |    3 |         8 |         0 |     6 |            21.65 |     0 |    0 |    1 |            4 |   0 |           4 |   0 |    0 |         0 |           0 |                 1 |       0 |       0 |           0 |    0 |      0 |       2 |   0 |  0 |           0 |
+2026-07-08 11:23:20,318 [INFO][ips_offload] | Juan Zou      |    5 |    0 |    1 |         0 |         0 |     6 |            11.84 |     0 |    0 |    1 |            3 |   0 |           0 |   0 |    0 |         0 |           0 |                 0 |       0 |       0 |           0 |    0 |      0 |       2 |   0 |  0 |           0 |
+2026-07-08 11:23:20,318 [INFO][ips_offload] | KJ Fang       |   11 |    0 |    4 |        10 |         0 |     5 |            26.27 |     0 |    0 |    1 |            9 |   0 |           0 |   0 |    0 |         1 |           0 |                 0 |       0 |       1 |           0 |    0 |      0 |       1 |   1 |  0 |           0 |
+2026-07-08 11:23:20,318 [INFO][ips_offload] | Steven1 Chen  |    9 |    0 |    4 |         8 |         0 |     5 |            10.98 |     0 |    0 |    0 |            1 |   0 |           0 |   0 |    0 |         0 |           0 |                 0 |       0 |       0 |           0 |    0 |      0 |       4 |   0 |  0 |           0 |
+2026-07-08 11:23:20,319 [INFO][ips_offload] | Timdaway Lai  |    5 |    0 |    2 |         2 |         0 |     5 |            10.86 |     0 |    0 |    0 |            3 |   0 |           0 |   0 |    0 |         0 |           1 |                 0 |       0 |       0 |           0 |    0 |      0 |       1 |   0 |  0 |           0 |
+2026-07-08 11:23:20,319 [INFO][ips_offload] | Brenton Wu    |    5 |    2 |    1 |         3 |         1 |     4 |             6.70 |     0 |    0 |    1 |            1 |   0 |           0 |   0 |    0 |         0 |           0 |                 0 |       0 |       0 |           0 |    0 |      0 |       1 |   0 |  0 |           0 |
+2026-07-08 11:23:20,319 [INFO][ips_offload] | Frank Yang    |    9 |    0 |    0 |         5 |         0 |     4 |             7.29 |     0 |    0 |    1 |            2 |   0 |           0 |   0 |    0 |         0 |           0 |                 0 |       0 |       0 |           0 |    0 |      0 |       1 |   0 |  0 |           0 |
+2026-07-08 11:23:20,319 [INFO][ips_offload] | Bingyue Sun   |    3 |    0 |    0 |         0 |         0 |     3 |             5.51 |     0 |    0 |    1 |            0 |   1 |           0 |   0 |    0 |         0 |           0 |                 0 |       0 |       0 |           0 |    0 |      0 |       1 |   0 |  0 |           0 |
+2026-07-08 11:23:20,319 [INFO][ips_offload] | Henryx Su     |    1 |    0 |    2 |         1 |         0 |     2 |             4.36 |     0 |    0 |    0 |            1 |   0 |           0 |   0 |    0 |         0 |           0 |                 0 |       0 |       0 |           0 |    0 |      0 |       1 |   0 |  0 |           0 |
+2026-07-08 11:23:20,319 [INFO][ips_offload] | Matt Chen     |    9 |    0 |    0 |         7 |         0 |     2 |             9.67 |     0 |    0 |    0 |            5 |   0 |           0 |   0 |    0 |         0 |           0 |                 0 |       0 |       0 |           0 |    0 |      0 |       0 |   0 |  0 |           0 |
+2026-07-08 11:23:20,319 [INFO][ips_offload] | Yu-Wei Chen   |    6 |    1 |    0 |         5 |         0 |     2 |             2.75 |     0 |    0 |    0 |            0 |   1 |           0 |   0 |    0 |         0 |           0 |                 0 |       0 |       0 |           0 |    0 |      0 |       0 |   0 |  0 |           0 |
+2026-07-08 11:23:20,319 [INFO][ips_offload] | Charles Chu   |    4 |    0 |    0 |         4 |         0 |     0 |             1.00 |     0 |    0 |    1 |            0 |   0 |           0 |   0 |    0 |         0 |           0 |                 0 |       0 |       0 |           0 |    0 |      0 |       0 |   0 |  0 |           0 |
+2026-07-08 11:23:20,319 [INFO][ips_offload] | Jonathan Tsao |    0 |    0 |    0 |         0 |         0 |     0 |             0.00 |     0 |    0 |    0 |            0 |   0 |           0 |   0 |    0 |         0 |           0 |                 0 |       0 |       0 |           0 |    0 |      0 |       0 |   0 |  0 |           0 |
+2026-07-08 11:23:20,319 [INFO][ips_offload] | Lydiax Chien  |    1 |    0 |    0 |         1 |         0 |     0 |             0.00 |     0 |    0 |    0 |            0 |   0 |           0 |   0 |    0 |         0 |           0 |                 0 |       0 |       0 |           0 |    0 |      0 |       0 |   0 |  0 |           0 |
+2026-07-08 11:23:20,319 [INFO][ips_offload] +---------------+------+------+------+-----------+-----------+-------+------------------+-------+------+------+--------------+-----+-------------+-----+------+-----------+-------------+-------------------+---------+---------+-------------+------+--------+---------+-----+----+-------------+
+2026-07-08 11:23:20,320 [INFO][ips_offload] Offload decision mode: Curr
+2026-07-08 11:23:21,040 [INFO][ips_offload] Applying 2 pending offload(s) from history to avoid duplicate recommendations.
+2026-07-08 11:23:21,041 [INFO][ips_offload] Pending reminder check: case=1017025 source=Wesley Kuo(9.00) target=Juan Zou(8.00) threshold=10 receiver_max=10 => skip reminder
+2026-07-08 11:23:21,041 [INFO][ips_offload] Pending reminder check: case=1017028 source=Wesley Kuo(9.00) target=Juan Zou(8.00) threshold=10 receiver_max=10 => skip reminder
+2026-07-08 11:23:21,041 [INFO][ips_offload] Pending reminder filter skipped 2 entrie(s): offload no longer needed based on current load.
+2026-07-08 11:23:21,041 [INFO][ips_offload] No over-threshold reporters found; stage-2 offload recommendation skipped.
+2026-07-08 11:23:21,050 [INFO][ips_offload] Pending offload reminders skipped: 2 pending entrie(s) no longer require offload based on current load.
+2026-07-08 11:23:21,050 [INFO][ips_offload] Sending informational notification: no queue case available for recommendation.
+2026-07-08 11:23:21,050 [INFO][ips_offload] Current load:
+- Bing Chang: 0.00 current issues
+- Charles Chu: 0.00 current issues
+- Jackx Lee: 0.00 current issues
+- Johnsonx Su: 0.00 current issues
+- Leaweix Chen: 0.00 current issues
+- Lydiax Chien: 0.00 current issues
+- Tonyx Yeh: 0.00 current issues
+- Xihaox Yang: 0.00 current issues
+- Zhanying Gao: 0.00 current issues
+- Zhiwei He: 0.00 current issues
+- Henryx Su: 2.00 current issues
+- Matt Chen: 2.00 current issues
+- Yu-Wei Chen: 2.00 current issues
+- Bingyue Sun: 3.00 current issues
+- Brenton Wu: 4.00 current issues
+- Frank Yang: 4.00 current issues
+- KJ Fang: 5.00 current issues
+- Steven1 Chen: 5.00 current issues
+- Timdaway Lai: 5.00 current issues
+- Frank Lee: 6.00 current issues
+- Juan Zou: 8.00 current issues
+- Zhiqiang Cai: 8.00 current issues
+- Wesley Kuo: 9.00 current issues
+2026-07-08 11:23:21,051 [INFO][ips_offload] Graph auth mode: delegated
+2026-07-08 11:23:23,089 [INFO][ips_offload] No email sent: no pending reminder and no recommendation/info content.
+[Config] Using GRAPH_CLIENT_SECRET from environment/.env.
+[Auth] Using cached Graph delegated token.
+[INFO] Finished with exit code 0
+[INFO] Exit code: 0
+[INFO] ===== Offload job end =====

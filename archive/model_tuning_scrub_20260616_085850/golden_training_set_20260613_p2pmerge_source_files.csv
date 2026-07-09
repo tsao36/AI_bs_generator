@@ -1,0 +1,34 @@
+source_folder,source_file,rows_used
+CFE_input,weekly_labels_20260425_151911.csv,34
+CFE_input,weekly_labels_20260425_154714.csv,34
+CFE_input,weekly_labels_20260425_162335.csv,33
+CFE_input,weekly_labels_20260425_165309.csv,33
+CFE_input,weekly_labels_20260501_170001.csv,27
+CFE_input,weekly_labels_20260508_230403.csv,35
+CFE_input,weekly_labels_20260515_170001.csv,7
+CFE_input,weekly_labels_20260522_183733.csv,20
+CFE_input,weekly_labels_20260523_143606.csv,20
+CFE_input,weekly_labels_20260523_143640.csv,20
+CFE_input,weekly_labels_20260523_145957.csv,20
+CFE_input,weekly_labels_20260523_150056.csv,20
+CFE_input,weekly_labels_20260525_100744.csv,20
+CFE_input,weekly_labels_20260529_170002.csv,74
+CFE_input,weekly_labels_20260530_145717.csv,74
+CFE_input,weekly_labels_20260605_170006.csv,70
+CFE_input,weekly_labels_20260606_143309.csv,70
+CFE_input,weekly_labels_20260608_163759.csv,70
+CFE_input,weekly_labels_20260612_170002.csv,57
+CFE_input,weekly_labels_20260612_233426.csv,57
+CFE_input,wifi_tools_piece_01_of_07_Timdaway.csv,37
+CFE_input,wifi_tools_piece_07_of_07_Brenton.csv,41
+CFE_reviewed_issue,bt_software_piece_01_of_07_Bingyue (2).csv,23
+CFE_reviewed_issue,bt_software_piece_02_of_07_Juan.csv,36
+CFE_reviewed_issue,bt_software_piece_03_of_07_Steven.csv,42
+CFE_reviewed_issue,bt_software_piece_04_of_07_Wesley.csv,36
+CFE_reviewed_issue,bt_software_piece_05_of_07_Leo.csv,32
+CFE_reviewed_issue,bt_software_piece_06_of_07_Matt.csv,39
+CFE_reviewed_issue,bt_software_piece_07_of_07_Yuwei (2).csv,22
+CFE_reviewed_issue,wifi_tools_piece_02_of_07_Frankyang (2).csv,40
+CFE_reviewed_issue,wifi_tools_piece_03_of_07_FrankLee.csv,37
+CFE_reviewed_issue,wifi_tools_piece_04_of_07_KJ (2).csv,44
+CFE_reviewed_issue,wifi_tools_piece_06_of_07_Zhiqiang (2).csv,42

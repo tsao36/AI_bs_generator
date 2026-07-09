@@ -1,0 +1,314 @@
+﻿Issue key,Technology,Year,Model Category,Category Confidence,Root Cause,Root Cause Theme,Resolved From Issue
+WIFI-885536,WIFI,2026,Connectivity,0.0,"after connecting to a stealth MLD AP and disconnecting
+the stale MLD entry retained the old SSID",State Machine Transition and Flow Handling Issues,WIFI-885536
+WIFI-851835,WIFI,2026,BSOD,0.0,"Missing states FW_INIT_FW_CONFIG_STATE and FW_INIT_WAIT_SETUP_COMPLETE_STATE
+for FW_INIT_FW_ERROR_DURING_INIT event.
+
+Without these states FW INIT SM gets stuck we saw that the prvFwInitCompleteFlowTimerWd didn't execute for an unknown reason.
+In such case OS would trigger a 0x9F BSOD because driver init flow didn't
+complete in time.",State Machine Transition and Flow Handling Issues,WIFI-851835
+WIFI-843819,WIFI,2026,BSOD,0.0,missing nullity check to the content of the pointer,Memory and Resource Management Issues,WIFI-843819
+WIFI-817045,WIFI,2026,Performance,0.0,too much weight for channel load and too big penalty for 11v request by AP,Firmware Configuration and Parameter Tuning Issues,WIFI-817045
+WIFI-811762,WIFI,2025,Connectivity,0.0,"https://gerritwcs.ir.intel.com/c/wcd_fw-dev/+/252821
+It is a WA for the case that before association is completed, the FW stays in mimo mode and does not go to DSMPS. So, the 2 ants are active. It solves the problem of authentication rx frame receive error.",Firmware Configuration and Parameter Tuning Issues,WIFI-811762
+WIFI-810250,WIFI,2025,Connectivity,0.0,Change in requirement to increase the length of the P2P TBTT event in case of 3207.,Firmware Configuration and Parameter Tuning Issues,WIFI-810250
+WIFI-807667,WIFI,2025,Connectivity,0.0,"MLD requires WPA3 security.
+MLD links with WPA2 are misbehaving, thus they are marked as such and they are no longer associated with each other in under the MLD AP.
+Toggling between WPA2/3 caused the database which holds this information to go out of sync, so when the links became WPA3 we connected as MLD but without being aware of the other links in the same MLD.",Security Validation and Protection Control Issues,WIFI-807667
+WIFI-805746,WIFI,2025,Connectivity,0.0,"couldn't hear the beacon - requirement changed
+
+NDP after 4
+driver disconnect after 6",RF Coexistence and Channel Behavior Issues,WIFI-805746
+WIFI-804612,WIFI,2025,Connectivity,0.0,"We had bug in c101 (already fixed in c102) That NOA that come from scan can be parsed when we handle our beacon This use case we didn't see before Seems one of the AP there, turn on oppPS When we handle our beacon after got this beacon with oppPS=1 it will cause queues suspend and we will not resume the queues as the oppPS enabled will clear right in next beacon ++++++++++++++++++++++++++++++++++++++++== This bug is a WIFI-754031",Firmware and Hardware Interface Communication Issues,WIFI-804612
+WIFI-801012,WIFI,2025,BSOD,0.0,"wdfSetDeviceFailed (trigger PLDR) was called during resume while driver still hold kmdf power thread, this led to OS bug which they didn't send surprise remove to us, which leads to a 9f BSOD",Power State Transition and Reset Recovery Issues,WIFI-801012
+WIFI-800123,WIFI,2025,Connectivity,0.0,"Description: The race is as follows
+Start conditions: tid T for peer P has a valid back aggrement with drv baid DB and fw baid FB
+Delba is received for T over P.
+delba sync cmd is sent to FW
+FW removed FB
+core X and core Y handle the delba sync notification at the same time
+both getting to rxAggMgrInvalidateStateForBaidApi at the same time.
+each stores pAggMgrContext->rxAggMgrBaidIndexTable[baidIndex].delbaStatePerQueueBitmap in a local memory region before the second core reset the bit.
+(so in this scenario, both holding the value 3)
+each of them is seeing the he is not the last queue, and assumes that the another sync notif will arrive soon and will invalidate the baid entry.
+leading to a scenario where the ent",Timing Synchronization and Race Condition Issues,WIFI-800123
+WIFI-796164,WIFI,2025,Connectivity,0.0,"We disconnect from APs that don't send beacons unless we still have
+traffic. In case there is no traffic, we'll disconnect after 4 missed
+beacons, In order to create traffic, send an NDP (using the keep alive infra) to
+clear the consecMissedBconsSinceLastRxFromAP counter in case the NDP is
+ACK'ed.",RF Coexistence and Channel Behavior Issues,WIFI-796164
+WIFI-795954,WIFI,2025,Connectivity,0.0,retry of PLL lock,Timing Synchronization and Race Condition Issues,WIFI-795954
+WIFI-795918,WIFI,2025,Connectivity,0.0,retry of pll lock,Timing Synchronization and Race Condition Issues,WIFI-795918
+WIFI-781567,WIFI,2025,Connectivity,0.0,couldn't hear the beacon - requirement changed,RF Coexistence and Channel Behavior Issues,WIFI-781567
+WIFI-759476,WIFI,2025,YB/Lost,0.0,"Root Cause:  TOP-15910
+The logic controlling the fatal/non-fatal behavior is governed by the register CNVR_IRI_STEP_PRIM_CSR_PHY_INT_MASK.
+When this register is set to its default value of 0x0, all interrupt sources are treated as fatal.
+As a result, Assert 508 is observed in Data 1: cnvr_step_csr_phy_interrupt_status.",Firmware Configuration and Parameter Tuning Issues,WIFI-759476
+WIFI-750602,WIFI,2025,YB/Lost,0.0,WIFI-751329,Duplicate or Reference Case (follow linked Jira root cause),WIFI-750602
+WIFI-746160,WIFI,2025,Connectivity,0.0,"Due to AP misbehavior of reporting Wifi7 IEs while being set as Wifi6 mode, we marked it as misbehaving and connected in HE mode.",Firmware Configuration and Parameter Tuning Issues,WIFI-746160
+WIFI-742498,WIFI,2025,YB/Lost,0.0,One of the CNVI HSIF timeout timers was not configured correctly to support worst case Channel/Package propagation time.,Timing Synchronization and Race Condition Issues,WIFI-742498
+WIFI-739243,WIFI,2025,YB/Lost,0.0,"The CNVio3 interface transitions from full power to low power and back might cause PHY errors, mainly in low temp, triggering Assert 0x505
+Fix:
+Eliminate transitions of CNVio3 to low power during S0i3 (included in FSEQ 0.0.4.201)",Power State Transition and Reset Recovery Issues,WIFI-739243
+WIFI-739113,WIFI,2025,YB/Lost,0.0,"SW will set by default CNViO3 frequency to 9.6 GHz
+Assert 0x505 is treated as non-fatal",Firmware Configuration and Parameter Tuning Issues,WIFI-739113
+WIFI-723912,WIFI,2025,Connectivity,0.0,Update of statistics datapoint ccaDefers,Firmware Configuration and Parameter Tuning Issues,WIFI-723912
+WIFI-671650,WIFI,2025,BSOD,0.0,"memalloc failures cause our ieMap to return NULL when searching for an IE.
+in this case, we just accessed the IE right after getting it, without a null check, thus a BSOD occurred.",Memory and Resource Management Issues,WIFI-671650
+WIFI-645737,WIFI,2025,Connectivity,0.0,"2 Issues resolved: 1. Authentication Failure: Handle scenarios where the SAE commit message is retransmitted (either STA→AP or AP→STA) in a more robust manner. The fix ensures that the second ( d) commit message from the AP is silently ignored, allowing the authentication process to continue. 2. Deauth frame is not sent to air when disconnecting: Improve the deauth flow making sure the frame is transmitted to air",Security Validation and Protection Control Issues,WIFI-645737
+WIFI-626295,WIFI,2025,Performance,0.0,"2 sec delay in entering SX due to synchronization with CSME, which is unnecessary when its policy is not enabled.",Timing Synchronization and Race Condition Issues,WIFI-626295
+WIFI-576414,WIFI,2025,Performance,0.0,"LQ value should be updated upon receiving a beacon, it is
+checked if the beacon is from our associated APs BSSID (which fails, as the
+BSSID is different between VAP and actual beacon in air)",Firmware and Hardware Interface Communication Issues,WIFI-576414
+WIFI-562968,WIFI,2024,YB/Lost,0.0,explained by or,Insufficient Root-Cause Detail,WIFI-562968
+WIFI-551095,WIFI,2024,Connectivity,0.0,Improve behavior during multi-link probe response during rejection of a link.,State Machine Transition and Flow Handling Issues,WIFI-551095
+WIFI-548045,WIFI,2024,Connectivity,0.0,Fix a race during back-to-back RFI commands that are being sent.,Timing Synchronization and Race Condition Issues,WIFI-548045
+WIFI-546162,WIFI,2024,BSOD,0.0,Miscalculation of pointers refcount when MLD AP changes from legacy to MLD mode,Memory and Resource Management Issues,WIFI-546162
+WIFI-528912,WIFI,2024,Connectivity,0.0,Improvements of Scan efficiency during p2p scan discovery,Firmware Configuration and Parameter Tuning Issues,WIFI-528912
+WIFI-521571,WIFI,2024,BSOD,0.0,Fix for MLD AP record keeping in the BSS table data base.,State Machine Transition and Flow Handling Issues,WIFI-521571
+WIFI-520916,WIFI,2024,Connectivity,0.0,"root cause as WIFI-503974, but can't set as as this is a different customer",Duplicate or Reference Case (follow linked Jira root cause),WIFI-520916
+WIFI-520712,WIFI,2024,Performance,0.0,"In LSO flow, the TCP headers had to set the PSH flag only for the last fragment.
+For that, driver reset this bit for all the fragments and tried to restore TCP headers back to original in the last fragment.
+But the ""original"" was overwritten by the last used header, thus we never really set the PSH bit again.",Driver and OS Interface Contract Issues,WIFI-520712
+WIFI-511524,WIFI,2024,BSOD,0.0,issue was already implemented in newer build.,Validation Coverage Gap and Test Escape Issues,WIFI-511524
+WIFI-495550,WIFI,2024,Performance,0.0,"On busy UHB channels we opt to do a passive scan as it would be better.
+But if there is a hidden SSID on that channel we would not find it as it requires an active scan.",Firmware Configuration and Parameter Tuning Issues,WIFI-445053
+WIFI-479724,WIFI,2024,YB/Lost,0.0,full URM solution implemented,Firmware Configuration and Parameter Tuning Issues,WIFI-479724
+WIFI-468811,WIFI,2024,YB/Lost,0.0,implemented full URM solution,Firmware Configuration and Parameter Tuning Issues,WIFI-468811
+WIFI-465691,WIFI,2024,YB/Lost,0.0,Fix STEP noise issues by removing DCDC modes.,Firmware Configuration and Parameter Tuning Issues,WIFI-465691
+WIFI-460321,WIFI,2024,BSOD,0.0,Proper handling of memory allocation failure while parsing beacon.,Memory and Resource Management Issues,WIFI-460321
+WIFI-440285,WIFI,2024,Connectivity,0.0,bcast packet used on mgmt q which mapped to fifo 10 -> no cs calc on these packets,Firmware and Hardware Interface Communication Issues,WIFI-440285
+WIFI-422775,WIFI,2024,Performance,0.0,https://jira.idoc.intel.com/browse/WIFI-417459,Duplicate or Reference Case (follow linked Jira root cause),WIFI-422775
+WIFI-415653,WIFI,2024,BSOD,0.0,"in case of un-initialized  pHwWritePtr,
+rfdQueueProcessFragments returned status failure,
+but this status was not checked in caller (prvIsrHandlerRoutineRx).
+so when prvIsrHandlerRoutineRx called rfdqIsQueueEmptyApi
+it de-referenced the NULL pointer and we got BSOD.",Memory and Resource Management Issues,WIFI-415653
+WIFI-409998,WIFI,2024,BSOD,0.0,"SW error and resume interrupt arrived at the same time
+so 2 jobs were submitted where the first set to NULL the CB functions of resume. so the second job, when it ran, tried to call a NULL pointer",Timing Synchronization and Race Condition Issues,WIFI-409998
+WIFI-383978,WIFI,2024,YB/Lost,0.0,fw SHA1 # 51c8cb contains the fix,Firmware Configuration and Parameter Tuning Issues,WIFI-383978
+WIFI-378432,WIFI,2024,YB/Lost,0.0,"DPHY setting according to SNPS spec + remove Spur mitigation.
+HF for Lenovo Only - 23.30.2.1
+**** Branch ****",Firmware Configuration and Parameter Tuning Issues,WIFI-378432
+WIFI-368602,WIFI,2023,BSOD,0.0,"Fixed by Lomanov:
+5cb81ff25d2659bd12730061055f4a66ff9de9e7
+64138927d5c51a80fd5560eb45b425189a91f8bf 
+CTDP/DPTF Get/Set API handling: introduce dynamically allocated DPTF handler
+data",Memory and Resource Management Issues,WIFI-368602
+WIFI-365608,WIFI,2023,YB/Lost,0.0,"DPHY setting according to SNPS spec + remove Spur mitigation.
+HF for Lenovo Only - 23.30.2.1
+**** Branch ****",Firmware Configuration and Parameter Tuning Issues,WIFI-365608
+WIFI-357703,WIFI,2023,Performance,0.0,PHY fix. Tx DFE fix for 320M channels.  Clk diff between digital (top pll) to LO clk caused timing drift in long packets.,Timing Synchronization and Race Condition Issues,WIFI-357703
+WIFI-351262,WIFI,2023,BSOD,0.0,"MLD stealth APs had double entry in BSS table, which caused double ref count reduction the pApCommon info buffer",Memory and Resource Management Issues,WIFI-351262
+WIFI-345845,WIFI,2023,Performance,0.0,"When running CITU, the wmal/wpal NMIs were still enabled (for projects which has the old phy init phases, pre-blazar family), and the fix is to disable such NMIs from Wmac code when Umac is running in ""silent mode"".",Firmware Configuration and Parameter Tuning Issues,WIFI-345845
+WIFI-342582,WIFI,2023,YB/Lost,0.0,added a W/A based on Ofer's recommendation.,Firmware Configuration and Parameter Tuning Issues,WIFI-342582
+WIFI-333675,WIFI,2023,YB/Lost,0.0,Update osc_freq for SNPS IP,Firmware Configuration and Parameter Tuning Issues,WIFI-333675
+WIFI-318975,WIFI,2023,Connectivity,0.0,"fixed by Lifshitz, Elad: 71ee2366f32f9b3a57dede3fd4de3890c212123e
+PHY: do not set adc pll lock indication in loopback config",Firmware Configuration and Parameter Tuning Issues,WIFI-318975
+WIFI-312496,WIFI,2023,Performance,0.0,don't ignore multicast packets when calculating the rx link speed,Firmware Configuration and Parameter Tuning Issues,WIFI-312496
+WIFI-309847,WIFI,2023,YB/Lost,0.0,"second scenario for the same bug of sys pwr req - cnvi_top is not rising in some cases wake arrive after vxtl got out of WAIT_FOR_SEQ state and MRG_SEQ go out of idle (wrong) and actually a short no needed wake occur and create a bad wake right after it. fixing the mrg_seq is needed. scu adding the cnvi_top to the wakeup vector in any case when it is missing, FW ignore  the stts in req resources status",Power State Transition and Reset Recovery Issues,WIFI-309847
+WIFI-308133,WIFI,2023,Connectivity,0.0,switching to ES2 as planned,Firmware Configuration and Parameter Tuning Issues,WIFI-308133
+WIFI-302222,WIFI,2023,YB/Lost,0.0,RDC - WMPM Reset Domain Crossing,Firmware and Hardware Interface Communication Issues,WIFI-302222
+WIFI-292530,WIFI,2023,YB/Lost,0.0,"in rarely cases power up resources vector is missing pwr & sys_clk req,
+the issue occur while two wakeup sources arrive in specific scenario ,
+in this case the trigger of second sequencer arrive while MAC in STATE_ON,
+this causing the VXTL to skip the state of rising the pwr and sys clk request toward the SCU through the wmpm -> SCU channel,
+the request will arrive in any case through the host VXTL to the SCU.
+the suggested FW solution is adding the HOST - >SCU  (pwr,sys_clk) indication to the 4phs resources checking.",Power State Transition and Reset Recovery Issues,WIFI-292530
+WIFI-287970,WIFI,2023,BSOD,0.0,"https://gerritwcs.ir.intel.com/c/wifi_drv-dev/+/52756 
+[BUGFIX] Return failure at EvtDeviceD0EntryPostInterruptsEnabled  on resume
+to D0 in case reset recovery was requested by Driver
+
+Description: Original issue issue if 9F post resume from D3, once PLDR requested by Driver
+(WIFI-273238/WIFI-287970/...)
+
+Following MSFT documentation, upon failure on power-up sequence stage, Driver is obligated to return failure for corresponding CB",Power State Transition and Reset Recovery Issues,WIFI-287970
+WIFI-287055,WIFI,2023,YB/Lost,0.0,"HW bug, Fast condition is not support thus results unusual behaviors",Firmware Configuration and Parameter Tuning Issues,WIFI-287055
+WIFI-270139,WIFI,2022,Connectivity,0.0,"GetAdapterList also returned success, regardless if it failed or not.
+Also, count wasn't initialized with 0.",Driver and OS Interface Contract Issues,WIFI-251564
+WIFI-242638,WIFI,2022,BSOD,0.0,missing FW input validation,Firmware Configuration and Parameter Tuning Issues,WIFI-242638
+WIFI-236751,WIFI,2022,Performance,0.0,reset the link quality parameters with INVALDATE and not with 0.,Firmware Configuration and Parameter Tuning Issues,WIFI-236751
+WIFI-196810,WIFI,2022,Connectivity,0.0,Define of queue num is incorrect.,Memory and Resource Management Issues,WIFI-196810
+WIFI-196777,WIFI,2022,YB/Lost,0.0,"cc67 fixes debug data collection reads, by adding the correct offset to read WPAL registers via AUX",Firmware and Hardware Interface Communication Issues,WIFI-196777
+WIFI-196588,WIFI,2022,Performance,0.0,"Description: after this efa77533053f663458feb0931b1e5f36c2b96e80
+was delivered we changed the logic of detecting old SN packets,
+and relied on FW to tell the driver when the SN is old, looks like
+the FW is not indicating this correctly in
+the packet we receive.
+which resulted in TPUT degradation in OPEN TCP connection
+since we forwarded old packets to the OS TCP stack.
+in secured connection there is no TPUT issue since the old packets
+are dropped due to PN check for REPLAY ATTACK after the re-order
+buffer phase and hence not forwarding it to the OS.
+in UDP there is no degradation also since there is no congestion
+control in UDP
+the solution is to check the newly arrived sequence if it is
+old sequence and to drop it in old sn check
+we also added a check on the newNormSsn position related
+to the reorder window, and if it is outside it
+we move the window accordignly",Firmware and Hardware Interface Communication Issues,WIFI-196588
+WIFI-188545,WIFI,2022,Performance,0.0,"AP sends rts to wake station and cause open 2 antennas, STA sends CTS
+AP sends first aggregation and CTS to self  in order not allow medium
+to move to idle and keep 2 antennas ready before sending next aggregation
+The bug is that in Solar L2P doesn't set L2P_GCSR_STAT_SE_CTRL_PENDING_MSK bit at MH parsing
+for CTRL frames that not for us, and when we recevie CTRL frame not for us in solar we don't path
+thought regular ctlr frame flow that allows to delay the air protection time and allow to receive the next RX MIMO frame before 1 antenna is closed
+in solar we just update nav, and dump CTRL frames not for us
+the fix is to add the same logic as in regular CTRL frames flow in solar nad add air protection delay if required (DSMPS)",RF Coexistence and Channel Behavior Issues,WIFI-188545
+WIFI-184317,WIFI,2021,BSOD,0.0,new HW introduced a little latency causing delay in the FW resume process.,Timing Synchronization and Race Condition Issues,WIFI-184317
+WIFI-177227,WIFI,2021,YB/Lost,0.0,"We are trying to send trigger based  TX with mcs 12
+MCS is coming from received trigger frame (trig_type bf_rprt_poll_(0x1)) - usrMcs = 0xC
+It cause WPAL assert with MOVE_2_RX_ERR status
+added checker and drop the frame if usrMcs is illegal",Firmware Configuration and Parameter Tuning Issues,WIFI-177227
+WIFI-146383,WIFI,2021,YB/Lost,0.0,DCR-1009 expansion to TyP,Firmware Configuration and Parameter Tuning Issues,WIFI-146383
+WIFI-143257,WIFI,2021,Performance,0.0,"In case number of TX packets per second is more than 200 link quality
+calculation is based on RSSI and TX phy rate (RSSI - 60%, TX phy rate - 40%).
+Link quality = ((40 * currRate) / maxRate) + (60 * rssiLevel) / 100))
+The bug is that in case of 6GHz we always set max link speed value to legacy due to incorrect condition when we update this value. Before we update maxRate we check if HT rate is not 0 but HT IE don’t exist in 6GHz leading to miscalculation of link quality (we divide current rate by legacy rate).
+Fix:
+Remove HT rate condition.",Firmware Configuration and Parameter Tuning Issues,WIFI-138076
+WIFI-120545,WIFI,2021,YB/Lost,0.0,"same issue as WIFI-119771
+
+Delivered fix to core62. Gerrit: https://git-amr-10.devtools.intel.com/gerrit/96753
+SHA1 239862e57c991c7679be61287002908d8cc2f2d7
+
+Delivered fix to core62 Master. Gerrit: https://git-amr-10.devtools.intel.com/gerrit/#/c/96904/
+SHA1: 32b695c193def7b9036626d0d8a46d26ddf0d4e9
+
+Issue does not exist in core26, core36, core51
+
+Will not be fixed in core61",Duplicate or Reference Case (follow linked Jira root cause),WIFI-120545
+WIFI-116224,WIFI,2021,BSOD,0.0,"BSOD related to NAPS algo of MSFT. not related to wifi driver.
+wifi driver removed NAPS capabilities support from the driver to avoid OS NAPS calls.",Driver and OS Interface Contract Issues,WIFI-116224
+WIFI-115075,WIFI,2021,BSOD,0.0,WIFI-55146. driver fail to recover cmd translation error. Flow: 1) RX cmd translation return with error 2) We try to free mdu and the sharedMem inside it but we didn't set the sharedMem pointer yet 3) Tring to access null pointer Fix: Release pMduDesc only after we updated SharedMemDesc,Firmware and Hardware Interface Communication Issues,WIFI-115075
+WIFI-114876,WIFI,2021,BSOD,0.0,wifi-100063,Duplicate or Reference Case (follow linked Jira root cause),WIFI-114876
+WIFI-102936,WIFI,2021,BSOD,0.0,"'
+Double nbl release to OS in case of TX and Remove Peer Race.
+During remove peer we get an NBL list with 2 packets
+We Drop the first one due to DATA port being closed, we have continue*and we *DO NOT move to next nbl, but current nbl on the next iteration will be the same nbl.
+Same nbl fails in classification and we try to indicate it to OS again.
+
+Fix:
+
+In case the port is closed we will drop the packets in prvTxFlowHandleSglMapRequest instead of calling dpReportPacketCompleteApi.
+prvTxFlowHandleSglMapRequest checks if the port is open and in case not drop the packet by calling txDropOsPacket.",Timing Synchronization and Race Condition Issues,WIFI-102936
+WIFI-101634,WIFI,2021,BSOD,0.0,The BSOD is because we access invalid memory in hmacQos in hqosHandleActiveBeaconChanged function. This is a connectivity issue that Jeffrey fixed in commit fd3438e90267ad4e60f45cfcaf439719cec63475 (CC60). This BSOD is with driver version without this fix(CC59).,Memory and Resource Management Issues,WIFI-101634
+WIFI-101605,WIFI,2021,Performance,0.0,"Link speed drop from 867Mbps to 144Mbps due to bandwidth reduction algorithm (DCR-746) in a noisy environment even though we are not far from the AP.
+
+Fix:
+Limit the bandwidth reduction algorithm (DCR-746) to low RSSI (below -75) to prevent switch from 80MHz to 20MHz when we are near the AP.",Firmware Configuration and Parameter Tuning Issues,WIFI-101605
+WIFI-96491,WIFI,2021,BSOD,0.0,"If the BSS VMAC is not active, we would return
+VIF_ID_AND_COLOR_NOT_VALID, and then access the bQosEnabled array in
+location 0xff.
+
+Fix:
+Prevent access to invalid memory in hmacQos.
+Already been fixed by Jeffrey commit sha:fd3438e90267ad4e60f45cfcaf439719cec63475",Memory and Resource Management Issues,WIFI-96491
+WIFI-96488,WIFI,2021,Connectivity,0.0,customer was using an old FW version,Firmware Configuration and Parameter Tuning Issues,WIFI-96488
+WIFI-94201,WIFI,2021,BSOD,0.0,issue fixed in core58,Validation Coverage Gap and Test Escape Issues,WIFI-94201
+BT-466439,BT,2026,YB/Lost,0.0,Lockdown issue is triggering the PLDR first which is dependent on Wifi. Also in discrete the existing design was to do the Intel hard reset. Now aligned with system to have FLR first and then escalate to PLDR in case of repeated issues. In platforms where PLDR is not supported it will go with hard reset,Security Validation and Protection Control Issues,BT-466439
+BT-465361,BT,2026,YB/Lost,0.0,During encryption restart procedure while disconnect request from LEC Layer is pending due to reception of illegal PDU and another illegal PDU is received the LEC layer was initiating second disconnect request to already released link. This resulted in firmware encountering system exception.,State Machine Transition and Flow Handling Issues,BT-465361
+BT-418278,BT,2025,YB/Lost,0.0,Certain shared memory registers were being incorrectly accessed during firmware download stage (transition to S0 State). This happens especially when debug data buffers are required to be accessed. These register addresses are not available during FW download and accessing them led to invalid memory access and this system exception,Memory and Resource Management Issues,BT-418278
+BT-407345,BT,2025,YB/Lost,0.0,uninitialized null pointer in use in the code.,Memory and Resource Management Issues,BT-407345
+BT-390980,BT,2025,Connectivity,0.0,"Incase of back-to-back channel map updates, with Channel Map PDU's
+priority higher than the Ping Req PDU, PING procedure almost never
+gets a chance resulting in APTO.",Timing Synchronization and Race Condition Issues,BT-390980
+BT-376190,BT,2025,YB/Lost,0.0,"Old issue exposed by new 25H2 OS.
+Set LE RX PHY_OPTIONS to default S8 instead of zero. In the
+current design, during extended scanning, when synchronization occurs on
+the primary 1M channel and the AuxPtr refers to an LE_CODED_PHY,
+PHY_OPTIONS were not initialized. This fix ensures that default PHY
+options are now initialized correctly.",Firmware Configuration and Parameter Tuning Issues,BT-376190
+BT-352739,BT,2025,Connectivity,0.0,ATSx on both sides may cause CTO if no time overlap exists.,Timing Synchronization and Race Condition Issues,BT-352739
+BT-345317,BT,2025,Connectivity,0.0,Missing fixes from master branch,Validation Coverage Gap and Test Escape Issues,BT-345317
+BT-327293,BT,2025,YB/Lost,0.0,"Rx stop flow included an AES termination handling that
+included a busy-wait loop that got stuck and activated
+a WD timer.
+The flow was replace with a full BMC HW reset flow.",Firmware and Hardware Interface Communication Issues,BT-327293
+BT-315828,BT,2025,Connectivity,0.0,"The ARL Hx product family goes with the MTL PCH-S, integrating Solar-F.
+Solar GfP2 products support Dynamic CODEC loading feature to download
+required CODEC image for AAC or LC3 on demand.
+
+It is observed in some platform like ARL-Hx + GfP2, CODEC download is
+taking more than 500ms in some corner case scenario. It is suspected
+that the additional delay could be due to device entering into LPM L1
+low power mode in between CODEC download.",Power State Transition and Reset Recovery Issues,BT-315828
+BT-314297,BT,2025,YB/Lost,0.0,All blocks of a2dp fifo was not flushed in case when A2dp flag was cleared on getting L2CAP disconnect from peripheral. Added check to do flush of the remaining block if suspend data flag is set irrespective of A2dp link flag.,Memory and Resource Management Issues,BT-314297
+BT-307873,BT,2025,Connectivity,0.0,"Same root cause as in BT-293863.
+167413: [TASK] Add EP + Glue logic reset to BMC close down flow | https://gerritwcs.ir.intel.com/c/ibt_core-fw/+/167413
+
+Was merged already to the branch which 23.120 is build from.",Duplicate or Reference Case (follow linked Jira root cause),BT-307873
+BT-306577,BT,2025,YB/Lost,0.0,"TX PKT INT arrived 2nd time after LE PDU header was pushed to the BMC HW.
+The 2nd PKT INT treated as TX EQ INT and this cause 2nd order issues.",Firmware and Hardware Interface Communication Issues,BT-306577
+BT-304026,BT,2024,YB/Lost,0.0,"TX PKT INT arrived 2nd time after LE PDU header was pushed to the BMC HW.
+The 2nd PKT INT treated as TX EQ INT and this cause 2nd order issues.",Firmware and Hardware Interface Communication Issues,BT-304026
+BT-303616,BT,2024,Connectivity,0.0,"Observed no sound output with A2dp SBC
+offload use case when doing back to back
+disconnect/reconnect flow.
+This is due to all blocks of a2dp fifo was not
+flushed.
+Added flush logic for A2dp fifo in AVDTP
+close flow as a WA to make sure previous
+blocks are flushed.",Memory and Resource Management Issues,BT-303616
+BT-303389,BT,2024,Connectivity,0.0,AES header bypass is set by mistake by AES HW,Firmware and Hardware Interface Communication Issues,BT-303389
+BT-302266,BT,2024,Connectivity,0.0,"1. Corrected the flush function which clears the pending data packets
+in the disconnection flow to use the descriptor to dequeue.
+2. In the flush function if we try to derive the connection handle
+using the link index it will result as INVALID connection handle
+because HC layer clears the connection table by the time TL layer
+starts to flush the data packets. to handle this case passing the
+link index and traffic type to flush function.
+3. Added code to flush the LE ACL data packet.
+4. In TL layer added fatal exception if connection handle is
+invalid for data packet.",Memory and Resource Management Issues,BT-302266
+BT-302212,BT,2024,YB/Lost,0.0,"TX PKT INT arrived 2nd time after LE PDU header was pushed to the BMC HW.
+The 2nd PKT INT treated as TX EQ INT and this cause 2nd order issues.",Firmware and Hardware Interface Communication Issues,BT-302212
+BT-301609,BT,2024,YB/Lost,0.0,Double register write is resulting in double interrupt in FW which is causing unexpected alive in host driver,Timing Synchronization and Race Condition Issues,BT-301609
+BT-295258,BT,2024,YB/Lost,0.0,"Because of back-to-back redo we are canceling the data structure involved in ongoing transaction.
+Back-to-back redo is avoided which will prevent such exception",State Machine Transition and Flow Handling Issues,BT-295258
+BT-293879,BT,2024,YB/Lost,0.0,"Below Issue were fixed for Scan Issue: 
+1.  While in Init Scan &  generic Scan primary PDU, if we receive CRC PDUs, assembly buffers & scan Index were not released.
+2. On receiving Directed Legacy PDUs assembly buffer & Scan index was not released.
+3. On BC Stuck for le scan transac clearing of the assembly was missed,",Firmware and Hardware Interface Communication Issues,BT-293879
+BT-291551,BT,2024,Connectivity,0.0,"Below Issue were fixed for Scan Issue: 
+1.  While in Init Scan &  generic Scan primary PDU, if we receive CRC PDUs, assembly buffers & scan Index were not released.
+2. On receiving Directed Legacy PDUs assembly buffer & Scan index was not released.
+3. On BC Stuck for le scan transac clearing of the assembly was missed,",Firmware and Hardware Interface Communication Issues,BT-291551
+BT-284342,BT,2024,YB/Lost,0.0,"In FW download time, getting Unspecified error followed by Signature verification failed, for which driver recovers with SHR only once in existing model and on next iteration PLDR triggered which is not working all the time on customer platform.",Security Validation and Protection Control Issues,BT-284342
+BT-278402,BT,2024,YB/Lost,0.0,"It is a negative scenario. Which is difficult to achieve,
+This is a corner where central might have violated the spec or the Poll pkt OTA got missed due to interference and we did hit this case.",RF Coexistence and Channel Behavior Issues,BT-278402
+BT-276753,BT,2024,YB/Lost,0.0,Race condition between windows putting device to D3 and RX from the device,Timing Synchronization and Race Condition Issues,BT-276753
+BT-271922,BT,2024,YB/Lost,0.0,"Rootcause for why sometimes (typically seen once in 6 to 24 hours) the first bri indirect read fails is still under investigation. Infinete loop is converted to timed loop and if there is no response within 1ms, fatal exception is raised. The fatal exception helps to recover from the scenario and avoids USB transaction error.",Insufficient Root-Cause Detail,BT-271922
+BT-264484,BT,2024,YB/Lost,0.0,"This issue has been addressed in the jira BT-241260
+Root cause was,
+In the current implementation, there was a mismatch in the ULPM
+Block/Unblock counter due to imbalanced call of functions
+sc_PscLpmBlock and sc_PscLpmUnBlock in the TL PCIe layer.
+
+Identified the redundant/multiple sc_PscLpmUnBlock call and fixed.",Duplicate or Reference Case (follow linked Jira root cause),BT-264484
+BT-263832,BT,2024,YB/Lost,0.0,"While executing a D3 scenario, prior to entering D0, we observed incorrect PCIE context info, which we suspect is due to an unidentified bug in the hardware. Consequently, the firmware (FW) triggered a fatal exception, leading to a soft reset of the CPU. During this soft reset, we encountered an additional Top exception rewriting all original exception data that was alraedy recorded in persistent.
+
+The details of this Top exception suggest an issue that occurred during the initialization of the FSEQ following the soft reset due to original exception. However, the extra details provided by the Top exception data was inconclusive as per Top team. We assume that the hardware may have already been in a bad state due to the original issue when FW attempted to program the FSEQ as part of the initialization after the soft reset.
+
+Due to the current exception handling approach, we lacked adequate data for debugging.
+
+Proposed Solution: To address this issue, systems suggested halting the CPU immediately after any exception occurs. This will allow the host to collect debug information related to the exception before the firmware proceeds further and trigger further exceptions due to any instability already in the system.",Insufficient Root-Cause Detail,BT-263832
+BT-258275,BT,2024,BSOD,0.0,"WDfRequestComplete with Unsuccessful is not an expected
+return value for the stack. Corrected this while, HW error
+event received in top error case where we will not fwd it
+to stack, instead we complete the request with status
+success.",Driver and OS Interface Contract Issues,BT-258275
+BT-249593,BT,2024,BSOD,0.0,Issue is driver trying to read or access unallocated memory.,Memory and Resource Management Issues,BT-249593
+BT-242267,BT,2024,BSOD,0.0,"While powering down in reboot scenario, FDO is moving to D3 final and PDO moved to D2, but PDO went back to D0 due to an IOCTL received from MSFT stack and wdfrequestcomplete is done with STATUS_DEVICE_BUSY which is not accepted by the stack as per msdn which can accept only STATUS_SUCCESS and if fails with STATUS_CANCELLED with proper data.",Driver and OS Interface Contract Issues,BT-242267
+BT-183232,BT,2023,HLK,0.0,"[HLK][22H2][GfP] Bluetooth - HciExtensionsV2 (Development and Integration) fails with received 0 advertisements, but expected at least 16",Firmware and Hardware Interface Communication Issues,BT-183232
+BT-162869,BT,2023,BSOD,0.0,There is a global device context stored in the driver extension which is added in device add callback and removed in device context cleanup. In the device reset scenario there is a race condition happening where new device add is happening before the previous device cleanup which is causing device be null in the driver ext.,Timing Synchronization and Race Condition Issues,BT-162869
+BT-70178,BT,2022,Connectivity,0.0,"In the scenario of Pulse duraiton = 0, Pulse interval =0, we will only reload Ring duration timer, pulse duration, interval timers will be inactive.
+In fw, we should reload Ring duration timer for 60sec.
+we are calling ring start timer, which already active and running, so timer set api not reloading timer when it's already active.
+FW should stop the timer before everytime before reloading it.",Timing Synchronization and Race Condition Issues,BT-70178
+BT-66763,BT,2022,Connectivity,0.0,Due to the multiple role switch during the connection setup and Override link policy settings enabled the connection process was failing with multiple issues. Changes done as part of BT-70469 fixed this issue of avoiding multiple role switches.,State Machine Transition and Flow Handling Issues,BT-66763
+BT-59398,BT,2022,Connectivity,0.0,"Windows Os is using different PowerActions to notify driver shutdown using command line and UI menu. Tile is configuring for  S5 based on the powerAction values. Now with the given fix, driver handles both the powerActions for S5.",Power State Transition and Reset Recovery Issues,BT-59398
+BT-56390,BT,2022,Connectivity,0.0,"During D0exit hci response for VS command(set S5 state) is not read . This packet remains in USB rx buffer , and doesnot allow controller to go in Low power mode",Power State Transition and Reset Recovery Issues,BT-56390
+BT-45129,BT,2021,BSOD,0.0,"EtwRegister/Unregister calls expected as per MSDN KMDF drivers to be under DriverEntry and unload. Currently in ibtusb driver, we have put it under device context under preparehardware and devicecleanup and HLK not able to detect these calls. So moved to driver context as per MSDN rules.",Driver and OS Interface Contract Issues,BT-45129
+BT-25285,BT,2021,Connectivity,0.0,"There is a race between remote initiated wake and host initiated wait.
+Host is sending a wake request(because of host initiated wakeuo) and firmware is expecting a wake response.",Timing Synchronization and Race Condition Issues,BT-25285

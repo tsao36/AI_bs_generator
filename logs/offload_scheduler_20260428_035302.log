@@ -1,0 +1,51 @@
+[INFO] ===== Offload scheduler start =====
+[INFO] Timestamp: Tue 04/28/2026  3:53:02.50
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\
+[INFO] Current dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat
+C:\Python314\python.exe
+C:\Users\jtsao1\AppData\Local\Microsoft\WindowsApps\python.exe
+C:\Users\jtsao1\AppData\Local\Python\bin\python.exe
+[INFO] GRAPH_AUTH_MODE=delegated
+[INFO] GRAPH_SENDER_UPN=frank.lee@intel.com
+[INFO] OFFLOAD_RECEIVER_MAX_ISSUES=10
+[INFO] OFFLOAD_ALWAYS_EXCLUDED_REPORTERS=Jonathan Tsao
+[INFO] Running offload_reporter_issues.py --send-email
+[INFO] OFFLOAD_ALWAYS_EXCLUDED_REPORTERS=Jonathan Tsao
+2026-04-28 03:53:07,167 [INFO][ips_offload] Included 18 allowed reporter(s) with zero current issues for receiver rotation.
+2026-04-28 03:53:07,830 [INFO][ips_offload] Current issue calculation breakdown per reporter:
+2026-04-28 03:53:09,579 [INFO][ips_offload] Weighted loading trial enabled for visibility; offload decision remains based on Curr.
+2026-04-28 03:53:09,580 [INFO][ips_offload] Combined trial table (single table with category columns, decision still uses Curr):
+2026-04-28 03:53:09,580 [INFO][ips_offload] +---------------+------+------+------+-----------+-----------+-------+------------------+-------+------+------+--------------+-----+------+-----+--------+------+----------+-----------+-------------+-------------------+-------------------+---------+---------+-------------+------+------+--------+---------+-----+----+--------------+
+2026-04-28 03:53:09,580 [INFO][ips_offload] | Name          | uIPS | uHSD | Jira | Stale IPS | Stale HSD | Total | Weighted Loading | Audio | BIOS | BSOD | Connectivity | HLK | ICPS | IOP | Killer | MSFT | Miracast | OEM Tools | Performance | Power Consumption | Power on sequence | Roaming | Sensing | System Hang | UEFI | WAPI | WowLAN | YB/Lost | P2P | RF | Needs-Triage |
+2026-04-28 03:53:09,580 [INFO][ips_offload] +---------------+------+------+------+-----------+-----------+-------+------------------+-------+------+------+--------------+-----+------+-----+--------+------+----------+-----------+-------------+-------------------+-------------------+---------+---------+-------------+------+------+--------+---------+-----+----+--------------+
+2026-04-28 03:53:09,580 [INFO][ips_offload] | Steven1 Chen  |    1 |   12 |    0 |         1 |         0 |    12 |            12.00 |     0 |    0 |    0 |            0 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-04-28 03:53:09,580 [INFO][ips_offload] | Yu-Wei Chen   |    0 |    2 |    0 |         0 |         0 |     2 |             2.00 |     0 |    0 |    0 |            0 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-04-28 03:53:09,580 [INFO][ips_offload] | Leo Chiang    |    0 |    3 |    0 |         0 |         2 |     1 |             1.00 |     0 |    0 |    0 |            0 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-04-28 03:53:09,580 [INFO][ips_offload] | Timdaway Lai  |    0 |    3 |    0 |         0 |         2 |     1 |             1.00 |     0 |    0 |    0 |            0 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-04-28 03:53:09,580 [INFO][ips_offload] | Tonyx Yeh     |    0 |    0 |    1 |         0 |         0 |     1 |             1.94 |     0 |    0 |    0 |            1 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-04-28 03:53:09,581 [INFO][ips_offload] | Jonathan Tsao |    0 |    0 |    0 |         0 |         0 |     0 |             0.00 |     0 |    0 |    0 |            0 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-04-28 03:53:09,581 [INFO][ips_offload] | Kj Fang       |    1 |    0 |    0 |         1 |         0 |     0 |             0.00 |     0 |    0 |    0 |            0 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-04-28 03:53:09,581 [INFO][ips_offload] +---------------+------+------+------+-----------+-----------+-------+------------------+-------+------+------+--------------+-----+------+-----+--------+------+----------+-----------+-------------+-------------------+-------------------+---------+---------+-------------+------+------+--------+---------+-----+----+--------------+
+2026-04-28 03:53:09,581 [INFO][ips_offload] Offload decision mode: Curr
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\offload_reporter_issues.py", line 4292, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\offload_reporter_issues.py", line 3855, in main
+    issue = _get_most_recent_overloaded_issue(
+        db,
+    ...<2 lines>...
+        exclude_case_numbers=known_cases,
+    )
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\offload_reporter_issues.py", line 1797, in _get_most_recent_overloaded_issue
+    rows = db.query_rows(query, None)
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\Wireless_bug_dashboard.py", line 1922, in query_rows
+    self.__cursor.execute(query, params or None)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column "jira_title" does not exist
+LINE 27: ...reason), ''), 'NA'))) = 0))))) AND (COALESCE(TRIM(jira_title...
+                                                              ^
+
+[INFO] Finished with exit code 1
+[INFO] Exit code: 1
+[INFO] ===== Offload scheduler end =====

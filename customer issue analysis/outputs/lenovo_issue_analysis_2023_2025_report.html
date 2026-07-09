@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Issue Analysis Report</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 24px;
+            color: #333333;
+            background: #f7f8fa;
+        }
+        h1, h2, h3 { margin: 8px 0; color: #333333; font-weight: 600; }
+        .meta { color: #666666; margin-bottom: 18px; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 18px; }
+        th, td { border: 1px solid #d1d5db; padding: 8px; text-align: center; }
+        th { background: #f3f4f6; color: #333333; }
+        .grid { display: grid; grid-template-columns: repeat(2, minmax(320px, 1fr)); gap: 16px; }
+        .card {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 12px;
+            background: #ffffff;
+            box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+        }
+        .year-section { margin-top: 18px; border-top: 2px solid #e5e7eb; padding-top: 12px; }
+        .pie-wrap { width: 100%; max-width: 288px; aspect-ratio: 1 / 1; margin: 0 auto; }
+        .line-wrap { width: 100%; height: 360px; margin: 6px 0 18px; }
+        canvas { width: 100% !important; height: 100% !important; }
+    </style>
+</head>
+<body>
+<h1>Lenovo Customer Issue Analysis (2023-2025)</h1>
+<div class='meta'>Generated at: 2026-05-20T13:56:15 | Scope: ips_jira_bugs | Customer filter: Lenovo only (Lenovo/Lenovo IdeaPad/Lenovo ThinkPad) | Breakdown: WiFi vs BT | Metrics: jira_exposure% and issue_category%</div>
+<h2>Executive Snapshot</h2>
+<ul><li>Total Lenovo WiFi+BT issues (2023-2025): 1187.</li><li>Yearly total moved from 2023: 255 to 2025: 446 (74.9%).</li><li>YB/Lost trend (customer-critical risk): Peaked, now trending downward (2023: 21.14% -> 2025: 20.05%).</li><li><strong>Trends Overview:</strong> YB/Lost risk peaked in 2024 and stabilized through 2025-2026, with Bluetooth becoming the primary residual risk and increasingly dominating the YB/Lost mix. Platform risk peaked at Lunar Lake but showed improvement at Panther Lake.</li><li>Top issue category: Connectivity (40.1%).</li><li>Top exposure bucket: 1-Critical (12.77%).</li></ul><h2>Executive Summary</h2>
+<h3>Customer Concern Analysis</h3>
+<table><thead><tr><th>Potential Customer Concern</th><th>Assessment</th><th>Evidence</th></tr></thead><tbody><tr><td>YB/Lost risk may be increasing year over year.</td><td>Peaked, now trending downward</td><td>YB/Lost % by year: 2023:21.14% -> 2024:24.48% -> 2025:20.05%</td></tr><tr><td>YB/Lost risk may rise across platform generations (Meteor Lake -> Lunar Lake -> Panther Lake).</td><td>Peaked, now trending downward</td><td>YB/Lost % within platform: Meteor Lake:22.65% -> Lunar Lake:25.82% -> Arrow Lake:25.51% -> Panther Lake:20.47%</td></tr><tr><td>Intel WiFi quality may be degrading year over year (YB/Lost used as risk proxy).</td><td>Improving trend</td><td>WiFi YB/Lost rate by year: 2023:27.52% -> 2024:23.98% -> 2025:22.69%</td></tr><tr><td>Intel BT quality may be degrading year over year (YB/Lost used as risk proxy).</td><td>Peaked, easing but above baseline</td><td>BT YB/Lost rate by year: 2023:11.34% -> 2024:25.0% -> 2025:16.92%</td></tr><tr><td>Platform-over-platform WiFi quality may worsen (Meteor -> Lunar -> Panther).</td><td>Peaked, now trending downward</td><td>WiFi YB/Lost rate by platform: Meteor Lake:29.63% -> Lunar Lake:25.62% -> Arrow Lake:31.4% -> Panther Lake:22.73%</td></tr><tr><td>Platform-over-platform BT quality may worsen (Meteor -> Lunar -> Panther).</td><td>Peaked, easing but above baseline</td><td>BT YB/Lost rate by platform: Meteor Lake:13.13% -> Lunar Lake:25.97% -> Arrow Lake:19.67% -> Panther Lake:18.1%</td></tr></tbody></table><div class='grid'><div class='card'><h3>Top 5 Issue Categories (2023-2025)</h3><table><thead><tr><th>Category</th><th>Count</th><th>%</th></tr></thead><tbody><tr><td>Connectivity</td><td>468</td><td>40.1%</td></tr><tr><td>YB/Lost</td><td>258</td><td>22.11%</td></tr><tr><td>BSOD</td><td>118</td><td>10.11%</td></tr><tr><td>Performance</td><td>95</td><td>8.14%</td></tr><tr><td>P2P</td><td>90</td><td>7.71%</td></tr></tbody></table></div><div class='card'><h3>Top 5 Jira Exposure Buckets (2023-2025)</h3><table><thead><tr><th>Exposure</th><th>Count</th><th>%</th></tr></thead><tbody><tr><td>1-Critical</td><td>149</td><td>12.77%</td></tr><tr><td>2-High</td><td>806</td><td>69.07%</td></tr><tr><td>3-Medium</td><td>154</td><td>13.2%</td></tr><tr><td>4-Low</td><td>42</td><td>3.6%</td></tr><tr><td>(missing)</td><td>16</td><td>1.37%</td></tr></tbody></table></div></div><h2>Overall Statistics by Year</h2>
+<table><thead><tr><th>Year</th><th>IPS Total</th><th>IPS WiFi</th><th>IPS BT</th><th>JIRA WiFi</th><th>JIRA BT</th><th>JIRA Total</th><th>IPS to JIRA conversion rate</th><th>Total issue closed with fix</th><th>Issue fixed rate</th><th>Average IPS Bug TAT (days)</th></tr></thead><tbody>
+<tr><td>2023</td><td>255</td><td>149</td><td>97</td><td>38</td><td>4</td><td>42</td><td>16.47%</td><td>21</td><td>8.24%</td><td>52.64</td></tr>
+<tr><td>2024</td><td>486</td><td>246</td><td>236</td><td>70</td><td>33</td><td>103</td><td>21.19%</td><td>38</td><td>7.82%</td><td>37.58</td></tr>
+<tr><td>2025</td><td>446</td><td>238</td><td>201</td><td>72</td><td>24</td><td>96</td><td>21.52%</td><td>27</td><td>6.05%</td><td>22.35</td></tr>
+</tbody></table>
+<h3>Trend Analysis: Rising Issue Volume</h3>
+<div class='meta'>Total issue trrend 2021-2025</div>
+<div class='line-wrap'><canvas id='overall_2021_2025_line'></canvas></div>
+<p>Comment: Total issue volume is peaked, easing but above baseline. Highest at 2024 (486 issues) and lowest at 2023 (255 issues).</p>
+<h2>Average IPS Bug Turn Around Time by Year (2023-2025)</h2>
+<table><thead><tr><th>Year</th><th>Average IPS Bug TAT (days)</th></tr></thead><tbody>
+<tr><td>2023</td><td>52.64</td></tr>
+<tr><td>2024</td><td>37.58</td></tr>
+<tr><td>2025</td><td>22.35</td></tr>
+</tbody></table>
+<h3>Average IPS Bug Turn Around Time by Year Trend</h3>
+<div class='line-wrap'><canvas id='year_tat_line'></canvas></div>
+<h2>Platform Breakdown</h2>
+<table><thead><tr><th>Platform</th><th>IPS Total</th><th>IPS WiFi</th><th>IPS BT</th><th>JIRA WiFi</th><th>JIRA BT</th><th>JIRA Total</th><th>IPS to JIRA conversion rate</th><th>Total issue closed with fix</th><th>Issue fixed rate</th><th>Average IPS Bug TAT (days)</th></tr></thead><tbody>
+<tr><td>Alder Lake</td><td>37</td><td>30</td><td>7</td><td>7</td><td>0</td><td>7</td><td>18.92%</td><td>1</td><td>2.7%</td><td>52.05</td></tr>
+<tr><td>Raptor Lake</td><td>97</td><td>67</td><td>30</td><td>18</td><td>2</td><td>20</td><td>20.62%</td><td>6</td><td>6.19%</td><td>46.2</td></tr>
+<tr><td>Meteor Lake</td><td>234</td><td>135</td><td>99</td><td>37</td><td>2</td><td>39</td><td>16.67%</td><td>21</td><td>8.97%</td><td>44.9</td></tr>
+<tr><td>Lunar Lake</td><td>275</td><td>121</td><td>154</td><td>42</td><td>29</td><td>71</td><td>25.82%</td><td>29</td><td>10.55%</td><td>33.99</td></tr>
+<tr><td>Arrow Lake</td><td>243</td><td>121</td><td>122</td><td>32</td><td>13</td><td>45</td><td>18.52%</td><td>15</td><td>6.17%</td><td>27.99</td></tr>
+<tr><td>Panther Lake</td><td>215</td><td>110</td><td>105</td><td>33</td><td>14</td><td>47</td><td>21.86%</td><td>13</td><td>6.05%</td><td>18.6</td></tr>
+</tbody></table>
+<h3>Platform Breakdown Trend Graph</h3>
+<div class='line-wrap'><canvas id='platform_breakdown_line'></canvas></div>
+<p>Comment: Platform issue volume is peaked, easing but above baseline. Highest at Lunar Lake (275 issues) and lowest at Alder Lake (37 issues).</p>
+<h2>Average IPS Bug Turn Around Time by Platform</h2>
+<table><thead><tr><th>Platform</th><th>Average IPS Bug TAT (days)</th></tr></thead><tbody>
+<tr><td>Alder Lake</td><td>52.05</td></tr>
+<tr><td>Raptor Lake</td><td>46.2</td></tr>
+<tr><td>Meteor Lake</td><td>44.9</td></tr>
+<tr><td>Lunar Lake</td><td>33.99</td></tr>
+<tr><td>Arrow Lake</td><td>27.99</td></tr>
+<tr><td>Panther Lake</td><td>18.6</td></tr>
+</tbody></table>
+<h3>Average IPS Bug Turn Around Time by Platform Trend</h3>
+<div class='line-wrap'><canvas id='platform_tat_line'></canvas></div>
+<h2>YB/Lost Breakdown by Year</h2>
+<table><thead><tr><th>Year</th><th>YB/Lost Bugs</th><th>WiFi Bugs</th><th>BT Bugs</th><th>YB/Lost % of Year</th></tr></thead><tbody>
+<tr><td>2023</td><td>52</td><td>41</td><td>11</td><td>21.14%</td></tr>
+<tr><td>2024</td><td>118</td><td>59</td><td>59</td><td>24.48%</td></tr>
+<tr><td>2025</td><td>88</td><td>54</td><td>34</td><td>20.05%</td></tr>
+</tbody></table>
+<h2>YB/Lost Breakdown by Platform</h2>
+<table><thead><tr><th>Platform</th><th>YB/Lost Bugs</th><th>WiFi Bugs</th><th>BT Bugs</th><th>YB/Lost % within Platform</th></tr></thead><tbody>
+<tr><td>Alder Lake</td><td>3</td><td>1</td><td>2</td><td>8.11%</td></tr>
+<tr><td>Raptor Lake</td><td>12</td><td>10</td><td>2</td><td>12.37%</td></tr>
+<tr><td>Meteor Lake</td><td>53</td><td>40</td><td>13</td><td>22.65%</td></tr>
+<tr><td>Lunar Lake</td><td>71</td><td>31</td><td>40</td><td>25.82%</td></tr>
+<tr><td>Arrow Lake</td><td>62</td><td>38</td><td>24</td><td>25.51%</td></tr>
+<tr><td>Panther Lake</td><td>44</td><td>25</td><td>19</td><td>20.47%</td></tr>
+</tbody></table>
+<div class='year-section'><h2>2023 Breakdown (WiFi vs BT)</h2><div class='grid'><div class='card'><h3>2023 WiFi - Issue Category %</h3><div class='pie-wrap'><canvas id='cat_2023_wifi'></canvas></div></div><div class='card'><h3>2023 WiFi - Jira Exposure %</h3><div class='pie-wrap'><canvas id='exp_2023_wifi'></canvas></div></div><div class='card'><h3>2023 BT - Issue Category %</h3><div class='pie-wrap'><canvas id='cat_2023_bt'></canvas></div></div><div class='card'><h3>2023 BT - Jira Exposure %</h3><div class='pie-wrap'><canvas id='exp_2023_bt'></canvas></div></div></div></div><div class='year-section'><h2>2024 Breakdown (WiFi vs BT)</h2><div class='grid'><div class='card'><h3>2024 WiFi - Issue Category %</h3><div class='pie-wrap'><canvas id='cat_2024_wifi'></canvas></div></div><div class='card'><h3>2024 WiFi - Jira Exposure %</h3><div class='pie-wrap'><canvas id='exp_2024_wifi'></canvas></div></div><div class='card'><h3>2024 BT - Issue Category %</h3><div class='pie-wrap'><canvas id='cat_2024_bt'></canvas></div></div><div class='card'><h3>2024 BT - Jira Exposure %</h3><div class='pie-wrap'><canvas id='exp_2024_bt'></canvas></div></div></div></div><div class='year-section'><h2>2025 Breakdown (WiFi vs BT)</h2><div class='grid'><div class='card'><h3>2025 WiFi - Issue Category %</h3><div class='pie-wrap'><canvas id='cat_2025_wifi'></canvas></div></div><div class='card'><h3>2025 WiFi - Jira Exposure %</h3><div class='pie-wrap'><canvas id='exp_2025_wifi'></canvas></div></div><div class='card'><h3>2025 BT - Issue Category %</h3><div class='pie-wrap'><canvas id='cat_2025_bt'></canvas></div></div><div class='card'><h3>2025 BT - Jira Exposure %</h3><div class='pie-wrap'><canvas id='exp_2025_bt'></canvas></div></div></div></div><script>
+const chartData = {"2023": {"WiFi": {"issue_category": {"labels": ["YB/Lost", "Connectivity", "Performance", "P2P", "BSOD", "Power Consumption", "Sensing", "UEFI", "System Hang", "BIOS", "RF"], "values": [27.52, 21.48, 13.42, 10.74, 10.07, 6.04, 4.03, 4.03, 1.34, 0.67, 0.67]}, "jira_exposure": {"labels": ["1-Critical", "2-High", "3-Medium", "4-Low", "(missing)"], "values": [14.77, 71.14, 8.05, 1.34, 4.7]}}, "BT": {"issue_category": {"labels": ["Connectivity", "BSOD", "YB/Lost", "HLK", "Performance"], "values": [63.92, 14.43, 11.34, 8.25, 2.06]}, "jira_exposure": {"labels": ["1-Critical", "2-High", "3-Medium", "4-Low", "(missing)"], "values": [8.25, 54.64, 30.93, 1.03, 5.15]}}}, "2024": {"WiFi": {"issue_category": {"labels": ["YB/Lost", "P2P", "Performance", "Connectivity", "BSOD", "Power Consumption", "UEFI", "HLK", "Sensing", "BIOS", "RF", "System Hang"], "values": [23.98, 18.7, 15.85, 14.23, 11.38, 6.1, 3.66, 2.85, 2.03, 0.41, 0.41, 0.41]}, "jira_exposure": {"labels": ["1-Critical", "2-High", "3-Medium", "4-Low"], "values": [13.01, 73.58, 9.76, 3.66]}}, "BT": {"issue_category": {"labels": ["Connectivity", "YB/Lost", "BSOD", "HLK", "System Hang", "Power Consumption", "Performance", "Sensing"], "values": [55.08, 25.0, 9.32, 7.63, 1.27, 0.85, 0.42, 0.42]}, "jira_exposure": {"labels": ["1-Critical", "2-High", "3-Medium", "4-Low"], "values": [16.95, 63.14, 11.44, 8.47]}}}, "2025": {"WiFi": {"issue_category": {"labels": ["Connectivity", "YB/Lost", "Performance", "P2P", "BSOD", "Sensing", "Power Consumption", "BIOS", "System Hang", "ICPS", "OEM Tools", "UEFI"], "values": [28.99, 22.69, 13.45, 11.76, 10.92, 4.62, 2.94, 2.1, 1.26, 0.42, 0.42, 0.42]}, "jira_exposure": {"labels": ["1-Critical", "2-High", "3-Medium", "4-Low", "(missing)"], "values": [15.13, 71.43, 10.08, 2.1, 1.26]}}, "BT": {"issue_category": {"labels": ["Connectivity", "YB/Lost", "BSOD", "HLK", "Power Consumption", "Performance"], "values": [69.65, 16.92, 6.47, 3.98, 2.49, 0.5]}, "jira_exposure": {"labels": ["1-Critical", "2-High", "3-Medium", "4-Low", "(missing)"], "values": [5.47, 73.13, 18.41, 2.49, 0.5]}}}};
+const overallLineData = {"labels": ["2023", "2024", "2025"], "ips": [255, 486, 446], "jira": [42, 103, 96], "fixed": [21, 38, 27]};
+const platformLineData = {"labels": ["Alder Lake", "Raptor Lake", "Meteor Lake", "Lunar Lake", "Arrow Lake", "Panther Lake"], "ips": [37, 97, 234, 275, 243, 215], "jira": [7, 20, 39, 71, 45, 47], "fixed": [1, 6, 21, 29, 15, 13]};
+const tatYearLineData = {"labels": ["2023", "2024", "2025"], "values": [52.64, 37.58, 22.35]};
+const tatPlatformLineData = {"labels": ["Alder Lake", "Raptor Lake", "Meteor Lake", "Lunar Lake", "Arrow Lake", "Panther Lake"], "values": [52.05, 46.2, 44.9, 33.99, 27.99, 18.6]};
+const LINE_COLORS = ["#F4B400", "#0F7A79", "#6DC1A2"];
+const PIE_COLORS = ["#0F7A79", "#6DC1A2", "#F4B400", "#D8A24B", "#7D8A96", "#B7C4CF", "#9BB7B0", "#C9D3A8", "#D7B98E", "#A7C7C4", "#C6CEC8", "#8EA6A3", "#E1D0A8", "#B8C8B8", "#D8DDDF"];
+const CHART_TEXT_COLOR = '#333333';
+const GRID_COLOR = '#E6E6E6';
+Chart.defaults.font.family = "'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, sans-serif";
+Chart.defaults.color = CHART_TEXT_COLOR;
+
+const LABEL_COLOR_MAP = {
+    // issue categories
+    'Connectivity':       '#2563eb',
+    'BSOD':               '#dc2626',
+    'Performance':        '#d97706',
+    'P2P':                '#7c3aed',
+    'YB/Lost':            '#ef4444',
+    'Sensing':            '#059669',
+    'BIOS':               '#0891b2',
+    'HLK':                '#ca8a04',
+    'Power Consumption':  '#9333ea',
+    'UEFI':               '#c2410c',
+    'System Hang':        '#be185d',
+    'RF':                 '#0d9488',
+    'OEM Tools':          '#64748b',
+    'ICPS':               '#854d0e',
+    // exposure buckets
+    '1-Critical':         '#dc2626',
+    '2-High':             '#ea580c',
+    '3-Medium':           '#ca8a04',
+    '4-Low':              '#16a34a',
+    '(missing)':          '#9ca3af',
+    'No Data':            '#e5e7eb',
+};
+const FALLBACK_COLORS = [
+    '#3b82f6','#10b981','#f59e0b','#8b5cf6','#ec4899',
+    '#06b6d4','#f97316','#84cc16','#6366f1','#14b8a6',
+    '#e11d48','#a78bfa','#34d399','#fbbf24','#fb7185',
+];
+function getLabelColors(labels) {
+    let fallbackIdx = 0;
+    return labels.map(function(label) {
+        return LABEL_COLOR_MAP[label] || FALLBACK_COLORS[fallbackIdx++ % FALLBACK_COLORS.length];
+    });
+}
+
+function makePie(canvasId, labels, values) {
+    const ctx = document.getElementById(canvasId);
+    if (!ctx) return;
+
+    const percentageLabelPlugin = {
+        id: 'percentageLabelPlugin',
+        afterDatasetsDraw(chart) {
+            const { ctx } = chart;
+            const dataset = chart.data.datasets[0];
+            const meta = chart.getDatasetMeta(0);
+            ctx.save();
+            ctx.font = '11px Segoe UI';
+            ctx.fillStyle = '#333333';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            meta.data.forEach((arc, index) => {
+                const value = dataset.data[index] || 0;
+                if (value < 3) return;
+                const pos = arc.tooltipPosition();
+                ctx.fillText(value + '%', pos.x, pos.y);
+            });
+            ctx.restore();
+        }
+    };
+
+    if (!labels || labels.length === 0) {
+        new Chart(ctx, {
+            type: 'pie',
+            data: { labels: ['No Data'], datasets: [{ data: [100], backgroundColor: ['#e5e7eb'] }] },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                aspectRatio: 1,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        align: 'center',
+                        labels: {
+                            usePointStyle: true,
+                            pointStyle: 'circle',
+                            boxWidth: 8,
+                            boxHeight: 8,
+                            padding: 14,
+                            color: CHART_TEXT_COLOR,
+                            font: { family: 'Segoe UI, Inter, sans-serif', size: 11 }
+                        }
+                    }
+                }
+            },
+            plugins: [percentageLabelPlugin]
+        });
+        return;
+    }
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: labels,
+            datasets: [{ data: values, backgroundColor: PIE_COLORS, borderColor: '#ffffff', borderWidth: 1 }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            aspectRatio: 1,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    align: 'center',
+                    labels: {
+                        usePointStyle: true,
+                        pointStyle: 'circle',
+                        boxWidth: 8,
+                        boxHeight: 8,
+                        padding: 14,
+                        color: CHART_TEXT_COLOR,
+                        font: { family: 'Segoe UI, Inter, sans-serif', size: 11 }
+                    }
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(255,255,255,0.98)',
+                    titleColor: CHART_TEXT_COLOR,
+                    bodyColor: CHART_TEXT_COLOR,
+                    borderColor: '#e5e7eb',
+                    borderWidth: 1,
+                    callbacks: {
+                        label: function(context) {
+                            const v = context.parsed || 0;
+                            return context.label + ': ' + v + '%';
+                        }
+                    }
+                }
+            }
+        },
+        plugins: [percentageLabelPlugin]
+    });
+}
+
+function makeIssueTrendLine(canvasId, labels, ipsIssueCount, jiraIssueCount, issueClosedWithFix) {
+    const ctx = document.getElementById(canvasId);
+    if (!ctx || !labels || labels.length === 0) return;
+    const allLineValues = [...ipsIssueCount, ...jiraIssueCount, ...issueClosedWithFix]
+        .map((v) => Number(v))
+        .filter((v) => !Number.isNaN(v));
+    const maxValue = allLineValues.length ? Math.max(...allLineValues, 1) : 1;
+    const yTickCount = 5;
+    const rawStep = maxValue / yTickCount;
+    const magnitude = Math.pow(10, Math.floor(Math.log10(Math.max(rawStep, 1))));
+    const normalized = rawStep / magnitude;
+    const niceMultiplier = normalized <= 1 ? 1 : normalized <= 2 ? 2 : normalized <= 5 ? 5 : 10;
+    const yStep = Math.max(1, niceMultiplier * magnitude);
+    const yAxisMax = yStep * yTickCount;
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'ips issue count',
+                    data: ipsIssueCount,
+                    borderWidth: 2.5,
+                    pointStyle: 'circle',
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    pointBackgroundColor: LINE_COLORS[0],
+                    pointBorderColor: '#333333',
+                    pointBorderWidth: 1.25,
+                    tension: 0.25,
+                    borderColor: LINE_COLORS[0],
+                    backgroundColor: LINE_COLORS[0],
+                    fill: false
+                },
+                {
+                    label: 'jira issue count',
+                    borderWidth: 2.5,
+                    data: jiraIssueCount,
+                    borderColor: LINE_COLORS[1],
+                    backgroundColor: LINE_COLORS[1],
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    pointBackgroundColor: LINE_COLORS[1],
+                    pointBorderColor: '#333333',
+                    pointBorderWidth: 1.25,
+                    tension: 0.25,
+                    borderDash: [7, 4],
+                    pointStyle: 'rectRot',
+                    pointRadius: 4,
+                    fill: false
+                },
+                {
+                    label: 'issue closed with fix',
+                    data: issueClosedWithFix,
+                    borderWidth: 2.5,
+                    pointStyle: 'triangle',
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    pointBackgroundColor: LINE_COLORS[2],
+                    pointBorderColor: '#333333',
+                    pointBorderWidth: 1.25,
+                    tension: 0.25,
+                    borderColor: LINE_COLORS[2],
+                    backgroundColor: LINE_COLORS[2],
+                    fill: false
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            layout: {
+                padding: { top: 22, right: 8, bottom: 4, left: 4 }
+            },
+            plugins: {
+                legend: {
+                    position: 'top',
+                    align: 'center',
+                    labels: {
+                        usePointStyle: true,
+                        pointStyle: 'circle',
+                        boxWidth: 8,
+                        boxHeight: 8,
+                        padding: 16,
+                        color: CHART_TEXT_COLOR,
+                        font: { family: 'Segoe UI, Inter, sans-serif', size: 11 }
+                    }
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(255,255,255,0.98)',
+                    titleColor: CHART_TEXT_COLOR,
+                    bodyColor: CHART_TEXT_COLOR,
+                    borderColor: '#e5e7eb',
+                    borderWidth: 1,
+                    callbacks: {
+                        afterLabel: function(context) {
+                            return '';
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    grid: {
+                        display: false,
+                        drawBorder: false
+                    },
+                    ticks: {
+                        color: CHART_TEXT_COLOR,
+                        font: { family: 'Segoe UI, Inter, sans-serif', size: 11 }
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    max: yAxisMax,
+                    grid: {
+                        color: GRID_COLOR,
+                        drawBorder: false
+                    },
+                    ticks: {
+                        stepSize: yStep,
+                        precision: 0,
+                        callback: function(value) { return String(Math.round(Number(value))); },
+                        color: CHART_TEXT_COLOR,
+                        font: { family: 'Segoe UI, Inter, sans-serif', size: 11 }
+                    }
+                }
+            },
+        },
+        plugins: [lineValueLabelPlugin]
+    });
+}
+
+const lineValueLabelPlugin = {
+    id: 'lineValueLabelPlugin',
+    afterDatasetsDraw(chart) {
+        const { ctx } = chart;
+        ctx.save();
+        ctx.font = '11px Segoe UI';
+        ctx.fillStyle = '#333333';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
+
+        chart.data.datasets.forEach((dataset, datasetIndex) => {
+            const meta = chart.getDatasetMeta(datasetIndex);
+            if (meta.hidden) return;
+            meta.data.forEach((point, index) => {
+                const rawValue = dataset.data[index];
+                if (rawValue === null || rawValue === undefined || Number.isNaN(Number(rawValue))) return;
+                const valueText = String(Math.round(Number(rawValue)));
+                ctx.fillText(valueText, point.x, point.y - 10);
+            });
+        });
+        ctx.restore();
+    }
+};
+
+function makeTatTrendLine(canvasId, labels, tatValues) {
+    const ctx = document.getElementById(canvasId);
+    if (!ctx || !labels || labels.length === 0) return;
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'average ips bug tat (days)',
+                    data: tatValues,
+                    borderColor: '#F4B400',
+                    backgroundColor: '#F4B400',
+                    borderWidth: 2.5,
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    pointBackgroundColor: '#F4B400',
+                    pointBorderColor: '#333333',
+                    pointBorderWidth: 1.25,
+                    tension: 0.35,
+                    fill: false,
+                    spanGaps: false
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                    align: 'center',
+                    labels: {
+                        usePointStyle: true,
+                        pointStyle: 'circle',
+                        boxWidth: 8,
+                        boxHeight: 8,
+                        padding: 16,
+                        color: CHART_TEXT_COLOR,
+                        font: { family: 'Segoe UI, Inter, sans-serif', size: 11 }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    grid: {
+                        display: false,
+                        drawBorder: false
+                    },
+                    ticks: {
+                        color: CHART_TEXT_COLOR,
+                        font: { family: 'Segoe UI, Inter, sans-serif', size: 11 }
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: GRID_COLOR,
+                        drawBorder: false
+                    },
+                    ticks: {
+                        callback: function(value) { return String(Math.round(Number(value))); },
+                        color: CHART_TEXT_COLOR,
+                        font: { family: 'Segoe UI, Inter, sans-serif', size: 11 }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Days',
+                        color: CHART_TEXT_COLOR,
+                        font: { family: 'Segoe UI, Inter, sans-serif', size: 11 }
+                    }
+                }
+            }
+        },
+        plugins: [lineValueLabelPlugin]
+    });
+}
+
+Object.keys(chartData).forEach((year) => {
+    const wifi = chartData[year]['WiFi'];
+    const bt = chartData[year]['BT'];
+    makePie(`cat_${year}_wifi`, wifi.issue_category.labels, wifi.issue_category.values);
+    makePie(`exp_${year}_wifi`, wifi.jira_exposure.labels, wifi.jira_exposure.values);
+    makePie(`cat_${year}_bt`, bt.issue_category.labels, bt.issue_category.values);
+    makePie(`exp_${year}_bt`, bt.jira_exposure.labels, bt.jira_exposure.values);
+});
+
+makeIssueTrendLine('overall_2021_2025_line', overallLineData.labels, overallLineData.ips, overallLineData.jira, overallLineData.fixed);
+makeIssueTrendLine('platform_breakdown_line', platformLineData.labels, platformLineData.ips, platformLineData.jira, platformLineData.fixed);
+makeTatTrendLine('year_tat_line', tatYearLineData.labels, tatYearLineData.values);
+makeTatTrendLine('platform_tat_line', tatPlatformLineData.labels, tatPlatformLineData.values);
+</script>
+</body></html>

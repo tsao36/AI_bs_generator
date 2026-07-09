@@ -1,0 +1,49 @@
+ips_title,human_category,predicted_category,technology,predicted_category_hint,source_file
+"[Honor][LUX][NvwaC][ARL-HX][AX211][WiFi]When roaming between 2.4G and 5G, roaming occurs around a threshold of -70 dB.",Connectivity,Roaming,,,golden_training_set_20260613.csv
+"[HP][Quanta]-[Trekker][LNL/ARL/RPL/PTL][Win11 25H2] ""Declarative Driver Check"" show fail after running Declarative Driver Check test with MSFTAuditHub_PS_1.00_A3",HLK,YB/Lost,,,golden_training_set_20260613.csv
+TPT degration on end customer site.,Performance,Connectivity,,,golden_training_set_20260613.csv
+TX timeout during ROM flow,Connectivity,RF,,,golden_training_set_20260613.csv
+NP50RW NB playing MV lag during Wi-Fi WIDI,P2P,Performance,,,golden_training_set_20260613.csv
+"[Huawei][Quanta][Euler][CML-U][AX201][WLAN][19H2]Connected with WPA3 AP, and after restart has fail rate that reconnected slowly.",Connectivity,Performance,,,golden_training_set_20260613.csv
+Canot Miracast to project the screen to this device wirelessly,Connectivity,Miracast,,,golden_training_set_20260613.csv
+[HUAWEI][HUAQIN][MACHD][Intel TGL][Intel AX201[20H2]TV image occur lag during PC projecting  XiaoMi TV and play local video,Miracast,Performance,,,golden_training_set_20260613.csv
+Advertising Duty Cycle complaint test is not meeting the SPEC requirement,Connectivity,Performance,,,golden_training_set_20260613.csv
+wifi icon lost and the system hang when ESD test,YB/Lost,System Hang,,,golden_training_set_20260613.csv
+Slow response and freezes,ICPS,Performance,,,golden_training_set_20260613.csv
+DID profile 1.3 version is not available,Connectivity,OEM Tools,,,golden_training_set_20260613.csv
+"0x28af/0x32d occurred when doing ""MS<-->Resume"" stress test",YB/Lost,BSOD,,,golden_training_set_20260613.csv
+Alternate Data Stream Detected,ICPS,Connectivity,,,golden_training_set_20260613.csv
+Intel Connect service says disconnected,ICPS,Killer,,,golden_training_set_20260613.csv
+Wireless WiFi is lost on 23.160,Connectivity,YB/Lost,,,golden_training_set_20260613.csv
+Conducted TX spectrum Mask fail IEEE specification,RF,Performance,,,golden_training_set_20260613.csv
+IWFT enters non-functional state for long run with WiFi Disabled,OEM Tools,Connectivity,,,golden_training_set_20260613.csv
+[Samsung][RPL][AX211] This pairing drops because the system suddenly stops sending RTP packets to the sink device while pairing with this device for Miracast.,Connectivity,Miracast,,,golden_training_set_20260613.csv
+[HUAWEI][HUAQIN][Morgan][NB3757][TGL][AX201][WIFI]The network quality signal is poor when Roam the other AP.,Roaming,Performance,,,golden_training_set_20260613.csv
+System does not sync screen via miracast from PC to PAD.,Connectivity,Miracast,,,golden_training_set_20260613.csv
+[Microsoft][UID 1295717][PTL/FmP/OOB 26581][PAS] PAS Audio Glitches during WiFi-BT Coex on 2.4ghz 20MHz (2.4ghz 20MHz CND),Performance,Connectivity,,,golden_training_set_20260613.csv
+SIP126564 - 840 G10 / Win 11 22H2 / Nestle / NA / PC US / 211 WLAN stuck in code,System Hang,Performance,,,golden_training_set_20260613.csv
+Fast Lane - Update IPCBridge BoostedAppInfoState on R3QO3 enabled activity detected,ICPS,Connectivity,,,golden_training_set_20260613.csv
+[Honor][LUX][NvwaB][RPL][AX211][BT]The BSOD 0x9f releated to BT when Resume from S4,Miracast,BSOD,,,golden_training_set_20260613.csv
+"Ant tool request to add ""Group 4 to 8"" reading value Get Tx Power Delta Limits",OEM Tools,RF,,,golden_training_set_20260613.csv
+SIP126226 - 1040 G11/Win11 24H2/NA/PC US/Intel WLAN driver causes 0xa bug check,BSOD,YB/Lost,,,golden_training_set_20260613.csv
+[HUAWEI][HUAQIN][Morgan][NB3757][TGL][AX201][WIFI]The network quality signal is poor when Roam the other AP.,Roaming,Performance,,,golden_training_set_20260613.csv
+Device Information Service - MDUT FW version doesnt match.,ICPS,OEM Tools,,,golden_training_set_20260613.csv
+BT enumerators and RFCOMM Protocol TDI disappears after hybridshutdown,YB/Lost,Connectivity,,,golden_training_set_20260613.csv
+"SystemEvent log show error ID_5 after connect the BT MS&KB&Hedset devices, FR: 1/1Unit, 3/3Cycles",Connectivity,YB/Lost,,,golden_training_set_20260613.csv
+[WCL][Roma] DUT still need to be connected under MS,WowLAN,Connectivity,,,golden_training_set_20260613.csv
+Bluetooth headset is 3 meters away and the sound is lag,Connectivity,Performance,,,golden_training_set_20260613.csv
+[HUAWEI][HUAQIN][MACHD][Intel TGL][Intel AX201[20H2]TV image occur lag during PC projecting  XiaoMi TV and play local video,Miracast,Performance,,,golden_training_set_20260613.csv
+[Honor][Huaqin][LvzhouD][WCL][Intel AX211][BT][25H2]The coldboot stress test resulted in a 0x9f BSOD.,Roaming,BSOD,,,golden_training_set_20260613.csv
+"Play music with BT Headset/Speaker no sound, and device show yellow bang.",Connectivity,YB/Lost,,,golden_training_set_20260613.csv
+Snap layout feature support,Killer,Connectivity,,,golden_training_set_20260613.csv
+"After DUT S4 for a period of time and wakes up, the performance is abnormal when the WIFi65G frequency band 80MHZ/160MHz bandwidth",Performance,Connectivity,,,golden_training_set_20260613.csv
+The pdb debug file exists in the package UWD\Win64\Drivers\ICPSComponent\Symbols directory,ICPS,Connectivity,,,golden_training_set_20260613.csv
+ChainB power is different from BIOS SAR setting,RF,BIOS,,,golden_training_set_20260613.csv
+BUGCODE_NDIS_DRIVER_LIVE_DUMP (15e) during PST testing,BSOD,YB/Lost,,,golden_training_set_20260613.csv
+Wi-Fi low tpt on 6Ghz 11be 320MHz bandwidth,Performance,Sensing,,,golden_training_set_20260613.csv
+"[Lenovo_IdeaPad][LCFC][NVL-H][ Chaplin A1][26H1][EVT][BE211] BT HID device no function during normal use,FR: 1/2Units",Connectivity,YB/Lost,,,golden_training_set_20260613.csv
+BT exception causeDUT stuck at bootup screen for a long time) - Repeated Boot up events DSBR command,System Hang,OEM Tools,,,golden_training_set_20260613.csv
+DUT 100% fail to bootup when BIOS BT config to PCIe (boot flow stuck at CNViBTConfig),BSOD,UEFI,,,golden_training_set_20260613.csv
+"Frequent assert 0x4446 when host is sharing the 5G hotspot, 3/3Units, 3/3cycles in noisy environment",YB/Lost,Connectivity,,,golden_training_set_20260613.csv
+T-put HL TX issue,Performance,OEM Tools,,,golden_training_set_20260613.csv
+BT Device Disappear CS+Wifi AP connected,Connectivity,YB/Lost,,,golden_training_set_20260613.csv

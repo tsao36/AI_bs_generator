@@ -1,0 +1,310 @@
+[WARN] ACTION REQUIRED: Monday pipeline completion log not found. Please run run_weekly_tuning_and_prepare_labeling.bat.
+[INFO] ===== Weekly KPI health check start =====
+[INFO] Timestamp: Mon 06/08/2026 16:38:08.15
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\
+[INFO] GRAPH_AUTH_MODE=delegated
+[INFO] min_accepted_labels=10 gain_window=4 top_confusions=3
+{
+  "overall_pass": false,
+  "round_completion": {
+    "round_complete": false,
+    "details": "labels_stable=False, recent_labels=[74, 73, 4], avg_gain=0.091856, max_abs_avg_gain=0.003, gain_plateau=False, conf_sums=[8, 7, 6], conf_non_increasing=True, conf_drop=2, max_confusion_drop=1, conf_plateau=False",
+    "stability_weeks": 3,
+    "max_abs_avg_gain": 0.003,
+    "max_confusion_drop": 1
+  },
+  "latest_week": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260608",
+  "checks": {
+    "accepted_labels": {
+      "pass": false,
+      "details": "accepted_labels=4, threshold=10"
+    },
+    "macro_f1_gain_trend": {
+      "pass": false,
+      "details": "recent_gains=[-0.025819883356606343, 0.26376837659374197, -0.0498529172246831, 0.061653694088334654], avg_gain=0.062437, positive_ratio=0.50"
+    },
+    "top_confusions_shrink": {
+      "pass": true,
+      "details": "prev_top3_sum=7, latest_on_prev_pairs_sum=4, pairs=[Performance->Connectivity: 3->2; Connectivity->Miracast: 2->2; Connectivity->System Hang: 2->0]"
+    }
+  },
+  "weeks": [
+    {
+      "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260413",
+      "accepted_labels": 0,
+      "macro_f1": 0.5613333333333335,
+      "macro_f1_gain": null,
+      "top_confusions": [
+        {
+          "true": "ICPS",
+          "pred": "Killer",
+          "count": 2
+        },
+        {
+          "true": "Performance",
+          "pred": "Connectivity",
+          "count": 2
+        },
+        {
+          "true": "YB/Lost",
+          "pred": "YB",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260417",
+      "accepted_labels": 0,
+      "macro_f1": 0.5613333333333335,
+      "macro_f1_gain": 0.0,
+      "top_confusions": [
+        {
+          "true": "ICPS",
+          "pred": "Killer",
+          "count": 2
+        },
+        {
+          "true": "Performance",
+          "pred": "Connectivity",
+          "count": 2
+        },
+        {
+          "true": "YB/Lost",
+          "pred": "YB",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260421",
+      "accepted_labels": 33,
+      "macro_f1": 0.7539409250240677,
+      "macro_f1_gain": 0.16748103035556472,
+      "top_confusions": [
+        {
+          "true": "Connectivity",
+          "pred": "OEM Tools",
+          "count": 3
+        },
+        {
+          "true": "Connectivity",
+          "pred": "System Hang",
+          "count": 3
+        },
+        {
+          "true": "YB/Lost",
+          "pred": "BSOD",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260425",
+      "accepted_labels": 0,
+      "macro_f1": 0.7427568730155368,
+      "macro_f1_gain": -0.011184052008530898,
+      "top_confusions": [
+        {
+          "true": "Connectivity",
+          "pred": "YB/Lost",
+          "count": 4
+        },
+        {
+          "true": "Connectivity",
+          "pred": "OEM Tools",
+          "count": 2
+        },
+        {
+          "true": "Connectivity",
+          "pred": "System Hang",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260427",
+      "accepted_labels": 30,
+      "macro_f1": 0.7418228532553475,
+      "macro_f1_gain": -0.02919044184413022,
+      "top_confusions": [
+        {
+          "true": "ICPS",
+          "pred": "Killer",
+          "count": 3
+        },
+        {
+          "true": "Connectivity",
+          "pred": "System Hang",
+          "count": 2
+        },
+        {
+          "true": "Sensing",
+          "pred": "Connectivity",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260504",
+      "accepted_labels": 38,
+      "macro_f1": 0.7834127685851823,
+      "macro_f1_gain": -0.004635430889756154,
+      "top_confusions": [
+        {
+          "true": "Connectivity",
+          "pred": "System Hang",
+          "count": 3
+        },
+        {
+          "true": "P2P",
+          "pred": "Connectivity",
+          "count": 2
+        },
+        {
+          "true": "Performance",
+          "pred": "Connectivity",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260511",
+      "accepted_labels": 14,
+      "macro_f1": 0.7575728201337957,
+      "macro_f1_gain": -0.024906165362951205,
+      "top_confusions": [
+        {
+          "true": "Performance",
+          "pred": "Connectivity",
+          "count": 3
+        },
+        {
+          "true": "YB/Lost",
+          "pred": "Connectivity",
+          "count": 3
+        },
+        {
+          "true": "Connectivity",
+          "pred": "System Hang",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260518",
+      "accepted_labels": 26,
+      "macro_f1": 0.7317529367771893,
+      "macro_f1_gain": -0.025819883356606343,
+      "top_confusions": [
+        {
+          "true": "Connectivity",
+          "pred": "System Hang",
+          "count": 4
+        },
+        {
+          "true": "ICPS",
+          "pred": "Killer",
+          "count": 4
+        },
+        {
+          "true": "Performance",
+          "pred": "Power Consumption",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260525",
+      "accepted_labels": 74,
+      "macro_f1": 0.849281644061885,
+      "macro_f1_gain": 0.26376837659374197,
+      "top_confusions": [
+        {
+          "true": "Performance",
+          "pred": "Connectivity",
+          "count": 3
+        },
+        {
+          "true": "YB/Lost",
+          "pred": "Connectivity",
+          "count": 3
+        },
+        {
+          "true": "P2P",
+          "pred": "Performance",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260601",
+      "accepted_labels": 73,
+      "macro_f1": 0.7815346107012774,
+      "macro_f1_gain": -0.0498529172246831,
+      "top_confusions": [
+        {
+          "true": "Performance",
+          "pred": "Connectivity",
+          "count": 3
+        },
+        {
+          "true": "Connectivity",
+          "pred": "Miracast",
+          "count": 2
+        },
+        {
+          "true": "Connectivity",
+          "pred": "System Hang",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260608",
+      "accepted_labels": 4,
+      "macro_f1": 0.843188304789612,
+      "macro_f1_gain": 0.061653694088334654,
+      "top_confusions": [
+        {
+          "true": "Connectivity",
+          "pred": "Miracast",
+          "count": 2
+        },
+        {
+          "true": "Performance",
+          "pred": "Connectivity",
+          "count": 2
+        },
+        {
+          "true": "YB/Lost",
+          "pred": "BSOD",
+          "count": 2
+        }
+      ]
+    }
+  ]
+}
+[INFO] KPI report written: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\tuning_outputs\weekly_20260608\weekly_kpi_health_check.json
+[INFO] Generating targeted labeling supplement...
+[INFO] 讀取 IPS 資料：IPS_data_exported.csv
+[INFO] 共 160475 筆 IPS 案件
+[INFO] 已標記/已在 template 中的標題：447 筆（排除重複用）
+
+  Roaming        : 候選  342 筆 → 抽取 10 筆
+  Miracast       : 候選 3727 筆 → 抽取 12 筆
+  WowLAN         : 候選  133 筆 → 抽取 12 筆
+  Performance    : 候選 6225 筆 → 抽取 15 筆
+  YB/Lost        : 候選 13725 筆 → 抽取 12 筆
+
+[OK] 已輸出 61 筆補標候選 → targeted_labeling_supplement_20260608.csv
+[提示] 下週 Monday pipeline 執行後，可將此檔案的列追加到
+       tuning_outputs/weekly_YYYYMMDD/weekly_labeling_template.csv
+[INFO] Sending KPI email report to tsao36@gmail.com
+[LLM] Generated Traditional Chinese summary (170 chars).
+[INFO] Loaded recipients.json: +20 to, +1 cc
+[Config] Using GRAPH_CLIENT_SECRET from environment/.env.
+[Auth] Using cached Graph delegated token.
+[OK] KPI 郵件已寄出至：tsao36@gmail.com, frank.lee@intel.com, zhiqiang.cai@intel.com, nicky.chen@intel.com, charles.p.chu@intel.com, kj.fang@intel.com, timdaway.lai@intel.com, frank.fc.yang@intel.com, matt.chen@intel.com, steven1.chen@intel.com, yu-wei.chen@intel.com, jackx.lee@intel.com, wesley.kuo@intel.com, bingyue.sun@intel.com, juan.zou@intel.com, arielx.fan@intel.com, brenton.wu@intel.com, wei-ling.chi@intel.com, yuan-yuan.tu@intel.com, cce.wireless.ce.cfe.wifi.gb@intel.com, cce.wireless.ce.cfe.bt.gb@intel.com
+[OK] KPI 郵件 CC：jonathan.tsao@intel.com
+[WARN] KPI checks did not fully pass. Review weekly_kpi_health_check.json in latest weekly folder.
+[INFO] ===== Weekly KPI health check end =====

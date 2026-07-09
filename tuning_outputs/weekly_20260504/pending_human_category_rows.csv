@@ -1,0 +1,38 @@
+assignee_email,assignee_team,technology,created_date,ips_title
+frank.lee@intel.com,wifi,WiFi,2026-04-29,DRTU Request for longer certificate valid date
+zhiqiang.cai@intel.com,wifi,WiFi,2026-04-30,[DELL][PTL][WHP]Yukon 13 2in1 (P208G)_Sensor Power is greater than SAR settings
+charles.p.chu@intel.com,wifi,WiFi,2026-04-27,[lenovo_ptl_mario]Field issue - WiFi connection issues (Romania)
+kj.fang@intel.com,wifi,WiFi,2026-04-27,[Dell][Wistron][ARL][DELL PRO 13 PLUS PB13250] Intel Wi-Fi 7 BE201 WIFI Signal Drop Issues
+timdaway.lai@intel.com,wifi,WiFi,2026-04-27,[WCL][Roma] DUT still need to be connected under MS
+frank.fc.yang@intel.com,wifi,WiFi,2026-04-28,HP Printing - Error when printing large format jobs causes brief disconnection - Intel Wi-Fi 6E AX211 and AX201 160Mhz
+jackx.lee@intel.com,wifi,WiFi,2026-04-29,[ASUS_CCBU][P5405CSA/P3405CVA][BE201/AX211] Cannot display extended mode on a second monitor via Miracast.
+brenton.wu@intel.com,wifi,WiFi,2026-04-27,[Lenovo][ThinkPad T14p G2 IMH]Network  speed is very slow
+frank.lee@intel.com,wifi,WiFi,2026-04-27,[DELL][field][AX211][BE200] Intermittent Wi-Fi disconnects with 802.11r enabled on Intel AX211/BE200 in WPA-EAP enterprise environments
+matt.chen@intel.com,bt,BT,2026-04-28,[Lenovo-DT][Huaqin][Yoga9][PTL] The yellow label of the Wifi/BT device appears in the reboot cycle stress test
+zhiqiang.cai@intel.com,wifi,WiFi,2026-04-27,"[HP][Wistron] [26C2_Salute_LNL + AX211] [Win11 25H2 Build 26200. 8037] Mobile Hotspot Fails on 5GHz Channel 104, Pass on Cadet LNL + Fmp2"
+steven1.chen@intel.com,bt,BT,2026-04-27,[HP] [Masada][LNL][FmP2-BE201][Win11 25H2 v26100.8246]Device keep going away for ~1min and comes back in NearSense UI view
+yu-wei.chen@intel.com,bt,BT,2026-04-27,"[ASUS_CCBU][P5405CSA][BE201/AX211] After pairing or using for a while, Bluetooth left click function not working."
+charles.p.chu@intel.com,wifi,WiFi,2026-04-28,"[Intel][Internal][RPL-P (I)][AX211] WiFi Disconnect, not roaming, stationary"
+kj.fang@intel.com,wifi,WiFi,2026-04-29,[HP][Sensing] PC didnt lock after user left inside 10s
+wesley.kuo@intel.com,bt,BT,2026-04-27,[Dell][GhostRider 16 ARL] IPS report BSOD 0x13a issue during install Audio driver from 10.0.244.2_A05 to 10.0.328.1_A06.
+bingyue.sun@intel.com,bt,BT,2026-04-29,[LG][16Z90U][PTL/BE211/Win11 25H2] Youtube lip-sync issue when connecting Bluetooth classic audio
+juan.zou@intel.com,bt,BT,2026-04-29,V7xxYU BE211 WCL BT YB
+brenton.wu@intel.com,bt,BT,2026-04-27,[lenovo/DT BU][In-house][ARL][AX211][yoga mimi]sonySonyLE audiolenovoconversationmedia
+matt.chen@intel.com,bt,BT,2026-04-30,"[NEC][LCFC][PTL[Yukimura-IP][25H2][SIT][BE211]Under S0 with a Bluetooth headset connected and running 1080P, the PHM log shows that C10 does not reach 50%.FR: 9/10Cycles"
+steven1.chen@intel.com,bt,BT,2026-04-28,[lenovo_ptl_paris] BT no prompt sound when pressing F2/F3 after Vantage enabled
+frank.lee@intel.com,other,Tools,2026-04-27,"[X17_PTL] WRT2G Tool get ""BIOS configuration is not vaild"" Warning"
+timdaway.lai@intel.com,wifi,WiFi,2026-04-30,[Dell][FXN][NVL-S][Citadel CSLP]  When running BIOS tool in WRT Tool fail
+zhiqiang.cai@intel.com,other,Software,2026-04-27,[Lenovo][LunarLake][BE201][25H2][20%][ICPS5.0]ICPS system tray icon doesnt exist intermittently
+frank.fc.yang@intel.com,wifi,WiFi,2026-04-29,[HP][Sensing]PC lock when user sitting in front of it
+yu-wei.chen@intel.com,bt,BT,2026-04-30,[CLEVO][V740TUT1][V740TUT1_AX201_HEADSET_NO-MIC_AFTER_S4]
+jackx.lee@intel.com,wifi,WiFi,2026-04-27,[Samsung][PTL][BE211][P260422-06258] PC didnt start connect after PD request/response.
+brenton.wu@intel.com,wifi,wifi,,Auth failed when doing connect and ping stress test
+frank.lee@intel.com,wifi,wifi,,Restricted mode long reconnection time after resume from sleep
+zhiqiang.cai@intel.com,wifi,wifi,,TyP2 6GHz output power 2-5dBm drop on conductive test (3/19 and 4/16)
+charles.p.chu@intel.com,wifi,wifi,,TyP2 6GHz output power 2-5dBm drop on conductive test (3/19 and 4/16)
+kj.fang@intel.com,wifi,wifi,,"The result show fail when running Stress-WiFi Ping (S4) test.(F/R:11/40units,13/4000cycles)"
+timdaway.lai@intel.com,wifi,wifi,,"The result show fail when running Stress-WiFi Ping (S4) test.(F/R:11/40units,13/4000cycles)"
+frank.fc.yang@intel.com,wifi,WiFi,,[DELL][Field]Intel(R) Wi-Fi 7 BE200 is unable to connect WIFI-6E 6GHz networks in Windows 10/11 in Macao
+jackx.lee@intel.com,wifi,wifi,,System cant found 6Ghz mobile hotspot.
+brenton.wu@intel.com,wifi,wifi,,System cant found 6Ghz mobile hotspot.
+frank.lee@intel.com,wifi,wifi,,"Roaming failed twice, with two failed attempts to reconnect to the 5G hotspot. F/R: 1/1u, 2/50C"

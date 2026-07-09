@@ -1,0 +1,49 @@
+[INFO] ===== Friday auto close-loop start =====
+[INFO] Timestamp: Tue 06/30/2026 21:57:52.00
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\
+[INFO] Project root: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..
+[INFO] tuning_root=C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\tuning_outputs
+[INFO] weekly_output_dir=C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\CFE_input
+[INFO] input_dirs=C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\CFE_reviewed_issue,C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\CFE_input
+[INFO] min_new_labels=10 min_gain=0.005 key_recall_drop_tol=0.02 threshold=0.45 allow_partial=1
+[INFO] This batch does not send email notifications. It only writes result artifacts.
+[STEP 1/2] Check weekly_labeling_template completion status
+C:\Python314\python.exe
+C:\Users\jtsao1\AppData\Local\Microsoft\WindowsApps\python.exe
+C:\Users\jtsao1\AppData\Local\Python\bin\python.exe
+{
+  "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260615",
+  "csv": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260615\\weekly_labeling_template.csv",
+  "total_rows": 80,
+  "filled_rows": 3,
+  "pending_rows": 77,
+  "pending_by_assignee": {
+    "charles.p.chu@intel.com": 9,
+    "frank.lee@intel.com": 9,
+    "kj.fang@intel.com": 9,
+    "timdaway.lai@intel.com": 9,
+    "zhiqiang.cai@intel.com": 9,
+    "brenton.wu@intel.com": 7,
+    "frank.fc.yang@intel.com": 7,
+    "jackx.lee@intel.com": 7,
+    "bingyue.sun@intel.com": 2,
+    "matt.chen@intel.com": 2,
+    "steven1.chen@intel.com": 2,
+    "wesley.kuo@intel.com": 2,
+    "yu-wei.chen@intel.com": 2,
+    "juan.zou@intel.com": 1
+  }
+}
+[INFO] Step 1 exit code: 2
+[WARN] Labeling precheck reported pending rows or check issue, but continuing due to --allow-partial.
+[STEP 2/2] Run Friday auto close-loop
+[WARN] No folder in Mon–Fri window; falling back to most recent dated folder: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\tuning_outputs\weekly_20260615
+[WARN] openpyxl not available (`Import openpyxl` failed.  Use pip or conda to install the openpyxl package.); fallback to CSV: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\tuning_outputs\weekly_20260615\weekly_labeling_template.csv
+[INFO] Reviewed file: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\tuning_outputs\weekly_20260615\weekly_labeling_template.xlsx
+[INFO] Accepted labels: 3/80
+[INFO] Ingested to: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\CFE_input\weekly_labels_20260630_215753.csv
+[WARN] Skip promotion due to insufficient newly labeled rows.
+[OK] Friday auto close-loop completed.
+[OK] Check latest weekly folder for model_promotion_decision.json
+[INFO] No email sent by design in this batch. If needed, add a post-step email script.
+[INFO] ===== Friday auto close-loop end =====

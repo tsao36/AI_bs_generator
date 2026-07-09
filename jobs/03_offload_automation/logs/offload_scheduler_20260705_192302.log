@@ -1,0 +1,9 @@
+[INFO] ===== Offload job start =====
+[INFO] Job: run_offload_reporter_issues_send_email_scheduler.bat
+[INFO] Timestamp: Sun 07/05/2026 19:23:02.71
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation\
+[INFO] Current dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\03_offload_automation
+[INFO] Args: 
+[WARN] Cannot reach 10-108-27-113.dbaas.intel.com - VPN may be down. Skipping run.
+[INFO] Exit code: 0 (skipped - no network)
+[INFO] ===== Offload job end =====

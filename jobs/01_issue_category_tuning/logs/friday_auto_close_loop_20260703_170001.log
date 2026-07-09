@@ -1,0 +1,66 @@
+[INFO] ===== Friday auto close-loop start =====
+[INFO] Timestamp: Fri 07/03/2026 17:00:01.08
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\
+[INFO] Project root: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..
+[INFO] tuning_root=C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\tuning_outputs
+[INFO] weekly_output_dir=C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\CFE_input
+[INFO] input_dirs=C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\CFE_reviewed_issue,C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\CFE_input
+[INFO] min_new_labels=10 min_gain=0.005 key_recall_drop_tol=0.02 threshold=0.45 allow_partial=1
+[INFO] This batch does not send email notifications. It only writes result artifacts.
+[STEP 1/2] Check weekly_labeling_template completion status
+C:\Python314\python.exe
+C:\Users\jtsao1\AppData\Local\Microsoft\WindowsApps\python.exe
+C:\Users\jtsao1\AppData\Local\Python\bin\python.exe
+{
+  "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260615",
+  "csv": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\tuning_outputs\\weekly_20260615\\weekly_labeling_template.csv",
+  "total_rows": 80,
+  "filled_rows": 3,
+  "pending_rows": 77,
+  "pending_by_assignee": {
+    "charles.p.chu@intel.com": 9,
+    "frank.lee@intel.com": 9,
+    "kj.fang@intel.com": 9,
+    "timdaway.lai@intel.com": 9,
+    "zhiqiang.cai@intel.com": 9,
+    "brenton.wu@intel.com": 7,
+    "frank.fc.yang@intel.com": 7,
+    "jackx.lee@intel.com": 7,
+    "bingyue.sun@intel.com": 2,
+    "matt.chen@intel.com": 2,
+    "steven1.chen@intel.com": 2,
+    "wesley.kuo@intel.com": 2,
+    "yu-wei.chen@intel.com": 2,
+    "juan.zou@intel.com": 1
+  }
+}
+[INFO] Step 1 exit code: 2
+[WARN] Labeling precheck reported pending rows or check issue, but continuing due to --allow-partial.
+[STEP 2/2] Run Friday auto close-loop
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\run_category_tuning_cycle.py", line 297, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\run_category_tuning_cycle.py", line 276, in main
+    low_conf_count = _export_low_confidence_rows(
+        args.current_model,
+    ...<3 lines>...
+        ml,
+    )
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\run_category_tuning_cycle.py", line 141, in _export_low_confidence_rows
+    artifact = joblib.load(current_model_path)
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\customer issue analysis\.venv\Lib\site-packages\joblib\numpy_pickle.py", line 735, in load
+    with open(filename, "rb") as f:
+         ~~~~^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'models\\issue_category_model.joblib'
+[WARN] No folder in Mon–Fri window; falling back to most recent dated folder: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\tuning_outputs\weekly_20260701
+[WARN] XLSX reviewed file not found; using CSV fallback: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\tuning_outputs\weekly_20260701\weekly_labeling_template.csv
+[INFO] Reviewed file: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\tuning_outputs\weekly_20260701\weekly_labeling_template.csv
+[INFO] Accepted labels: 15/67
+[INFO] Ingested to: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\CFE_input\weekly_labels_20260703_170002.csv
+[INFO] Candidate not promoted; keep active model.
+[OK] Decision report: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\jobs\01_issue_category_tuning\..\..\tuning_outputs\weekly_20260701\model_promotion_decision.json
+[OK] Friday auto close-loop completed.
+[OK] Check latest weekly folder for model_promotion_decision.json
+[INFO] No email sent by design in this batch. If needed, add a post-step email script.
+[INFO] ===== Friday auto close-loop end =====

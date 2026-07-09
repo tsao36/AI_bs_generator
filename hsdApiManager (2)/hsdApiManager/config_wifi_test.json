@@ -1,0 +1,80 @@
+{
+    "hsd": {
+        "server": "https://hsdes-api.intel.com/rest/auth/magazine/",
+        "parent_article": "",
+        "user": "",
+        "token_path": "hsd_token.json",
+        "attachments_path": "downloads",
+        "max_results": "1000",
+        "query_fetch_headers": "",
+        "query_closed_issues": ""
+    },
+    "embedded_certificate_created": false,
+    "OS": "",
+    "log_file_name": "hsd2jira_test.log",
+    "log_file_max_size": 10,
+    "jira_options": {
+        "server": "https://jiratest.idoc.intel.com/",
+        "timeout": 5,
+        "field_map_file_name": "field_maps_hsd_test.txt",
+        "verify": false,
+        "max_jira_attachment_size": 3145728
+    },
+    "jira_user": {
+        "name": "",
+        "pass": ""
+    },
+    "jira_query_options": {
+        "type": [
+            "BUG"
+        ],
+        "exclude_status": [
+            "Closed",
+            "Rejected"
+        ],
+        "external_id_field_name": "External Issue ID",
+        "labels": [
+            "External_HSD"
+        ],
+        "projects": [
+            "WIFI"
+        ],
+        "additional_reporters": [
+            "llazari"
+        ]
+    },
+    "report_options": {
+        "cced": [
+            "lior.lazari@intel.com"
+        ],
+        "recipients": [
+            "lior.lazari@intel.com"
+        ],
+        "reports_file_name": "sync_report_{}.html",
+        "reports_path": "reports_test",
+        "sender": "",
+        "smtp_server": "smtp.intel.com",
+        "subject": "TEST Sync Report - {}",
+        "report_title": " Bridge Sync Report"
+    },
+    "jira_new_issue": {
+        "project": "WCS WIFI",
+        "issue_type": "bug",
+        "project_bug": "WIFI",
+        "assignee": "meliahu",
+        "component": "WiAMTDriver",
+        "dictionary_file": "dictionary.json",
+        "label": "External_HSD",
+        "priority": "P2-High",
+        "customer_name": "HSD",
+        "teams": "Development",
+        "watchers": [
+            "meliahu"
+        ]
+    },
+    "sharepoint_data": {
+        "sharepoint_credentials_file": "sharepoint_credentials.json",
+        "sharepoint_root_folder": "files/jira_attachments_test",
+        "data_retention_period_weeks": 12
+    }
+}

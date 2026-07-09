@@ -1,0 +1,33 @@
+﻿component,suggested_category
+WinDriver->System flows,YB/Lost
+WinDriver->Connectivity,Connectivity
+WinDriver->Performance,Performance
+User Interface->Intel Connectivity Performance Suite,ICPS
+FW->PHY,Performance
+FW->Data Path,YB/Lost
+TOP->STEP,YB/Lost
+Host Windows- Driver->ibtusb,YB/Lost
+System->MAC,YB/Lost
+TOP->FW,YB/Lost
+WinDriver->WiFi Extensions,P2P
+FW- Transport,YB/Lost
+Host Windows- Driver->PCIe,YB/Lost
+FW- Protocol -> ACL_LE,Connectivity
+FW- Protocol -> ACL_BR_EDR,Connectivity
+System->PHY,RF
+3rd Party->AP,Connectivity
+FW->MVM,YB/Lost
+UEFIDriver,UEFI
+FW->Infra,YB/Lost
+ANT,OEM Tools
+DRTU,OEM Tools
+Installation->Killer,Killer
+3rd Party-BIOS,BIOS
+FW- PHY,Performance
+CITU,OEM Tools
+Host UEFI - BIOS,BIOS
+Installation->ICPS,ICPS
+TOP->FSEQ,YB/Lost
+ICPS,ICPS
+WRT::2G,OEM Tools
+FW- Coex,Performance

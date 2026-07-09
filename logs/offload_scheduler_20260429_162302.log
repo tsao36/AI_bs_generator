@@ -1,0 +1,65 @@
+[INFO] ===== Offload scheduler start =====
+[INFO] Timestamp: Wed 04/29/2026 16:23:02.31
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\
+[INFO] Current dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat
+C:\Python314\python.exe
+C:\Users\jtsao1\AppData\Local\Microsoft\WindowsApps\python.exe
+C:\Users\jtsao1\AppData\Local\Python\bin\python.exe
+[INFO] GRAPH_AUTH_MODE=delegated
+[INFO] GRAPH_SENDER_UPN=frank.lee@intel.com
+[INFO] OFFLOAD_RECEIVER_MAX_ISSUES=10
+[INFO] OFFLOAD_ALWAYS_EXCLUDED_REPORTERS=Jonathan Tsao
+[INFO] Running offload_reporter_issues.py --send-email
+[INFO] OFFLOAD_ALWAYS_EXCLUDED_REPORTERS=Jonathan Tsao
+2026-04-29 16:23:06,256 [INFO][ips_offload] Included 6 allowed reporter(s) with zero current issues for receiver rotation.
+2026-04-29 16:23:06,814 [INFO][ips_offload] Current issue calculation breakdown per reporter:
+2026-04-29 16:23:09,994 [INFO][ips_offload] Weighted loading trial enabled for visibility; offload decision remains based on Curr.
+2026-04-29 16:23:09,995 [INFO][ips_offload] Combined trial table (single table with category columns, decision still uses Curr):
+2026-04-29 16:23:09,996 [INFO][ips_offload] +---------------+------+------+------+-----------+-----------+-------+------------------+-------+------+------+--------------+-----+------+-----+--------+------+----------+-----------+-------------+-------------------+-------------------+---------+---------+-------------+------+------+--------+---------+-----+----+--------------+
+2026-04-29 16:23:09,996 [INFO][ips_offload] | Name          | uIPS | uHSD | Jira | Stale IPS | Stale HSD | Total | Weighted Loading | Audio | BIOS | BSOD | Connectivity | HLK | ICPS | IOP | Killer | MSFT | Miracast | OEM Tools | Performance | Power Consumption | Power on sequence | Roaming | Sensing | System Hang | UEFI | WAPI | WowLAN | YB/Lost | P2P | RF | Needs-Triage |
+2026-04-29 16:23:09,996 [INFO][ips_offload] +---------------+------+------+------+-----------+-----------+-------+------------------+-------+------+------+--------------+-----+------+-----+--------+------+----------+-----------+-------------+-------------------+-------------------+---------+---------+-------------+------+------+--------+---------+-----+----+--------------+
+2026-04-29 16:23:09,996 [INFO][ips_offload] | Steven1 Chen  |   10 |   11 |    5 |         9 |         0 |    17 |            22.64 |     0 |    0 |    0 |            6 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-04-29 16:23:09,996 [INFO][ips_offload] | Frank Lee     |   18 |    0 |    6 |        11 |         0 |    13 |            28.02 |     0 |    0 |    0 |            3 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           2 |                 0 |                 0 |       0 |       3 |           0 |    0 |    0 |      0 |       2 |   3 |  0 |            0 |
+2026-04-29 16:23:09,996 [INFO][ips_offload] | Zhiqiang Cai  |    6 |    0 |    6 |         1 |         0 |    11 |            23.52 |     0 |    0 |    1 |            3 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           1 |                 0 |                 0 |       0 |       1 |           0 |    1 |    0 |      0 |       2 |   3 |  0 |            0 |
+2026-04-29 16:23:09,996 [INFO][ips_offload] | Bingyue Sun   |    6 |    0 |    3 |         0 |         0 |     9 |            16.92 |     1 |    0 |    2 |            6 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-04-29 16:23:09,996 [INFO][ips_offload] | Frank Yang    |   10 |    0 |    1 |         2 |         0 |     9 |            18.69 |     0 |    0 |    0 |            2 |   0 |    0 |   0 |      0 |    0 |        0 |         2 |           3 |                 0 |                 0 |       0 |       1 |           0 |    0 |    0 |      0 |       0 |   1 |  0 |            0 |
+2026-04-29 16:23:09,996 [INFO][ips_offload] | Wesley Kuo    |   11 |    0 |    2 |         5 |         0 |     8 |            14.90 |     0 |    0 |    1 |            5 |   0 |    0 |   0 |      0 |    0 |        0 |         1 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       1 |   0 |  0 |            0 |
+2026-04-29 16:23:09,996 [INFO][ips_offload] | Charles Chu   |   14 |    0 |    2 |         9 |         0 |     7 |            14.07 |     0 |    0 |    0 |            0 |   0 |    0 |   0 |      0 |    0 |        0 |         1 |           1 |                 0 |                 0 |       0 |       2 |           0 |    0 |    0 |      0 |       0 |   3 |  0 |            0 |
+2026-04-29 16:23:09,996 [INFO][ips_offload] | Kj Fang       |   29 |    0 |    2 |        24 |         0 |     7 |            14.93 |     0 |    0 |    0 |            3 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           2 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   2 |  0 |            0 |
+2026-04-29 16:23:09,996 [INFO][ips_offload] | Jackx Lee     |    4 |    0 |    3 |         1 |         0 |     6 |            12.00 |     0 |    1 |    0 |            1 |   0 |    0 |   0 |      0 |    0 |        0 |         1 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       2 |   1 |  0 |            0 |
+2026-04-29 16:23:09,996 [INFO][ips_offload] | Brenton Wu    |    8 |    0 |    2 |         5 |         0 |     5 |             9.80 |     0 |    0 |    0 |            1 |   2 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       1 |   1 |  0 |            0 |
+2026-04-29 16:23:09,996 [INFO][ips_offload] | Matt Chen     |    6 |    0 |    5 |         6 |         0 |     5 |            10.66 |     0 |    0 |    0 |            2 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       2 |   1 |  0 |            0 |
+2026-04-29 16:23:09,996 [INFO][ips_offload] | Timdaway Lai  |    4 |    3 |    2 |         2 |         2 |     5 |             9.29 |     0 |    0 |    1 |            2 |   0 |    1 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       1 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-04-29 16:23:09,996 [INFO][ips_offload] | Juan Zou      |    3 |    0 |    0 |         0 |         0 |     3 |             5.38 |     0 |    0 |    1 |            2 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-04-29 16:23:09,997 [INFO][ips_offload] | Yu-Wei Chen   |    0 |    3 |    0 |         0 |         0 |     3 |             1.50 |     0 |    0 |    1 |            0 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-04-29 16:23:09,997 [INFO][ips_offload] | Leo Chiang    |    8 |    3 |    0 |         7 |         2 |     2 |             2.94 |     0 |    0 |    0 |            1 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-04-29 16:23:09,997 [INFO][ips_offload] | Lydiax Chien  |    0 |    0 |    2 |         0 |         0 |     2 |             3.86 |     0 |    0 |    0 |            1 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   1 |  0 |            0 |
+2026-04-29 16:23:09,997 [INFO][ips_offload] | Henryx Su     |    1 |    0 |    0 |         0 |         0 |     1 |             1.00 |     0 |    0 |    1 |            0 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-04-29 16:23:09,997 [INFO][ips_offload] | Tonyx Yeh     |    0 |    0 |    1 |         0 |         0 |     1 |             1.94 |     0 |    0 |    0 |            1 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-04-29 16:23:09,997 [INFO][ips_offload] | Yu-wei Chen   |    3 |    0 |    0 |         2 |         0 |     1 |             1.50 |     0 |    0 |    1 |            0 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-04-29 16:23:09,997 [INFO][ips_offload] | Jonathan Tsao |    0 |    0 |    0 |         0 |         0 |     0 |             0.00 |     0 |    0 |    0 |            0 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |   0 |  0 |            0 |
+2026-04-29 16:23:09,997 [INFO][ips_offload] +---------------+------+------+------+-----------+-----------+-------+------------------+-------+------+------+--------------+-----+------+-----+--------+------+----------+-----------+-------------+-------------------+-------------------+---------+---------+-------------+------+------+--------+---------+-----+----+--------------+
+2026-04-29 16:23:09,997 [INFO][ips_offload] Offload decision mode: Curr
+2026-04-29 16:23:10,005 [INFO][ips_offload] Created 1 trigger notification(s) for over-threshold reporters.
+Traceback (most recent call last):
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\offload_reporter_issues.py", line 4297, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\offload_reporter_issues.py", line 3860, in main
+    issue = _get_most_recent_overloaded_issue(
+        db,
+    ...<2 lines>...
+        exclude_case_numbers=known_cases,
+    )
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\offload_reporter_issues.py", line 1797, in _get_most_recent_overloaded_issue
+    rows = db.query_rows(query, None)
+  File "C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\Wireless_bug_dashboard.py", line 1926, in query_rows
+    self.__cursor.execute(query, params or None)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column "jira_title" does not exist
+LINE 27: ...reason), ''), 'NA'))) = 0))))) AND (COALESCE(TRIM(jira_title...
+                                                              ^
+
+[INFO] Finished with exit code 1
+[INFO] Exit code: 1
+[INFO] ===== Offload scheduler end =====

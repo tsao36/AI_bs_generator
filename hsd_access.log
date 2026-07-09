@@ -1,0 +1,97 @@
+2026-06-21 16:02:30,832 [DEBUG] Using existing KRB5CCNAME=FILE:C:\Temp\krb5cache
+2026-06-21 16:02:30,839 [INFO] Kerberos credential cache in use: FILE:C:\Temp\krb5cache
+2026-06-21 16:02:30,844 [INFO] Using Kerberos authentication with cache FILE:C:\Temp\krb5cache
+2026-06-21 16:02:30,853 [WARNING] SSL verification disabled for HSD API requests; set HSD_CA_CERT to enable.
+2026-06-21 16:02:30,861 [INFO] HSD authentication mode in use: kerberos
+2026-06-21 16:02:30,878 [INFO] Fetching bugs from saved query ID: 16021056445 (limit: 5000)
+2026-06-21 16:02:30,887 [INFO] Query URL: https://hsdes.intel.com/appstore/generalapps/#/pages/community/1203659509?queryId=16021056445
+2026-06-21 16:02:30,890 [INFO] [Attempt 1/5] Trying endpoint: https://hsdes-api.intel.com/rest/query/16021056445
+2026-06-21 16:02:30,895 [DEBUG] API request: GET https://hsdes-api.intel.com/rest/query/16021056445
+2026-06-21 16:02:36,740 [INFO] Successfully fetched 2 bugs from query 16021056445
+2026-06-21 16:02:53,441 [DEBUG] Using existing KRB5CCNAME=FILE:C:\Temp\krb5cache
+2026-06-21 16:02:53,442 [INFO] Kerberos credential cache in use: FILE:C:\Temp\krb5cache
+2026-06-21 16:02:53,443 [INFO] Using Kerberos authentication with cache FILE:C:\Temp\krb5cache
+2026-06-21 16:02:53,443 [WARNING] SSL verification disabled for HSD API requests; set HSD_CA_CERT to enable.
+2026-06-21 16:02:53,444 [INFO] HSD authentication mode in use: kerberos
+2026-06-21 16:02:53,444 [INFO] Fetching bugs from saved query ID: 15019019900 (limit: 5000)
+2026-06-21 16:02:53,445 [INFO] Query URL: https://hsdes.intel.com/appstore/generalapps/#/pages/community/1203659509?queryId=15019019900
+2026-06-21 16:02:53,446 [INFO] [Attempt 1/5] Trying endpoint: https://hsdes-api.intel.com/rest/query/15019019900
+2026-06-21 16:02:53,447 [DEBUG] API request: GET https://hsdes-api.intel.com/rest/query/15019019900
+2026-06-21 16:02:55,431 [INFO] Successfully fetched 306 bugs from query 15019019900
+2026-06-21 16:21:12,705 [DEBUG] Using existing KRB5CCNAME=FILE:C:\Temp\krb5cache
+2026-06-21 16:21:12,706 [INFO] Kerberos credential cache in use: FILE:C:\Temp\krb5cache
+2026-06-21 16:21:12,706 [INFO] Using Kerberos authentication with cache FILE:C:\Temp\krb5cache
+2026-06-21 16:21:12,706 [WARNING] SSL verification disabled for HSD API requests; set HSD_CA_CERT to enable.
+2026-06-21 16:21:12,707 [INFO] HSD authentication mode in use: kerberos
+2026-06-21 16:21:12,707 [INFO] Fetching bugs from saved query ID: 15019019900 (limit: 5000)
+2026-06-21 16:21:12,707 [INFO] Query URL: https://hsdes.intel.com/appstore/generalapps/#/pages/community/1203659509?queryId=15019019900
+2026-06-21 16:21:12,708 [INFO] [Attempt 1/5] Trying endpoint: https://hsdes-api.intel.com/rest/query/15019019900
+2026-06-21 16:21:12,709 [DEBUG] API request: GET https://hsdes-api.intel.com/rest/query/15019019900
+2026-06-21 16:21:14,208 [INFO] Successfully fetched 306 bugs from query 15019019900
+2026-06-21 16:38:21,347 [DEBUG] Using existing KRB5CCNAME=FILE:C:\Temp\krb5cache
+2026-06-21 16:38:21,348 [INFO] Kerberos credential cache in use: FILE:C:\Temp\krb5cache
+2026-06-21 16:38:21,350 [INFO] Using Kerberos authentication with cache FILE:C:\Temp\krb5cache
+2026-06-21 16:38:21,352 [WARNING] SSL verification disabled for HSD API requests; set HSD_CA_CERT to enable.
+2026-06-21 16:38:21,356 [INFO] HSD authentication mode in use: kerberos
+2026-06-21 16:38:21,359 [INFO] Fetching bugs from saved query ID: 15019019900 (limit: 5000)
+2026-06-21 16:38:21,360 [INFO] Query URL: https://hsdes.intel.com/appstore/generalapps/#/pages/community/1203659509?queryId=15019019900
+2026-06-21 16:38:21,361 [INFO] [Attempt 1/5] Trying endpoint: https://hsdes-api.intel.com/rest/query/15019019900
+2026-06-21 16:38:21,361 [DEBUG] API request: GET https://hsdes-api.intel.com/rest/query/15019019900
+2026-06-21 16:38:22,423 [INFO] Successfully fetched 306 bugs from query 15019019900
+2026-06-21 16:38:32,290 [DEBUG] Using existing KRB5CCNAME=FILE:C:\Temp\krb5cache
+2026-06-21 16:38:32,290 [INFO] Kerberos credential cache in use: FILE:C:\Temp\krb5cache
+2026-06-21 16:38:32,290 [INFO] Using Kerberos authentication with cache FILE:C:\Temp\krb5cache
+2026-06-21 16:38:32,291 [WARNING] SSL verification disabled for HSD API requests; set HSD_CA_CERT to enable.
+2026-06-21 16:38:32,291 [INFO] HSD authentication mode in use: kerberos
+2026-06-21 16:38:32,291 [INFO] Fetching bugs from saved query ID: 16021056445 (limit: 5000)
+2026-06-21 16:38:32,292 [INFO] Query URL: https://hsdes.intel.com/appstore/generalapps/#/pages/community/1203659509?queryId=16021056445
+2026-06-21 16:38:32,292 [INFO] [Attempt 1/5] Trying endpoint: https://hsdes-api.intel.com/rest/query/16021056445
+2026-06-21 16:38:32,292 [DEBUG] API request: GET https://hsdes-api.intel.com/rest/query/16021056445
+2026-06-21 16:38:34,140 [INFO] Successfully fetched 2 bugs from query 16021056445
+2026-06-21 19:17:00,274 [DEBUG] Using existing KRB5CCNAME=FILE:C:\Temp\krb5cache
+2026-06-21 19:17:00,275 [INFO] Kerberos credential cache in use: FILE:C:\Temp\krb5cache
+2026-06-21 19:17:00,276 [INFO] Using Kerberos authentication with cache FILE:C:\Temp\krb5cache
+2026-06-21 19:17:00,276 [WARNING] SSL verification disabled for HSD API requests; set HSD_CA_CERT to enable.
+2026-06-21 19:17:00,277 [INFO] HSD authentication mode in use: kerberos
+2026-06-21 19:17:00,277 [INFO] Fetching bugs from saved query ID: 15019533347 (limit: 5000)
+2026-06-21 19:17:00,277 [INFO] Query URL: https://hsdes.intel.com/appstore/generalapps/#/pages/community/1203659509?queryId=15019533347
+2026-06-21 19:17:00,278 [INFO] [Attempt 1/5] Trying endpoint: https://hsdes-api.intel.com/rest/query/15019533347
+2026-06-21 19:17:00,278 [DEBUG] API request: GET https://hsdes-api.intel.com/rest/query/15019533347
+2026-06-21 19:17:01,444 [INFO] Successfully fetched 122 bugs from query 15019533347
+2026-06-21 19:18:13,064 [DEBUG] Using existing KRB5CCNAME=FILE:C:\Temp\krb5cache
+2026-06-21 19:18:13,065 [INFO] Kerberos credential cache in use: FILE:C:\Temp\krb5cache
+2026-06-21 19:18:13,065 [INFO] Using Kerberos authentication with cache FILE:C:\Temp\krb5cache
+2026-06-21 19:18:13,066 [WARNING] SSL verification disabled for HSD API requests; set HSD_CA_CERT to enable.
+2026-06-21 19:18:13,066 [INFO] HSD authentication mode in use: kerberos
+2026-06-21 19:18:13,067 [DEBUG] API request: GET https://hsdes-api.intel.com/rest/query/15019533347
+2026-06-21 19:18:23,100 [DEBUG] Using existing KRB5CCNAME=FILE:C:\Temp\krb5cache
+2026-06-21 19:18:23,100 [INFO] Kerberos credential cache in use: FILE:C:\Temp\krb5cache
+2026-06-21 19:18:23,101 [INFO] Using Kerberos authentication with cache FILE:C:\Temp\krb5cache
+2026-06-21 19:18:23,101 [WARNING] SSL verification disabled for HSD API requests; set HSD_CA_CERT to enable.
+2026-06-21 19:18:23,102 [INFO] HSD authentication mode in use: kerberos
+2026-06-21 19:18:23,102 [DEBUG] API request: GET https://hsdes-api.intel.com/rest/query/15019533347
+2026-07-07 18:56:57,474 [DEBUG] Using existing KRB5CCNAME=FILE:C:\Temp\krb5cache
+2026-07-07 18:56:57,476 [INFO] Kerberos credential cache in use: FILE:C:\Temp\krb5cache
+2026-07-07 18:56:57,477 [INFO] Using Kerberos authentication with cache FILE:C:\Temp\krb5cache
+2026-07-07 18:56:57,477 [WARNING] SSL verification disabled for HSD API requests; set HSD_CA_CERT to enable.
+2026-07-07 18:56:57,477 [INFO] HSD authentication mode in use: kerberos
+2026-07-07 18:56:57,478 [INFO] Fetching bugs from saved query ID: 15019608847 (limit: 50000)
+2026-07-07 18:56:57,478 [INFO] Query URL: https://hsdes.intel.com/appstore/generalapps/#/pages/community/1203659509?queryId=15019608847
+2026-07-07 18:56:57,479 [INFO] [Attempt 1/5] Trying endpoint: https://hsdes-api.intel.com/rest/query/15019608847
+2026-07-07 18:56:57,479 [DEBUG] API request: GET https://hsdes-api.intel.com/rest/query/15019608847
+2026-07-07 18:56:58,277 [INFO] Successfully fetched 123 bugs from query 15019608847
+2026-07-07 18:56:58,278 [INFO] Fetching bugs from saved query ID: 15019575844 (limit: 50000)
+2026-07-07 18:56:58,278 [INFO] Query URL: https://hsdes.intel.com/appstore/generalapps/#/pages/community/1203659509?queryId=15019575844
+2026-07-07 18:56:58,279 [INFO] [Attempt 1/5] Trying endpoint: https://hsdes-api.intel.com/rest/query/15019575844
+2026-07-07 18:56:58,279 [DEBUG] API request: GET https://hsdes-api.intel.com/rest/query/15019575844
+2026-07-07 18:56:58,444 [INFO] Successfully fetched 6 bugs from query 15019575844
+2026-07-07 19:01:22,669 [DEBUG] Using existing KRB5CCNAME=FILE:C:\Temp\krb5cache
+2026-07-07 19:01:22,669 [INFO] Kerberos credential cache in use: FILE:C:\Temp\krb5cache
+2026-07-07 19:01:22,670 [INFO] Using Kerberos authentication with cache FILE:C:\Temp\krb5cache
+2026-07-07 19:01:22,671 [WARNING] SSL verification disabled for HSD API requests; set HSD_CA_CERT to enable.
+2026-07-07 19:01:22,671 [INFO] HSD authentication mode in use: kerberos
+2026-07-07 19:01:22,672 [INFO] Fetching bugs from saved query ID: 15019608847 (limit: 50000)
+2026-07-07 19:01:22,672 [INFO] Query URL: https://hsdes.intel.com/appstore/generalapps/#/pages/community/1203659509?queryId=15019608847
+2026-07-07 19:01:22,673 [INFO] [Attempt 1/5] Trying endpoint: https://hsdes-api.intel.com/rest/query/15019608847
+2026-07-07 19:01:22,674 [DEBUG] API request: GET https://hsdes-api.intel.com/rest/query/15019608847
+2026-07-07 19:01:23,471 [INFO] Successfully fetched 439 bugs from query 15019608847

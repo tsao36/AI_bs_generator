@@ -1,0 +1,46 @@
+{
+  "timestamp": "20260425_165309",
+  "weekly_dir": "tuning_outputs\\weekly_20260421",
+  "accepted_labels": 33,
+  "reviewed_rows": 41,
+  "active_macro_f1": 0.5164200322095058,
+  "candidate_macro_f1": 0.6839010625650705,
+  "macro_f1_gain": 0.16748103035556472,
+  "min_gain": 0.005,
+  "pass_gain": true,
+  "key_recall_drop_tolerance": 0.02,
+  "recall_checks": [
+    {
+      "class": "Audio",
+      "active_recall": null,
+      "candidate_recall": null,
+      "status": "not_present"
+    },
+    {
+      "class": "Connectivity",
+      "active_recall": 0.6363636363636364,
+      "candidate_recall": 0.696969696969697,
+      "status": "pass"
+    },
+    {
+      "class": "BSOD",
+      "active_recall": 1.0,
+      "candidate_recall": 1.0,
+      "status": "pass"
+    },
+    {
+      "class": "System Hang",
+      "active_recall": 1.0,
+      "candidate_recall": 1.0,
+      "status": "pass"
+    },
+    {
+      "class": "Performance",
+      "active_recall": 0.42857142857142855,
+      "candidate_recall": 0.7142857142857143,
+      "status": "pass"
+    }
+  ],
+  "promoted": true,
+  "action": "promote"
+}

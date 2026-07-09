@@ -1,0 +1,68 @@
+[INFO] ===== Offload scheduler start =====
+[INFO] Timestamp: Sun 03/22/2026  9:23:03.25
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\
+[INFO] Current dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat
+C:\Python314\python.exe
+C:\Users\jtsao1\AppData\Local\Microsoft\WindowsApps\python.exe
+C:\Users\jtsao1\AppData\Local\Python\bin\python.exe
+[INFO] GRAPH_AUTH_MODE=delegated
+[INFO] GRAPH_SENDER_UPN=
+[INFO] OFFLOAD_RECEIVER_MAX_ISSUES=10
+[INFO] OFFLOAD_ALWAYS_EXCLUDED_REPORTERS=Jonathan Tsao
+[INFO] Running offload_reporter_issues.py --send-email
+[INFO] OFFLOAD_ALWAYS_EXCLUDED_REPORTERS=Jonathan Tsao
+2026-03-22 09:23:12,346 [INFO][ips_offload] Included 9 allowed reporter(s) with zero current issues for receiver rotation.
+2026-03-22 09:23:12,346 [INFO][ips_offload] Pending reminder check: case=1001296 source=Timdaway Lai(14) target=Brenton Wu(9) threshold=15 => skip reminder
+2026-03-22 09:23:12,346 [INFO][ips_offload] Pending reminder check: case=1001680 source=Timdaway Lai(14) target=Charles Chu(11) threshold=15 => skip reminder
+2026-03-22 09:23:12,347 [INFO][ips_offload] Pending reminder filter skipped 2 entrie(s): offload no longer needed based on current load.
+2026-03-22 09:23:12,347 [INFO][ips_offload] Applying 2 pending offload(s) from history to avoid duplicate recommendations.
+2026-03-22 09:23:12,911 [INFO][ips_offload] Current issue calculation breakdown per reporter:
+2026-03-22 09:23:12,913 [INFO][ips_offload] +---------------+------+------+------+------+-------+-------+------+
+2026-03-22 09:23:12,914 [INFO][ips_offload] | Reporter      | uHSD | uIPS | pIPS | Jira | Stale | cPend | Curr |
+2026-03-22 09:23:12,914 [INFO][ips_offload] +---------------+------+------+------+------+-------+-------+------+
+2026-03-22 09:23:12,914 [INFO][ips_offload] | Timdaway Lai  |    6 |    7 |    3 |    8 |     1 |     4 |   16 |
+2026-03-22 09:23:12,914 [INFO][ips_offload] | Frank Lee     |    0 |   12 |    4 |   12 |     9 |     1 |   14 |
+2026-03-22 09:23:12,914 [INFO][ips_offload] | Charles Chu   |    0 |   13 |    5 |    8 |     9 |     2 |   10 |
+2026-03-22 09:23:12,914 [INFO][ips_offload] | Frank Yang    |    0 |    9 |    4 |    6 |     1 |     4 |   10 |
+2026-03-22 09:23:12,914 [INFO][ips_offload] | Brenton Wu    |    0 |    8 |    0 |    0 |     0 |     0 |    8 |
+2026-03-22 09:23:12,914 [INFO][ips_offload] | Zhiqiang Cai  |    0 |    8 |    4 |    6 |     1 |     5 |    8 |
+2026-03-22 09:23:12,914 [INFO][ips_offload] | Steven1 Chen  |    0 |   22 |    0 |    2 |    14 |     3 |    7 |
+2026-03-22 09:23:12,914 [INFO][ips_offload] | Tonyx Yeh     |    0 |    0 |    0 |    7 |     0 |     0 |    7 |
+2026-03-22 09:23:12,914 [INFO][ips_offload] | Jackx Lee     |    0 |    5 |    2 |    2 |     1 |     0 |    6 |
+2026-03-22 09:23:12,914 [INFO][ips_offload] | Matt Chen     |    0 |    7 |    0 |    5 |     6 |     0 |    6 |
+2026-03-22 09:23:12,914 [INFO][ips_offload] | Bingyue Sun   |    0 |   11 |    1 |    2 |     1 |     7 |    5 |
+2026-03-22 09:23:12,914 [INFO][ips_offload] | Juan Zou      |    0 |    7 |    0 |    1 |     0 |     3 |    5 |
+2026-03-22 09:23:12,914 [INFO][ips_offload] | Wesley Kuo    |    0 |    8 |    0 |    3 |     6 |     0 |    5 |
+2026-03-22 09:23:12,914 [INFO][ips_offload] | Kj Fang       |    0 |   25 |    2 |    2 |    24 |     0 |    3 |
+2026-03-22 09:23:12,914 [INFO][ips_offload] | Leo Chiang    |    2 |    8 |    0 |    0 |     8 |     0 |    2 |
+2026-03-22 09:23:12,914 [INFO][ips_offload] | Yu-wei Chen   |    0 |    8 |    0 |    0 |     0 |     6 |    2 |
+2026-03-22 09:23:12,914 [INFO][ips_offload] | Jonathan Tsao |    0 |    1 |    0 |    1 |     0 |     1 |    1 |
+2026-03-22 09:23:12,914 [INFO][ips_offload] +---------------+------+------+------+------+-------+-------+------+
+2026-03-22 09:23:12,914 [INFO][ips_offload] No reporters exceed threshold (15).
+2026-03-22 09:23:12,916 [INFO][ips_offload] Pending offload reminders skipped: 2 pending entrie(s) no longer require offload based on current load.
+2026-03-22 09:23:12,916 [INFO][ips_offload] Sending informational notification: no reporters exceed threshold (15).
+2026-03-22 09:23:12,916 [INFO][ips_offload] Current load:
+- Timdaway Lai: 16 current issues
+- Frank Lee: 14 current issues
+- Charles Chu: 10 current issues
+- Frank Yang: 10 current issues
+- Brenton Wu: 8 current issues
+- Zhiqiang Cai: 8 current issues
+- Steven1 Chen: 7 current issues
+- Tonyx Yeh: 7 current issues
+- Jackx Lee: 6 current issues
+- Matt Chen: 6 current issues
+- Bingyue Sun: 5 current issues
+- Juan Zou: 5 current issues
+- Wesley Kuo: 5 current issues
+- Kj Fang: 3 current issues
+- Leo Chiang: 2 current issues
+- Yu-wei Chen: 2 current issues
+- Jonathan Tsao: 1 current issues
+2026-03-22 09:23:12,917 [INFO][ips_offload] Graph auth mode: delegated
+2026-03-22 09:23:13,916 [INFO][ips_offload] No email sent: no pending reminder and no recommendation/info content.
+[Config] Using GRAPH_CLIENT_SECRET from environment/.env.
+[Auth] Using cached Graph delegated token.
+[INFO] Finished with exit code 0
+[INFO] Exit code: 0
+[INFO] ===== Offload scheduler end =====

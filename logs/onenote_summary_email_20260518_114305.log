@@ -1,0 +1,51 @@
+[INFO] ===== OneNote summary email start =====
+[INFO] Timestamp: Mon 05/18/2026 11:43:05.94
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\
+[INFO] Current dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat
+[INFO] Command: python Meeting_agenda_OneNote.py --send-email 
+C:\Python314\python.exe
+C:\Users\jtsao1\AppData\Local\Microsoft\WindowsApps\python.exe
+C:\Users\jtsao1\AppData\Local\Python\bin\python.exe
+[Config] Using GRAPH_CLIENT_SECRET from environment/.env.
+[Config] Using GNAI_TOKEN from environment/.env.
+[Auth] Using cached Graph delegated token.
+[Lookup] Using section id: 1-03f44d4c-a88a-418f-a72c-bb3afec2d7b5
+[Lookup] No page title provided. Using latest page: 'WW20'26' (id: 1-2e6151b76ac40ec41e2893c28aa3533a!1-03f44d4c-a88a-418f-a72c-bb3afec2d7b5) created at 2026-05-04T19:01:38.033Z
+[OCR] Found 2 image(s); sending to VLM at http://localhost:11434...
+[OK] Saved summary to: onenote_summary.md
+
+=== Page Summary (GNAI) ===
+
+Executive Summary  
+The notes for WW20'26 focus on negotiations and compliance related to GPS and WiFi/GPS bundles. The team is seeking data to assess bundle value, aiming for a 10% discount, and considering alternative options if a better deal cannot be secured before year-end. There is an emphasis on getting AOS to properly value the WiFi/GPS bundles.
+
+---
+
+### Key Points
+- 100% compliance achieved on GPS bundles (credit given to a team member).
+- Data requested on WiFi/GPS bundles vs. GPS-only to assess bundle value.
+- Need for AOS to recognize the value of WiFi/GPS bundles.
+- Negotiation for a 10% discount on bundle price.
+- Exploring other options if a better deal is not secured.
+- Target to secure improved deal before end of year.
+
+### Decisions
+- None
+
+### Action Items
+- Request data on WiFi/GPS bundles vs. GPS-only (owner not specified).
+- Get AOS to value WiFi/GPS bundles (owner not specified).
+- Negotiate for a 10% discount on bundle price (owner not specified).
+
+### Risks/Blockers
+- Potential inability to secure a better deal before year-end.
+- AOS may not properly value WiFi/GPS bundles.
+
+### Open Questions
+- Who owns each action item?
+- What are the alternative options if a better deal is not secured?
+- What specific data is needed for bundle valuation?
+
+[OK] Email sent via Graph to: frank.lee@intel.com, zhiqiang.cai@intel.com, nicky.chen@intel.com, charles.p.chu@intel.com, kj.fang@intel.com, timdaway.lai@intel.com, frank.fc.yang@intel.com, matt.chen@intel.com, steven1.chen@intel.com, yu-wei.chen@intel.com, jackx.lee@intel.com, wesley.kuo@intel.com, bingyue.sun@intel.com, juan.zou@intel.com, arielx.fan@intel.com, brenton.wu@intel.com, wei-ling.chi@intel.com, yuan-yuan.tu@intel.com, cce.wireless.ce.cfe.wifi.gb@intel.com, cce.wireless.ce.cfe.bt.gb@intel.com (cc: jonathan.tsao@intel.com)
+[INFO] Exit code: 0
+[INFO] ===== OneNote summary email end =====

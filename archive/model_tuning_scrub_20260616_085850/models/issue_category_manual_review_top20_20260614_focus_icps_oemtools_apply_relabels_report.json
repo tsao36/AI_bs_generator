@@ -1,0 +1,20 @@
+{
+  "requested_updates": 2,
+  "applied_updates": 2,
+  "unmatched": [],
+  "ambiguous": [],
+  "applied": [
+    {
+      "source_file": "CFE_reviewed_issue\\bt_software_piece_05_of_07_Leo.csv",
+      "ips_title": "Device Information Service - MDUT FW version doesnt match.",
+      "from": "ICPS",
+      "to": "Need-Triage"
+    },
+    {
+      "source_file": "CFE_reviewed_issue\\bt_software_piece_02_of_07_Juan.csv",
+      "ips_title": "Slow response and freezes",
+      "from": "ICPS",
+      "to": "system hang"
+    }
+  ]
+}

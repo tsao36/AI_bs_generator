@@ -1,0 +1,30 @@
+{
+  "input_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\CFE_input",
+  "rows_total": 689,
+  "rows_used": 675,
+  "dropped_rare_labels": [
+    "Layout",
+    "Miracast",
+    "Roaming",
+    "Schematic",
+    "WowLAN",
+    "audio"
+  ],
+  "test_size": 0.2,
+  "random_state": 42,
+  "models": [
+    {
+      "model": "LogisticRegression",
+      "accuracy": 0.7851851851851852,
+      "macro_f1": 0.734600111183404,
+      "weighted_f1": 0.7892557065189411
+    },
+    {
+      "model": "LinearSVC",
+      "accuracy": 0.8296296296296296,
+      "macro_f1": 0.7575728201337957,
+      "weighted_f1": 0.826117807215368
+    }
+  ],
+  "best_model": "LinearSVC"
+}

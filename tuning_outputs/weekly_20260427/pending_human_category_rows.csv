@@ -1,0 +1,39 @@
+assignee_email,assignee_team,technology,created_date,ips_title
+frank.lee@intel.com,other,,2026-04-21,Request for EU (RED/EMC) and Korea (KC) Regulatory Certificates and Test Reports
+frank.lee@intel.com,wifi,WiFi,2026-04-22,[Lenovo ideapad ][LCFC][V gen 7 WCL][be213] BIOS WGDS shetting invalid
+zhiqiang.cai@intel.com,wifi,WiFi,2026-04-20,[ASUS_CCBU][BE211][B9406CAA] Teams call will drop when wifi connecting.
+charles.p.chu@intel.com,wifi,WiFi,2026-04-23,[DELL][Field]Intel(R) Wi-Fi 7 BE200 is unable to connect WIFI-6E 6GHz networks in Windows 10/11 in Macao
+kj.fang@intel.com,wifi,WiFi,2026-04-20,[Lenovo][Lunarlake][BE200][Project-T] Intermittent Wi-Fi Enable/Disable issue
+timdaway.lai@intel.com,wifi,WiFi,2026-04-20,[Honor][ZhuQue][PTL][AX211 1216@160M][High probability]
+frank.fc.yang@intel.com,wifi,WiFi,2026-04-24,[HP][IEC][Bobcats][MTL][Intel Wi-Fi 7 BE200]Randomly unable to connect to EAP-TLS network with 11r enabled
+jackx.lee@intel.com,wifi,WiFi,2026-04-20,WPA3 Security of AC9260/AC9560
+brenton.wu@intel.com,wifi,WiFi,2026-04-20,[DELL][field][AX211][BE200] Intermittent Wi-Fi disconnects with 802.11r enabled on Intel AX211/BE200 in WPA-EAP enterprise environments
+frank.lee@intel.com,wifi,WiFi,2026-04-24,[HP][IEC][Bobcats][MTL][Intel Wi-Fi 7 BE200] Wi-Fi signals keep fluctuating on the laptop resulting in slow connection and packet drops
+zhiqiang.cai@intel.com,wifi,WiFi,2026-04-22,3LS - SIP129540 - EB 640 G11(Rex 14) & 630G11/ W11 22H2 / GC / SF / Intel wireless AX211 suffering from heavy packet loss intermittently/PC APJ/
+charles.p.chu@intel.com,wifi,WiFi,2026-04-21,[HP][Wistron][ 26C1_Chiharu_PTL][H12XE][WHP2[Win11 25H2 Build 26200.7462] Intel Dual Bluetooth PCI Enumerator Shows Yellow Bang (Code 10) with Event Error 5002  Netwaw18.sys
+matt.chen@intel.com,bt,BT,2026-04-21,[xiaomi][huaqin][N56SR/N57SR][PTL-H][AX211] BSOD 0xE6 during FCT test leaves AX211 Bluetooth in unrecoverable yellow bang state on Panther Lake
+steven1.chen@intel.com,bt,BT,2026-04-20,"[HP][Quanta]-[Trekker][LNL/ARL/RPL/PTL][Win11 25H2] ""Declarative Driver Check"" show fail after running Declarative Driver Check test with MSFTAuditHub_PS_1.00_A3"
+yu-wei.chen@intel.com,bt,BT,2026-04-21,"[Lenovo][Poseidon][PTL][Win11][SVT]The Event log show  Warning Code 14 when running user scenario test after connecting to Microsoft BT Mouse/Keyboard.(F/R:2/2units,4/4cycles)"
+kj.fang@intel.com,wifi,WiFi,2026-04-20,[DELL][Field] Wi-Fi issue : Connection failure with 802.11r on
+wesley.kuo@intel.com,bt,BT,2026-04-23,[Samsung][GB6-16 PTL][GfP2] PC snatches the connection of Buds4 from Phone
+timdaway.lai@intel.com,wifi,WiFi,2026-04-22,[VAIO][Quanta][WCL][TRC][BE211] System BSOD 0xD1 when doing idle.(FAILURE_BUCKET_ID: AV_Netwaw18!unknown_function)
+bingyue.sun@intel.com,bt,BT,2026-04-21,[Lenovo ThinkPad][Avon/PTL/BE211][PCI][25H2] Short Audio Cues does not Play When Using Bluetooth Headset
+zhiqiang.cai@intel.com,other,Software,2026-04-22,NetworkService fails to start after inf install with new root location
+juan.zou@intel.com,bt,BT,2026-04-20,[xiaomi][huaqin][N56SR/N57SR][PTL-H][AX211] BSOD 0xE6
+brenton.wu@intel.com,bt,BT,2026-04-22,[Microsoft][UID 1292890][PTL/FmP/OOB 26581][PAS] LE earbuds disconnects intermittently during the PAS streaming with TCPRx iperf traffic and HID(mouse connected)
+charles.p.chu@intel.com,other,Tools,2026-04-20,[DELL][Compal]ADL Ant tool not work
+kj.fang@intel.com,other,Software,2026-04-26,"[ICPS5, CMD] ICPS didnt switch to better network when auto switch enabled - Sometimes"
+timdaway.lai@intel.com,other,Software,2026-04-24,[Lenovo][ICPS5.0][BDBA] Vulnerabilities on .Net 4.6/6.1 with C23
+frank.fc.yang@intel.com,other,Software,2026-04-22,[Lenovo][ICPS5] ICPS is not in system tray after booting and cannot open UI successfully
+jackx.lee@intel.com,other,Software,2026-04-22,[Dynabook] ICPS appx (50.26.401.224) installation failed via install.bat
+leo.chiang@intel.com,bt,BT,2026-04-21,[WHQL][25H2] [BIOS R0070WC][HLK 26100.7705]Bluetooth - Audio - Voice interrupt m
+frank.fc.yang@intel.com,wifi,wifi,,Auth failed when doing connect and ping stress test
+jackx.lee@intel.com,wifi,wifi,,Restricted mode long reconnection time after resume from sleep
+brenton.wu@intel.com,wifi,wifi,,TyP2 6GHz output power 2-5dBm drop on conductive test (3/19 and 4/16)
+frank.lee@intel.com,wifi,wifi,,"The result show fail when running Stress-WiFi Ping (S4) test.(F/R:11/40units,13/4000cycles)"
+zhiqiang.cai@intel.com,wifi,wifi,,System cant found 6Ghz mobile hotspot.
+charles.p.chu@intel.com,wifi,wifi,,"Roaming failed twice, with two failed attempts to reconnect to the 5G hotspot. F/R: 1/1u, 2/50C"
+kj.fang@intel.com,wifi,wifi,,"[Haier][Wingtech][G1][ADL-P][Ax210][21H2]With the PC connection to the WiFi for a long-time suspension test, the WLAN driver has a loss problem [3 / 3]"
+timdaway.lai@intel.com,wifi,wifi,,2.4G DRTU Target power difference at the same SKU
+frank.fc.yang@intel.com,wifi,wifi,,Wireless WiFi is lost on 23.160
+jackx.lee@intel.com,wifi,wifi,,Mobile hotspot cannot be opened when selecting 5GHz band

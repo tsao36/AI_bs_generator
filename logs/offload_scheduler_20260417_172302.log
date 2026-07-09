@@ -1,0 +1,61 @@
+[INFO] ===== Offload scheduler start =====
+[INFO] Timestamp: Fri 04/17/2026 17:23:02.35
+[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\
+[INFO] Current dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat
+C:\Python314\python.exe
+C:\Users\jtsao1\AppData\Local\Microsoft\WindowsApps\python.exe
+C:\Users\jtsao1\AppData\Local\Python\bin\python.exe
+[INFO] GRAPH_AUTH_MODE=delegated
+[INFO] GRAPH_SENDER_UPN=frank.lee@intel.com
+[INFO] OFFLOAD_RECEIVER_MAX_ISSUES=10
+[INFO] OFFLOAD_ALWAYS_EXCLUDED_REPORTERS=Jonathan Tsao
+[INFO] Running offload_reporter_issues.py --send-email
+[INFO] OFFLOAD_ALWAYS_EXCLUDED_REPORTERS=Jonathan Tsao
+2026-04-17 17:23:08,686 [INFO][ips_offload] Included 19 allowed reporter(s) with zero current issues for receiver rotation.
+2026-04-17 17:23:09,206 [INFO][ips_offload] Current issue calculation breakdown per reporter:
+2026-04-17 17:23:13,002 [INFO][ips_offload] Weighted loading trial enabled for visibility; offload decision remains based on Curr.
+2026-04-17 17:23:13,004 [INFO][ips_offload] Combined trial table (single table with category columns, decision still uses Curr):
+2026-04-17 17:23:13,004 [INFO][ips_offload] +--------------+------+------+------+-----------+-----------+-------+------------------+-------+------+------+--------------+-----+------+-----+--------+------+----------+-----------+-------------+-------------------+-------------------+---------+---------+-------------+------+------+--------+---------+--------------+
+2026-04-17 17:23:13,004 [INFO][ips_offload] | Name         | uIPS | uHSD | Jira | Stale IPS | Stale HSD | Total | Weighted Loading | Audio | BIOS | BSOD | Connectivity | HLK | ICPS | IOP | Killer | MSFT | Miracast | OEM Tools | Performance | Power Consumption | Power on sequence | Roaming | Sensing | System Hang | UEFI | WAPI | WowLAN | YB/Lost | Needs-Triage |
+2026-04-17 17:23:13,005 [INFO][ips_offload] +--------------+------+------+------+-----------+-----------+-------+------------------+-------+------+------+--------------+-----+------+-----+--------+------+----------+-----------+-------------+-------------------+-------------------+---------+---------+-------------+------+------+--------+---------+--------------+
+2026-04-17 17:23:13,005 [INFO][ips_offload] | Leo Chiang   |    0 |   15 |    0 |         0 |         2 |    13 |            13.00 |     0 |    0 |    0 |            0 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |            0 |
+2026-04-17 17:23:13,005 [INFO][ips_offload] | Tonyx Yeh    |    0 |    0 |    7 |         0 |         0 |     7 |            13.92 |     1 |    0 |    0 |            6 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |            0 |
+2026-04-17 17:23:13,005 [INFO][ips_offload] | Timdaway Lai |    0 |   11 |    0 |         0 |         7 |     4 |             4.00 |     0 |    0 |    0 |            0 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |            0 |
+2026-04-17 17:23:13,005 [INFO][ips_offload] | Kj Fang      |    1 |    0 |    0 |         1 |         0 |     0 |             0.00 |     0 |    0 |    0 |            0 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |            0 |
+2026-04-17 17:23:13,005 [INFO][ips_offload] | Steven1 Chen |    1 |    0 |    0 |         1 |         0 |     0 |             0.00 |     0 |    0 |    0 |            0 |   0 |    0 |   0 |      0 |    0 |        0 |         0 |           0 |                 0 |                 0 |       0 |       0 |           0 |    0 |    0 |      0 |       0 |            0 |
+2026-04-17 17:23:13,005 [INFO][ips_offload] +--------------+------+------+------+-----------+-----------+-------+------------------+-------+------+------+--------------+-----+------+-----+--------+------+----------+-----------+-------------+-------------------+-------------------+---------+---------+-------------+------+------+--------+---------+--------------+
+2026-04-17 17:23:13,005 [INFO][ips_offload] Offload decision mode: Curr
+2026-04-17 17:23:13,611 [WARNING][ips_offload] No new IPS case found in Jonathan queue after history filtering.
+2026-04-17 17:23:13,613 [INFO][ips_offload] Sending informational notification: no queue case available for recommendation.
+2026-04-17 17:23:13,613 [INFO][ips_offload] Current load:
+- Bing Chang: 0.00 current issues
+- Bingyue Sun: 0.00 current issues
+- Brenton Wu: 0.00 current issues
+- Charles Chu: 0.00 current issues
+- Frank Lee: 0.00 current issues
+- Frank Yang: 0.00 current issues
+- Henryx Su: 0.00 current issues
+- Jackx Lee: 0.00 current issues
+- Johnsonx Su: 0.00 current issues
+- Juan Zou: 0.00 current issues
+- Kj Fang: 0.00 current issues
+- Leaweix Chen: 0.00 current issues
+- Lydiax Chien: 0.00 current issues
+- Matt Chen: 0.00 current issues
+- Steven1 Chen: 0.00 current issues
+- Wesley Kuo: 0.00 current issues
+- Xihaox Yang: 0.00 current issues
+- Yu-wei Chen: 0.00 current issues
+- Zhanying Gao: 0.00 current issues
+- Zhiqiang Cai: 0.00 current issues
+- Zhiwei He: 0.00 current issues
+- Timdaway Lai: 4.00 current issues
+- Tonyx Yeh: 7.00 current issues
+- Leo Chiang: 13.00 current issues
+2026-04-17 17:23:13,613 [INFO][ips_offload] Graph auth mode: delegated
+2026-04-17 17:23:16,102 [INFO][ips_offload] No email sent: no pending reminder and no recommendation/info content.
+[Config] Using GRAPH_CLIENT_SECRET from environment/.env.
+[Auth] Using cached Graph delegated token.
+[INFO] Finished with exit code 0
+[INFO] Exit code: 0
+[INFO] ===== Offload scheduler end =====

@@ -1,0 +1,52 @@
+﻿Issue key,Technology,Year,Model Category,Root Cause Theme,Root Cause
+WIFI-870206,WIFI,2026,YB/Lost,Power State / Reset / PLDR,"ROM asserts are not recoverable and should be treated as fatal.
+Product reset will be triggered immediately
+"
+WIFI-863547,WIFI,2026,BSOD,State Machine / Flow Handling,"[BUGFIX] Fix surface sar table size and bound flat array copy
+
+Description: Update surface sar initialization and table conversion paths in
+platform sar modules and add a sar bios test for radio off boot
+per antenna config set flow on uhb platforms
+
+These changes set table size from bios metadata and bound flat
+array writes to prevent stack buffer overwrite when fw is not
+operational and per antenna config set runs after radio off boot
+
+The issue: Surface sar per antenna config set on uhb could
+write beyond destination buffer and corrupt stack state when
+source table size remained zero after radio off boot
+
+The buggy flow: During radio off initialization fw command
+failure left source table size unset then per antenna config set
+converted data with four chain writes into a two chain surface
+buffer
+
+The fix: Persist surface table size from bios during init and
+pass dest array size to bounded conversion so cdb chain writes
+run only when buffer capacity allows
+
+This commit message was generated using AI.
+
+DeliveryType: BugFix - JIRA bug fix
+
+BugOrigin: Code Change – Req Imp (SAS or FCM)
+
+BugFoundBy: Microsoft
+
+FcmPrevented: No
+
+Issues: WIFI-863547
+
+ExCr: Full PerCI
+
+UnitTest: Added
+
+CommitFormatterSha: 805340ecc792f0fc7f1622ac32e8ba5c
+
+Change-Id: Ibc06731916244f955761af5ba804211aba2900c8
+"
+WIFI-891080,WIFI,2026,Connectivity,Driver-OS Interface / API / OID,"There was a function called tryWaitForSingleWlanext which waited for a single instance of wlanext.exe, and it just froze RouterDLL initialization until there is a single instance which eventually crashed wlanext.exe."
+BT-470036,BT,2026,YB/Lost,Insufficient Root-Cause Detail,"InstaDock timer state persisted across power cycles due to incomplete cleanup during device power transitions and removal events, leading to potential Bluetooth connectivity loss."
+BT-477053,BT,2026,Connectivity,Insufficient Root-Cause Detail,"Being in Peripheral role, our device was unable to sync to
+Central for sometime. This was due to a WA in our code
+not to allow piconet time info."
