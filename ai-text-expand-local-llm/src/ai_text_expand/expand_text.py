@@ -34,6 +34,81 @@ TARGET_SENTENCE_COUNTS = {
     "paragraph": 10,
 }
 
+SUPPORTED_LANGUAGE_HINTS = {
+    "auto",
+    "english",
+    "chinese",
+    "japanese",
+    "korean",
+    "mixed",
+}
+
+
+def detect_language_hint(text: str) -> str:
+    if not text.strip():
+        return "unknown"
+
+    counts = {
+        "english": 0,
+        "chinese": 0,
+        "japanese": 0,
+        "korean": 0,
+    }
+
+    for ch in text:
+        code = ord(ch)
+        if (0x0041 <= code <= 0x005A) or (0x0061 <= code <= 0x007A):
+            counts["english"] += 1
+        elif 0x4E00 <= code <= 0x9FFF:
+            counts["chinese"] += 1
+        elif (0x3040 <= code <= 0x30FF) or (0x31F0 <= code <= 0x31FF):
+            counts["japanese"] += 1
+        elif 0xAC00 <= code <= 0xD7AF:
+            counts["korean"] += 1
+
+    dominant_language = max(counts, key=counts.get)
+    dominant_count = counts[dominant_language]
+    total = sum(counts.values())
+    if total == 0 or dominant_count == 0:
+        return "unknown"
+
+    dominance_ratio = dominant_count / total
+    if dominance_ratio < 0.6:
+        return "mixed"
+    return dominant_language
+
+
+def normalize_language_hint(value: str) -> str:
+    normalized = value.strip().lower().replace("_", "-")
+    aliases = {
+        "en": "english",
+        "en-us": "english",
+        "en-gb": "english",
+        "zh": "chinese",
+        "zh-cn": "chinese",
+        "zh-tw": "chinese",
+        "ja": "japanese",
+        "ko": "korean",
+    }
+    normalized = aliases.get(normalized, normalized)
+    if normalized in SUPPORTED_LANGUAGE_HINTS:
+        return normalized
+    return "auto"
+
+
+def build_language_instruction(language_hint: str) -> str:
+    if language_hint == "english":
+        return "Detected input language: English. Output must be in English only."
+    if language_hint == "chinese":
+        return "Detected input language: Chinese. Output must be in Chinese only."
+    if language_hint == "japanese":
+        return "Detected input language: Japanese. Output must be in Japanese only."
+    if language_hint == "korean":
+        return "Detected input language: Korean. Output must be in Korean only."
+    if language_hint == "mixed":
+        return "Detected input language: Mixed. Keep the same language mix and proportions as the selected text."
+    return "Detected input language is unclear. Use the same language as the selected text and do not translate."
+
 
 def is_local_ollama_endpoint(ollama_url: str) -> bool:
     parsed = urlparse(ollama_url)
@@ -88,17 +163,29 @@ def count_sentences(text: str) -> int:
     return 1
 
 
-def build_user_prompt(text: str, length_mode: str) -> str:
-    return f"{LENGTH_INSTRUCTIONS[length_mode]}\n\nSelected text:\n{text}"
+def build_user_prompt(text: str, length_mode: str, language_hint: str) -> str:
+    language_instruction = build_language_instruction(language_hint)
+    return (
+        f"{LENGTH_INSTRUCTIONS[length_mode]}\n"
+        f"{language_instruction}\n\n"
+        f"Selected text:\n{text}"
+    )
 
 
-def build_correction_prompt(original_text: str, previous_output: str, target_count: int) -> str:
+def build_correction_prompt(
+    original_text: str,
+    previous_output: str,
+    target_count: int,
+    language_hint: str,
+) -> str:
     actual_count = count_sentences(previous_output)
+    language_instruction = build_language_instruction(language_hint)
     return (
         f"The previous rewrite had {actual_count} sentence(s), but it must have exactly "
         f"{target_count} sentence(s). Rewrite it again. Return exactly {target_count} complete "
         "sentences, with no bullets, numbering, labels, explanations, or markdown. "
-        "Preserve the meaning, tone, and language of the selected text.\n\n"
+        "Preserve the meaning, tone, and language of the selected text. "
+        f"{language_instruction}\n\n"
         f"Selected text:\n{original_text}\n\nPrevious rewrite:\n{previous_output}"
     )
 
@@ -167,10 +254,13 @@ def expand_with_ollama(
     timeout_seconds: int,
     length_mode: str,
     num_gpu: int,
+    output_language: str,
 ) -> str:
+    configured_language = normalize_language_hint(output_language)
+    language_hint = detect_language_hint(text) if configured_language == "auto" else configured_language
     messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
-        {"role": "user", "content": build_user_prompt(text, length_mode)},
+        {"role": "user", "content": build_user_prompt(text, length_mode, language_hint)},
     ]
 
     result = send_ollama_chat(messages, model, ollama_url, timeout_seconds, num_gpu)
@@ -184,7 +274,10 @@ def expand_with_ollama(
 
         messages = [
             {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": build_correction_prompt(text, result, target_count)},
+            {
+                "role": "user",
+                "content": build_correction_prompt(text, result, target_count, language_hint),
+            },
         ]
         result = send_ollama_chat(messages, model, ollama_url, timeout_seconds, num_gpu)
 
@@ -231,6 +324,7 @@ def main() -> int:
         ollama_url = get_setting(config, "OLLAMA_BASE_URL", DEFAULT_OLLAMA_URL)
         timeout_seconds = int(config.get("timeout_seconds", 90))
         num_gpu = get_int_setting(config, "OLLAMA_NUM_GPU", DEFAULT_NUM_GPU)
+        output_language = get_setting(config, "LOCAL_LLM_OUTPUT_LANGUAGE", "auto")
         expanded_text = expand_with_ollama(
             selected_text,
             model,
@@ -238,6 +332,7 @@ def main() -> int:
             timeout_seconds,
             args.length,
             num_gpu,
+            output_language,
         )
         output_path.write_text(expanded_text, encoding="utf-8")
     except Exception as exc:  # noqa: BLE001
