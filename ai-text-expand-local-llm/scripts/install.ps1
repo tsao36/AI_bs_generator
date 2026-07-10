@@ -107,6 +107,26 @@ function Set-ProxyEnvironment($proxyUrl)
     Write-Host "Using proxy for downloads: $proxyUrl"
 }
 
+function Enable-OllamaIntelGpuIfAvailable()
+{
+    try {
+        $intelGpu = Get-CimInstance Win32_VideoController |
+            Where-Object {
+                ($_.Name -match "Intel") -and
+                ($_.Name -match "Arc|Iris|Graphics")
+            } |
+            Select-Object -First 1
+
+        if ($intelGpu) {
+            $env:OLLAMA_IGPU_ENABLE = "1"
+            [Environment]::SetEnvironmentVariable("OLLAMA_IGPU_ENABLE", "1", "User")
+            Write-Host "Enabled Ollama Intel GPU acceleration preference (OLLAMA_IGPU_ENABLE=1)."
+        }
+    } catch {
+        Write-Warning "Could not detect GPU for Ollama iGPU setting. Continuing..."
+    }
+}
+
 function Get-PythonCommand()
 {
     $python = Get-Command python -ErrorAction SilentlyContinue
@@ -284,6 +304,8 @@ if ($NoProxy) {
 } else {
     Set-ProxyEnvironment $Proxy
 }
+
+Enable-OllamaIntelGpuIfAvailable
 
 $python = Get-PythonCommand
 if (-not $python) {
