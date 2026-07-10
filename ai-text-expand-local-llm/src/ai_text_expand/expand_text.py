@@ -38,10 +38,19 @@ SUPPORTED_LANGUAGE_HINTS = {
     "auto",
     "english",
     "chinese",
+    "chinese-traditional",
+    "chinese-simplified",
     "japanese",
     "korean",
     "mixed",
 }
+
+TRADITIONAL_ONLY_CHARS = set(
+    "體臺萬與專業為這來時會個們說對學習機會開發測試網路軟體資料應該問題處理"  # common Traditional-only forms
+)
+SIMPLIFIED_ONLY_CHARS = set(
+    "体台万与专业为这来时会个们说对学习机会开发测试网络软件资料应该问题处理"  # common Simplified-only forms
+)
 
 
 def detect_language_hint(text: str) -> str:
@@ -85,8 +94,13 @@ def normalize_language_hint(value: str) -> str:
         "en-us": "english",
         "en-gb": "english",
         "zh": "chinese",
-        "zh-cn": "chinese",
-        "zh-tw": "chinese",
+        "zh-cn": "chinese-simplified",
+        "zh-hans": "chinese-simplified",
+        "simplified": "chinese-simplified",
+        "zh-tw": "chinese-traditional",
+        "zh-hk": "chinese-traditional",
+        "zh-hant": "chinese-traditional",
+        "traditional": "chinese-traditional",
         "ja": "japanese",
         "ko": "korean",
     }
@@ -96,11 +110,33 @@ def normalize_language_hint(value: str) -> str:
     return "auto"
 
 
+def detect_chinese_script(text: str) -> str:
+    traditional_count = 0
+    simplified_count = 0
+    for ch in text:
+        if ch in TRADITIONAL_ONLY_CHARS:
+            traditional_count += 1
+        elif ch in SIMPLIFIED_ONLY_CHARS:
+            simplified_count += 1
+
+    if traditional_count == 0 and simplified_count == 0:
+        return "unknown"
+    if traditional_count > simplified_count:
+        return "traditional"
+    if simplified_count > traditional_count:
+        return "simplified"
+    return "unknown"
+
+
 def build_language_instruction(language_hint: str) -> str:
     if language_hint == "english":
         return "Detected input language: English. Output must be in English only."
     if language_hint == "chinese":
-        return "Detected input language: Chinese. Output must be in Chinese only."
+        return "Detected input language: Chinese. Output must be in Chinese only and do not translate."
+    if language_hint == "chinese-traditional":
+        return "Detected input language: Traditional Chinese. Output must be Traditional Chinese only. Do not use Simplified Chinese characters."
+    if language_hint == "chinese-simplified":
+        return "Detected input language: Simplified Chinese. Output must be Simplified Chinese only. Do not use Traditional Chinese characters."
     if language_hint == "japanese":
         return "Detected input language: Japanese. Output must be in Japanese only."
     if language_hint == "korean":
@@ -258,6 +294,12 @@ def expand_with_ollama(
 ) -> str:
     configured_language = normalize_language_hint(output_language)
     language_hint = detect_language_hint(text) if configured_language == "auto" else configured_language
+    if language_hint == "chinese":
+        chinese_script = detect_chinese_script(text)
+        if chinese_script == "traditional":
+            language_hint = "chinese-traditional"
+        elif chinese_script == "simplified":
+            language_hint = "chinese-simplified"
     messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user", "content": build_user_prompt(text, length_mode, language_hint)},

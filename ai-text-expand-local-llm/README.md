@@ -113,8 +113,9 @@ The default config is in `config.example.json`:
 To confirm runtime device, run `ollama ps` and check the `PROCESSOR` column.
 
 `LOCAL_LLM_OUTPUT_LANGUAGE` controls language alignment for rewritten output.
-Supported values: `auto` (default), `english`, `chinese`, `japanese`, `korean`, `mixed`.
+Supported values: `auto` (default), `english`, `chinese`, `chinese-traditional`, `chinese-simplified`, `japanese`, `korean`, `mixed`.
 When set to `auto`, the tool detects input language and keeps output aligned. You can force a language by setting a specific value.
+You can also use aliases such as `zh-tw`/`zh-hant` (Traditional) and `zh-cn`/`zh-hans` (Simplified).
 
 You can change the model name if you prefer another local model, such as `qwen2.5:7b`, `llama3.1:8b`, or another model installed in Ollama. Instruction-tuned models usually follow the length options more reliably.
 
