@@ -28,6 +28,7 @@ LastErrorPath := LogsDir "\\last_error.txt"
 GitHubDistPageUrl := "https://github.com/tsao36/AI_bs_generator/tree/main/ai-text-expand-local-llm/dist"
 
 global SelectedText := ""
+global SelectionWindowId := 0
 global ProgressTick := 0
 global ProgressLabel := ""
 global ProgressModel := ""
@@ -55,7 +56,7 @@ GetCommandPath(commandName)
 #HotIf IsSupportedBrowser()
 RButton::
 {
-    global SelectedText
+    global SelectedText, SelectionWindowId
 
     selected := CopySelectedText()
     if (selected = "") {
@@ -64,7 +65,7 @@ RButton::
     }
 
     SelectedText := selected
-    MouseGetPos &mouseX, &mouseY
+    MouseGetPos &mouseX, &mouseY, &SelectionWindowId
     ContextMenu.Show(mouseX, mouseY)
 }
 #HotIf
@@ -148,9 +149,37 @@ ExpandWithLocalAI(lengthMode, lengthLabel)
 
     A_Clipboard := expanded
 
+    didAutoPaste := TryAutoPasteToOriginalWindow()
+
     TryDelete(errorFile)
-    ShowStatusNearMouse("Your words are expanded and can be pasted", 4500)
+    if didAutoPaste {
+        ShowStatusNearMouse("Your words are expanded and pasted", 4500)
+    } else {
+        ShowStatusNearMouse("Your words are expanded and can be pasted", 4500)
+    }
     SoundBeep 1200, 80
+}
+
+TryAutoPasteToOriginalWindow()
+{
+    global SelectionWindowId
+
+    if (SelectionWindowId = 0) {
+        return false
+    }
+
+    MouseGetPos ,, &currentMouseWindowId
+    if (currentMouseWindowId != SelectionWindowId) {
+        return false
+    }
+
+    activeWindowId := WinExist("A")
+    if (activeWindowId != SelectionWindowId) {
+        return false
+    }
+
+    Send "^v"
+    return true
 }
 
 ShowNativeContextMenu(*)
