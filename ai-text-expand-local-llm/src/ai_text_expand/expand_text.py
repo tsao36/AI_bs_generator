@@ -44,7 +44,9 @@ def is_local_ollama_endpoint(ollama_url: str) -> bool:
 def load_config(config_path: Path | None) -> dict[str, Any]:
     if config_path is None or not config_path.exists():
         return {}
-    return json.loads(config_path.read_text(encoding="utf-8"))
+    # Accept UTF-8 BOM because some Windows write paths (e.g. PowerShell Set-Content)
+    # may emit BOM-prefixed JSON.
+    return json.loads(config_path.read_text(encoding="utf-8-sig"))
 
 
 def get_setting(config: dict[str, Any], name: str, default: str) -> str:
