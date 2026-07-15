@@ -29,6 +29,10 @@ GitHubDistPageUrl := "https://github.com/tsao36/AI_bs_generator/tree/main/ai-tex
 
 global SelectedText := ""
 global SelectionWindowId := 0
+global NativeMenuPassThroughMs := 1500
+global LastNativeRightClickTick := 0
+global LastNativeRightClickText := ""
+global LastNativeRightClickWindowId := 0
 global ProgressTick := 0
 global ProgressLabel := ""
 global ProgressModel := ""
@@ -56,16 +60,37 @@ GetCommandPath(commandName)
 #HotIf IsSupportedBrowser()
 RButton::
 {
-    global SelectedText, SelectionWindowId
+    global SelectedText, SelectionWindowId, NativeMenuPassThroughMs
+    global LastNativeRightClickTick, LastNativeRightClickText, LastNativeRightClickWindowId
 
     selected := CopySelectedText()
     if (selected = "") {
+        LastNativeRightClickTick := 0
+        LastNativeRightClickText := ""
+        LastNativeRightClickWindowId := 0
         Send "{RButton}"
         return
     }
 
-    SelectedText := selected
     MouseGetPos &mouseX, &mouseY, &SelectionWindowId
+    isAiMenuRequest := LastNativeRightClickTick > 0
+        && (A_TickCount - LastNativeRightClickTick <= NativeMenuPassThroughMs)
+        && (SelectionWindowId = LastNativeRightClickWindowId)
+        && (selected = LastNativeRightClickText)
+
+    if !isAiMenuRequest {
+        LastNativeRightClickTick := A_TickCount
+        LastNativeRightClickText := selected
+        LastNativeRightClickWindowId := SelectionWindowId
+        SelectedText := selected
+        Send "{RButton}"
+        return
+    }
+
+    LastNativeRightClickTick := 0
+    LastNativeRightClickText := ""
+    LastNativeRightClickWindowId := 0
+    SelectedText := selected
     ContextMenu.Show(mouseX, mouseY)
 }
 #HotIf
