@@ -153,7 +153,7 @@ Then:
 1. Click inside a browser webpage text field.
 2. Highlight text.
 3. Right-click once to use the normal browser menu.
-4. Right-click the same selection again within 1.5 seconds to open the AI menu.
+4. Right-click the same selection again within 3 seconds to open the AI menu.
 5. Select one of the AI length options:
   - **Expand with Local AI - 2 sentences**
   - **Expand with Local AI - 5 sentences**

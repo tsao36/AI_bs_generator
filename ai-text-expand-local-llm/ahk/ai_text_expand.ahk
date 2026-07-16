@@ -29,7 +29,7 @@ GitHubDistPageUrl := "https://github.com/tsao36/AI_bs_generator/tree/main/ai-tex
 
 global SelectedText := ""
 global SelectionWindowId := 0
-global NativeMenuPassThroughMs := 1500
+global NativeMenuPassThroughMs := 3000
 global LastNativeRightClickTick := 0
 global LastNativeRightClickText := ""
 global LastNativeRightClickWindowId := 0
@@ -63,6 +63,23 @@ RButton::
     global SelectedText, SelectionWindowId, NativeMenuPassThroughMs
     global LastNativeRightClickTick, LastNativeRightClickText, LastNativeRightClickWindowId
 
+    MouseGetPos &mouseX, &mouseY, &currentWindowId
+    isAiMenuRequest := LastNativeRightClickTick > 0
+        && (A_TickCount - LastNativeRightClickTick <= NativeMenuPassThroughMs)
+        && (LastNativeRightClickText != "")
+
+    if isAiMenuRequest {
+        SelectedText := LastNativeRightClickText
+        SelectionWindowId := LastNativeRightClickWindowId
+        LastNativeRightClickTick := 0
+        LastNativeRightClickText := ""
+        LastNativeRightClickWindowId := 0
+        Send "{Esc}"
+        Sleep 50
+        ContextMenu.Show(mouseX, mouseY)
+        return
+    }
+
     selected := CopySelectedText()
     if (selected = "") {
         LastNativeRightClickTick := 0
@@ -72,26 +89,12 @@ RButton::
         return
     }
 
-    MouseGetPos &mouseX, &mouseY, &SelectionWindowId
-    isAiMenuRequest := LastNativeRightClickTick > 0
-        && (A_TickCount - LastNativeRightClickTick <= NativeMenuPassThroughMs)
-        && (SelectionWindowId = LastNativeRightClickWindowId)
-        && (selected = LastNativeRightClickText)
-
-    if !isAiMenuRequest {
-        LastNativeRightClickTick := A_TickCount
-        LastNativeRightClickText := selected
-        LastNativeRightClickWindowId := SelectionWindowId
-        SelectedText := selected
-        Send "{RButton}"
-        return
-    }
-
-    LastNativeRightClickTick := 0
-    LastNativeRightClickText := ""
-    LastNativeRightClickWindowId := 0
+    SelectionWindowId := currentWindowId
+    LastNativeRightClickTick := A_TickCount
+    LastNativeRightClickText := selected
+    LastNativeRightClickWindowId := SelectionWindowId
     SelectedText := selected
-    ContextMenu.Show(mouseX, mouseY)
+    Send "{RButton}"
 }
 #HotIf
 
