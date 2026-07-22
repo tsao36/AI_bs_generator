@@ -16,20 +16,24 @@ DEFAULT_OLLAMA_URL = "http://127.0.0.1:11434"
 DEFAULT_NUM_GPU = 999
 
 SYSTEM_PROMPT = (
-    "You rewrite selected text into clearer, more complete wording. "
+    "You rewrite selected text into clearer wording that matches the requested length. "
     "Strictly follow the requested output length and format. "
     "Preserve the original meaning, tone, and language. "
     "Return only the rewritten text. Do not add explanations, labels, or markdown."
 )
 
 LENGTH_INSTRUCTIONS = {
+    "one_sentence": "Output exactly 1 complete sentence. The sentence must end with sentence punctuation.",
     "two_sentences": "Output exactly 2 complete sentences. Each sentence must end with sentence punctuation.",
+    "three_sentences": "Output exactly 3 complete sentences. Each sentence must end with sentence punctuation.",
     "five_sentences": "Output exactly 5 complete sentences. Each sentence must end with sentence punctuation.",
     "paragraph": "Output exactly 10 complete sentences as one cohesive paragraph. Each sentence must end with sentence punctuation.",
 }
 
 TARGET_SENTENCE_COUNTS = {
+    "one_sentence": 1,
     "two_sentences": 2,
+    "three_sentences": 3,
     "five_sentences": 5,
     "paragraph": 10,
 }

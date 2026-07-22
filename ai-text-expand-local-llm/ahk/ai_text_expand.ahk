@@ -36,17 +36,8 @@ global LastNativeRightClickWindowId := 0
 global ProgressTick := 0
 global ProgressLabel := ""
 global ProgressModel := ""
-global ContextMenu := Menu()
-ContextMenu.Add("Expand with Local AI - 2 sentences", ExpandTwoSentences)
-ContextMenu.Add("Expand with Local AI - 5 sentences", ExpandFiveSentences)
-ContextMenu.Add("Expand with Local AI - paragraph", ExpandParagraph)
-ContextMenu.Add()
-ContextMenu.Add("Check GitHub for Latest Download", CheckGitHubForLatestDownload)
-ContextMenu.Add("Open AI Logs Folder", OpenLogsFolder)
-ContextMenu.Add("Open Last Error Log", OpenLastErrorLog)
-ContextMenu.Add("Copy Last Error Path", CopyLastErrorPath)
-ContextMenu.Add("Use Native Context Menu", ShowNativeContextMenu)
-ContextMenu.Add("Cancel", (*) => 0)
+global ShrinkWordThreshold := 30
+global ShrinkCharThreshold := 120
 
 GetCommandPath(commandName)
 {
@@ -76,7 +67,7 @@ RButton::
         LastNativeRightClickWindowId := 0
         Send "{Esc}"
         Sleep 50
-        ContextMenu.Show(mouseX, mouseY)
+        ShowAiContextMenu(mouseX, mouseY, SelectedText)
         return
     }
 
@@ -111,6 +102,73 @@ ExpandFiveSentences(*)
 ExpandParagraph(*)
 {
     ExpandWithLocalAI("paragraph", "paragraph")
+}
+
+ShrinkOneSentence(*)
+{
+    ExpandWithLocalAI("one_sentence", "1 sentence")
+}
+
+ShrinkThreeSentences(*)
+{
+    ExpandWithLocalAI("three_sentences", "3 sentences")
+}
+
+ShowAiContextMenu(mouseX, mouseY, selectedText)
+{
+    aiMenu := Menu()
+    aiMenu.Add("Expand with Local AI - 2 sentences", ExpandTwoSentences)
+    aiMenu.Add("Expand with Local AI - 5 sentences", ExpandFiveSentences)
+    aiMenu.Add("Expand with Local AI - paragraph", ExpandParagraph)
+
+    if IsLargeSelection(selectedText) {
+        aiMenu.Add()
+        aiMenu.Add("Shrink with Local AI - 1 sentence", ShrinkOneSentence)
+        aiMenu.Add("Shrink with Local AI - 3 sentences", ShrinkThreeSentences)
+    }
+
+    aiMenu.Add()
+    aiMenu.Add("Check GitHub for Latest Download", CheckGitHubForLatestDownload)
+    aiMenu.Add("Open AI Logs Folder", OpenLogsFolder)
+    aiMenu.Add("Open Last Error Log", OpenLastErrorLog)
+    aiMenu.Add("Copy Last Error Path", CopyLastErrorPath)
+    aiMenu.Add("Use Native Context Menu", ShowNativeContextMenu)
+    aiMenu.Add("Cancel", (*) => 0)
+    aiMenu.Show(mouseX, mouseY)
+}
+
+IsLargeSelection(text)
+{
+    global ShrinkWordThreshold, ShrinkCharThreshold
+
+    normalized := Trim(text)
+    if (normalized = "") {
+        return false
+    }
+
+    charCount := StrLen(normalized)
+    if (charCount >= ShrinkCharThreshold) {
+        return true
+    }
+
+    wordCount := CountWords(normalized)
+    estimatedTokenCount := Ceil(charCount / 4)
+
+    ; Handle both space-separated languages and CJK-heavy text.
+    return (wordCount >= ShrinkWordThreshold) || (estimatedTokenCount >= ShrinkWordThreshold)
+}
+
+CountWords(text)
+{
+    count := 0
+    searchPos := 1
+
+    while RegExMatch(text, "\\S+", &match, searchPos) {
+        count += 1
+        searchPos := match.Pos + match.Len
+    }
+
+    return count
 }
 
 ExpandWithLocalAI(lengthMode, lengthLabel)
