@@ -897,13 +897,34 @@ total_num_of_ips_where_Jira_already_closed = COUNTROWS(
     )
 ) //count IPS where JIRA is already closed or implemented
 ---
-total_num_of_jira = 
-// Exclude rows where IPS is close-pending OR ips_status=Closed — matches Python offload script logic.
-// Python jira_count_cond filters:
-//   1. ips_status <> 'closed'
-//   2. ips_sub_status NOT IN ('close-pending', 'pending-closed')
-// Root cause of Frank Lee discrepancy (2026-05-10): IPS=1001265 had ips_status=Closed+jira=Closed,
-// Python excluded it via ips_status filter, Power BI counted it → fixed by adding ips_status check.
+total_num_of_jira_all_status = 
+// Count all Jira keys regardless of IPS/Jira status.
+// Use this as the base measure, then slice by date/status in visuals.
+VAR _keys =
+    SELECTCOLUMNS (
+        ips_jira_bugs,
+        "jira_key",
+            VAR _jira_id = TRIM ( COALESCE ( ips_jira_bugs[jira_id], "" ) )
+            VAR _ips_jira_id = TRIM ( COALESCE ( ips_jira_bugs[ips_jira_id], "" ) )
+            RETURN
+                IF (
+                    _jira_id <> "" && UPPER ( _jira_id ) <> "NA",
+                    _jira_id,
+                    IF (
+                        _ips_jira_id <> "" && UPPER ( _ips_jira_id ) <> "NA",
+                        _ips_jira_id,
+                        BLANK ()
+                    )
+                )
+    )
+VAR _valid =
+    FILTER ( _keys, NOT ISBLANK ( [jira_key] ) )
+RETURN
+COALESCE ( COUNTROWS ( DISTINCT ( _valid ) ), 0 )
+---
+total_num_of_jira_active_only = 
+// Active-only Jira count: excludes rows where IPS is closed / close-pending / pending-closed.
+// Keep this measure when you want old offload-style logic.
 VAR _keys =
     SELECTCOLUMNS (
         FILTER (
@@ -932,6 +953,8 @@ VAR _valid =
     FILTER ( _keys, NOT ISBLANK ( [jira_key] ) )
 RETURN
 COALESCE ( COUNTROWS ( DISTINCT ( _valid ) ), 0 )
+---
+total_num_of_jira = [total_num_of_jira_all_status]
 ---
 Total_num_of_open_ips = 
 CALCULATE(
@@ -1020,6 +1043,6 @@ total_tat_days =
 <!-- Format: [YYYY-MM-DD] Description — Root cause — Resolution -->
 
 - [2026-05-10] bat shows different Total than Power BI for some reporters — Root cause: bat output was from an older run; data changed between runs (num_jira increased by 1 for Frank Lee). Both Python and Power BI showed 9 when queried at same time. Not a bug.
-- [2026-05-10] total_num_of_jira DAX updated: added FILTER to exclude rows where ips_sub_status IN {close-pending, pending-closed} OR ips_status = closed — matches Python offload script's jira_count_cond logic. Without this, Power BI counted JIRAs linked to closed/close-pending IPS rows that Python excludes.
+- [2026-07-18] total_num_of_jira changed to status-agnostic counting: include all Jira keys (jira_id fallback ips_jira_id), excluding only blank/NA keys. Status segmentation is now expected to be done via report filters/slicers (date/status/sub-status).
 - [2026-05-18] HSD rejected-count fix: `num_of_not_promoted_hsd` and `total_num_of_unpromoted_hsd` now explicitly exclude `hsd_status_reason` in {closed, complete, implemented, rejected}. This aligns current/open HSD counts with `bug_status_custom`, which already treats `rejected` as closed.
 

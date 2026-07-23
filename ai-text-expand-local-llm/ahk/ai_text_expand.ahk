@@ -87,7 +87,39 @@ RButton::
     SelectedText := selected
     Send "{RButton}"
 }
+
+!RButton::
+{
+    OpenAiMenuFromCurrentSelection(true)
+}
+
+^!a::
+{
+    OpenAiMenuFromCurrentSelection(false)
+}
 #HotIf
+
+OpenAiMenuFromCurrentSelection(fallbackToNativeWhenEmpty := false)
+{
+    global SelectedText, SelectionWindowId
+
+    MouseGetPos &mouseX, &mouseY, &currentWindowId
+    selected := CopySelectedText()
+    if (selected = "") {
+        if fallbackToNativeWhenEmpty {
+            Send "{RButton}"
+        } else {
+            ShowStatusNearMouse("Select text first to open AI menu", 1800)
+            SoundBeep 700, 60
+        }
+        return false
+    }
+
+    SelectedText := selected
+    SelectionWindowId := currentWindowId
+    ShowAiContextMenu(mouseX, mouseY, selected)
+    return true
+}
 
 ExpandTwoSentences(*)
 {

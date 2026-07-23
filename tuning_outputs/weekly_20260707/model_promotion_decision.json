@@ -1,0 +1,8 @@
+{
+  "timestamp": "20260711_013110",
+  "action": "skip",
+  "reason": "accepted labels 1 < min_new_labels 10",
+  "accepted_labels": 1,
+  "reviewed_rows": 66,
+  "weekly_dir": "C:\\Users\\jtsao1\\OneDrive - Intel Corporation\\Documents\\My workspace\\jira_ips_tat_HP\\jira_tat\\jira_customer_tat\\jobs\\01_issue_category_tuning\\..\\..\\tuning_outputs\\weekly_20260707"
+}

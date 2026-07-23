@@ -144,6 +144,9 @@ def _build_html_body(team_name: str, rows: Sequence[dict], jira_browse_base: str
         "是的，我們知道大家都很忙，忙到連 Verify 都捨不得關，"
         "但為了報表與流程健康，拜託拜託再拜託，幫我們把它們關起來，感激不盡！"
         "</p>"
+        "<div style='margin:10px 0 14px;padding:10px 12px;border:1px solid #d9534f;border-left:4px solid #b00020;background:#fff1f1;color:#7a1f1f;border-radius:4px;font-size:14px;line-height:1.6;'>"
+        "<b>重要提醒：</b>請務必在 <b>PV released</b> 之後，才關閉 Verify issue。"
+        "</div>"
     )
 
     en_header = (
@@ -153,6 +156,9 @@ def _build_html_body(team_name: str, rows: Sequence[dict], jira_browse_base: str
         f"<b>{count}</b> Jira issue(s) currently in <b>Verify</b> status. "
         "Please review and close them when appropriate."
         "</p>"
+        "<div style='margin:10px 0 14px;padding:10px 12px;border:1px solid #d9534f;border-left:4px solid #b00020;background:#fff1f1;color:#7a1f1f;border-radius:4px;font-size:14px;line-height:1.6;'>"
+        "<b>Important:</b> Please close Verify issues <b>only after PV is released</b>."
+        "</div>"
     )
 
     table_head = (

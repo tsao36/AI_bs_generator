@@ -1789,7 +1789,10 @@ def _get_most_recent_overloaded_issue(
         else:
             base_filter = f"({base_filter}) AND ({ips_sub_open_cond})"
         ips_sub_status_norm = "LOWER(REPLACE(TRIM(COALESCE(NULLIF(ips_sub_status::text, 'NA'), '')), ' ', '-'))"
-        base_filter = f"({base_filter}) AND ({ips_sub_status_norm} <> 'close-pending')"
+        base_filter = (
+            f"({base_filter}) AND "
+            f"({ips_sub_status_norm} NOT IN ('close-pending', 'pending-closed', 'pending-close'))"
+        )
     if _has(columns, "jira_status"):
         jira_open_cond = _status_open_condition("jira_status", ["closed", "implemented", "verify"])
         if hsd_open_cond:
@@ -2864,16 +2867,18 @@ def _auto_cancel_closed_case_pending_entries(
         LOG.warning("Auto-cancel closed case check failed: %s", exc)
         return 0
 
-    # Build a map: case_number -> is_closed
+    # Build a map: case_number -> is_closed_or_not_offloadable
     closed_cases: set = set()
     for row in rows:
         case_num = str(row.get("ips_case_number") or "").strip()
         ips_st = str(row.get("ips_status") or "")
         ips_sub = str(row.get("ips_sub_status") or "")
         jira_st = str(row.get("jira_status") or "")
+        ips_sub_norm = ips_sub.replace(" ", "-")
         is_closed = (
             ips_st == "closed"
             or ips_sub == "closed"
+            or ips_sub_norm in ("close-pending", "pending-closed", "pending-close")
             or jira_st in ("closed", "implemented", "verify")
         )
         if is_closed:
@@ -2888,9 +2893,9 @@ def _auto_cancel_closed_case_pending_entries(
         if case_num in closed_cases:
             entry["status"] = "cancelled"
             entry["cancelled_at"] = now_utc
-            entry["cancelled_reason"] = "IPS case is closed in DB; offload no longer applicable."
+            entry["cancelled_reason"] = "IPS case is closed/close-pending in DB; offload no longer applicable."
             LOG.info(
-                "Auto-cancelled pending offload for case %s (IPS case is now closed).", case_num
+                "Auto-cancelled pending offload for case %s (IPS case is closed/close-pending).", case_num
             )
             cancelled += 1
 
@@ -3013,7 +3018,9 @@ def _filter_pending_entries_still_need_offload(
     allowed_receivers = set(_allowed_reporters())
     for entry in pending_entries:
         trigger_reporter = str(entry.get("trigger_reporter") or entry.get("overloaded_reporter") or "")
+        overloaded_reporter = str(entry.get("overloaded_reporter") or trigger_reporter or "")
         source_norm = _normalize_reporter(trigger_reporter)
+        overloaded_norm = _normalize_reporter(overloaded_reporter)
         receiving_reporter = str(entry.get("receiving_reporter") or "")
         target_norm = _normalize_reporter(receiving_reporter)
         if not source_norm or not target_norm:
@@ -3050,7 +3057,9 @@ def _filter_pending_entries_still_need_offload(
         )
         if still_needed:
             enriched = dict(entry)
-            enriched["overloaded_count_current"] = source_current
+            # Keep email display consistent with "Giving Engineer" (= overloaded_reporter).
+            overloaded_current = float(current_count_map.get(overloaded_norm, source_current))
+            enriched["overloaded_count_current"] = overloaded_current
             enriched["receiving_count_current"] = target_current
             filtered.append(enriched)
         else:
