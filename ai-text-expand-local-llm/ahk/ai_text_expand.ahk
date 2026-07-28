@@ -166,7 +166,15 @@ ShowAiContextMenu(mouseX, mouseY, selectedText)
     aiMenu.Add("Copy Last Error Path", CopyLastErrorPath)
     aiMenu.Add("Use Native Context Menu", ShowNativeContextMenu)
     aiMenu.Add("Cancel", (*) => 0)
-    aiMenu.Show(mouseX, mouseY)
+
+    ; Re-read cursor position in logical coordinates right before showing,
+    ; so the menu appears next to the pointer regardless of per-monitor DPI.
+    pt := Buffer(8, 0)
+    DllCall("GetCursorPos", "Ptr", pt)
+    DllCall("PhysicalToLogicalPointForPerMonitorDPI", "Ptr", 0, "Ptr", pt)
+    showX := NumGet(pt, 0, "Int")
+    showY := NumGet(pt, 4, "Int")
+    aiMenu.Show(showX, showY)
 }
 
 IsLargeSelection(text)
