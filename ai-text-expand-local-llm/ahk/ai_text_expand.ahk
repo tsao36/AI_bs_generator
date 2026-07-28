@@ -377,7 +377,8 @@ IsSupportedBrowser()
         "firefox.exe", true,
         "brave.exe", true,
         "opera.exe", true,
-        "vivaldi.exe", true
+        "vivaldi.exe", true,
+        "outlook.exe", true
     )
 
     try {
