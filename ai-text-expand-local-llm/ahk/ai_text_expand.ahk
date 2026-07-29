@@ -160,7 +160,7 @@ ShowAiContextMenu(mouseX, mouseY, selectedText)
     }
 
     aiMenu.Add()
-    aiMenu.Add("Check GitHub for Latest Download", CheckGitHubForLatestDownload)
+    aiMenu.Add("Update to Latest Version", AutoUpdateFromGitHub)
     aiMenu.Add("Open AI Logs Folder", OpenLogsFolder)
     aiMenu.Add("Open Last Error Log", OpenLastErrorLog)
     aiMenu.Add("Copy Last Error Path", CopyLastErrorPath)
@@ -313,17 +313,35 @@ ShowNativeContextMenu(*)
     Send "+{F10}"
 }
 
-CheckGitHubForLatestDownload(*)
+AutoUpdateFromGitHub(*)
 {
     currentVersion := GetCurrentAppVersion()
-    if (currentVersion = "") {
-        prompt := "Open the GitHub package page to check for the latest download?`n`nLook for the newest AITextExpandLocalLLM-v*.zip file."
-    } else {
-        prompt := "Current local package version: " currentVersion "`n`nOpen the GitHub package page to check for a newer download?"
+
+    prompt := "This will automatically download and install the latest version from GitHub."
+    if (currentVersion != "") {
+        prompt .= "`n`nCurrent version: v" currentVersion
+    }
+    prompt .= "`n`nProceed with update?"
+
+    if (MsgBox(prompt, "AI Text Expand - Update", "YesNo Iconi") != "Yes") {
+        return
     }
 
-    if (MsgBox(prompt, "AI Text Expand", "YesNo Iconi") = "Yes") {
-        Run GitHubDistPageUrl
+    updateScript := ProjectRoot "\\scripts\\update.ps1"
+    if !FileExist(updateScript) {
+        MsgBox "Update script not found:`n" updateScript, "AI Text Expand", "Iconx"
+        return
+    }
+
+    psArgs := Format('-NoProfile -ExecutionPolicy Bypass -File "{}" -CurrentVersion "{}"', updateScript, currentVersion)
+    exitCode := RunWait(Format('powershell.exe {}', psArgs), , "Show")
+
+    if (exitCode = 0) {
+        if (MsgBox("Update installed successfully.`n`nReload AI Text Expand now to apply the new version?", "AI Text Expand - Update", "YesNo Iconi") = "Yes") {
+            Reload
+        }
+    } else {
+        MsgBox "Update failed (exit code " exitCode ").`n`nCheck the console output for details.", "AI Text Expand", "Iconx"
     }
 }
 

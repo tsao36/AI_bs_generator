@@ -72,6 +72,30 @@ function Update-ProcessPath()
     $env:Path = "$machinePath;$userPath"
 }
 
+function Install-OllamaDirectly($proxy)
+{
+    $installerUrl = "https://ollama.com/download/OllamaSetup.exe"
+    $installerPath = Join-Path $env:TEMP "OllamaSetup.exe"
+
+    Write-Host "Downloading Ollama installer from $installerUrl ..."
+    try {
+        Invoke-WebRequest -Uri $installerUrl -OutFile $installerPath -UseBasicParsing -Proxy $proxy -ErrorAction Stop
+    } catch {
+        Write-Host "Proxy failed, retrying without proxy..."
+        Invoke-WebRequest -Uri $installerUrl -OutFile $installerPath -UseBasicParsing -ErrorAction Stop
+    }
+
+    Write-Host "Running Ollama installer silently..."
+    $proc = Start-Process -FilePath $installerPath -ArgumentList "/SILENT" -Wait -PassThru
+    Remove-Item $installerPath -Force -ErrorAction SilentlyContinue
+
+    if ($proc.ExitCode -ne 0) {
+        throw "Ollama installer exited with code $($proc.ExitCode)."
+    }
+
+    Update-ProcessPath
+}
+
 function Install-WithWinget($packageId, $displayName)
 {
     if ($SkipWingetInstall) {
@@ -79,6 +103,13 @@ function Install-WithWinget($packageId, $displayName)
     }
 
     if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
+        # winget is unavailable (older Windows or unprovisioned system);
+        # fall back to a direct download for Ollama specifically.
+        if ($packageId -eq "Ollama.Ollama") {
+            Write-Warning "winget was not found. Falling back to direct Ollama download..."
+            Install-OllamaDirectly $Proxy
+            return
+        }
         throw "winget was not found. Install $displayName manually, then rerun this script."
     }
 
@@ -110,17 +141,32 @@ function Set-ProxyEnvironment($proxyUrl)
 function Enable-OllamaIntelGpuIfAvailable()
 {
     try {
+        # Match any Intel GPU variant: Arc, Iris Xe, UHD, HD Graphics, etc.
         $intelGpu = Get-CimInstance Win32_VideoController |
             Where-Object {
                 ($_.Name -match "Intel") -and
-                ($_.Name -match "Arc|Iris|Graphics")
+                ($_.Name -match "Arc|Iris|UHD|HD|Graphics")
             } |
             Select-Object -First 1
 
         if ($intelGpu) {
+            $alreadySet = [Environment]::GetEnvironmentVariable("OLLAMA_IGPU_ENABLE", "User") -eq "1"
             $env:OLLAMA_IGPU_ENABLE = "1"
             [Environment]::SetEnvironmentVariable("OLLAMA_IGPU_ENABLE", "1", "User")
-            Write-Host "Enabled Ollama Intel GPU acceleration preference (OLLAMA_IGPU_ENABLE=1)."
+            Write-Host "Intel GPU detected: $($intelGpu.Name)"
+            Write-Host "Enabled Ollama Intel GPU acceleration (OLLAMA_IGPU_ENABLE=1)."
+
+            # If Ollama was already running before this env var was set,
+            # it must be restarted to pick up the new setting.
+            if (-not $alreadySet) {
+                $ollamaProc = Get-Process -Name "ollama" -ErrorAction SilentlyContinue
+                if ($ollamaProc) {
+                    Write-Host "Restarting Ollama so it picks up the Intel GPU setting..."
+                    Stop-Process -Name "ollama" -Force -ErrorAction SilentlyContinue
+                    Start-Sleep -Milliseconds 800
+                    # Start-OllamaIfNeeded will restart it below with the env var now in session
+                }
+            }
         }
     } catch {
         Write-Warning "Could not detect GPU for Ollama iGPU setting. Continuing..."
