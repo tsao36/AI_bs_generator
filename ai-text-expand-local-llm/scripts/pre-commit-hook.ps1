@@ -35,12 +35,7 @@ if ($sourceChanged.Count -eq 0) {
 
 # ── 2. Read and bump the patch version ──
 $pyprojectContent = Get-Content $pyprojectAbs -Raw
-Write-Host "[pre-commit DBG] repoRoot: $repoRoot"
-Write-Host "[pre-commit DBG] pyprojectAbs: $pyprojectAbs"
-Write-Host "[pre-commit DBG] file exists: $(Test-Path $pyprojectAbs)"
-Write-Host "[pre-commit DBG] content: $($pyprojectContent.Substring(0, [Math]::Min(80, $pyprojectContent.Length)))"
 $versionMatch = [regex]::Match($pyprojectContent, 'version = "(\d+)\.(\d+)\.(\d+)"')
-Write-Host "[pre-commit DBG] match success: $($versionMatch.Success) groups: '$($versionMatch.Groups[1].Value)' '$($versionMatch.Groups[2].Value)' '$($versionMatch.Groups[3].Value)'"
 if (-not $versionMatch.Success) {
     Write-Host "[pre-commit] Could not parse version from pyproject.toml — skipping auto-package."
     exit 0
