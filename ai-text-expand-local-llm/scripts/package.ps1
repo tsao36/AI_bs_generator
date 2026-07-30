@@ -1,7 +1,7 @@
 $ErrorActionPreference = "Stop"
 
 $projectRoot = Split-Path -Parent $PSScriptRoot
-$version = "0.1.5"
+$version = "0.1.6"
 $packageName = "AITextExpandLocalLLM-v$version"
 $distDir = Join-Path $projectRoot "dist"
 $stagingRoot = Join-Path ([System.IO.Path]::GetTempPath()) "$packageName-package"

@@ -21,24 +21,31 @@ function Copy-PackageToInstallDir($sourceRoot, $destinationRoot)
         New-Item -ItemType Directory -Path $destinationRoot | Out-Null
     }
 
-    $itemsToCopy = @(
-        "Install.cmd",
-        "01_Setup_and_Start.exe",
-        "ahk",
-        "scripts",
-        "src",
-        "pyproject.toml",
-        "requirements.txt",
-        "README.md"
-    )
-
-    foreach ($item in $itemsToCopy) {
-        $source = Join-Path $sourceRoot $item
+    # Directories that are fully owned by the package — delete then replace so
+    # files removed in newer versions don't linger in the install folder.
+    $managedDirs = @("ahk", "scripts", "src")
+    foreach ($dir in $managedDirs) {
+        $dest = Join-Path $destinationRoot $dir
+        if (Test-Path $dest) {
+            Remove-Item $dest -Recurse -Force
+        }
+        $source = Join-Path $sourceRoot $dir
         if (Test-Path $source) {
             Copy-Item $source -Destination $destinationRoot -Recurse -Force
         }
     }
 
+    # Loose files — just overwrite.
+    $managedFiles = @("Install.cmd", "01_Setup_and_Start.exe", "pyproject.toml", "requirements.txt", "README.md")
+    foreach ($file in $managedFiles) {
+        $source = Join-Path $sourceRoot $file
+        if (Test-Path $source) {
+            Copy-Item $source -Destination $destinationRoot -Force
+        }
+    }
+
+    # config.example.json — only copy if the user doesn't already have one
+    # (preserves any customisations they made).
     $configSource = Join-Path $sourceRoot "config.example.json"
     $configTarget = Join-Path $destinationRoot "config.example.json"
     if ((Test-Path $configSource) -and -not (Test-Path $configTarget)) {
