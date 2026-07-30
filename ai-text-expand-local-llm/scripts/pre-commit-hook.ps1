@@ -4,9 +4,11 @@
 
 $ErrorActionPreference = "Stop"
 
-# Derive absolute paths from this script's own location
-$projectDir    = Split-Path -Parent $PSScriptRoot          # ai-text-expand-local-llm/
-$repoRoot      = Split-Path -Parent $projectDir             # repo root
+# When PowerShell calls git directly, it returns a native Windows path (C:/...).
+# This is more reliable than $PSScriptRoot when the script is invoked from a bash hook
+# which passes POSIX-style paths that PowerShell cannot use for file I/O.
+$repoRoot = (& git rev-parse --show-toplevel) -replace '/', '\'
+$projectDir = Join-Path $repoRoot "ai-text-expand-local-llm"
 
 # Paths relative to repo root (used by git commands)
 $pyprojectRel  = "ai-text-expand-local-llm/pyproject.toml"
