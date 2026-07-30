@@ -54,10 +54,13 @@ LENGTH_INSTRUCTIONS = {
         "Each sentence must end with sentence punctuation."
     ),
     "paragraph": (
-        "Output exactly 10 complete sentences as one cohesive paragraph. "
-        "Write with clear narrative progression: introduce the idea, develop it with supporting details, "
-        "and close with a conclusion or implication. "
-        "Use transition words and phrases to connect sentences naturally. "
+        "Output exactly 10 complete sentences as one cohesive, structured literary paragraph. "
+        "Structure it in three parts: "
+        "(1) Opening — 2-3 sentences that establish the central theme or sentiment of the original text. "
+        "(2) Body — 5-6 sentences that develop and deepen that theme with concrete, connected elaboration; "
+        "each sentence must build on the previous one and add something new — do not repeat phrases or restart the same idea. "
+        "(3) Closing — 1-2 sentences that bring the paragraph to a meaningful conclusion that echoes the opening. "
+        "The result must read as a single continuous piece of writing, not a list of separate sentences. "
         "Each sentence must end with sentence punctuation."
     ),
 }
@@ -180,7 +183,15 @@ def build_language_instruction(language_hint: str) -> str:
     if language_hint == "chinese":
         return "Detected input language: Chinese. Output must be in Chinese only and do not translate."
     if language_hint == "chinese-traditional":
-        return "Detected input language: Traditional Chinese. Output must be Traditional Chinese only. Do not use Simplified Chinese characters."
+        return (
+            "Output language: Traditional Chinese only. "
+            "Every single character must be Traditional Chinese — never use Simplified Chinese characters. "
+            "Check each character carefully. Common pairs where you must use the Traditional form: "
+            "曠 not 旷, 廣 not 广, 國 not 国, 為 not 为, 們 not 们, 愛 not 爱, 來 not 来, "
+            "開 not 开, 說 not 说, 這 not 这, 時 not 时, 會 not 会, 長 not 长, 學 not 学, "
+            "體 not 体, 語 not 语, 發 not 发, 還 not 还, 過 not 过, 關 not 关. "
+            "Do not use Simplified Chinese characters under any circumstances."
+        )
     if language_hint == "chinese-simplified":
         return "Detected input language: Simplified Chinese. Output must be Simplified Chinese only. Do not use Traditional Chinese characters."
     if language_hint == "japanese":
