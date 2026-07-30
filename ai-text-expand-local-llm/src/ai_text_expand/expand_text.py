@@ -49,8 +49,13 @@ LENGTH_INSTRUCTIONS = {
         "Each sentence must end with sentence punctuation."
     ),
     "five_sentences": (
-        "Output exactly 5 complete sentences as a cohesive unit. "
-        "Use smooth transitional flow between every pair of sentences — no abrupt jumps. "
+        "Output exactly 5 complete sentences as one cohesive, structured piece of writing. "
+        "Structure it in three parts: "
+        "(1) Opening — 1 sentence that establishes the central theme or sentiment of the original text. "
+        "(2) Body — 3 sentences that develop and deepen that theme with connected elaboration; "
+        "each sentence must build on the previous one and add something new — do not repeat phrases or restart the same idea. "
+        "(3) Closing — 1 sentence that brings it to a meaningful conclusion echoing the opening. "
+        "The result must read as a single continuous piece of writing, not a list of separate sentences. "
         "Each sentence must end with sentence punctuation."
     ),
     "paragraph": (
