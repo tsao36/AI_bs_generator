@@ -298,7 +298,17 @@ def build_correction_prompt(
     )
 
 
-def send_ollama_chat(
+def build_polish_prompt(draft: str, language_hint: str) -> str:
+    language_instruction = build_language_instruction(language_hint)
+    return (
+        "The following is a draft text. Polish it into smooth, natural prose: "
+        "improve word choice, fix awkward phrasing, and ensure every sentence flows seamlessly into the next. "
+        "Do NOT add, remove, or reorder any sentences. Do NOT change the meaning or content. "
+        "Return only the polished text with no explanations or labels. "
+        f"{language_instruction}\n\nDraft:\n{draft}"
+    )
+
+
     messages: list[dict[str, str]],
     model: str,
     ollama_url: str,
@@ -403,14 +413,28 @@ def expand_with_ollama(
     # After all retries, return the result if it's within tolerance.
     # Only hard-fail if the count is wildly off (more than 2× the tolerance away).
     if is_acceptable(result):
-        return result
-    actual_count = count_sentences(result)
-    hard_fail_threshold = max(1, tolerance * 2)
-    if abs(actual_count - target_count) <= hard_fail_threshold:
-        return result  # close enough — don't block the user
-    raise RuntimeError(
-        f"Model returned {actual_count} sentence(s); expected {target_count} (±{tolerance})."
-    )
+        pass
+    else:
+        actual_count = count_sentences(result)
+        hard_fail_threshold = max(1, tolerance * 2)
+        if abs(actual_count - target_count) > hard_fail_threshold:
+            raise RuntimeError(
+                f"Model returned {actual_count} sentence(s); expected {target_count} (\u00b1{tolerance})."
+            )
+
+    # Final polish pass — smooth the validated draft into natural flowing prose.
+    polish_messages = [
+        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "user", "content": build_polish_prompt(result, language_hint)},
+    ]
+    try:
+        polished = send_ollama_chat(polish_messages, model, ollama_url, timeout_seconds, num_gpu)
+        # Only use the polished version if it didn't drastically change the length
+        if abs(count_sentences(polished) - count_sentences(result)) <= 2:
+            return polished
+    except Exception:  # noqa: BLE001
+        pass  # If polish fails for any reason, fall back to the validated draft
+    return result
 
 
 def parse_args() -> argparse.Namespace:
