@@ -148,24 +148,47 @@ ShrinkThreeSentences(*)
 
 ShowAiContextMenu(mouseX, mouseY, selectedText)
 {
+    iconShell  := A_WinDir "\system32\shell32.dll"
+    iconImages := A_WinDir "\system32\imageres.dll"
+
     aiMenu := Menu()
+
     aiMenu.Add("Expand with Local AI - 2 sentences", ExpandTwoSentences)
+    aiMenu.SetIcon("Expand with Local AI - 2 sentences", iconImages, 179)   ; pencil/edit
+
     aiMenu.Add("Expand with Local AI - 5 sentences", ExpandFiveSentences)
+    aiMenu.SetIcon("Expand with Local AI - 5 sentences", iconImages, 179)
+
     aiMenu.Add("Expand with Local AI - paragraph", ExpandParagraph)
+    aiMenu.SetIcon("Expand with Local AI - paragraph", iconImages, 179)
 
     if IsLargeSelection(selectedText) {
         aiMenu.Add()
         aiMenu.Add("Shrink with Local AI - 1 sentence", ShrinkOneSentence)
+        aiMenu.SetIcon("Shrink with Local AI - 1 sentence", iconShell, 131)  ; compress/cut
+
         aiMenu.Add("Shrink with Local AI - 3 sentences", ShrinkThreeSentences)
+        aiMenu.SetIcon("Shrink with Local AI - 3 sentences", iconShell, 131)
     }
 
     aiMenu.Add()
     aiMenu.Add("Update to Latest Version", AutoUpdateFromGitHub)
+    aiMenu.SetIcon("Update to Latest Version", iconImages, 228)              ; refresh/download
+
     aiMenu.Add("Open AI Logs Folder", OpenLogsFolder)
+    aiMenu.SetIcon("Open AI Logs Folder", iconShell, 4)                     ; open folder
+
     aiMenu.Add("Open Last Error Log", OpenLastErrorLog)
+    aiMenu.SetIcon("Open Last Error Log", iconShell, 110)                    ; warning triangle
+
     aiMenu.Add("Copy Last Error Path", CopyLastErrorPath)
+    aiMenu.SetIcon("Copy Last Error Path", iconShell, 140)                   ; copy
+
     aiMenu.Add("Use Native Context Menu", ShowNativeContextMenu)
+    aiMenu.SetIcon("Use Native Context Menu", iconShell, 48)                 ; settings/properties
+
     aiMenu.Add("Cancel", (*) => 0)
+    aiMenu.SetIcon("Cancel", iconImages, 189)                                ; red X / error
 
     ; Re-read cursor position in logical coordinates right before showing,
     ; so the menu appears next to the pointer regardless of per-monitor DPI.
@@ -176,7 +199,6 @@ ShowAiContextMenu(mouseX, mouseY, selectedText)
     showY := NumGet(pt, 4, "Int")
 
     ; Offset to the right so the AI menu never overlaps the browser's native context menu.
-    ; A typical context menu is ~200 px wide; add extra padding.
     showX += 220
     aiMenu.Show(showX, showY)
 }
