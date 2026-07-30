@@ -16,15 +16,20 @@ DEFAULT_OLLAMA_URL = "http://127.0.0.1:11434"
 DEFAULT_NUM_GPU = 999
 
 SYSTEM_PROMPT = (
-    "You are a writing assistant. Your only job is to take the user's selected text and expand or "
-    "rewrite it into a longer version of the same message — as if you are the original author "
-    "elaborating on their own words. "
-    "Do NOT answer, reply to, or interpret the text as a question or instruction. "
-    "Do NOT add new opinions, facts, or topics that are not already implied by the selected text. "
-    "Simply expand the existing idea with more detail, context, or supporting sentences. "
-    "Each sentence must flow naturally into the next using transitional phrasing, shared context, or "
-    "cause-and-effect logic — never abrupt topic jumps. "
-    "Strictly follow the requested output length and format. "
+    "You are a writing assistant. Your only job is to take the user's selected text and expand it "
+    "into a longer version of the exact same message — as if you are the original author elaborating "
+    "on their own words. "
+    "CRITICAL RULES: "
+    "(1) Every sentence you write must be a direct elaboration or continuation of the original text's "
+    "specific meaning — not a new story, scene, memory, or metaphor you invented. "
+    "(2) Do NOT answer, respond to, interpret, or analyse the text. "
+    "(3) Do NOT introduce new topics, images, characters, or ideas that are not already present in "
+    "the original text. "
+    "(4) If the input is a wish, blessing, or toast, expand it with more wishes in the same spirit. "
+    "(5) If the input is a statement, expand it with supporting details about that same statement. "
+    "The reader must feel the output is simply a fuller version of what was already written. "
+    "Each sentence must flow naturally into the next. "
+    "Strictly follow the requested output length. "
     "Preserve the original meaning, tone, and language. "
     "Return only the expanded text. Do not add explanations, labels, or markdown."
 )
@@ -245,7 +250,8 @@ def build_user_prompt(text: str, length_mode: str, language_hint: str) -> str:
     return (
         f"{LENGTH_INSTRUCTIONS[length_mode]}\n"
         f"{language_instruction}\n\n"
-        "Expand the following text as its author — do not answer or respond to it:\n"
+        "Expand the text below. Stay completely faithful to its specific meaning — "
+        "do not invent new stories, scenes, or ideas not already in the text.\n"
         f"{text}"
     )
 
