@@ -174,6 +174,10 @@ ShowAiContextMenu(mouseX, mouseY, selectedText)
     DllCall("PhysicalToLogicalPointForPerMonitorDPI", "Ptr", 0, "Ptr", pt)
     showX := NumGet(pt, 0, "Int")
     showY := NumGet(pt, 4, "Int")
+
+    ; Offset to the right so the AI menu never overlaps the browser's native context menu.
+    ; A typical context menu is ~200 px wide; add extra padding.
+    showX += 220
     aiMenu.Show(showX, showY)
 }
 
