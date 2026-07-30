@@ -1,16 +1,7 @@
-# Local secrets
-.env
-.env.*
-!.env.example
+# Only track the ai-text-expand-local-llm project
+/*
+!/.gitignore
+!/ai-text-expand-local-llm/
 
-# Python cache
-__pycache__/
-*.py[cod]
-
-# Runtime logs and local state
-logs/
-**/logs/
-*.log
-*.tmp
-jobs/**/.offload_csv_watch_state.json
-jobs/**/.graph_msal_token_cache.json
+# Ignore extracted dist subfolders (keep only the zip)
+ai-text-expand-local-llm/dist/*/

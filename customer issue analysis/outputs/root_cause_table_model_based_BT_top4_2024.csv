@@ -1,5 +1,0 @@
-﻿Category,Root Cause Type 1,Root Cause Type 2,Root Cause Type 3,Root Cause Type 4,Issue Count
-Connectivity,Memory and Resource Management Issues,Firmware Configuration and Parameter Tuning Issues,Timing Synchronization and Race Condition Issues,,6
-YB/Lost,Timing Synchronization and Race Condition Issues,State Machine Transition and Flow Handling Issues,Security Validation and Protection Control Issues,RF Coexistence and Channel Behavior Issues,9
-BSOD,Driver and OS Interface Contract Issues,Memory and Resource Management Issues,,,3
-HLK,,,,,0

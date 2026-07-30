@@ -1,7 +1,0 @@
-[gerrit]
-host=gerritwcs.ir.intel.com
-port=29418
-project=wifi_drv-devops-apis.git
-defaultbranch=master
-defaultremote=origin
-defaultrebase=0

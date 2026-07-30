@@ -1,5 +1,0 @@
-[INFO] ===== Offload scheduler start =====
-[INFO] Timestamp: Mon 03/09/2026 18:50:01.40
-[INFO] Script dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\
-[INFO] Current dir: C:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat
-[ERROR] GRAPH_SENDER_UPN is not set. Configure it in .env or Task Scheduler environment.

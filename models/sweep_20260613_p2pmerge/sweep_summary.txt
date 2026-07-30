@@ -1,7 +1,0 @@
-total_runs=12
-best_tag=ng1_md1_c2p0
-best_accuracy=0.857143
-best_macro_f1=0.810952
-best_weighted_f1=0.852108
-best_model=c:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\models\sweep_20260613_p2pmerge\model_ng1_md1_c2p0.joblib
-best_metrics=c:\Users\jtsao1\OneDrive - Intel Corporation\Documents\My workspace\jira_ips_tat_HP\jira_tat\jira_customer_tat\models\sweep_20260613_p2pmerge\metrics_ng1_md1_c2p0.json

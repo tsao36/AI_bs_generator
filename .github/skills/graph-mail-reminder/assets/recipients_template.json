@@ -1,9 +1,0 @@
-{
-  "to": [
-    "team.alias@intel.com",
-    "owner.name@intel.com"
-  ],
-  "cc": [
-    "manager.name@intel.com"
-  ]
-}

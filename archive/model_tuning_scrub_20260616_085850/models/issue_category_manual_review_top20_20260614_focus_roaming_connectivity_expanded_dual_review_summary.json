@@ -1,8 +1,0 @@
-{
-  "total_rows": 20,
-  "pending_review": 0,
-  "acceptable_alternative": 3,
-  "hard_wrong_or_unclear": 10,
-  "resolved_by_relabel": 7,
-  "model_correct_keep_current": 0
-}

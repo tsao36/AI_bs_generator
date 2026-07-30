@@ -1,5 +1,0 @@
-﻿Category,Root Cause Type 1,Root Cause Type 2,Root Cause Type 3,Root Cause Type 4,Issue Count
-Connectivity,Driver and OS Interface Contract Issues,State Machine Transition and Flow Handling Issues,,,2
-YB/Lost,Firmware and Hardware Interface Communication Issues,,,,1
-BSOD,Firmware Configuration and Parameter Tuning Issues,,,,1
-Performance,Firmware Configuration and Parameter Tuning Issues,RF Coexistence and Channel Behavior Issues,,,3

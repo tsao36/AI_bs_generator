@@ -1,5 +1,0 @@
-total_input_rows_with_labels=1336
-conflict_title_keys=8
-excluded_conflict_rows=68
-golden_rows=1264
-golden_unique_source_files=33

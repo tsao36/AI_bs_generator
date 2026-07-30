@@ -1,9 +1,0 @@
-{
-  "baseline_golden": "golden_training_set_20260614_p2pmerge_round4b.csv",
-  "new_golden": "golden_training_set_20260614_p2pmerge_round6_focus_icps_oem.csv",
-  "rows": 1266,
-  "human_category_synced_updates": 9,
-  "sync_missing": 0,
-  "sync_ambiguous": 2,
-  "apply_report_json": "models\\issue_category_manual_review_top20_20260614_focus_icps_oemtools_apply_relabels_report.json"
-}
