@@ -16,18 +16,40 @@ DEFAULT_OLLAMA_URL = "http://127.0.0.1:11434"
 DEFAULT_NUM_GPU = 999
 
 SYSTEM_PROMPT = (
-    "You rewrite selected text into clearer wording that matches the requested length. "
+    "You rewrite selected text into clearer, well-connected prose that matches the requested length. "
+    "Each sentence must flow naturally into the next using transitional phrasing, shared context, or "
+    "cause-and-effect logic — never abrupt topic jumps. "
     "Strictly follow the requested output length and format. "
     "Preserve the original meaning, tone, and language. "
     "Return only the rewritten text. Do not add explanations, labels, or markdown."
 )
 
 LENGTH_INSTRUCTIONS = {
-    "one_sentence": "Output exactly 1 complete sentence. The sentence must end with sentence punctuation.",
-    "two_sentences": "Output exactly 2 complete sentences. Each sentence must end with sentence punctuation.",
-    "three_sentences": "Output exactly 3 complete sentences. Each sentence must end with sentence punctuation.",
-    "five_sentences": "Output exactly 5 complete sentences. Each sentence must end with sentence punctuation.",
-    "paragraph": "Output exactly 10 complete sentences as one cohesive paragraph. Each sentence must end with sentence punctuation.",
+    "one_sentence": (
+        "Output exactly 1 complete sentence. The sentence must end with sentence punctuation."
+    ),
+    "two_sentences": (
+        "Output exactly 2 complete sentences. "
+        "The second sentence must connect to the first — use a transition, elaboration, or consequence. "
+        "Each sentence must end with sentence punctuation."
+    ),
+    "three_sentences": (
+        "Output exactly 3 complete sentences as a cohesive unit. "
+        "Each sentence must build on the previous one through transition words, shared subject, or cause-and-effect. "
+        "Each sentence must end with sentence punctuation."
+    ),
+    "five_sentences": (
+        "Output exactly 5 complete sentences as a cohesive unit. "
+        "Use smooth transitional flow between every pair of sentences — no abrupt jumps. "
+        "Each sentence must end with sentence punctuation."
+    ),
+    "paragraph": (
+        "Output exactly 10 complete sentences as one cohesive paragraph. "
+        "Write with clear narrative progression: introduce the idea, develop it with supporting details, "
+        "and close with a conclusion or implication. "
+        "Use transition words and phrases to connect sentences naturally. "
+        "Each sentence must end with sentence punctuation."
+    ),
 }
 
 TARGET_SENTENCE_COUNTS = {
