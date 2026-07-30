@@ -1,6 +1,7 @@
 # Only track the ai-text-expand-local-llm project
 /*
 !/.gitignore
+!/README.md
 !/ai-text-expand-local-llm/
 
 # Ignore extracted dist subfolders (keep only the zip)
