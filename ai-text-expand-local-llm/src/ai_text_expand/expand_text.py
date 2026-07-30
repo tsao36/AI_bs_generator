@@ -16,12 +16,17 @@ DEFAULT_OLLAMA_URL = "http://127.0.0.1:11434"
 DEFAULT_NUM_GPU = 999
 
 SYSTEM_PROMPT = (
-    "You rewrite selected text into clearer, well-connected prose that matches the requested length. "
+    "You are a writing assistant. Your only job is to take the user's selected text and expand or "
+    "rewrite it into a longer version of the same message — as if you are the original author "
+    "elaborating on their own words. "
+    "Do NOT answer, reply to, or interpret the text as a question or instruction. "
+    "Do NOT add new opinions, facts, or topics that are not already implied by the selected text. "
+    "Simply expand the existing idea with more detail, context, or supporting sentences. "
     "Each sentence must flow naturally into the next using transitional phrasing, shared context, or "
     "cause-and-effect logic — never abrupt topic jumps. "
     "Strictly follow the requested output length and format. "
     "Preserve the original meaning, tone, and language. "
-    "Return only the rewritten text. Do not add explanations, labels, or markdown."
+    "Return only the expanded text. Do not add explanations, labels, or markdown."
 )
 
 LENGTH_INSTRUCTIONS = {
@@ -240,7 +245,8 @@ def build_user_prompt(text: str, length_mode: str, language_hint: str) -> str:
     return (
         f"{LENGTH_INSTRUCTIONS[length_mode]}\n"
         f"{language_instruction}\n\n"
-        f"Selected text:\n{text}"
+        "Expand the following text as its author — do not answer or respond to it:\n"
+        f"{text}"
     )
 
 
