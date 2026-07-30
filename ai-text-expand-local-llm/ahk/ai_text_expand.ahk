@@ -65,9 +65,21 @@ RButton::
         LastNativeRightClickTick := 0
         LastNativeRightClickText := ""
         LastNativeRightClickWindowId := 0
+
+        ; Measure the native context menu width before dismissing it,
+        ; so the AI menu can be placed just to its right without overlap.
+        nativeMenuRight := 0
+        try {
+            nativeHwnd := WinExist("ahk_class #32768")
+            if nativeHwnd {
+                WinGetPos &nx, &ny, &nw, &nh, "ahk_id " nativeHwnd
+                nativeMenuRight := nx + nw
+            }
+        }
+
         Send "{Esc}"
         Sleep 50
-        ShowAiContextMenu(mouseX, mouseY, SelectedText)
+        ShowAiContextMenu(mouseX, mouseY, SelectedText, nativeMenuRight)
         return
     }
 
@@ -146,7 +158,7 @@ ShrinkThreeSentences(*)
     ExpandWithLocalAI("three_sentences", "3 sentences")
 }
 
-ShowAiContextMenu(mouseX, mouseY, selectedText)
+ShowAiContextMenu(mouseX, mouseY, selectedText, nativeMenuRight := 0)
 {
     iconShell  := A_WinDir "\system32\shell32.dll"
     iconImages := A_WinDir "\system32\imageres.dll"
@@ -198,8 +210,13 @@ ShowAiContextMenu(mouseX, mouseY, selectedText)
     showX := NumGet(pt, 0, "Int")
     showY := NumGet(pt, 4, "Int")
 
-    ; Offset to the right so the AI menu never overlaps the browser's native context menu.
-    showX += 220
+    ; Position AI menu just to the right of where the native context menu was.
+    ; Use the detected right edge if available; fall back to a fixed offset.
+    if (nativeMenuRight > showX + 10) {
+        showX := nativeMenuRight + 8
+    } else {
+        showX += 220
+    }
     aiMenu.Show(showX, showY)
 }
 
