@@ -309,6 +309,7 @@ def build_polish_prompt(draft: str, language_hint: str) -> str:
     )
 
 
+def send_ollama_chat(
     messages: list[dict[str, str]],
     model: str,
     ollama_url: str,
