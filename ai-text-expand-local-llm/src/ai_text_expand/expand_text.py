@@ -60,6 +60,16 @@ TARGET_SENTENCE_COUNTS = {
     "paragraph": 10,
 }
 
+# How many sentences off from the target we still accept.
+# Short modes are strict (users notice the difference); long modes allow slack.
+SENTENCE_COUNT_TOLERANCE = {
+    "one_sentence": 0,
+    "two_sentences": 0,
+    "three_sentences": 1,
+    "five_sentences": 1,
+    "paragraph": 2,
+}
+
 SUPPORTED_LANGUAGE_HINTS = {
     "auto",
     "english",
@@ -336,8 +346,13 @@ def expand_with_ollama(
     if target_count is None:
         return result
 
+    tolerance = SENTENCE_COUNT_TOLERANCE.get(length_mode, 0)
+
+    def is_acceptable(text: str) -> bool:
+        return abs(count_sentences(text) - target_count) <= tolerance
+
     for _ in range(3):
-        if count_sentences(result) == target_count:
+        if is_acceptable(result):
             return result
 
         messages = [
@@ -349,12 +364,17 @@ def expand_with_ollama(
         ]
         result = send_ollama_chat(messages, model, ollama_url, timeout_seconds, num_gpu)
 
+    # After all retries, return the result if it's within tolerance.
+    # Only hard-fail if the count is wildly off (more than 2× the tolerance away).
+    if is_acceptable(result):
+        return result
     actual_count = count_sentences(result)
-    if actual_count != target_count:
-        raise RuntimeError(
-            f"Model returned {actual_count} sentence(s); expected exactly {target_count}."
-        )
-    return result
+    hard_fail_threshold = max(1, tolerance * 2)
+    if abs(actual_count - target_count) <= hard_fail_threshold:
+        return result  # close enough — don't block the user
+    raise RuntimeError(
+        f"Model returned {actual_count} sentence(s); expected {target_count} (±{tolerance})."
+    )
 
 
 def parse_args() -> argparse.Namespace:
