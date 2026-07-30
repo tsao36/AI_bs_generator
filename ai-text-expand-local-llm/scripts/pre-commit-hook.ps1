@@ -4,18 +4,27 @@
 
 $ErrorActionPreference = "Stop"
 
-# Paths relative to repo root
-$pyprojectPath  = "ai-text-expand-local-llm/pyproject.toml"
-$packageScript  = "ai-text-expand-local-llm/scripts/package.ps1"
-$distPrefix     = "ai-text-expand-local-llm/dist/"
+# Derive absolute paths from this script's own location
+$projectDir    = Split-Path -Parent $PSScriptRoot          # ai-text-expand-local-llm/
+$repoRoot      = Split-Path -Parent $projectDir             # repo root
+
+# Paths relative to repo root (used by git commands)
+$pyprojectRel  = "ai-text-expand-local-llm/pyproject.toml"
+$packageRel    = "ai-text-expand-local-llm/scripts/package.ps1"
+$distPrefixRel = "ai-text-expand-local-llm/dist/"
+
+# Absolute paths (used for file I/O)
+$pyprojectAbs  = Join-Path $projectDir "pyproject.toml"
+$packageAbs    = Join-Path $projectDir "scripts\package.ps1"
 
 # ── 1. Check whether any source files (not dist/, not version files) are staged ──
+Set-Location $repoRoot
 $staged = git diff --cached --name-only
 $sourceChanged = @($staged | Where-Object {
     $_ -match "^ai-text-expand-local-llm/" -and
     $_ -notmatch "^ai-text-expand-local-llm/dist/" -and
-    $_ -ne $pyprojectPath -and
-    $_ -ne $packageScript
+    $_ -ne $pyprojectRel -and
+    $_ -ne $packageRel
 })
 
 if ($sourceChanged.Count -eq 0) {
@@ -23,7 +32,7 @@ if ($sourceChanged.Count -eq 0) {
 }
 
 # ── 2. Read and bump the patch version ──
-$pyprojectContent = Get-Content $pyprojectPath -Raw
+$pyprojectContent = Get-Content $pyprojectAbs -Raw
 $versionMatch = [regex]::Match($pyprojectContent, 'version = "(\d+)\.(\d+)\.(\d+)"')
 if (-not $versionMatch.Success) {
     Write-Host "[pre-commit] Could not parse version from pyproject.toml — skipping auto-package."
@@ -34,23 +43,23 @@ Write-Host "[pre-commit] Bumping version to $newVersion and building package..."
 
 # ── 3. Write new version into both files ──
 $pyprojectContent = $pyprojectContent -replace 'version = "\d+\.\d+\.\d+"', "version = `"$newVersion`""
-[System.IO.File]::WriteAllText((Resolve-Path $pyprojectPath).Path, $pyprojectContent)
+[System.IO.File]::WriteAllText($pyprojectAbs, $pyprojectContent)
 
-$packageContent = Get-Content $packageScript -Raw
+$packageContent = Get-Content $packageAbs -Raw
 $packageContent = $packageContent -replace '\$version = "\d+\.\d+\.\d+"', "`$version = `"$newVersion`""
-[System.IO.File]::WriteAllText((Resolve-Path $packageScript).Path, $packageContent)
+[System.IO.File]::WriteAllText($packageAbs, $packageContent)
 
 # ── 4. Build the dist zip ──
-& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $packageScript
+& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $packageAbs
 if ($LASTEXITCODE -ne 0) {
     Write-Host "[pre-commit] Package build failed — aborting commit."
     exit 1
 }
 
 # ── 5. Stage the generated artefacts ──
-git add $pyprojectPath
-git add $packageScript
-git add "$($distPrefix)AITextExpandLocalLLM-v$newVersion.zip"
+git add $pyprojectRel
+git add $packageRel
+git add "$($distPrefixRel)AITextExpandLocalLLM-v$newVersion.zip"
 
 Write-Host "[pre-commit] v$newVersion packaged and staged."
 exit 0
