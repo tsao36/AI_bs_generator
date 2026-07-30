@@ -24,11 +24,12 @@ if ($sourceChanged.Count -eq 0) {
 
 # ── 2. Read and bump the patch version ──
 $pyprojectContent = Get-Content $pyprojectPath -Raw
-if (-not ($pyprojectContent -match 'version = "(\d+)\.(\d+)\.(\d+)"')) {
+$versionMatch = [regex]::Match($pyprojectContent, 'version = "(\d+)\.(\d+)\.(\d+)"')
+if (-not $versionMatch.Success) {
     Write-Host "[pre-commit] Could not parse version from pyproject.toml — skipping auto-package."
     exit 0
 }
-$newVersion = "$($Matches[1]).$($Matches[2]).$([int]$Matches[3] + 1)"
+$newVersion = "$($versionMatch.Groups[1].Value).$($versionMatch.Groups[2].Value).$([int]$versionMatch.Groups[3].Value + 1)"
 Write-Host "[pre-commit] Bumping version to $newVersion and building package..."
 
 # ── 3. Write new version into both files ──
