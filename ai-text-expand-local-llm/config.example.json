@@ -3,5 +3,6 @@
   "LOCAL_LLM_OUTPUT_LANGUAGE": "auto",
   "OLLAMA_BASE_URL": "http://127.0.0.1:11434",
   "timeout_seconds": 90,
-  "OLLAMA_NUM_GPU": 999
+  "OLLAMA_NUM_GPU": 999,
+  "LOCAL_LLM_POLISH_PASS": false
 }

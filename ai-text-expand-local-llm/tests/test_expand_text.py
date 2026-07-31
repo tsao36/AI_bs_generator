@@ -329,19 +329,19 @@ class TestExpandWithOllama:
     """Tests for expand_with_ollama that mock send_ollama_chat to avoid needing Ollama."""
 
     def _expand(self, text: str, length_mode: str, mock_responses: list[str],
-                output_language: str = "auto") -> str:
+                output_language: str = "auto", enable_polish_pass: bool = False) -> str:
         responses = iter(mock_responses)
         with patch("ai_text_expand.expand_text.send_ollama_chat", side_effect=responses):
             return expand_with_ollama(
-                text, "llama3", "http://127.0.0.1:11434", 30, length_mode, 1, output_language
+                text, "llama3", "http://127.0.0.1:11434", 30, length_mode, 1,
+                output_language, enable_polish_pass
             )
 
     def test_returns_result_when_sentence_count_matches(self):
         result = self._expand(
             "Hello.",
             "two_sentences",
-            ["First sentence. Second sentence.",   # expand pass — 2 sentences ✓
-             "First sentence. Second sentence."],  # polish pass
+            ["First sentence. Second sentence."],  # expand pass — 2 sentences ✓ (no polish)
         )
         assert "First sentence" in result
 
@@ -349,9 +349,8 @@ class TestExpandWithOllama:
         result = self._expand(
             "Hello.",
             "two_sentences",
-            ["Only one sentence.",                        # expand — wrong count
-             "First sentence. Second sentence.",          # correction — correct
-             "First sentence. Second sentence."],         # polish
+            ["Only one sentence.",                  # expand — wrong count
+             "First sentence. Second sentence."],   # correction — correct
         )
         assert "First sentence" in result
 
@@ -421,7 +420,8 @@ class TestExpandWithOllama:
         with patch("ai_text_expand.expand_text.send_ollama_chat", side_effect=capture):
             expand_with_ollama(
                 "Hello.",
-                "llama3", "http://127.0.0.1:11434", 30, "five_sentences", 1, "auto"
+                "llama3", "http://127.0.0.1:11434", 30, "five_sentences", 1, "auto",
+                enable_polish_pass=True,   # must opt in
             )
 
         # Last call is the polish pass
@@ -442,8 +442,21 @@ class TestExpandWithOllama:
     def test_accepts_result_within_tolerance(self):
         # paragraph tolerance = 2, so 12 sentences should be accepted
         twelve = " ".join(f"Sentence {i}." for i in range(1, 13))
-        result = self._expand("Hello.", "paragraph", [twelve, twelve])
+        result = self._expand("Hello.", "paragraph", [twelve])  # no polish pass
         assert result  # should not raise
+
+    def test_polish_disabled_by_default(self):
+        # With polish off (default), only 1 call is made for an acceptable result
+        captured = []
+        def capture(messages, *args, **kwargs):
+            captured.append(messages)
+            return "First sentence. Second sentence."
+        with patch("ai_text_expand.expand_text.send_ollama_chat", side_effect=capture):
+            expand_with_ollama(
+                "Hello.", "llama3", "http://127.0.0.1:11434", 30,
+                "two_sentences", 1, "auto"
+            )
+        assert len(captured) == 1, "Polish disabled: should only call LLM once"
 
     def test_polish_failure_falls_back_to_draft(self):
         from urllib.error import URLError
@@ -458,7 +471,8 @@ class TestExpandWithOllama:
 
         with patch("ai_text_expand.expand_text.send_ollama_chat", side_effect=side_effect):
             result = expand_with_ollama(
-                "Hello.", "llama3", "http://127.0.0.1:11434", 30, "two_sentences", 1, "auto"
+                "Hello.", "llama3", "http://127.0.0.1:11434", 30, "two_sentences", 1, "auto",
+                enable_polish_pass=True,
             )
         assert "First sentence" in result  # should return the draft, not raise
 

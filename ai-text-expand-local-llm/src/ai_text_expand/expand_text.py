@@ -395,6 +395,7 @@ def expand_with_ollama(
     length_mode: str,
     num_gpu: int,
     output_language: str,
+    enable_polish_pass: bool = False,
 ) -> str:
     configured_language = normalize_language_hint(output_language)
     language_hint = detect_language_hint(text) if configured_language == "auto" else configured_language
@@ -450,7 +451,12 @@ def expand_with_ollama(
                 f"Model returned {actual_count} sentence(s); expected {target_count} (\u00b1{tolerance})."
             )
 
-    # Final polish pass — smooth the validated draft into natural flowing prose.
+    # Final polish pass — optional extra LLM call to smooth the prose.
+    # Enable via LOCAL_LLM_POLISH_PASS: true in config.example.json.
+    # Disabled by default because it roughly doubles inference time.
+    if not enable_polish_pass:
+        return result
+
     polish_messages = [
         {"role": "system", "content": POLISH_SYSTEM_PROMPT},
         {"role": "user", "content": build_polish_prompt(result, language_hint)},
@@ -501,6 +507,7 @@ def main() -> int:
         timeout_seconds = int(config.get("timeout_seconds", 90))
         num_gpu = get_int_setting(config, "OLLAMA_NUM_GPU", DEFAULT_NUM_GPU)
         output_language = get_setting(config, "LOCAL_LLM_OUTPUT_LANGUAGE", "auto")
+        enable_polish_pass = get_setting(config, "LOCAL_LLM_POLISH_PASS", "false").lower() == "true"
         expanded_text = expand_with_ollama(
             selected_text,
             model,
@@ -509,6 +516,7 @@ def main() -> int:
             args.length,
             num_gpu,
             output_language,
+            enable_polish_pass,
         )
         output_path.write_text(expanded_text, encoding="utf-8")
     except Exception as exc:  # noqa: BLE001
