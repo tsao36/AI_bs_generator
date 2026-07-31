@@ -506,3 +506,5 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+# tests run on every commit via pre-commit hook
