@@ -482,6 +482,12 @@ def parse_args() -> argparse.Namespace:
         default="paragraph",
         help="Target expansion length.",
     )
+    parser.add_argument(
+        "--polish",
+        action="store_true",
+        default=False,
+        help="Run an extra LLM pass to smooth the output prose (slower).",
+    )
     return parser.parse_args()
 
 
@@ -507,7 +513,10 @@ def main() -> int:
         timeout_seconds = int(config.get("timeout_seconds", 90))
         num_gpu = get_int_setting(config, "OLLAMA_NUM_GPU", DEFAULT_NUM_GPU)
         output_language = get_setting(config, "LOCAL_LLM_OUTPUT_LANGUAGE", "auto")
-        enable_polish_pass = get_setting(config, "LOCAL_LLM_POLISH_PASS", "false").lower() == "true"
+        enable_polish_pass = (
+            args.polish
+            or get_setting(config, "LOCAL_LLM_POLISH_PASS", "false").lower() == "true"
+        )
         expanded_text = expand_with_ollama(
             selected_text,
             model,

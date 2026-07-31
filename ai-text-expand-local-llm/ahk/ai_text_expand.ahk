@@ -33,6 +33,7 @@ global NativeMenuPassThroughMs := 3000
 global LastNativeRightClickTick := 0
 global LastNativeRightClickText := ""
 global LastNativeRightClickWindowId := 0
+global PolishEnabled := false
 global ProgressTick := 0
 global ProgressLabel := ""
 global ProgressModel := ""
@@ -187,6 +188,10 @@ ShowAiContextMenu(mouseX, mouseY, selectedText, nativeMenuRight := 0)
     aiMenu.Add("Update to Latest Version", AutoUpdateFromGitHub)
     aiMenu.SetIcon("Update to Latest Version", iconImages, 228)              ; refresh/download
 
+    polishLabel := PolishEnabled ? "Polish Output: ON" : "Polish Output: OFF"
+    aiMenu.Add(polishLabel, TogglePolish)
+    aiMenu.SetIcon(polishLabel, iconImages, PolishEnabled ? 177 : 178)       ; + / - icon
+
     aiMenu.Add("Open AI Logs Folder", OpenLogsFolder)
     aiMenu.SetIcon("Open AI Logs Folder", iconShell, 4)                     ; open folder
 
@@ -282,7 +287,8 @@ ExpandWithLocalAI(lengthMode, lengthLabel)
 
     modelName := GetConfiguredModel()
     StartProgressIndicator(lengthLabel, modelName)
-    command := Format('{} /c ""{}" {} "{}" --input "{}" --output "{}" --config "{}" --length "{}" > "{}" 2>&1"', A_ComSpec, PythonExe, PythonArgs, ScriptPath, inputFile, outputFile, ConfigPath, lengthMode, errorFile)
+    polishFlag := PolishEnabled ? " --polish" : ""
+    command := Format('{} /c ""{}" {} "{}" --input "{}" --output "{}" --config "{}" --length "{}"{}  > "{}" 2>&1"', A_ComSpec, PythonExe, PythonArgs, ScriptPath, inputFile, outputFile, ConfigPath, lengthMode, polishFlag, errorFile)
     try {
         exitCode := RunWait(command, , "Hide")
     } catch as err {
@@ -354,6 +360,14 @@ TryAutoPasteToOriginalWindow()
 ShowNativeContextMenu(*)
 {
     Send "+{F10}"
+}
+
+TogglePolish(*)
+{
+    global PolishEnabled
+    PolishEnabled := !PolishEnabled
+    state := PolishEnabled ? "ON  (slower, smoother prose)" : "OFF (faster, default)"
+    ShowStatusNearMouse("Polish output: " state, 2500)
 }
 
 AutoUpdateFromGitHub(*)
