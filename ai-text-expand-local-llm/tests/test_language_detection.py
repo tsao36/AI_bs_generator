@@ -128,6 +128,8 @@ def _full_language_chain(text: str) -> str:
             return "chinese-traditional"
         if script == "simplified":
             return "chinese-simplified"
+        # new: unknown script defaults to Traditional
+        return "chinese-traditional"
     return raw
 
 def test_traditional_text_uses_traditional_instruction():
@@ -141,6 +143,15 @@ def test_simplified_text_uses_simplified_instruction():
     assert hint == "chinese-simplified"
     instr = build_language_instruction(hint)
     assert "Simplified Chinese" in instr
+
+def test_ambiguous_chinese_defaults_to_traditional():
+    # "真的很棒" has no distinctive Traditional/Simplified characters
+    hint = _full_language_chain("真的很棒")
+    assert hint == "chinese-traditional", (
+        "Short Chinese phrases with no distinctive chars should default to Traditional"
+    )
+    instr = build_language_instruction(hint)
+    assert "Traditional Chinese" in instr
 
 def test_english_text_uses_english_instruction():
     hint = _full_language_chain("Please follow up with the customer.")

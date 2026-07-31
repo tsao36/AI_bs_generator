@@ -1,6 +1,6 @@
 [project]
 name = "ai-text-expand-local-llm"
-version = "0.1.21"
+version = "0.1.22"
 description = "Windows 11 right-click text expansion using a local Ollama LLM."
 requires-python = ">=3.9"
 dependencies = []

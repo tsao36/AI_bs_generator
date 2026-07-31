@@ -388,6 +388,25 @@ class TestExpandWithOllama:
         first_user_msg = captured[0][1]["content"]
         assert "English" in first_user_msg
 
+    def test_ambiguous_chinese_defaults_to_traditional(self):
+        # "真的很棒" has no distinctive chars — must default to Traditional, not Simplified
+        captured = []
+
+        def capture(messages, *args, **kwargs):
+            captured.append(messages)
+            return "第一句話。第二句話。"
+
+        with patch("ai_text_expand.expand_text.send_ollama_chat", side_effect=capture):
+            expand_with_ollama(
+                "真的很棒",
+                "llama3", "http://127.0.0.1:11434", 30, "two_sentences", 1, "auto"
+            )
+
+        first_user_msg = captured[0][1]["content"]
+        assert "Traditional Chinese" in first_user_msg, (
+            "Ambiguous Chinese input must default to Traditional, not Simplified"
+        )
+
     def test_polish_pass_uses_polish_system_prompt(self):
         # The polish pass only runs after all 3 retries are exhausted.
         # Use five_sentences (tolerance=1): 3 sentences is NOT acceptable (|3-5|=2 > 1)

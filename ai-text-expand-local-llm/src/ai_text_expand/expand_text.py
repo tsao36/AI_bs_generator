@@ -108,10 +108,18 @@ SUPPORTED_LANGUAGE_HINTS = {
 }
 
 TRADITIONAL_ONLY_CHARS = set(
-    "體臺萬與專業為這來時會個們說對學習機會開發測試網路軟體資料應該問題處理"  # common Traditional-only forms
+    # Original set
+    "體臺萬與專業為這來時會個們說對學習機會開發測試網路軟體資料應該問題處理"
+    # Extended: more common Traditional-distinctive characters
+    "裡後樣點發號過還邊種實現圖話讓關經線進門問間見產員單變從區聽讀寫辦"
+    "愛國來開長語還嗎歡樂藝術電腦腦傳統習慣記憶幫助努力"
 )
 SIMPLIFIED_ONLY_CHARS = set(
-    "体台万与专业为这来时会个们说对学习机会开发测试网络软件资料应该问题处理"  # common Simplified-only forms
+    # Original set
+    "体台万与专业为这来时会个们说对学习机会开发测试网络软件资料应该问题处理"
+    # Extended: Simplified counterparts of the Traditional set above
+    "里后样点发号过还边种实现图话让关经线进门问间见产员单变从区听读写办"
+    "爱国来开长语还吗欢乐艺术电脑脑传统习惯记忆帮助努力"
 )
 
 
@@ -396,6 +404,12 @@ def expand_with_ollama(
             language_hint = "chinese-traditional"
         elif chinese_script == "simplified":
             language_hint = "chinese-simplified"
+        else:
+            # No distinctive Traditional/Simplified characters found (e.g. short phrases
+            # like "真的很棒" that are identical in both scripts).
+            # Default to Traditional Chinese — users who need Simplified output can set
+            # LOCAL_LLM_OUTPUT_LANGUAGE: "chinese-simplified" in config.example.json.
+            language_hint = "chinese-traditional"
     messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user", "content": build_user_prompt(text, length_mode, language_hint)},
