@@ -301,12 +301,25 @@ def build_correction_prompt(
 def build_polish_prompt(draft: str, language_hint: str) -> str:
     language_instruction = build_language_instruction(language_hint)
     return (
-        "The following is a draft text. Polish it into smooth, natural prose: "
-        "improve word choice, fix awkward phrasing, and ensure every sentence flows seamlessly into the next. "
-        "Do NOT add, remove, or reorder any sentences. Do NOT change the meaning or content. "
-        "Return only the polished text with no explanations or labels. "
-        f"{language_instruction}\n\nDraft:\n{draft}"
+        # Language must come FIRST so the model treats it as the top constraint
+        f"{language_instruction}\n\n"
+        "Polish the following draft text: improve word choice and ensure every sentence "
+        "flows naturally into the next. "
+        "CRITICAL: Do NOT translate. Do NOT change the language. "
+        "Do NOT add, remove, or reorder any sentences. "
+        "Return only the polished text with no explanations or labels.\n\n"
+        f"Draft:\n{draft}"
     )
+
+
+POLISH_SYSTEM_PROMPT = (
+    "You are a writing assistant that polishes draft text. "
+    "Your only job is to improve wording and flow within the same language. "
+    "You must NEVER translate the text — if the draft is in Chinese, output Chinese; "
+    "if the draft is in Japanese, output Japanese; and so on. "
+    "Do NOT add, remove, or reorder sentences. "
+    "Return only the polished text."
+)
 
 
 def send_ollama_chat(
@@ -425,7 +438,7 @@ def expand_with_ollama(
 
     # Final polish pass — smooth the validated draft into natural flowing prose.
     polish_messages = [
-        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "system", "content": POLISH_SYSTEM_PROMPT},
         {"role": "user", "content": build_polish_prompt(result, language_hint)},
     ]
     try:
