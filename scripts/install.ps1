@@ -1,0 +1,445 @@
+param(
+    [string]$Model,
+    [string]$Proxy = "http://proxy-dmz.intel.com:912",
+    [string]$InstallDir = "$env:LOCALAPPDATA\AITextExpandLocalLLM",
+    [switch]$SkipWingetInstall,
+    [switch]$SkipModelPull,
+    [switch]$SkipStart,
+    [switch]$NoProxy,
+    [switch]$InstallInPlace
+)
+
+$ErrorActionPreference = "Stop"
+
+$packageRoot = Split-Path -Parent $PSScriptRoot
+$targetRoot = [System.IO.Path]::GetFullPath($InstallDir)
+$currentRoot = [System.IO.Path]::GetFullPath($packageRoot)
+
+function Copy-PackageToInstallDir($sourceRoot, $destinationRoot)
+{
+    if (-not (Test-Path $destinationRoot)) {
+        New-Item -ItemType Directory -Path $destinationRoot | Out-Null
+    }
+
+    # Directories that are fully owned by the package — delete then replace so
+    # files removed in newer versions don't linger in the install folder.
+    $managedDirs = @("ahk", "scripts", "src")
+    foreach ($dir in $managedDirs) {
+        $dest = Join-Path $destinationRoot $dir
+        if (Test-Path $dest) {
+            Remove-Item $dest -Recurse -Force
+        }
+        $source = Join-Path $sourceRoot $dir
+        if (Test-Path $source) {
+            Copy-Item $source -Destination $destinationRoot -Recurse -Force
+        }
+    }
+
+    # Loose files — just overwrite.
+    $managedFiles = @("Install.cmd", "01_Setup_and_Start.exe", "pyproject.toml", "requirements.txt", "README.md")
+    foreach ($file in $managedFiles) {
+        $source = Join-Path $sourceRoot $file
+        if (Test-Path $source) {
+            Copy-Item $source -Destination $destinationRoot -Force
+        }
+    }
+
+    # config.example.json — only copy if the user doesn't already have one
+    # (preserves any customisations they made).
+    $configSource = Join-Path $sourceRoot "config.example.json"
+    $configTarget = Join-Path $destinationRoot "config.example.json"
+    if ((Test-Path $configSource) -and -not (Test-Path $configTarget)) {
+        Copy-Item $configSource -Destination $configTarget -Force
+    }
+}
+
+if (-not $InstallInPlace -and ($currentRoot.TrimEnd("\") -ine $targetRoot.TrimEnd("\"))) {
+    Write-Host "Updating installed app files in: $targetRoot"
+    Copy-PackageToInstallDir $currentRoot $targetRoot
+
+    $installedScript = Join-Path $targetRoot "scripts\install.ps1"
+    $args = @("-NoProfile", "-ExecutionPolicy", "Bypass", "-File", $installedScript, "-InstallInPlace", "-InstallDir", $targetRoot)
+    if ($Model) { $args += @("-Model", $Model) }
+    if ($Proxy) { $args += @("-Proxy", $Proxy) }
+    if ($SkipWingetInstall) { $args += "-SkipWingetInstall" }
+    if ($SkipModelPull) { $args += "-SkipModelPull" }
+    if ($SkipStart) { $args += "-SkipStart" }
+    if ($NoProxy) { $args += "-NoProxy" }
+
+    & powershell.exe @args
+    exit $LASTEXITCODE
+}
+
+Set-Location $currentRoot
+
+function Update-ProcessPath()
+{
+    $machinePath = [Environment]::GetEnvironmentVariable("Path", "Machine")
+    $userPath = [Environment]::GetEnvironmentVariable("Path", "User")
+    $env:Path = "$machinePath;$userPath"
+}
+
+function Install-OllamaDirectly($proxy)
+{
+    $installerUrl = "https://ollama.com/download/OllamaSetup.exe"
+    $installerPath = Join-Path $env:TEMP "OllamaSetup.exe"
+
+    Write-Host "Downloading Ollama installer from $installerUrl ..."
+    try {
+        Invoke-WebRequest -Uri $installerUrl -OutFile $installerPath -UseBasicParsing -Proxy $proxy -ErrorAction Stop
+    } catch {
+        Write-Host "Proxy failed, retrying without proxy..."
+        Invoke-WebRequest -Uri $installerUrl -OutFile $installerPath -UseBasicParsing -ErrorAction Stop
+    }
+
+    Write-Host "Running Ollama installer silently..."
+    $proc = Start-Process -FilePath $installerPath -ArgumentList "/SILENT" -Wait -PassThru
+    Remove-Item $installerPath -Force -ErrorAction SilentlyContinue
+
+    if ($proc.ExitCode -ne 0) {
+        throw "Ollama installer exited with code $($proc.ExitCode)."
+    }
+
+    Update-ProcessPath
+}
+
+function Install-WithWinget($packageId, $displayName)
+{
+    if ($SkipWingetInstall) {
+        throw "$displayName was not found. Install it manually or rerun without -SkipWingetInstall."
+    }
+
+    if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
+        # winget is unavailable (older Windows or unprovisioned system);
+        # fall back to a direct download for Ollama specifically.
+        if ($packageId -eq "Ollama.Ollama") {
+            Write-Warning "winget was not found. Falling back to direct Ollama download..."
+            Install-OllamaDirectly $Proxy
+            return
+        }
+        throw "winget was not found. Install $displayName manually, then rerun this script."
+    }
+
+    Write-Host "Installing $displayName with winget..."
+    & winget install --id $packageId --exact --accept-package-agreements --accept-source-agreements
+    if ($LASTEXITCODE -ne 0) {
+        throw "Failed to install $displayName with winget."
+    }
+
+    Update-ProcessPath
+}
+
+function Set-ProxyEnvironment($proxyUrl)
+{
+    if (-not $proxyUrl) {
+        return
+    }
+
+    $env:HTTP_PROXY = $proxyUrl
+    $env:HTTPS_PROXY = $proxyUrl
+    $env:ALL_PROXY = $proxyUrl
+    $env:http_proxy = $proxyUrl
+    $env:https_proxy = $proxyUrl
+    $env:all_proxy = $proxyUrl
+
+    Write-Host "Using proxy for downloads: $proxyUrl"
+}
+
+function Enable-OllamaIntelGpuIfAvailable()
+{
+    try {
+        # Match any Intel GPU variant: Arc, Iris Xe, UHD, HD Graphics, etc.
+        $intelGpu = Get-CimInstance Win32_VideoController |
+            Where-Object {
+                ($_.Name -match "Intel") -and
+                ($_.Name -match "Arc|Iris|UHD|HD|Graphics")
+            } |
+            Select-Object -First 1
+
+        if ($intelGpu) {
+            $alreadySet = [Environment]::GetEnvironmentVariable("OLLAMA_IGPU_ENABLE", "User") -eq "1"
+            $env:OLLAMA_IGPU_ENABLE = "1"
+            [Environment]::SetEnvironmentVariable("OLLAMA_IGPU_ENABLE", "1", "User")
+            Write-Host "Intel GPU detected: $($intelGpu.Name)"
+            Write-Host "Enabled Ollama Intel GPU acceleration (OLLAMA_IGPU_ENABLE=1)."
+
+            # If Ollama was already running before this env var was set,
+            # it must be restarted to pick up the new setting.
+            if (-not $alreadySet) {
+                $ollamaProc = Get-Process -Name "ollama" -ErrorAction SilentlyContinue
+                if ($ollamaProc) {
+                    Write-Host "Restarting Ollama so it picks up the Intel GPU setting..."
+                    Stop-Process -Name "ollama" -Force -ErrorAction SilentlyContinue
+                    Start-Sleep -Milliseconds 800
+                    # Start-OllamaIfNeeded will restart it below with the env var now in session
+                }
+            }
+        }
+    } catch {
+        Write-Warning "Could not detect GPU for Ollama iGPU setting. Continuing..."
+    }
+}
+
+function Get-PythonCommand()
+{
+    $python = Get-Command python -ErrorAction SilentlyContinue
+    if ($python) {
+        return $python.Source
+    }
+
+    $py = Get-Command py -ErrorAction SilentlyContinue
+    if ($py) {
+        return $py.Source
+    }
+
+    return $null
+}
+
+function Get-AutoHotkeyCommand()
+{
+    $candidates = @(
+        "AutoHotkey64",
+        "AutoHotkey",
+        "$env:LOCALAPPDATA\Programs\AutoHotkey\v2\AutoHotkey64.exe",
+        "$env:LOCALAPPDATA\Programs\AutoHotkey\AutoHotkey64.exe",
+        "$env:ProgramFiles\AutoHotkey\v2\AutoHotkey64.exe",
+        "$env:ProgramFiles\AutoHotkey\AutoHotkey64.exe"
+    )
+
+    foreach ($candidate in $candidates) {
+        $command = Get-Command $candidate -ErrorAction SilentlyContinue
+        if ($command) {
+            return $command.Source
+        }
+        if (Test-Path $candidate) {
+            return $candidate
+        }
+    }
+
+    return $null
+}
+
+function Get-ConfiguredModel($configPath)
+{
+    if (-not $Model -and (Test-Path $configPath)) {
+        $config = Get-Content $configPath -Raw | ConvertFrom-Json
+        if ($config.LOCAL_LLM_MODEL) {
+            return $config.LOCAL_LLM_MODEL
+        }
+    }
+
+    if ($Model) {
+        return $Model
+    }
+
+    return "llama3.1:8b-instruct-q4_K_M"
+}
+
+function Test-OllamaApi($baseUrl)
+{
+    try {
+        Invoke-RestMethod -Uri "$baseUrl/api/tags" -Method Get -TimeoutSec 3 | Out-Null
+        return $true
+    } catch {
+        return $false
+    }
+}
+
+function Test-OllamaModelInstalled($baseUrl, $modelName)
+{
+    try {
+        $tags = Invoke-RestMethod -Uri "$baseUrl/api/tags" -Method Get -TimeoutSec 5
+        return @($tags.models | ForEach-Object { $_.name }) -contains $modelName
+    } catch {
+        return $false
+    }
+}
+
+function Pull-OllamaModel($modelName)
+{
+    foreach ($attempt in 1..3) {
+        Write-Host "Pulling Ollama model: $modelName (attempt $attempt of 3)"
+        & ollama pull $modelName
+        if ($LASTEXITCODE -eq 0) {
+            return $true
+        }
+
+        if ($attempt -lt 3) {
+            Write-Warning "Model pull failed. Retrying..."
+        }
+    }
+
+    return $false
+}
+
+function Test-AITextExpandHelperRunning($rootPath)
+{
+    $scriptPath = Join-Path $rootPath "ahk\ai_text_expand.ahk"
+
+    $proc = Get-CimInstance Win32_Process -Filter "name = 'AutoHotkey64.exe' or name = 'AutoHotkey.exe'" |
+        Where-Object { $_.CommandLine -and $_.CommandLine.Contains($scriptPath) } |
+        Select-Object -First 1
+
+    return $null -ne $proc
+}
+
+function Start-OllamaIfNeeded($baseUrl)
+{
+    if (Test-OllamaApi $baseUrl) {
+        Write-Host "Ollama is already running."
+        return
+    }
+
+    $ollama = Get-Command ollama -ErrorAction SilentlyContinue
+    if (-not $ollama) {
+        throw "Ollama command was not found after install. Restart PowerShell, then rerun this script."
+    }
+
+    Write-Host "Starting Ollama..."
+    Start-Process -FilePath $ollama.Source -ArgumentList "serve" -WindowStyle Hidden
+
+    foreach ($attempt in 1..20) {
+        Start-Sleep -Milliseconds 500
+        if (Test-OllamaApi $baseUrl) {
+            Write-Host "Ollama is running."
+            return
+        }
+    }
+
+    throw "Ollama did not respond at $baseUrl. Start Ollama manually, then rerun this script."
+}
+
+function Get-FileSha256($path)
+{
+    if (-not (Test-Path $path)) {
+        return ""
+    }
+    return (Get-FileHash -Path $path -Algorithm SHA256).Hash
+}
+
+function Install-PythonRequirementsIfNeeded($requirementsPath)
+{
+    $venvPython = ".\.venv\Scripts\python.exe"
+    $hashPath = ".\.venv\.requirements.sha256"
+    $requirementsHash = Get-FileSha256 $requirementsPath
+    $installedHash = ""
+    if (Test-Path $hashPath) {
+        $installedHash = (Get-Content $hashPath -Raw).Trim()
+    }
+
+    if ((Test-Path $venvPython) -and $requirementsHash -and ($requirementsHash -eq $installedHash)) {
+        Write-Host "Python requirements are already up to date."
+        return
+    }
+
+    $requirements = Get-Content $requirementsPath | Where-Object { $_.Trim() -and -not $_.Trim().StartsWith("#") }
+    if ($requirements) {
+        Write-Host "Installing Python requirements..."
+        & $venvPython -m pip install -r $requirementsPath
+        if ($LASTEXITCODE -ne 0) {
+            throw "Failed to install Python requirements."
+        }
+        Set-Content -Path $hashPath -Value $requirementsHash -Encoding ASCII
+    }
+}
+
+$configPath = ".\config.example.json"
+$baseUrl = "http://127.0.0.1:11434"
+if (Test-Path $configPath) {
+    $config = Get-Content $configPath -Raw | ConvertFrom-Json
+    if ($config.OLLAMA_BASE_URL) {
+        $baseUrl = $config.OLLAMA_BASE_URL
+    }
+}
+
+if ($NoProxy) {
+    Write-Host "Proxy disabled for this install."
+} else {
+    Set-ProxyEnvironment $Proxy
+}
+
+Enable-OllamaIntelGpuIfAvailable
+
+$python = Get-PythonCommand
+if (-not $python) {
+    Install-WithWinget "Python.Python.3.12" "Python 3.12"
+    $python = Get-PythonCommand
+}
+if (-not $python) {
+    throw "Python was not found after install. Restart PowerShell, then rerun this script."
+}
+
+if (-not (Test-Path ".\.venv\Scripts\python.exe")) {
+    Write-Host "Creating Python virtual environment..."
+    if ($python -like "*\py.exe") {
+        & $python -3 -m venv .venv
+    } else {
+        & $python -m venv .venv
+    }
+} else {
+    Write-Host "Using existing Python virtual environment."
+}
+
+Install-PythonRequirementsIfNeeded ".\requirements.txt"
+
+if (-not (Get-AutoHotkeyCommand)) {
+    Install-WithWinget "AutoHotkey.AutoHotkey" "AutoHotkey v2"
+}
+if (-not (Get-AutoHotkeyCommand)) {
+    throw "AutoHotkey v2 was not found after install. Restart PowerShell, then rerun this script."
+}
+
+if (-not (Get-Command ollama -ErrorAction SilentlyContinue)) {
+    Install-WithWinget "Ollama.Ollama" "Ollama"
+}
+if (-not (Get-Command ollama -ErrorAction SilentlyContinue)) {
+    throw "Ollama was not found after install. Restart PowerShell, then rerun this script."
+}
+
+Start-OllamaIfNeeded $baseUrl
+
+$modelName = Get-ConfiguredModel $configPath
+if ($SkipModelPull) {
+    Write-Host "Skipping model pull. Required model: $modelName"
+    $modelReady = Test-OllamaModelInstalled $baseUrl $modelName
+} else {
+    $modelReady = Test-OllamaModelInstalled $baseUrl $modelName
+    if ($modelReady) {
+        Write-Host "Ollama model is already installed: $modelName"
+    } else {
+        $modelReady = Pull-OllamaModel $modelName
+    }
+}
+
+Write-Host "Install complete."
+
+if (-not $modelReady) {
+    Write-Warning "The required Ollama model is not installed: $modelName"
+    Write-Warning "AI Text Expand is installed, but it cannot run until this model is available."
+    Write-Warning "This is usually caused by a corporate firewall, proxy, VPN, or timeout reaching https://registry.ollama.ai."
+    Write-Warning "Connect to a network that can reach registry.ollama.ai, then double-click Install.exe again."
+    Write-Warning "If your company provides a preloaded Ollama model, install it with the same model name or update config.example.json."
+    exit 0
+}
+
+if ($SkipStart) {
+    Write-Host "Start skipped. Run scripts\run.ps1 when you are ready to start the AutoHotkey helper."
+    Write-Host "Logs folder: $env:LOCALAPPDATA\AITextExpandLocalLLM\logs"
+    Write-Host "Latest error log: $env:LOCALAPPDATA\AITextExpandLocalLLM\logs\last_error.txt"
+    exit 0
+}
+
+Write-Host "Starting AI Text Expand..."
+try {
+    & (Join-Path (Get-Location) "scripts\run.ps1")
+} catch {
+    throw "Install completed, but AI Text Expand failed to launch: $($_.Exception.Message)"
+}
+
+if (-not (Test-AITextExpandHelperRunning (Get-Location).Path)) {
+    throw "Install completed, but AI Text Expand did not stay running. Run scripts\run.ps1 manually and check the error message."
+}
+
+Write-Host "AI Text Expand is installed and running."
+Write-Host "Logs folder: $env:LOCALAPPDATA\AITextExpandLocalLLM\logs"
+Write-Host "Latest error log: $env:LOCALAPPDATA\AITextExpandLocalLLM\logs\last_error.txt"

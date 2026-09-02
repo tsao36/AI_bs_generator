@@ -1,0 +1,9 @@
+{
+  "LOCAL_LLM_MODEL": "llama3.1:8b-instruct-q4_K_M",
+  "LOCAL_LLM_OUTPUT_LANGUAGE": "auto",
+  "OLLAMA_BASE_URL": "http://127.0.0.1:11434",
+  "timeout_seconds": 60,
+  "OLLAMA_NUM_GPU": 999,
+  "LOCAL_LLM_POLISH_PASS": false,
+  "num_predict": 300
+}
